@@ -1,0 +1,1224 @@
+```json
+{
+  "crime_in_india_2022_volume_1": {
+    "contents": [
+      {
+        "CHAPTER & TABLE NO.": "Contents",
+        "TITLE": "Contents",
+        "PAGE NO.": "i-iv"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Disclaimer & Limitations",
+        "TITLE": "Disclaimer & Limitations",
+        "PAGE NO.": "v"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Methodology of Data Collection & Publication",
+        "TITLE": "Methodology of Data Collection & Publication",
+        "PAGE NO.": "vi-vii"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Projected Population",
+        "TITLE": "Projected Population",
+        "PAGE NO.": "viii"
+      },
+      {
+        "CHAPTER & TABLE NO.": "A Word of Caution",
+        "TITLE": "A Word of Caution",
+        "PAGE NO.": "ix"
+      },
+      {
+        "CHAPTER & TABLE NO.": "IPC Crimes over the Years 1982-2022",
+        "TITLE": "IPC Crimes over the Years 1982-2022",
+        "PAGE NO.": "x"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1",
+        "TITLE": "Summary (All India)",
+        "PAGE NO.": "1"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1A",
+        "TITLE": "Summary (States/UTs)",
+        "PAGE NO.": "9"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1B",
+        "TITLE": "Summary (Metropolitan Cities)",
+        "PAGE NO.": "83"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2",
+        "TITLE": "Violent Crimes",
+        "PAGE NO.": "157"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2A",
+        "TITLE": "Violent Crimes - Murder (States/UTs)",
+        "PAGE NO.": "163"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2B",
+        "TITLE": "Violent Crimes - Murder (Metropolitan Cities)",
+        "PAGE NO.": "173"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2C",
+        "TITLE": "Violent Crimes - Kidnapping & Abduction (States/UTs)",
+        "PAGE NO.": "183"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2D",
+        "TITLE": "Violent Crimes - Kidnapping & Abduction (Metropolitan Cities)",
+        "PAGE NO.": "197"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-3A",
+        "TITLE": "Crime Against Women (States/UTs)",
+        "PAGE NO.": "211"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-3B",
+        "TITLE": "Crime Against Women (Metropolitan Cities)",
+        "PAGE NO.": "267"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-4A",
+        "TITLE": "Crime Against Children (States/UTs)",
+        "PAGE NO.": "317"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-4B",
+        "TITLE": "Crime Against Children (Metropolitan Cities)",
+        "PAGE NO.": "373"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-5A",
+        "TITLE": "Juveniles in Conflict with Law (States/UTs)",
+        "PAGE NO.": "427"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-5B",
+        "TITLE": "Juveniles in Conflict with Law (Metropolitan Cities)",
+        "PAGE NO.": "453"
+      }
+    ],
+    "projected_population_states_uts_2022": [
+      {
+        "STATE/UT": "Andhra Pradesh",
+        "Population (in Lakhs)": 531.85
+      },
+      {
+        "STATE/UT": "Arunachal Pradesh",
+        "Population (in Lakhs)": 15.7
+      },
+      {
+        "STATE/UT": "Assam",
+        "Population (in Lakhs)": 355.99
+      },
+      {
+        "STATE/UT": "Bihar",
+        "Population (in Lakhs)": 1259.54
+      },
+      {
+        "STATE/UT": "Chhattisgarh",
+        "Population (in Lakhs)": 299.11
+      },
+      {
+        "STATE/UT": "Goa",
+        "Population (in Lakhs)": 15.75
+      },
+      {
+        "STATE/UT": "Gujarat",
+        "Population (in Lakhs)": 707.97
+      },
+      {
+        "STATE/UT": "Haryana",
+        "Population (in Lakhs)": 299.45
+      },
+      {
+        "STATE/UT": "Himachal Pradesh",
+        "Population (in Lakhs)": 74.58
+      },
+      {
+        "STATE/UT": "Jharkhand",
+        "Population (in Lakhs)": 390.93
+      },
+      {
+        "STATE/UT": "Karnataka",
+        "Population (in Lakhs)": 676.92
+      },
+      {
+        "STATE/UT": "Kerala",
+        "Population (in Lakhs)": 357.75
+      },
+      {
+        "STATE/UT": "Madhya Pradesh",
+        "Population (in Lakhs)": 859.04
+      },
+      {
+        "STATE/UT": "Maharashtra",
+        "Population (in Lakhs)": 1259.9
+      },
+      {
+        "STATE/UT": "Manipur",
+        "Population (in Lakhs)": 32.23
+      },
+      {
+        "STATE/UT": "Meghalaya",
+        "Population (in Lakhs)": 33.41
+      },
+      {
+        "STATE/UT": "Mizoram",
+        "Population (in Lakhs)": 12.39
+      },
+      {
+        "STATE/UT": "Nagaland",
+        "Population (in Lakhs)": 22.18
+      },
+      {
+        "STATE/UT": "Odisha",
+        "Population (in Lakhs)": 462.77
+      },
+      {
+        "STATE/UT": "Punjab",
+        "Population (in Lakhs)": 307.31
+      },
+      {
+        "STATE/UT": "Rajasthan",
+        "Population (in Lakhs)": 807.89
+      },
+      {
+        "STATE/UT": "Sikkim",
+        "Population (in Lakhs)": 6.84
+      },
+      {
+        "STATE/UT": "Tamil Nadu",
+        "Population (in Lakhs)": 769.93
+      },
+      {
+        "STATE/UT": "Telangana",
+        "Population (in Lakhs)": 380.99
+      },
+      {
+        "STATE/UT": "Tripura",
+        "Population (in Lakhs)": 41.47
+      },
+      {
+        "STATE/UT": "Uttar Pradesh",
+        "Population (in Lakhs)": 2341.29
+      },
+      {
+        "STATE/UT": "Uttarakhand",
+        "Population (in Lakhs)": 115.97
+      },
+      {
+        "STATE/UT": "West Bengal",
+        "Population (in Lakhs)": 990.85
+      },
+      {
+        "STATE/UT": "A&N Islands",
+        "Population (in Lakhs)": 4.03
+      },
+      {
+        "STATE/UT": "Chandigarh",
+        "Population (in Lakhs)": 12.28
+      },
+      {
+        "STATE/UT": "D&N Haveli and Daman & Diu",
+        "Population (in Lakhs)": 11.36
+      },
+      {
+        "STATE/UT": "Delhi",
+        "Population (in Lakhs)": 210.74
+      },
+      {
+        "STATE/UT": "Jammu & Kashmir",
+        "Population (in Lakhs)": 136.35
+      },
+      {
+        "STATE/UT": "Ladakh",
+        "Population (in Lakhs)": 3.0
+      },
+      {
+        "STATE/UT": "Lakshadweep",
+        "Population (in Lakhs)": 0.69
+      },
+      {
+        "STATE/UT": "Puducherry",
+        "Population (in Lakhs)": 16.08
+      }
+    ],
+    "population_19_metropolitan_cities": [
+      {
+        "CITY": "Ahmedabad (Gujarat)",
+        "Population in Lakhs": 63.52
+      },
+      {
+        "CITY": "Bengaluru (Karnataka)",
+        "Population in Lakhs": 84.99
+      },
+      {
+        "CITY": "Chennai (Tamil Nadu)",
+        "Population in Lakhs": 86.96
+      },
+      {
+        "CITY": "Coimbatore (Tamil Nadu)",
+        "Population in Lakhs": 21.51
+      },
+      {
+        "CITY": "Delhi",
+        "Population in Lakhs": 163.15
+      },
+      {
+        "CITY": "Ghaziabad (Uttar Pradesh)",
+        "Population in Lakhs": 23.59
+      },
+      {
+        "CITY": "Hyderabad (Telangana)",
+        "Population in Lakhs": 77.49
+      },
+      {
+        "CITY": "Indore (Madhya Pradesh)",
+        "Population in Lakhs": 21.67
+      },
+      {
+        "CITY": "Jaipur (Rajasthan)",
+        "Population in Lakhs": 30.73
+      },
+      {
+        "CITY": "Kanpur (Uttar Pradesh)",
+        "Population in Lakhs": 29.2
+      },
+      {
+        "CITY": "Kochi (Kerala)",
+        "Population in Lakhs": 21.18
+      },
+      {
+        "CITY": "Kolkata (West Bengal)",
+        "Population in Lakhs": 141.13
+      },
+      {
+        "CITY": "Kozhikode (Kerala)",
+        "Population in Lakhs": 20.31
+      },
+      {
+        "CITY": "Lucknow (Uttar Pradesh)",
+        "Population in Lakhs": 29.01
+      },
+      {
+        "CITY": "Mumbai (Maharashtra)",
+        "Population in Lakhs": 184.14
+      },
+      {
+        "CITY": "Nagpur (Maharashtra)",
+        "Population in Lakhs": 24.98
+      },
+      {
+        "CITY": "Patna (Bihar)",
+        "Population in Lakhs": 20.47
+      },
+      {
+        "CITY": "Pune (Maharashtra)",
+        "Population in Lakhs": 50.5
+      },
+      {
+        "CITY": "Surat (Gujarat)",
+        "Population in Lakhs": 45.85
+      }
+    ],
+    "ipc_crimes_over_years_1982_2022": [
+      {
+        "Year": 1982,
+        "Crime Incidence": 1353904,
+        "Crime Rate": 192.0,
+        "Charge-sheeting Rate": 65.3
+      },
+      {
+        "Year": 1983,
+        "Crime Incidence": 1349866,
+        "Crime Rate": 187.4,
+        "Charge-sheeting Rate": 67.3
+      },
+      {
+        "Year": 1984,
+        "Crime Incidence": 1358660,
+        "Crime Rate": 184.7,
+        "Charge-sheeting Rate": 67.9
+      },
+      {
+        "Year": 1985,
+        "Crime Incidence": 1384731,
+        "Crime Rate": 184.4,
+        "Charge-sheeting Rate": 70.2
+      },
+      {
+        "Year": 1986,
+        "Crime Incidence": 1405835,
+        "Crime Rate": 183.5,
+        "Charge-sheeting Rate": 71.1
+      },
+      {
+        "Year": 1987,
+        "Crime Incidence": 1406992,
+        "Crime Rate": 180.1,
+        "Charge-sheeting Rate": 72.4
+      },
+      {
+        "Year": 1988,
+        "Crime Incidence": 1440356,
+        "Crime Rate": 180.8,
+        "Charge-sheeting Rate": 70.7
+      },
+      {
+        "Year": 1989,
+        "Crime Incidence": 1529844,
+        "Crime Rate": 188.5,
+        "Charge-sheeting Rate": 72.3
+      },
+      {
+        "Year": 1990,
+        "Crime Incidence": 1604449,
+        "Crime Rate": 194.0,
+        "Charge-sheeting Rate": 70.2
+      },
+      {
+        "Year": 1991,
+        "Crime Incidence": 1678375,
+        "Crime Rate": 197.5,
+        "Charge-sheeting Rate": 71.3
+      },
+      {
+        "Year": 1992,
+        "Crime Incidence": 1689341,
+        "Crime Rate": 194.7,
+        "Charge-sheeting Rate": 72.2
+      },
+      {
+        "Year": 1993,
+        "Crime Incidence": 1629936,
+        "Crime Rate": 184.4,
+        "Charge-sheeting Rate": 72.5
+      },
+      {
+        "Year": 1994,
+        "Crime Incidence": 1635251,
+        "Crime Rate": 181.7,
+        "Charge-sheeting Rate": 74.1
+      },
+      {
+        "Year": 1995,
+        "Crime Incidence": 1695696,
+        "Crime Rate": 185.1,
+        "Charge-sheeting Rate": 74.3
+      },
+      {
+        "Year": 1996,
+        "Crime Incidence": 1709576,
+        "Crime Rate": 183.4,
+        "Charge-sheeting Rate": 76.9
+      },
+      {
+        "Year": 1997,
+        "Crime Incidence": 1719820,
+        "Crime Rate": 180.0,
+        "Charge-sheeting Rate": 77.5
+      },
+      {
+        "Year": 1998,
+        "Crime Incidence": 1778815,
+        "Crime Rate": 183.2,
+        "Charge-sheeting Rate": 77.8
+      },
+      {
+        "Year": 1999,
+        "Crime Incidence": 1764629,
+        "Crime Rate": 178.9,
+        "Charge-sheeting Rate": 78.0
+      },
+      {
+        "Year": 2000,
+        "Crime Incidence": 1771084,
+        "Crime Rate": 176.7,
+        "Charge-sheeting Rate": 78.4
+      },
+      {
+        "Year": 2001,
+        "Crime Incidence": 1769308,
+        "Crime Rate": 172.3,
+        "Charge-sheeting Rate": 78.6
+      },
+      {
+        "Year": 2002,
+        "Crime Incidence": 1780330,
+        "Crime Rate": 169.5,
+        "Charge-sheeting Rate": 80.0
+      },
+      {
+        "Year": 2003,
+        "Crime Incidence": 1716120,
+        "Crime Rate": 160.7,
+        "Charge-sheeting Rate": 80.1
+      },
+      {
+        "Year": 2004,
+        "Crime Incidence": 1832015,
+        "Crime Rate": 168.8,
+        "Charge-sheeting Rate": 79.8
+      },
+      {
+        "Year": 2005,
+        "Crime Incidence": 1822602,
+        "Crime Rate": 165.3,
+        "Charge-sheeting Rate": 80.7
+      },
+      {
+        "Year": 2006,
+        "Crime Incidence": 1878293,
+        "Crime Rate": 167.7,
+        "Charge-sheeting Rate": 80.6
+      },
+      {
+        "Year": 2007,
+        "Crime Incidence": 1989673,
+        "Crime Rate": 175.1,
+        "Charge-sheeting Rate": 80.1
+      },
+      {
+        "Year": 2008,
+        "Crime Incidence": 2093379,
+        "Crime Rate": 181.5,
+        "Charge-sheeting Rate": 79.8
+      },
+      {
+        "Year": 2009,
+        "Crime Incidence": 2121345,
+        "Crime Rate": 181.4,
+        "Charge-sheeting Rate": 78.4
+      },
+      {
+        "Year": 2010,
+        "Crime Incidence": 2224831,
+        "Crime Rate": 187.6,
+        "Charge-sheeting Rate": 79.1
+      },
+      {
+        "Year": 2011,
+        "Crime Incidence": 2325575,
+        "Crime Rate": 192.2,
+        "Charge-sheeting Rate": 78.8
+      },
+      {
+        "Year": 2012,
+        "Crime Incidence": 2387188,
+        "Crime Rate": 196.7,
+        "Charge-sheeting Rate": 78.8
+      },
+      {
+        "Year": 2013,
+        "Crime Incidence": 2647722,
+        "Crime Rate": 215.5,
+        "Charge-sheeting Rate": 79.5
+      },
+      {
+        "Year": 2014,
+        "Crime Incidence": 2851563,
+        "Crime Rate": 229.2,
+        "Charge-sheeting Rate": 79.6
+      },
+      {
+        "Year": 2015,
+        "Crime Incidence": 2949400,
+        "Crime Rate": 234.2,
+        "Charge-sheeting Rate": 77.7
+      },
+      {
+        "Year": 2016,
+        "Crime Incidence": 2975711,
+        "Crime Rate": 233.6,
+        "Charge-sheeting Rate": 72.9
+      },
+      {
+        "Year": 2017,
+        "Crime Incidence": 3062579,
+        "Crime Rate": 237.7,
+        "Charge-sheeting Rate": 70.7
+      },
+      {
+        "Year": 2018,
+        "Crime Incidence": 3132955,
+        "Crime Rate": 236.7,
+        "Charge-sheeting Rate": 68.1
+      },
+      {
+        "Year": 2019,
+        "Crime Incidence": 3225597,
+        "Crime Rate": 241.2,
+        "Charge-sheeting Rate": 67.2
+      },
+      {
+        "Year": 2020,
+        "Crime Incidence": 4254356,
+        "Crime Rate": 314.3,
+        "Charge-sheeting Rate": 75.8
+      },
+      {
+        "Year": 2021,
+        "Crime Incidence": 3663360,
+        "Crime Rate": 268.0,
+        "Charge-sheeting Rate": 72.3
+      },
+      {
+        "Year": 2022,
+        "Crime Incidence": 3561379,
+        "Crime Rate": 258.1,
+        "Charge-sheeting Rate": 72.3
+      }
+    ],
+    "table_1.1_crime_cases_registered": [
+      {
+        "Crime Head": "Total Cognizable Crimes (IPC+SLL)",
+        "2020": 6601285,
+        "2021": 6096310,
+        "2022": 5824946,
+        "Percentage Change in 2021 over 2020": -7.6,
+        "Percentage Change in 2022 over 2021": -4.5,
+        "Crime Rate 2020": 487.8,
+        "Crime Rate 2021": 445.9,
+        "Crime Rate 2022": 422.2
+      },
+      {
+        "Crime Head": "Total IPC Crimes",
+        "2020": 4254356,
+        "2021": 3663360,
+        "2022": 3561379,
+        "Percentage Change in 2021 over 2020": -13.9,
+        "Percentage Change in 2022 over 2021": -2.8,
+        "Crime Rate 2020": 314.3,
+        "Crime Rate 2021": 268.0,
+        "Crime Rate 2022": 258.1
+      },
+      {
+        "Crime Head": "Total SLL Crimes",
+        "2020": 2346929,
+        "2021": 2432950,
+        "2022": 2263567,
+        "Percentage Change in 2021 over 2020": 3.7,
+        "Percentage Change in 2022 over 2021": -7.0,
+        "Crime Rate 2020": 173.4,
+        "Crime Rate 2021": 177.9,
+        "Crime Rate 2022": 164.1
+      }
+    ],
+    "table_1.2_disposal_of_ipc_crime_cases_by_police": [
+      {
+        "Description": "Cases for Investigation at the beginning of the year",
+        "2020": 1056529,
+        "2021": 1118821,
+        "2022": 1162491
+      },
+      {
+        "Description": "Cases Reported during the year",
+        "2020": 4254356,
+        "2021": 3663360,
+        "2022": 3561379
+      },
+      {
+        "Description": "Total cases for Investigation",
+        "2020": 5310885,
+        "2021": 4782181,
+        "2022": 4723870
+      },
+      {
+        "Description": "Total Cases Disposed of by Police",
+        "2020": 4192064,
+        "2021": 3619690,
+        "2022": 3505697
+      },
+      {
+        "Description": "Cases pending investigation at the end of the year",
+        "2020": 1118821,
+        "2021": 1162491,
+        "2022": 1218173
+      },
+      {
+        "Description": "Chargesheeting Rate",
+        "2020": 75.8,
+        "2021": 72.3,
+        "2022": 72.3
+      }
+    ],
+    "table_1.3_disposal_of_ipc_crime_cases_by_courts": [
+      {
+        "Description": "Cases for Trial at the beginning of the year",
+        "2020": 30044549,
+        "2021": 31305943,
+        "2022": 32800161
+      },
+      {
+        "Description": "Cases Sent for Trial during the year",
+        "2020": 1799797,
+        "2021": 2029587,
+        "2022": 2164478
+      },
+      {
+        "Description": "Total cases for Trial",
+        "2020": 31844346,
+        "2021": 33335530,
+        "2022": 34964639
+      },
+      {
+        "Description": "Total Cases in which Trials were Completed",
+        "2020": 538403,
+        "2021": 535369,
+        "2022": 662589
+      },
+      {
+        "Description": "Cases pending trial at the end of the year",
+        "2020": 31305943,
+        "2021": 32800161,
+        "2022": 34302050
+      },
+      {
+        "Description": "Conviction Rate",
+        "2020": 59.2,
+        "2021": 57.0,
+        "2022": 58.6
+      }
+    ],
+    "table_1.4_persons_arrested_chargesheeted_convicted_ipc": [
+      {
+        "Description": "Persons Arrested",
+        "2020": 5345758,
+        "2021": 4443171,
+        "2022": 4448574
+      },
+      {
+        "Description": "Persons Chargesheeted",
+        "2020": 4277717,
+        "2021": 3619582,
+        "2022": 3601859
+      },
+      {
+        "Description": "Persons Convicted",
+        "2020": 582449,
+        "2021": 573634,
+        "2022": 773130
+      },
+      {
+        "Description": "Persons Acquitted",
+        "2020": 403061,
+        "2021": 428059,
+        "2022": 535850
+      },
+      {
+        "Description": "Persons Discharged",
+        "2020": 76953,
+        "2021": 105634,
+        "2022": 113463
+      }
+    ],
+    "table_1.5_crime_head_wise_cases_registered_ipc_2020_2022": [
+      {
+        "Crime Head": "Offences Affecting the Human Body",
+        "2020": 1109968,
+        "2021": 1083989,
+        "2022": 1079313
+      },
+      {
+        "Crime Head": "Murder",
+        "2020": 29193,
+        "2021": 29272,
+        "2022": 28522
+      },
+      {
+        "Crime Head": "Attempt to commit Murder",
+        "2020": 54682,
+        "2021": 56641,
+        "2022": 57970
+      },
+      {
+        "Crime Head": "Culpable Homicide not amounting to Murder",
+        "2020": 3233,
+        "2021": 3317,
+        "2022": 3226
+      },
+      {
+        "Crime Head": "Attempt to commit Culpable Homicide",
+        "2020": 2969,
+        "2021": 2984,
+        "2022": 2772
+      },
+      {
+        "Crime Head": "Grievous Hurt",
+        "2020": 110484,
+        "2021": 112009,
+        "2022": 109860
+      },
+      {
+        "Crime Head": "Causing Death by Negligence",
+        "2020": 121557,
+        "2021": 133572,
+        "2022": 145947
+      },
+      {
+        "Crime Head": "Dowry Deaths",
+        "2020": 6966,
+        "2021": 6589,
+        "2022": 6450
+      },
+      {
+        "Crime Head": "Kidnapping & Abduction",
+        "2020": 84805,
+        "2021": 101707,
+        "2022": 107588
+      },
+      {
+        "Crime Head": "Human Trafficking",
+        "2020": 1714,
+        "2021": 2189,
+        "2022": 2250
+      },
+      {
+        "Crime Head": "Rape",
+        "2020": 28046,
+        "2021": 31677,
+        "2022": 31516
+      },
+      {
+        "Crime Head": "Attempt to commit Rape",
+        "2020": 4273,
+        "2021": 4545,
+        "2022": 4518
+      },
+      {
+        "Crime Head": "Sexual Harassment",
+        "2020": 9866,
+        "2021": 10775,
+        "2022": 11440
+      },
+      {
+        "Crime Head": "Assault on Women with intent to outrage her Modesty",
+        "2020": 79274,
+        "2021": 85331,
+        "2022": 86001
+      },
+      {
+        "Crime Head": "Insult to the Modesty of Women",
+        "2020": 6398,
+        "2021": 7247,
+        "2022": 7291
+      },
+      {
+        "Crime Head": "Cruelty by Husband or his Relatives",
+        "2020": 111549,
+        "2021": 136459,
+        "2022": 140441
+      },
+      {
+        "Crime Head": "Other IPC Crimes",
+        "2020": 454359,
+        "2021": 360215,
+        "2022": 337521
+      },
+      {
+        "Crime Head": "Offences Against Property",
+        "2020": 796031,
+        "2021": 723321,
+        "2022": 728952
+      },
+      {
+        "Crime Head": "Dacoity",
+        "2020": 2424,
+        "2021": 1827,
+        "2022": 1603
+      },
+      {
+        "Crime Head": "Making Preparation and Assembly for committing Dacoity",
+        "2020": 3482,
+        "2021": 2516,
+        "2022": 1964
+      },
+      {
+        "Crime Head": "Robbery",
+        "2020": 26978,
+        "2021": 24040,
+        "2022": 23071
+      },
+      {
+        "Crime Head": "Burglary",
+        "2020": 85112,
+        "2021": 73236,
+        "2022": 72844
+      },
+      {
+        "Crime Head": "Theft",
+        "2020": 632360,
+        "2021": 579040,
+        "2022": 588323
+      },
+      {
+        "Crime Head": "Criminal Trespass",
+        "2020": 26431,
+        "2021": 22253,
+        "2022": 21255
+      },
+      {
+        "Crime Head": "Extortion",
+        "2020": 13917,
+        "2021": 15002,
+        "2022": 14457
+      },
+      {
+        "Crime Head": "Criminal Breach of Trust",
+        "2020": 24716,
+        "2021": 22262,
+        "2022": 21814
+      },
+      {
+        "Crime Head": "Cheating",
+        "2020": 126135,
+        "2021": 134547,
+        "2022": 143895
+      },
+      {
+        "Crime Head": "Counterfeiting",
+        "2020": 792,
+        "2021": 699,
+        "2022": 670
+      },
+      {
+        "Crime Head": "Arson",
+        "2020": 6344,
+        "2021": 6223,
+        "2022": 6133
+      },
+      {
+        "Crime Head": "Offences Against Public Tranquility",
+        "2020": 956873,
+        "2021": 51631,
+        "2022": 49724
+      },
+      {
+        "Crime Head": "Riots",
+        "2020": 71107,
+        "2021": 42094,
+        "2022": 41243
+      },
+      {
+        "Crime Head": "Unlawful Assembly",
+        "2020": 23460,
+        "2021": 8709,
+        "2022": 7575
+      },
+      {
+        "Crime Head": "Offences relating to Public Servants",
+        "2020": 3396,
+        "2021": 4028,
+        "2022": 4140
+      },
+      {
+        "Crime Head": "Offences relating to Elections",
+        "2020": 128,
+        "2021": 210,
+        "2022": 166
+      },
+      {
+        "Crime Head": "Offences against the State",
+        "2020": 5613,
+        "2021": 5164,
+        "2022": 4439
+      }
+    ],
+    "table_1.6_month_wise_incidents_of_crime_ipc_2022": [
+      {
+        "Month": "January",
+        "Incidents": 300431
+      },
+      {
+        "Month": "February",
+        "Incidents": 277259
+      },
+      {
+        "Month": "March",
+        "Incidents": 304245
+      },
+      {
+        "Month": "April",
+        "Incidents": 301712
+      },
+      {
+        "Month": "May",
+        "Incidents": 322557
+      },
+      {
+        "Month": "June",
+        "Incidents": 308130
+      },
+      {
+        "Month": "July",
+        "Incidents": 305411
+      },
+      {
+        "Month": "August",
+        "Incidents": 298179
+      },
+      {
+        "Month": "September",
+        "Incidents": 291113
+      },
+      {
+        "Month": "October",
+        "Incidents": 284382
+      },
+      {
+        "Month": "November",
+        "Incidents": 284149
+      },
+      {
+        "Month": "December",
+        "Incidents": 283811
+      }
+    ],
+    "table_1A.1_cases_registered_under_ipc_crimes_state_ut_wise_2020_2022": {
+      "STATES": [
+        {
+          "State/UT": "Andhra Pradesh",
+          "2020": 135434,
+          "2021": 135892,
+          "2022": 142100
+        },
+        {
+          "State/UT": "Arunachal Pradesh",
+          "2020": 2699,
+          "2021": 2728,
+          "2022": 2885
+        },
+        {
+          "State/UT": "Assam",
+          "2020": 121703,
+          "2021": 133229,
+          "2022": 109851
+        },
+        {
+          "State/UT": "Bihar",
+          "2020": 185124,
+          "2021": 175027,
+          "2022": 172655
+        },
+        {
+          "State/UT": "Chhattisgarh",
+          "2020": 96511,
+          "2021": 85100,
+          "2022": 88775
+        },
+        {
+          "State/UT": "Goa",
+          "2020": 2999,
+          "2021": 2901,
+          "2022": 2933
+        },
+        {
+          "State/UT": "Gujarat",
+          "2020": 170063,
+          "2021": 196160,
+          "2022": 222629
+        },
+        {
+          "State/UT": "Haryana",
+          "2020": 139130,
+          "2021": 121650,
+          "2022": 125167
+        },
+        {
+          "State/UT": "Himachal Pradesh",
+          "2020": 18919,
+          "2021": 18833,
+          "2022": 18742
+        },
+        {
+          "State/UT": "Jharkhand",
+          "2020": 53483,
+          "2021": 53574,
+          "2022": 52624
+        },
+        {
+          "State/UT": "Karnataka",
+          "2020": 134107,
+          "2021": 148118,
+          "2022": 156323
+        },
+        {
+          "State/UT": "Kerala",
+          "2020": 128913,
+          "2021": 142858,
+          "2022": 156291
+        },
+        {
+          "State/UT": "Madhya Pradesh",
+          "2020": 358352,
+          "2021": 309714,
+          "2022": 314413
+        },
+        {
+          "State/UT": "Maharashtra",
+          "2020": 367628,
+          "2021": 367123,
+          "2022": 374038
+        },
+        {
+          "State/UT": "Manipur",
+          "2020": 2727,
+          "2021": 2769,
+          "2022": 3288
+        },
+        {
+          "State/UT": "Meghalaya",
+          "2020": 3479,
+          "2021": 3444,
+          "2022": 3298
+        },
+        {
+          "State/UT": "Mizoram",
+          "2020": 2291,
+          "2021": 2244,
+          "2022": 2337
+        },
+        {
+          "State/UT": "Nagaland",
+          "2020": 1502,
+          "2021": 1551,
+          "2022": 1624
+        },
+        {
+          "State/UT": "Odisha",
+          "2020": 134230,
+          "2021": 131343,
+          "2022": 130104
+        },
+        {
+          "State/UT": "Punjab",
+          "2020": 63445,
+          "2021": 54245,
+          "2022": 52362
+        },
+        {
+          "State/UT": "Rajasthan",
+          "2020": 224750,
+          "2021": 213904,
+          "2022": 235191
+        },
+        {
+          "State/UT": "Sikkim",
+          "2020": 801,
+          "2021": 776,
+          "2022": 804
+        },
+        {
+          "State/UT": "Tamil Nadu",
+          "2020": 465617,
+          "2021": 204369,
+          "2022": 194462
+        },
+        {
+          "State/UT": "Telangana",
+          "2020": 149314,
+          "2021": 154817,
+          "2022": 160912
+        },
+        {
+          "State/UT": "Tripura",
+          "2020": 4811,
+          "2021": 4913,
+          "2022": 4350
+        },
+        {
+          "State/UT": "Uttar Pradesh",
+          "2020": 357879,
+          "2021": 357905,
+          "2022": 345397
+        },
+        {
+          "State/UT": "Uttarakhand",
+          "2020": 25287,
+          "2021": 23999,
+          "2022": 24227
+        },
+        {
+          "State/UT": "West Bengal",
+          "2020": 182772,
+          "2021": 168052,
+          "2022": 160656
+        }
+      ],
+      "UNION TERRITORIES": [
+        {
+          "State/UT": "A&N Islands",
+          "2020": 1106,
+          "2021": 894,
+          "2022": 723
+        },
+        {
+          "State/UT": "Chandigarh",
+          "2020": 2989,
+          "2021": 2690,
+          "2022": 2750
+        },
+        {
+          "State/UT": "D&N Haveli and Daman & Diu",
+          "2020": 857,
+          "2021": 719,
+          "2022": 718
+        },
+        {
+          "State/UT": "Delhi",
+          "2020": 266072,
+          "2021": 306380,
+          "2022": 313936
+        },
+        {
+          "State/UT": "Jammu & Kashmir",
+          "2020": 28911,
+          "2021": 31671,
+          "2022": 31448
+        },
+        {
+          "State/UT": "Ladakh",
+          "2020": 418,
+          "2021": 506,
+          "2022": 526
+        },
+        {
+          "State/UT": "Lakshadweep",
+          "2020": 48,
+          "2021": 41,
+          "2022": 33
+        },
+        {
+          "State/UT": "Puducherry",
+          "2020": 3939,
+          "2021": 3538,
+          "2022": 3418
+        }
+      ],
+      "TOTAL": {
+        "TOTAL STATE(S)": {
+          "2020": 3949982,
+          "2021": 3356611,
+          "2022": 3245427
+        },
+        "TOTAL UT(S)": {
+          "2020": 304340,
+          "2021": 346439,
+          "2022": 353552
+        },
+        "TOTAL ALL INDIA": {
+          "2020": 4254322,
+          "2021": 3703050,
+          "2022": 3598979
+        }
+      }
+    }
+  }
+}
+```

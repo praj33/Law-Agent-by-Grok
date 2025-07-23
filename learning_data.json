@@ -1,0 +1,35 @@
+{
+  "feedback_weights": {
+    "my landlord won't return my deposit": -0.30000000000000004,
+    "my bank charged me unfair fees": -0.1,
+    "my employer didn't pay overtime": 0.1,
+    "online scammer took my money": -0.1,
+    "my credit card company is charging hidden fees": -0.1,
+    "my landlord deposit issue": -0.1,
+    "not helpful": 0.1
+  },
+  "confidence_adjustments": {
+    "tenant rights": -0.1,
+    "criminal law": -0.05,
+    "employment law": 0.05,
+    "cyber crime": -0.05,
+    "immigration law": -0.05,
+    "consumer complaint": -0.1,
+    "unknown": 0.05
+  },
+  "negative_feedback_queries": [
+    "my landlord won't return my deposit",
+    "my bank charged me unfair fees",
+    "online scammer took my money",
+    "my credit card company is charging hidden fees",
+    "my landlord deposit issue",
+    "my landlord won't return my deposit",
+    "my landlord won't return my deposit",
+    "my landlord won't return my deposit"
+  ],
+  "positive_feedback_queries": [
+    "my employer didn't pay overtime",
+    "my landlord won't return my deposit",
+    "not helpful"
+  ]
+}

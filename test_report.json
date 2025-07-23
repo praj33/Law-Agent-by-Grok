@@ -1,0 +1,222 @@
+{
+  "timestamp": "2025-07-22 16:10:52",
+  "overall_score": 80.0,
+  "classification_accuracy": 75.0,
+  "route_quality": 75.0,
+  "location_accuracy": 100.0,
+  "data_integration_enabled": true,
+  "detailed_results": {
+    "classification_tests": [
+      {
+        "test_id": 1,
+        "query": "My landlord won't return my security deposit in Mumbai",
+        "expected_domain": "tenant rights",
+        "actual_domain": "tenant rights",
+        "confidence": 0.4160251471689219,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      },
+      {
+        "test_id": 2,
+        "query": "My elderly mother is being abused in Delhi nursing home",
+        "expected_domain": "elder abuse",
+        "actual_domain": "elder abuse",
+        "confidence": 0.2606195122358012,
+        "classification_correct": true,
+        "confidence_adequate": false,
+        "overall_pass": false
+      },
+      {
+        "test_id": 3,
+        "query": "Someone hacked my bank account and stole money",
+        "expected_domain": "cyber crime",
+        "actual_domain": "unknown",
+        "confidence": 0.0,
+        "classification_correct": false,
+        "confidence_adequate": false,
+        "overall_pass": false
+      },
+      {
+        "test_id": 4,
+        "query": "I want to divorce my husband and get custody of children",
+        "expected_domain": "family law",
+        "actual_domain": "family law",
+        "confidence": 0.7337993857053431,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      },
+      {
+        "test_id": 5,
+        "query": "My employer fired me for filing harassment complaint in Bangalore",
+        "expected_domain": "employment law",
+        "actual_domain": "employment law",
+        "confidence": 0.5892169619755108,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      },
+      {
+        "test_id": 6,
+        "query": "I was hit by a car and need compensation for medical bills",
+        "expected_domain": "personal injury",
+        "actual_domain": "personal injury",
+        "confidence": 0.6324555320336762,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      },
+      {
+        "test_id": 7,
+        "query": "How do I patent my new invention?",
+        "expected_domain": "unknown",
+        "actual_domain": "unknown",
+        "confidence": 0.0,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      },
+      {
+        "test_id": 8,
+        "query": "Senior citizen harassment case in Maharashtra",
+        "expected_domain": "elder abuse",
+        "actual_domain": "elder abuse",
+        "confidence": 0.5663697541533541,
+        "classification_correct": true,
+        "confidence_adequate": true,
+        "overall_pass": true
+      }
+    ],
+    "route_tests": [
+      {
+        "test_id": 1,
+        "domain": "tenant rights",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      },
+      {
+        "test_id": 2,
+        "domain": "elder abuse",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      },
+      {
+        "test_id": 3,
+        "domain": "unknown",
+        "has_route": true,
+        "has_timeline": false,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": false,
+        "step_count": 4
+      },
+      {
+        "test_id": 4,
+        "domain": "family law",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      },
+      {
+        "test_id": 5,
+        "domain": "employment law",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      },
+      {
+        "test_id": 6,
+        "domain": "personal injury",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      },
+      {
+        "test_id": 7,
+        "domain": "unknown",
+        "has_route": true,
+        "has_timeline": false,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": false,
+        "step_count": 4
+      },
+      {
+        "test_id": 8,
+        "domain": "elder abuse",
+        "has_route": true,
+        "has_timeline": true,
+        "has_outcome": true,
+        "has_steps": true,
+        "route_quality": true,
+        "step_count": 8
+      }
+    ],
+    "location_tests": [
+      {
+        "test_id": 1,
+        "query": "My landlord won't return my security deposit in Mumbai",
+        "expected_location": "Mumbai",
+        "extracted_location": "Mumbai",
+        "location_correct": true
+      },
+      {
+        "test_id": 2,
+        "query": "My elderly mother is being abused in Delhi nursing home",
+        "expected_location": "Delhi",
+        "extracted_location": "Delhi nursing home",
+        "location_correct": true
+      },
+      {
+        "test_id": 3,
+        "query": "My employer fired me for filing harassment complaint in Bangalore",
+        "expected_location": "Bangalore",
+        "extracted_location": "Bangalore",
+        "location_correct": true
+      },
+      {
+        "test_id": 4,
+        "query": "Senior citizen harassment case in Maharashtra",
+        "expected_location": "Maharashtra",
+        "extracted_location": "Maharashtra",
+        "location_correct": true
+      }
+    ],
+    "feedback_tests": {
+      "feedback_collected": true,
+      "stats_generated": true,
+      "session_tracking": true
+    },
+    "performance_tests": {
+      "response_time_seconds": 0.0026645660400390625,
+      "response_time_ok": true,
+      "response_complete": true
+    },
+    "data_integration_tests": {
+      "high_risk_identification": true,
+      "location_advice": true,
+      "trends_analysis": true,
+      "enhanced_response": true,
+      "total_passed": 4,
+      "total_tests": 4
+    }
+  }
+}

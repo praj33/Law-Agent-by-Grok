@@ -1,0 +1,28 @@
+timestamp,query,domain,feedback,session_id
+2025-07-22T15:08:30.000000,my property is being hijack,tenant rights,good,session_001
+2025-07-22T15:08:31.002736,Same query as before,unknown,"This was very helpful, thank you!",session_20250722150831_6871
+2025-07-22T15:10:00.710512,Same query as before,unknown,"This was very helpful, thank you!",session_20250722151000_3043
+2025-07-22T15:10:54.019108,Test feedback query,unknown,This was very helpful!,session_20250722151054_5505
+2025-07-22T15:16:53.738431,Test feedback query,unknown,This was very helpful!,session_20250722151653_9619
+2025-07-22T15:23:04.410526,Tenant rights query,unknown,helpful,session_20250722152304_7134
+2025-07-22T15:23:04.413496,Family law question,unknown,very helpful,session_20250722152304_8947
+2025-07-22T15:23:04.417629,Employment issue,unknown,not helpful,session_20250722152304_7245
+2025-07-22T15:29:48.112188,Test feedback query,unknown,This was very helpful!,session_20250722152948_8930
+2025-07-22T15:46:48.775514,Test feedback query,unknown,This was very helpful!,session_20250722154648_3587
+2025-07-22T15:47:34.966358,Test feedback query,unknown,This was very helpful!,session_20250722154734_7395
+2025-07-22T15:48:52.154191,Test feedback query,unknown,This was very helpful!,session_20250722154852_8901
+2025-07-22T15:49:46.888680,Test feedback query,unknown,This was very helpful!,session_20250722154946_3868
+2025-07-22T16:08:13.659937,My landlord won't return my deposit,tenant rights,"This is wrong! This should be consumer complaint, not tenant rights!",session_20250722160813_9141
+2025-07-22T16:08:13.673209,My landlord won't return my deposit,tenant rights,"This is wrong! This should be consumer complaint, not tenant rights!",adaptive_session_20250722160813_3316
+2025-07-22T16:08:13.710988,My bank charged me unfair fees,criminal law,"not helpful, this is a banking issue",adaptive_session_20250722160813_9112
+2025-07-22T16:08:13.719179,My employer didn't pay overtime,employment law,"very helpful, exactly right",adaptive_session_20250722160813_6840
+2025-07-22T16:08:13.730243,Online scammer took my money,cyber crime,"wrong domain, this is fraud not cyber crime",adaptive_session_20250722160813_7173
+2025-07-22T16:08:13.754844,My credit card company is charging hidden fees,immigration law,"This should be consumer complaint, not banking law",adaptive_session_20250722160813_4890
+2025-07-22T16:10:51.985303,Test feedback query,unknown,This was very helpful!,session_20250722161051_3125
+2025-07-22T16:16:37.465574,My landlord deposit issue,tenant rights,"not helpful, wrong domain",session_20250722161637_8714
+2025-07-22T16:16:37.481507,My landlord deposit issue,tenant rights,"not helpful, wrong domain",adaptive_session_20250722161637_1444
+2025-07-22T16:17:57.756361,My landlord won't return my deposit,consumer complaint,"not helpful, this should be consumer complaint",adaptive_session_20250722161740_3428
+2025-07-22T16:19:01.662500,My landlord won't return my deposit,consumer complaint,"not helpful, this should be consumer complaint",adaptive_session_20250722161841_2804
+2025-07-22T16:21:24.769752,My landlord won't return my deposit,consumer complaint,helpful,adaptive_session_20250722162000_1024
+2025-07-22T16:32:56.611669,not helpful,unknown,helpful,adaptive_session_20250722162000_1024
+2025-07-23T10:09:56.873933,My landlord won't return my deposit,consumer complaint,helpfu,adaptive_session_20250723100747_7196
