@@ -120,6 +120,8 @@ class CrimeDataAnalyzer:
     
     def get_location_stats(self, location: str) -> Optional[CrimeStatistics]:
         """Get crime statistics for a specific location"""
+        if not location:
+            return None
         location_key = location.lower().strip()
         
         # Direct match

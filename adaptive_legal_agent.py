@@ -33,9 +33,12 @@ from legal_agent import (
 
 try:
     from data_integration import CrimeDataAnalyzer, EnhancedLegalRouteEngine, create_enhanced_legal_system
+    from enhanced_data_integration import EnhancedCrimeDataAnalyzer, create_enhanced_legal_system as create_enhanced_system
     DATA_INTEGRATION_AVAILABLE = True
+    ENHANCED_DATA_INTEGRATION_AVAILABLE = True
 except ImportError:
     DATA_INTEGRATION_AVAILABLE = False
+    ENHANCED_DATA_INTEGRATION_AVAILABLE = False
 
 
 class AdaptiveDomainClassifier(DomainClassifier):
@@ -233,18 +236,31 @@ class AdaptiveLegalAgent:
         self.glossary_engine = GlossaryEngine()
         self.feedback_system = FeedbackSystem(feedback_file)
         
-        # Data integration
+        # Enhanced data integration
         self.data_integration_enabled = False
+        self.enhanced_data_integration_enabled = False
         self.crime_analyzer = None
+        self.enhanced_crime_analyzer = None
         self.enhanced_route_engine = None
-        
-        if enable_data_integration and DATA_INTEGRATION_AVAILABLE:
-            try:
-                self.crime_analyzer, self.enhanced_route_engine = create_enhanced_legal_system()
-                self.data_integration_enabled = True
-                print("✅ Adaptive agent with data integration enabled")
-            except Exception as e:
-                print(f"⚠️ Data integration failed: {e}")
+
+        if enable_data_integration:
+            # Try enhanced data integration first (with all 3 JSON files)
+            if ENHANCED_DATA_INTEGRATION_AVAILABLE:
+                try:
+                    self.enhanced_crime_analyzer = create_enhanced_system()
+                    self.enhanced_data_integration_enabled = True
+                    print("✅ Adaptive agent with ENHANCED data integration enabled (3 datasets)")
+                except Exception as e:
+                    print(f"⚠️ Enhanced data integration failed: {e}")
+
+            # Fallback to basic data integration
+            if not self.enhanced_data_integration_enabled and DATA_INTEGRATION_AVAILABLE:
+                try:
+                    self.crime_analyzer, self.enhanced_route_engine = create_enhanced_legal_system()
+                    self.data_integration_enabled = True
+                    print("✅ Adaptive agent with basic data integration enabled")
+                except Exception as e:
+                    print(f"⚠️ Basic data integration failed: {e}")
         
         # Learning statistics
         self.learning_stats = {
@@ -287,13 +303,20 @@ class AdaptiveLegalAgent:
         combined_text = query_input.user_input + ' ' + route['summary']
         glossary = self.glossary_engine.find_terms(combined_text)
         
-        # Get location insights
+        # Get enhanced location insights
         location_insights = None
         data_driven_advice = None
         risk_assessment = None
-        
-        if self.data_integration_enabled and location:
-            if 'senior' in query_input.user_input.lower() or 'elder' in query_input.user_input.lower():
+
+        if location and ('senior' in query_input.user_input.lower() or 'elder' in query_input.user_input.lower()):
+            if self.enhanced_data_integration_enabled:
+                # Use enhanced data integration (3 datasets)
+                location_insights = self.enhanced_crime_analyzer.get_comprehensive_location_advice(location, 'senior_citizen_abuse')
+                if location_insights.get('location_found'):
+                    data_driven_advice = location_insights['advice']
+                    risk_assessment = location_insights['risk_level']
+            elif self.data_integration_enabled:
+                # Fallback to basic data integration
                 location_insights = self.crime_analyzer.get_location_based_advice(location, 'senior_citizen_abuse')
                 if location_insights.get('location_found'):
                     data_driven_advice = location_insights['advice']

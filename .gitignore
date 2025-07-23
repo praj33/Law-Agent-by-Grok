@@ -255,6 +255,9 @@ cython_debug/
 # ------------------------------------------
 # All datasets, reports, and learning data are included for company use
 
+# Keep all JSON datasets (including INSERT2.json, INSERT3.json, fixed versions)
+# Keep all enhanced integration files
+
 # Only ignore personal development files
 dev_personal.py
 my_test_*.py

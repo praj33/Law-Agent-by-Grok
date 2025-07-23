@@ -32,6 +32,12 @@ try:
     DATA_INTEGRATION_AVAILABLE = True
 except ImportError:
     DATA_INTEGRATION_AVAILABLE = False
+
+try:
+    from constitutional_integration import ConstitutionalAdvisor, create_constitutional_advisor
+    CONSTITUTIONAL_INTEGRATION_AVAILABLE = True
+except ImportError:
+    CONSTITUTIONAL_INTEGRATION_AVAILABLE = False
     print("Warning: Data integration module not available. Running in basic mode.")
 
 
@@ -60,6 +66,8 @@ class LegalAgentResponse:
     location_insights: Optional[Dict[str, Any]] = None
     data_driven_advice: Optional[str] = None
     risk_assessment: Optional[str] = None
+    constitutional_backing: Optional[str] = None
+    constitutional_articles: Optional[List[Dict]] = None
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert response to dictionary"""
@@ -89,7 +97,7 @@ class DomainClassifier:
             ],
             'example_query': [
                 'my landlord is not returning deposit security rent eviction notice',
-                'i received a faulty product defective warranty refund return',
+                'i received a faulty product defective warranty refund return consumer complaint filing defective goods service',
                 'i want a divorce from my husband custody child support alimony',
                 'my employer fired me wrongfully terminated harassment discrimination',
                 'breach of contract agreement violation terms conditions',
@@ -97,7 +105,7 @@ class DomainClassifier:
                 'arrested charged crime criminal defense lawyer bail',
                 'visa application green card citizenship immigration status',
                 'elderly abuse senior citizen harassment neglect financial exploitation',
-                'online fraud cyber crime hacking identity theft digital scam'
+                'online fraud cyber crime hacking identity theft digital scam phone hacked malware computer virus cyberbullying social media stalking email compromise data breach mobile security'
             ]
         })
         
@@ -107,7 +115,7 @@ class DomainClassifier:
             max_features=1000
         )
         self.X = self.vectorizer.fit_transform(self.domain_data['example_query'])
-        self.confidence_threshold = 0.15
+        self.confidence_threshold = 0.12  # Lowered for better coverage
     
     def classify(self, user_query: str) -> Tuple[str, float]:
         """
@@ -578,6 +586,18 @@ class LegalAgent:
                 print("✅ Data integration enabled with crime statistics")
             except Exception as e:
                 print(f"⚠️ Data integration failed: {e}")
+
+        # Initialize constitutional integration
+        self.constitutional_integration_enabled = False
+        self.constitutional_advisor = None
+
+        if CONSTITUTIONAL_INTEGRATION_AVAILABLE:
+            try:
+                self.constitutional_advisor = create_constitutional_advisor()
+                self.constitutional_integration_enabled = True
+                print("✅ Legal agent with constitutional integration enabled")
+            except Exception as e:
+                print(f"⚠️ Constitutional integration failed: {e}")
                 self.data_integration_enabled = False
 
     def process_query(self, query_input: LegalQueryInput) -> LegalAgentResponse:
@@ -625,6 +645,25 @@ class LegalAgent:
                     data_driven_advice = location_insights['advice']
                     risk_assessment = location_insights['risk_level']
 
+        # Get constitutional backing if available
+        constitutional_backing = None
+        constitutional_articles = None
+
+        if self.constitutional_integration_enabled and domain != 'unknown':
+            try:
+                constitutional_info = self.constitutional_advisor.get_constitutional_backing(domain, query_input.user_input)
+                constitutional_backing = constitutional_info['constitutional_basis']
+                constitutional_articles = [
+                    {
+                        'article_number': article.article_number,
+                        'title': article.clean_title,
+                        'summary': article.summary
+                    }
+                    for article in constitutional_info['relevant_articles'][:3]  # Limit to top 3
+                ]
+            except Exception as e:
+                print(f"⚠️ Constitutional backing failed: {e}")
+
         # Store feedback if provided
         if query_input.feedback:
             self.feedback_system.collect_feedback(
@@ -648,7 +687,9 @@ class LegalAgent:
             raw_query=query_input.user_input,
             location_insights=location_insights,
             data_driven_advice=data_driven_advice,
-            risk_assessment=risk_assessment
+            risk_assessment=risk_assessment,
+            constitutional_backing=constitutional_backing,
+            constitutional_articles=constitutional_articles
         )
 
         return response

@@ -1,31 +1,4 @@
-```json
-{
-  "crime_in_india_2022_volume_1": {
-    "contents": [
-      {
-        "CHAPTER & TABLE NO.": "Contents",
-        "TITLE": "Contents",
-        "PAGE NO.": "i-iv"
-      },
-      {
-        "CHAPTER & TABLE NO.": "Disclaimer & Limitations",
-        "TITLE": "Disclaimer & Limitations",
-        "PAGE NO.": "v"
-      },
-      {
-        "CHAPTER & TABLE NO.": "Methodology of Data Collection & Publication",
-        "TITLE": "Methodology of Data Collection & Publication",
-        "PAGE NO.": "vi-vii"
-      },
-      {
-        "CHAPTER & TABLE NO.": "Projected Population",
-        "TITLE": "Projected Population",
-        "PAGE NO.": "viii"
-      },
-      {
-        "CHAPTER & TABLE NO.": "A Word of Caution",
-        "TITLE": "A Word of Caution",
-        "PAGE NO.": "ix"
+
       },
       {
         "CHAPTER & TABLE NO.": "IPC Crimes over the Years 1982-2022",

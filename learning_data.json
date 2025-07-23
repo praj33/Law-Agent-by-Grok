@@ -15,7 +15,8 @@
     "cyber crime": -0.05,
     "immigration law": -0.05,
     "consumer complaint": -0.1,
-    "unknown": 0.05
+    "unknown": 0.05,
+    "elder abuse": 0.0
   },
   "negative_feedback_queries": [
     "my landlord won't return my deposit",
@@ -25,7 +26,7 @@
     "my landlord deposit issue",
     "my landlord won't return my deposit",
     "my landlord won't return my deposit",
-    "my landlord won't return my deposit"
+my landlord won't return my deposit
   ],
   "positive_feedback_queries": [
     "my employer didn't pay overtime",

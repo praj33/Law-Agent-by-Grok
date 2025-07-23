@@ -1,0 +1,1843 @@
+{
+  "crime_in_india_2021_volume_2": {
+    "contents": [
+      {
+        "CHAPTER & TABLE NO.": "Contents",
+        "TITLE": "Contents",
+        "PAGE NO.": "i-iv"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Disclaimer & Limitations",
+        "TITLE": "Disclaimer & Limitations",
+        "PAGE NO.": "V"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Methodology of Data Collection & Publication",
+        "TITLE": "Methodology of Data Collection & Publication",
+        "PAGE NO.": "vi-vii"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Projected Population",
+        "TITLE": "Projected Population",
+        "PAGE NO.": "viii"
+      },
+      {
+        "CHAPTER & TABLE NO.": "A Word of Caution",
+        "TITLE": "A Word of Caution",
+        "PAGE NO.": "ix"
+      },
+      {
+        "CHAPTER & TABLE NO.": "IPC Crimes over the Years 1981-2021",
+        "TITLE": "IPC Crimes over the Years 1981-2021",
+        "PAGE NO.": "X"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1",
+        "TITLE": "Summary (All India)",
+        "PAGE NO.": "1"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1A",
+        "TITLE": "Summary (States/UTs)",
+        "PAGE NO.": "9"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-1B",
+        "TITLE": "Summary (Metropolitan Cities)",
+        "PAGE NO.": "83"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2",
+        "TITLE": "Violent Crimes",
+        "PAGE NO.": "157"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2A",
+        "TITLE": "Violent Crimes - Murder (States/UTs)",
+        "PAGE NO.": "163"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2B",
+        "TITLE": "Violent Crimes - Murder (Metropolitan Cities)",
+        "PAGE NO.": "173"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2C",
+        "TITLE": "Violent Crimes - Kidnapping & Abduction (States/UTs)",
+        "PAGE NO.": "183"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-2D",
+        "TITLE": "Violent Crimes - Kidnapping & Abduction (Metropolitan Cities)",
+        "PAGE NO.": "197"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-3A",
+        "TITLE": "Crime Against Women (States/UTs)",
+        "PAGE NO.": "211"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter 3B",
+        "TITLE": "Crime Against Women (Metropolitan Cities)",
+        "PAGE NO.": "267"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-4A",
+        "TITLE": "Crime Against Children (States/UTs)",
+        "PAGE NO.": "317"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-4B",
+        "TITLE": "Crime Against Children (Metropolitan Cities)",
+        "PAGE NO.": "373"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-5A",
+        "TITLE": "Juveniles in Conflict with Law (States/UTs)",
+        "PAGE NO.": "427"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-5B",
+        "TITLE": "Juveniles in Conflict with Law (Metropolitan Cities)",
+        "PAGE NO.": "453"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-6A",
+        "TITLE": "Crime Against Senior Citizens (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.1",
+        "TITLE": "Crime against Senior Citizens (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "477"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.2",
+        "TITLE": "Crime Against Senior Citizens (Crime Head-wise & State/UT-wise) - 2021",
+        "PAGE NO.": "478"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.3",
+        "TITLE": "Police Disposal of Crime Against Senior Citizen Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "486"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.4",
+        "TITLE": "Police Disposal of Crime Against Senior Citizen Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "490"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.5",
+        "TITLE": "Court Disposal of Crime Against Senior Citizen Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "494"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.6",
+        "TITLE": "Court Disposal of Crime Against Senior Citizen Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "498"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.7",
+        "TITLE": "Disposal of Persons Arrested for Crime Against Senior Citizen (Crime Head-wise) - 2021",
+        "PAGE NO.": "502"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6A.8",
+        "TITLE": "Disposal of Persons Arrested for Crime Against Senior Citizen (State/UT-wise) - 2021",
+        "PAGE NO.": "505"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-6B",
+        "TITLE": "Crime Against Senior Citizen (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.1",
+        "TITLE": "Crime Against Senior Citizens (City-wise) - 2019-2021",
+        "PAGE NO.": "507"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.2",
+        "TITLE": "Crime Against Senior Citizens (Crime Head-wise & City-wise) - 2021",
+        "PAGE NO.": "508"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.3",
+        "TITLE": "Police Disposal of Crime Against Senior Citizen Cases (City-wise) - 2021",
+        "PAGE NO.": "516"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.4",
+        "TITLE": "Police Disposal of Crime Against Senior Citizen Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "520"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.5",
+        "TITLE": "Court Disposal of Crime Against Senior Citizen Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "524"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.6",
+        "TITLE": "Court Disposal of Crime Against Senior Citizen (City-wise) - 2021",
+        "PAGE NO.": "528"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.7",
+        "TITLE": "Disposal of Persons for Crime Against Senior Citizen (City-wise) - 2021",
+        "PAGE NO.": "532"
+      },
+      {
+        "CHAPTER & TABLE NO.": "6B.8",
+        "TITLE": "Disposal of Persons for Crime Against Senior Citizen (Crime Head-wise) - 2021",
+        "PAGE NO.": "535"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-7A",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.1",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "537"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.2",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (Crime Head-wise & State/UT-wise) - 2021",
+        "PAGE NO.": "538"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.3",
+        "TITLE": "Police Disposal of Crime/Atrocities against SCs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "555"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.4",
+        "TITLE": "Police Disposal of Crime/Atrocities against SCs Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "563"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.5",
+        "TITLE": "Court Disposal of Crime/Atrocities against SCs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "567"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.6",
+        "TITLE": "Court Disposal of Crime/Atrocities against SCs Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "575"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.7",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against SCs (Crime Head-wise) - 2021",
+        "PAGE NO.": "579"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7A.8",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against SCs (State/UT-wise) - 2021",
+        "PAGE NO.": "585"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-7B",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.1",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (City-wise) - 2019-2021",
+        "PAGE NO.": "587"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.2",
+        "TITLE": "Crime/Atrocities against Scheduled Castes (Crime Head-wise & City-wise) - 2021",
+        "PAGE NO.": "588"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.3",
+        "TITLE": "Police Disposal of Crime/Atrocities against SCs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "604"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.4",
+        "TITLE": "Police Disposal of Crime/Atrocities against SCs Cases (City-wise) - 2021",
+        "PAGE NO.": "612"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.5",
+        "TITLE": "Court Disposal of Crime/Atrocities against SCs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "616"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.6",
+        "TITLE": "Court Disposal of Crime/Atrocities against SCs Cases (City-wise) - 2021",
+        "PAGE NO.": "624"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.7",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against SCs (Crime Head-wise) - 2021",
+        "PAGE NO.": "628"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7B.8",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against SCs (City-wise) - 2021",
+        "PAGE NO.": "634"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-7C",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.1",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "637"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.2",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (Crime Head-wise & State/UT-wise) - 2021",
+        "PAGE NO.": "638"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.3",
+        "TITLE": "Police Disposal of Crime/Atrocities against STs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "655"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.4",
+        "TITLE": "Police Disposal of Crime/Atrocities against STs Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "663"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.5",
+        "TITLE": "Court Disposal of Crime/Atrocities against STs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "667"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.6",
+        "TITLE": "Court Disposal of Crime/Atrocities against STs Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "675"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.7",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against STs (Crime Head-wise) - 2021",
+        "PAGE NO.": "679"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7C.8",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against STs (State/UT-Wise) - 2021",
+        "PAGE NO.": "685"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-7D",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.1",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (City-wise) - 2019-2021",
+        "PAGE NO.": "687"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.2",
+        "TITLE": "Crime/Atrocities against Scheduled Tribes (Crime Head-wise & City-wise) - 2021",
+        "PAGE NO.": "688"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.3",
+        "TITLE": "Police Disposal of Crime/Atrocities against STs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "704"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.4",
+        "TITLE": "Police Disposal of Crime/Atrocities against STs Cases (City-wise) - 2021",
+        "PAGE NO.": "712"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.5",
+        "TITLE": "Court Disposal of Crime/Atrocities against STs Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "716"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.6",
+        "TITLE": "Court Disposal of Crime/Atrocities against STs Cases (City-wise) - 2021",
+        "PAGE NO.": "724"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.7",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against STs (Crime Head-wise) - 2021",
+        "PAGE NO.": "728"
+      },
+      {
+        "CHAPTER & TABLE NO.": "7D.8",
+        "TITLE": "Disposal of Persons Arrested for Crime/Atrocities against STs (City-wise) - 2021",
+        "PAGE NO.": "734"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-8A",
+        "TITLE": "Economic Offences (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.1",
+        "TITLE": "Economic Offences (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "737"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.2",
+        "TITLE": "Economic Crimes (State/UT-wise & Crime Head-wise) - 2021",
+        "PAGE NO.": "738"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.3",
+        "TITLE": "Economic Offence Cases - Loss of Property - 2021",
+        "PAGE NO.": "739"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.4",
+        "TITLE": "Police Disposal of Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "743"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.5",
+        "TITLE": "Police Disposal of Economic Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "744"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.6",
+        "TITLE": "Court Disposal of Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "748"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.7",
+        "TITLE": "Court Disposal of Economic Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "749"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.8",
+        "TITLE": "Disposal of Persons Arrested under Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "753"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8A.9",
+        "TITLE": "Disposal of Persons Arrested under Economic Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "754"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-8B",
+        "TITLE": "Economic Offences (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.1",
+        "TITLE": "Economic Offences (City-wise) - 2019-2021",
+        "PAGE NO.": "757"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.2",
+        "TITLE": "Economic Crimes (City wise & Crime Head-wise) - 2021",
+        "PAGE NO.": "758"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.3",
+        "TITLE": "Economic Offences - Loss of Property More than 1 Crore - 2021",
+        "PAGE NO.": "759"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.4",
+        "TITLE": "Police Disposal of Economic Offences (City wise) - 2021",
+        "PAGE NO.": "763"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.5",
+        "TITLE": "Police Disposal of Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "765"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.6",
+        "TITLE": "Court Disposal of Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "769"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.7",
+        "TITLE": "Court Disposal of Economic Offences (City wise) - 2021",
+        "PAGE NO.": "771"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.8",
+        "TITLE": "Disposal of Persons Arrested under Economic Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "775"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8B.9",
+        "TITLE": "Disposal of Persons Arrested under Economic Offences (City wise) - 2021",
+        "PAGE NO.": "778"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-8C",
+        "TITLE": "Corruption Offences (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8C.1",
+        "TITLE": "Prevention of Corruption Act Cases (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "779"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8C.2",
+        "TITLE": "Prevention of Corruption Act, 1988 and Related IPC Sections - 2021",
+        "PAGE NO.": "780"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8C.3",
+        "TITLE": "Police Disposal of Anti-Corruption Bureau, Vigilance and Lok Adalat Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "781"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8C.4",
+        "TITLE": "Court Disposal of Anti-Corruption Bureau, Vigilance and Lok Adalat Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "782"
+      },
+      {
+        "CHAPTER & TABLE NO.": "8C.5",
+        "TITLE": "Action against Persons Arrested and Dep. Action taken In Offences under P.C. Act - 2021",
+        "PAGE NO.": "784"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-9A",
+        "TITLE": "Cyber Crimes (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.1",
+        "TITLE": "Cyber Crimes (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "785"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.2",
+        "TITLE": "Cyber Crimes (Crime Head-wise & State/UT-wise) - 2021"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.2 (A)",
+        "TITLE": "IT Act Cases",
+        "PAGE NO.": "786"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.2 (B)",
+        "TITLE": "IPC (involving Computer as Medium/Target) Cases"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.2 (C)",
+        "TITLE": "SLL (involving Computer as Medium/Target) Cases & Total Cyber Crimes"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.3",
+        "TITLE": "Cyber Crime Motives - 2021",
+        "PAGE NO.": "796"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.4",
+        "TITLE": "Police Disposal of Cyber Crime Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "799"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.5",
+        "TITLE": "Police Disposal of Cyber Crimes Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "807"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.6",
+        "TITLE": "Court Disposal of Cyber Crime Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "811"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.7",
+        "TITLE": "Court Disposal of Cyber Crimes Cases (State/UT-wise) - 2021",
+        "PAGE NO.": "819"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.8",
+        "TITLE": "Disposal of Persons Arrested under Cyber Crimes (Crime Head-wise) - 2021",
+        "PAGE NO.": "823"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.9",
+        "TITLE": "Disposal of Persons Arrested under Cyber Crimes (State/UT-wise) - 2021",
+        "PAGE NO.": "829"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.10",
+        "TITLE": "Cyber Crimes against Women (State/UT-wise) - 2021",
+        "PAGE NO.": "831"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9A.11",
+        "TITLE": "Cyber Crimes against Children (State/UT-wise) - 2021",
+        "PAGE NO.": "832"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-9B",
+        "TITLE": "Cyber Crimes (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.1",
+        "TITLE": "Cyber Crime (City-wise) - 2019-2021",
+        "PAGE NO.": "833"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.2",
+        "TITLE": "Cyber Crimes (Crime Head-wise & City-wise) - 2021"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.2 (i)",
+        "TITLE": "IT Act Cases",
+        "PAGE NO.": "834"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.2(ii)",
+        "TITLE": "IPC (involving Computer as Medium/Target) Cases"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.2(iii)",
+        "TITLE": "SLL (involving Computer as Medium/Target) Cases & Total Cyber Crimes"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.3",
+        "TITLE": "Cyber Crime Motives - 2021",
+        "PAGE NO.": "844"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.4",
+        "TITLE": "Police Disposal of Cyber Crime Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "847"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.5",
+        "TITLE": "Police Disposal of Cyber Crime Cases (City wise) - 2021",
+        "PAGE NO.": "855"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.6",
+        "TITLE": "Court Disposal of Cyber Crime Cases (Crime Head-wise) - 2021",
+        "PAGE NO.": "859"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.7",
+        "TITLE": "Court Disposal of Cyber Crime Cases (City wise) - 2021",
+        "PAGE NO.": "867"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.8",
+        "TITLE": "Disposal of Persons Arrested under Cyber Crime (Crime Head-wise) - 2021",
+        "PAGE NO.": "871"
+      },
+      {
+        "CHAPTER & TABLE NO.": "9B.9",
+        "TITLE": "Disposal of Persons Arrested under Cyber Crime (City wise) - 2021",
+        "PAGE NO.": "877"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-10A",
+        "TITLE": "Offences against the State"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.1",
+        "TITLE": "Offences against State (State/UT-wise) - 2019-2021",
+        "PAGE NO.": "879"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.2",
+        "TITLE": "Offences against State (IPC & SLL) - 2021",
+        "PAGE NO.": "880"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.3",
+        "TITLE": "Police Disposal of Offences against State (Crime Head-wise) - 2021",
+        "PAGE NO.": "881"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.4",
+        "TITLE": "Police Disposal of Offences against the State (State/UT-wise) - 2021",
+        "PAGE NO.": "885"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.5",
+        "TITLE": "Court Disposal of Offences against the State (Crime Head-wise) - 2021",
+        "PAGE NO.": "889"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.6",
+        "TITLE": "Court Disposal of Offences against State (State/UT-wise) - 2021",
+        "PAGE NO.": "893"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.7",
+        "TITLE": "Disposal of Persons Arrested under Offences against State (Crime Head-wise) - 2021",
+        "PAGE NO.": "897"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10A.8",
+        "TITLE": "Disposal of Persons Arrested under Offences against State (State/UT-wise) - 2021",
+        "PAGE NO.": "900"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-10B",
+        "TITLE": "Crimes committed by Extremists/Insurgents/Terrorists"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10B.1",
+        "TITLE": "Crimes by North-East Insurgents (State/UT-wise) - 2021",
+        "PAGE NO.": "903"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10B.2",
+        "TITLE": "Crimes by Left-Wing Extremists (State/UT-wise) - 2021",
+        "PAGE NO.": "907"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10B.3",
+        "TITLE": "Crimes by Terrorists - 2021",
+        "PAGE NO.": "911"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10B.4",
+        "TITLE": "Incidents of Violence by Extremists/Insurgents/Terrorists - 2021",
+        "PAGE NO.": "915"
+      },
+      {
+        "CHAPTER & TABLE NO.": "10B.5",
+        "TITLE": "Arms Taken Away from Police/CAPFs by Extremists/Insurgents/Terrorists - 2021",
+        "PAGE NO.": "916"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-11",
+        "TITLE": "Offences related to Environment"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.1",
+        "TITLE": "Environment Related Offences State/UT-wise) - 2019-2021",
+        "PAGE NO.": "917"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.2",
+        "TITLE": "Environment Related Offences (State/UT-wise & Crime Head-wise) - 2021",
+        "PAGE NO.": "918"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.3",
+        "TITLE": "Police Disposal of Environment Related Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "919"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.4",
+        "TITLE": "Police Disposal of Environment Related Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "923"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.5",
+        "TITLE": "Court Disposal of Environment Related Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "927"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.6",
+        "TITLE": "Court Disposal of Environment Related Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "931"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.7",
+        "TITLE": "Disposal of Persons Arrested under Environment Related Offences (Crime Head-wise) - 2021",
+        "PAGE NO.": "935"
+      },
+      {
+        "CHAPTER & TABLE NO.": "11.8",
+        "TITLE": "Disposal of Persons Arrested under Environment Related Offences (State/UT-wise) - 2021",
+        "PAGE NO.": "938"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Glossary / Definitions/ Abbreviations",
+        "TITLE": "Glossary / Definitions/ Abbreviations",
+        "PAGE NO.": "941"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Acknowledgement",
+        "TITLE": "Acknowledgement"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Feedback",
+        "TITLE": "Feedback"
+      },
+      {
+        "CHAPTER & TABLE NO.": "CONTENTS - VOLUME-III",
+        "TITLE": "CONTENTS - VOLUME-III"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-12A",
+        "TITLE": "Crime in Railways (Government Railway Police)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-12B",
+        "TITLE": "Crime in Railways (Railway Protection Force)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-13A",
+        "TITLE": "Crime Against Foreigners"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-13B",
+        "TITLE": "Crime Committed by Foreigners"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-14",
+        "TITLE": "Human Trafficking"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-15",
+        "TITLE": "Missing Persons (States & UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-16A",
+        "TITLE": "Custodial Crimes & Complaints Against Police Personnel"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-16B",
+        "TITLE": "Injuries & Casualties of Police & Civilians and Incidents of Police Firing/ Lathi-charge"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-17A",
+        "TITLE": "Disposal of Cases By Police (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-17B",
+        "TITLE": "Disposal of Cases By Police (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-18A",
+        "TITLE": "Disposal of Cases By Courts (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-18B",
+        "TITLE": "Disposal of Cases By Courts (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-19A",
+        "TITLE": "Arrests, Convictions & Acquittals of Persons (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-19B",
+        "TITLE": "Arrests, Convictions & Acquittals of Persons (Metropolitan Cities)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-19C",
+        "TITLE": "Recidivism"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-20A",
+        "TITLE": "Property Stolen and Recovered (States/UTs)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-20B",
+        "TITLE": "Seizures by State/UT Police"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-20C",
+        "TITLE": "Seizures and Prosecution (Central Armed Police Forces)"
+      },
+      {
+        "CHAPTER & TABLE NO.": "Chapter-20D",
+        "TITLE": "Seizures and Prosecution (Central Law Enforcement Agencies)"
+      }
+    ],
+    "population_data_sources": [
+      {
+        "SI.": "1.",
+        "Segment": "IPC & SLL",
+        "Source": "Report of the Technical Group on Population Projections, July, 2020, National Commission on Population, MoHFW",
+        "Year of Population": "Estimated population of States/UTs on the basis of 2011 Census for 2021"
+      },
+      {
+        "SI.": "2.",
+        "Segment": "Women",
+        "Source": "Report of the Technical Group on Population Projections, July, 2020, National Commission on Population, MoHFW",
+        "Year of Population": "Estimated population of States/UTs on the basis of 2011 Census for 2021"
+      },
+      {
+        "SI.": "3.",
+        "Segment": "Children",
+        "Source": "RGI",
+        "Year of Population": "Actual Census 2011"
+      },
+      {
+        "SI.": "4.",
+        "Segment": "Senior Citizen",
+        "Source": "RGI",
+        "Year of Population": "Actual Census 2011"
+      },
+      {
+        "SI.": "5.",
+        "Segment": "Scheduled Castes",
+        "Source": "RGI",
+        "Year of Population": "Actual Census 2011"
+      },
+      {
+        "SI.": "6.",
+        "Segment": "Scheduled Tribes",
+        "Source": "RGI",
+        "Year of Population": "Actual Census 2011"
+      },
+      {
+        "SI.": "7.",
+        "Segment": "Metropolitan Cities",
+        "Source": "RGI",
+        "Year of Population": "Actual Census 2011"
+      }
+    ],
+    "projected_population_states_uts_2021": [
+      {
+        "SL": 1,
+        "STATE/UT": "Andhra Pradesh",
+        "Population (in Lakhs)": 528.49
+      },
+      {
+        "SL": 2,
+        "STATE/UT": "Arunachal Pradesh",
+        "Population (in Lakhs)": 15.37
+      },
+      {
+        "SL": 3,
+        "STATE/UT": "Assam",
+        "Population (in Lakhs)": 351.55
+      },
+      {
+        "SL": 4,
+        "STATE/UT": "Bihar",
+        "Population (in Lakhs)": 1236.95
+      },
+      {
+        "SL": 5,
+        "STATE/UT": "Chhattisgarh",
+        "Population (in Lakhs)": 296.07
+      },
+      {
+        "SL": 6,
+        "STATE/UT": "Goa",
+        "Population (in Lakhs)": 15.61
+      },
+      {
+        "SL": 7,
+        "STATE/UT": "Gujarat",
+        "Population (in Lakhs)": 700.75
+      },
+      {
+        "SL": 8,
+        "STATE/UT": "Haryana",
+        "Population (in Lakhs)": 296.04
+      },
+      {
+        "SL": 9,
+        "STATE/UT": "Himachal Pradesh",
+        "Population (in Lakhs)": 74.06
+      },
+      {
+        "SL": 10,
+        "STATE/UT": "Jharkhand",
+        "Population (in Lakhs)": 386.37
+      },
+      {
+        "SL": 11,
+        "STATE/UT": "Karnataka",
+        "Population (in Lakhs)": 669.86
+      },
+      {
+        "SL": 12,
+        "STATE/UT": "Kerala",
+        "Population (in Lakhs)": 355.37
+      },
+      {
+        "SL": 13,
+        "STATE/UT": "Madhya Pradesh",
+        "Population (in Lakhs)": 848.6
+      },
+      {
+        "SL": 14,
+        "STATE/UT": "Maharashtra",
+        "Population (in Lakhs)": 1247.62
+      },
+      {
+        "SL": 15,
+        "STATE/UT": "Manipur",
+        "Population (in Lakhs)": 31.72
+      },
+      {
+        "SL": 16,
+        "STATE/UT": "Meghalaya",
+        "Population (in Lakhs)": 32.95
+      },
+      {
+        "SL": 17,
+        "STATE/UT": "Mizoram",
+        "Population (in Lakhs)": 12.19
+      },
+      {
+        "SL": 18,
+        "STATE/UT": "Nagaland",
+        "Population (in Lakhs)": 21.98
+      },
+      {
+        "SL": 19,
+        "STATE/UT": "Odisha",
+        "Population (in Lakhs)": 457.93
+      },
+      {
+        "SL": 20,
+        "STATE/UT": "Punjab",
+        "Population (in Lakhs)": 304.04
+      },
+      {
+        "SL": 21,
+        "STATE/UT": "Rajasthan",
+        "Population (in Lakhs)": 795.72
+      },
+      {
+        "SL": 22,
+        "STATE/UT": "Sikkim",
+        "Population (in Lakhs)": 6.78
+      },
+      {
+        "SL": 23,
+        "STATE/UT": "Tamil Nadu",
+        "Population (in Lakhs)": 764.79
+      },
+      {
+        "SL": 24,
+        "STATE/UT": "Telangana",
+        "Population (in Lakhs)": 377.71
+      },
+      {
+        "SL": 25,
+        "STATE/UT": "Tripura",
+        "Population (in Lakhs)": 40.81
+      },
+      {
+        "SL": 26,
+        "STATE/UT": "Uttar Pradesh",
+        "Population (in Lakhs)": 2317.04
+      },
+      {
+        "SL": 27,
+        "STATE/UT": "Uttarakhand",
+        "Population (in Lakhs)": 114.39
+      },
+      {
+        "SL": 28,
+        "STATE/UT": "West Bengal",
+        "Population (in Lakhs)": 982.85
+      },
+      {
+        "SL": 29,
+        "STATE/UT": "A&N Islands",
+        "Population (in Lakhs)": 4.01
+      },
+      {
+        "SL": 30,
+        "STATE/UT": "Chandigarh",
+        "Population (in Lakhs)": 12.12
+      },
+      {
+        "SL": 31,
+        "STATE/UT": "D&N Haveli and Daman & Diu",
+        "Population (in Lakhs)": 11.08
+      },
+      {
+        "SL": 32,
+        "STATE/UT": "Delhi",
+        "Population (in Lakhs)": 207.03
+      },
+      {
+        "SL": 33,
+        "STATE/UT": "Jammu & Kashmir",
+        "Population (in Lakhs)": 134.4
+      },
+      {
+        "SL": 34,
+        "STATE/UT": "Ladakh",
+        "Population (in Lakhs)": 2.98
+      },
+      {
+        "SL": 35,
+        "STATE/UT": "Lakshadweep",
+        "Population (in Lakhs)": 0.68
+      },
+      {
+        "SL": 36,
+        "STATE/UT": "Puducherry",
+        "Population (in Lakhs)": 15.84
+      }
+    ],
+    "population_19_metropolitan_cities": [
+      {
+        "SL": 1,
+        "CITY": "Ahmedabad (Gujarat)",
+        "Population in Lakhs": 63.52
+      },
+      {
+        "SL": 2,
+        "CITY": "Bengaluru (Karnataka)",
+        "Population in Lakhs": 84.99
+      },
+      {
+        "SL": 3,
+        "CITY": "Chennai (Tamil Nadu)",
+        "Population in Lakhs": 86.96
+      },
+      {
+        "SL": 4,
+        "CITY": "Coimbatore (Tamil Nadu)",
+        "Population in Lakhs": 21.51
+      },
+      {
+        "SL": 5,
+        "CITY": "Delhi",
+        "Population in Lakhs": 163.15
+      },
+      {
+        "SL": 6,
+        "CITY": "Ghaziabad (Uttar Pradesh)",
+        "Population in Lakhs": 23.59
+      },
+      {
+        "SL": 7,
+        "CITY": "Hyderabad (Telangana)",
+        "Population in Lakhs": 77.49
+      },
+      {
+        "SL": 8,
+        "CITY": "Indore (Madhya Pradesh)",
+        "Population in Lakhs": 21.67
+      },
+      {
+        "SL": 9,
+        "CITY": "Jaipur (Rajasthan)",
+        "Population in Lakhs": 30.73
+      },
+      {
+        "SL": 10,
+        "CITY": "Kanpur (Uttar Pradesh)",
+        "Population in Lakhs": 29.2
+      },
+      {
+        "SL": 11,
+        "CITY": "Kochi (Kerala)",
+        "Population in Lakhs": 21.18
+      },
+      {
+        "SL": 12,
+        "CITY": "Kolkata (West Bengal)",
+        "Population in Lakhs": 141.13
+      },
+      {
+        "SL": 13,
+        "CITY": "Kozhikode (Kerala)",
+        "Population in Lakhs": 20.31
+      },
+      {
+        "SL": 14,
+        "CITY": "Lucknow (Uttar Pradesh)",
+        "Population in Lakhs": 29.01
+      },
+      {
+        "SL": 15,
+        "CITY": "Mumbai (Maharashtra)",
+        "Population in Lakhs": 184.14
+      },
+      {
+        "SL": 16,
+        "CITY": "Nagpur (Maharashtra)",
+        "Population in Lakhs": 24.98
+      },
+      {
+        "SL": 17,
+        "CITY": "Patna (Bihar)",
+        "Population in Lakhs": 20.47
+      },
+      {
+        "SL": 18,
+        "CITY": "Pune (Maharashtra)",
+        "Population in Lakhs": 50.5
+      },
+      {
+        "SL": 19,
+        "CITY": "Surat (Gujarat)",
+        "Population in Lakhs": 45.85
+      }
+    ],
+    "ipc_crimes_over_years_1981_2021": [
+      {
+        "S. No.": 1,
+        "Year": 1981,
+        "Crime Incidence": 1385757,
+        "Crime Rate": 200.8,
+        "Charge-sheeting Rate": 61.3
+      },
+      {
+        "S. No.": 2,
+        "Year": 1982,
+        "Crime Incidence": 1353904,
+        "Crime Rate": 192,
+        "Charge-sheeting Rate": 65.3
+      },
+      {
+        "S. No.": 3,
+        "Year": 1983,
+        "Crime Incidence": 1349866,
+        "Crime Rate": 187.4,
+        "Charge-sheeting Rate": 67.3
+      },
+      {
+        "S. No.": 4,
+        "Year": 1984,
+        "Crime Incidence": 1358660,
+        "Crime Rate": 184.7,
+        "Charge-sheeting Rate": 67.9
+      },
+      {
+        "S. No.": 5,
+        "Year": 1985,
+        "Crime Incidence": 1384731,
+        "Crime Rate": 184.4,
+        "Charge-sheeting Rate": 70.2
+      },
+      {
+        "S. No.": 6,
+        "Year": 1986,
+        "Crime Incidence": 1405835,
+        "Crime Rate": 183.5,
+        "Charge-sheeting Rate": 71.1
+      },
+      {
+        "S. No.": 7,
+        "Year": 1987,
+        "Crime Incidence": 1406992,
+        "Crime Rate": 180.1,
+        "Charge-sheeting Rate": 72.4
+      },
+      {
+        "S. No.": 8,
+        "Year": 1988,
+        "Crime Incidence": 1440356,
+        "Crime Rate": 180.8,
+        "Charge-sheeting Rate": 70.7
+      },
+      {
+        "S. No.": 9,
+        "Year": 1989,
+        "Crime Incidence": 1529844,
+        "Crime Rate": 188.5,
+        "Charge-sheeting Rate": 72.3
+      },
+      {
+        "S. No.": 10,
+        "Year": 1990,
+        "Crime Incidence": 1604449,
+        "Crime Rate": 194,
+        "Charge-sheeting Rate": 70.2
+      },
+      {
+        "S. No.": 11,
+        "Year": 1991,
+        "Crime Incidence": 1678375,
+        "Crime Rate": 197.5,
+        "Charge-sheeting Rate": 71.3
+      },
+      {
+        "S. No.": 12,
+        "Year": 1992,
+        "Crime Incidence": 1689341,
+        "Crime Rate": 194.7,
+        "Charge-sheeting Rate": 72.2
+      },
+      {
+        "S. No.": 13,
+        "Year": 1993,
+        "Crime Incidence": 1629936,
+        "Crime Rate": 184.4,
+        "Charge-sheeting Rate": 72.5
+      },
+      {
+        "S. No.": 14,
+        "Year": 1994,
+        "Crime Incidence": 1635251,
+        "Crime Rate": 181.7,
+        "Charge-sheeting Rate": 74.1
+      },
+      {
+        "S. No.": 15,
+        "Year": 1995,
+        "Crime Incidence": 1695696,
+        "Crime Rate": 185.1,
+        "Charge-sheeting Rate": 74.3
+      },
+      {
+        "S. No.": 16,
+        "Year": 1996,
+        "Crime Incidence": 1709576,
+        "Crime Rate": 183.4,
+        "Charge-sheeting Rate": 76.9
+      },
+      {
+        "S. No.": 17,
+        "Year": 1997,
+        "Crime Incidence": 1719820,
+        "Crime Rate": 180,
+        "Charge-sheeting Rate": 77.5
+      },
+      {
+        "S. No.": 18,
+        "Year": 1998,
+        "Crime Incidence": 1778815,
+        "Crime Rate": 183.2,
+        "Charge-sheeting Rate": 77.8
+      },
+      {
+        "S. No.": 19,
+        "Year": 1999,
+        "Crime Incidence": 1764629,
+        "Crime Rate": 178.9,
+        "Charge-sheeting Rate": 78
+      },
+      {
+        "S. No.": 20,
+        "Year": 2000,
+        "Crime Incidence": 1771084,
+        "Crime Rate": 176.7,
+        "Charge-sheeting Rate": 78.4
+      },
+      {
+        "S. No.": 21,
+        "Year": 2001,
+        "Crime Incidence": 1769308,
+        "Crime Rate": 172.3,
+        "Charge-sheeting Rate": 78.6
+      },
+      {
+        "S. No.": 22,
+        "Year": 2002,
+        "Crime Incidence": 1780330,
+        "Crime Rate": 169.5,
+        "Charge-sheeting Rate": 80
+      },
+      {
+        "S. No.": 23,
+        "Year": 2003,
+        "Crime Incidence": 1716120,
+        "Crime Rate": 160.7,
+        "Charge-sheeting Rate": 80.1
+      },
+      {
+        "S. No.": 24,
+        "Year": 2004,
+        "Crime Incidence": 1832015,
+        "Crime Rate": 168.8,
+        "Charge-sheeting Rate": 79.8
+      },
+      {
+        "S. No.": 25,
+        "Year": 2005,
+        "Crime Incidence": 1822602,
+        "Crime Rate": 165.3,
+        "Charge-sheeting Rate": 80.7
+      },
+      {
+        "S. No.": 26,
+        "Year": 2006,
+        "Crime Incidence": 1878293,
+        "Crime Rate": 167.7,
+        "Charge-sheeting Rate": 80.6
+      },
+      {
+        "S. No.": 27,
+        "Year": 2007,
+        "Crime Incidence": 1989673,
+        "Crime Rate": 175.1,
+        "Charge-sheeting Rate": 80.1
+      },
+      {
+        "S. No.": 28,
+        "Year": 2008,
+        "Crime Incidence": 2093379,
+        "Crime Rate": 181.5,
+        "Charge-sheeting Rate": 79.8
+      },
+      {
+        "S. No.": 29,
+        "Year": 2009,
+        "Crime Incidence": 2121345,
+        "Crime Rate": 181.4,
+        "Charge-sheeting Rate": 78.4
+      },
+      {
+        "S. No.": 30,
+        "Year": 2010,
+        "Crime Incidence": 2224831,
+        "Crime Rate": 187.6,
+        "Charge-sheeting Rate": 79.1
+      },
+      {
+        "S. No.": 31,
+        "Year": 2011,
+        "Crime Incidence": 2325575,
+        "Crime Rate": 192.2,
+        "Charge-sheeting Rate": 78.8
+      },
+      {
+        "S. No.": 32,
+        "Year": 2012,
+        "Crime Incidence": 2387188,
+        "Crime Rate": 196.7,
+        "Charge-sheeting Rate": 78.8
+      },
+      {
+        "S. No.": 33,
+        "Year": 2013,
+        "Crime Incidence": 2647722,
+        "Crime Rate": 215.5,
+        "Charge-sheeting Rate": 79.5
+      },
+      {
+        "S. No.": 34,
+        "Year": 2014,
+        "Crime Incidence": 2851563,
+        "Crime Rate": 229.2,
+        "Charge-sheeting Rate": 79.6
+      },
+      {
+        "S. No.": 35,
+        "Year": 2015,
+        "Crime Incidence": 2949400,
+        "Crime Rate": 234.2,
+        "Charge-sheeting Rate": 77.7
+      },
+      {
+        "S. No.": 36,
+        "Year": 2016,
+        "Crime Incidence": 2975711,
+        "Crime Rate": 233.6,
+        "Charge-sheeting Rate": 72.9
+      },
+      {
+        "S. No.": 37,
+        "Year": 2017,
+        "Crime Incidence": 3062579,
+        "Crime Rate": 237.7,
+        "Charge-sheeting Rate": 70.7
+      },
+      {
+        "S. No.": 38,
+        "Year": 2018,
+        "Crime Incidence": 3132955,
+        "Crime Rate": 236.7,
+        "Charge-sheeting Rate": 68.1
+      },
+      {
+        "S. No.": 39,
+        "Year": 2019,
+        "Crime Incidence": 3225597,
+        "Crime Rate": 241.2,
+        "Charge-sheeting Rate": 67.2
+      },
+      {
+        "S. No.": 40,
+        "Year": 2020,
+        "Crime Incidence": 4254356,
+        "Crime Rate": 314.3,
+        "Charge-sheeting Rate": 75.8
+      },
+      {
+        "S. No.": 41,
+        "Year": 2021,
+        "Crime Incidence": 3663360,
+        "Crime Rate": 268,
+        "Charge-sheeting Rate": 72.3
+      }
+    ],
+    "table_6A.1_crime_against_senior_citizens_state_ut_wise_2019_2021": {
+      "STATES": [
+        {
+          "SL": 1,
+          "State/UT": "Andhra Pradesh",
+          "2019": 2430,
+          "2020": 1860,
+          "2021": 1818,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 48.3,
+          "Rate of Total Crime against Senior Citizen (2021)": 37.6,
+          "Chargesheeting Rate (2021)": 94.4
+        },
+        {
+          "SL": 2,
+          "State/UT": "Arunachal Pradesh",
+          "2019": 3,
+          "2020": 0,
+          "2021": 8,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.6,
+          "Rate of Total Crime against Senior Citizen (2021)": 12.6,
+          "Chargesheeting Rate (2021)": 100
+        },
+        {
+          "SL": 3,
+          "State/UT": "Assam",
+          "2019": 2,
+          "2020": 6,
+          "2021": 5,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 20.8,
+          "Rate of Total Crime against Senior Citizen (2021)": 0.2,
+          "Chargesheeting Rate (2021)": 100
+        },
+        {
+          "SL": 4,
+          "State/UT": "Bihar",
+          "2019": 251,
+          "2020": 322,
+          "2021": 150,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 77.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 1.9,
+          "Chargesheeting Rate (2021)": 95.2
+        },
+        {
+          "SL": 5,
+          "State/UT": "Chhattisgarh",
+          "2019": 1349,
+          "2020": 1533,
+          "2021": 1408,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 20,
+          "Rate of Total Crime against Senior Citizen (2021)": 70.3,
+          "Chargesheeting Rate (2021)": 89.9
+        },
+        {
+          "SL": 6,
+          "State/UT": "Goa",
+          "2019": 40,
+          "2020": 31,
+          "2021": 50,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1.6,
+          "Rate of Total Crime against Senior Citizen (2021)": 30.6,
+          "Chargesheeting Rate (2021)": 85.7
+        },
+        {
+          "SL": 7,
+          "State/UT": "Gujarat",
+          "2019": 4088,
+          "2020": 2785,
+          "2021": 872,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 47.9,
+          "Rate of Total Crime against Senior Citizen (2021)": 18.2,
+          "Chargesheeting Rate (2021)": 90.2
+        },
+        {
+          "SL": 8,
+          "State/UT": "Haryana",
+          "2019": 384,
+          "2020": 650,
+          "2021": 1056,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 21.9,
+          "Rate of Total Crime against Senior Citizen (2021)": 48.1,
+          "Chargesheeting Rate (2021)": 40.6
+        },
+        {
+          "SL": 9,
+          "State/UT": "Himachal Pradesh",
+          "2019": 166,
+          "2020": 394,
+          "2021": 419,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 7,
+          "Rate of Total Crime against Senior Citizen (2021)": 59.6,
+          "Chargesheeting Rate (2021)": 92.6
+        },
+        {
+          "SL": 10,
+          "State/UT": "Jharkhand",
+          "2019": 9,
+          "2020": 2,
+          "2021": 32,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 23.6,
+          "Rate of Total Crime against Senior Citizen (2021)": 1.4,
+          "Chargesheeting Rate (2021)": 73.3
+        },
+        {
+          "SL": 11,
+          "State/UT": "Karnataka",
+          "2019": 1172,
+          "2020": 853,
+          "2021": 1442,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 57.9,
+          "Rate of Total Crime against Senior Citizen (2021)": 24.9,
+          "Chargesheeting Rate (2021)": 83.1
+        },
+        {
+          "SL": 12,
+          "State/UT": "Kerala",
+          "2019": 683,
+          "2020": 699,
+          "2021": 671,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 41.9,
+          "Rate of Total Crime against Senior Citizen (2021)": 16,
+          "Chargesheeting Rate (2021)": 80.6
+        },
+        {
+          "SL": 13,
+          "State/UT": "Madhya Pradesh",
+          "2019": 4184,
+          "2020": 4602,
+          "2021": 5273,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 57.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 92.3,
+          "Chargesheeting Rate (2021)": 92.9
+        },
+        {
+          "SL": 14,
+          "State/UT": "Maharashtra",
+          "2019": 6163,
+          "2020": 4909,
+          "2021": 6190,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 111.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 55.7,
+          "Chargesheeting Rate (2021)": 72.9
+        },
+        {
+          "SL": 15,
+          "State/UT": "Manipur",
+          "2019": 10,
+          "2020": 7,
+          "2021": 8,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 2,
+          "Rate of Total Crime against Senior Citizen (2021)": 4,
+          "Chargesheeting Rate (2021)": 0
+        },
+        {
+          "SL": 16,
+          "State/UT": "Meghalaya",
+          "2019": 1,
+          "2020": 3,
+          "2021": 3,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 2.2,
+          "Chargesheeting Rate (2021)": 33.3
+        },
+        {
+          "SL": 17,
+          "State/UT": "Mizoram",
+          "2019": 9,
+          "2020": 8,
+          "2021": 5,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.7,
+          "Rate of Total Crime against Senior Citizen (2021)": 7.3,
+          "Chargesheeting Rate (2021)": 83.3
+        },
+        {
+          "SL": 18,
+          "State/UT": "Nagaland",
+          "2019": 16,
+          "2020": 11,
+          "2021": 8,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1,
+          "Rate of Total Crime against Senior Citizen (2021)": 7.8,
+          "Chargesheeting Rate (2021)": 66.7
+        },
+        {
+          "SL": 19,
+          "State/UT": "Odisha",
+          "2019": 157,
+          "2020": 326,
+          "2021": 210,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 39.8,
+          "Rate of Total Crime against Senior Citizen (2021)": 5.3,
+          "Chargesheeting Rate (2021)": 79.8
+        },
+        {
+          "SL": 20,
+          "State/UT": "Punjab",
+          "2019": 228,
+          "2020": 289,
+          "2021": 335,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 28.7,
+          "Rate of Total Crime against Senior Citizen (2021)": 11.7,
+          "Chargesheeting Rate (2021)": 78.7
+        },
+        {
+          "SL": 21,
+          "State/UT": "Rajasthan",
+          "2019": 437,
+          "2020": 648,
+          "2021": 363,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 51.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 7.1,
+          "Chargesheeting Rate (2021)": 41.6
+        },
+        {
+          "SL": 22,
+          "State/UT": "Sikkim",
+          "2019": 2,
+          "2020": 2,
+          "2021": 2,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 4.9,
+          "Chargesheeting Rate (2021)": 66.7
+        },
+        {
+          "SL": 23,
+          "State/UT": "Tamil Nadu",
+          "2019": 2509,
+          "2020": 1581,
+          "2021": 1841,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 75.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 24.5,
+          "Chargesheeting Rate (2021)": 85.3
+        },
+        {
+          "SL": 24,
+          "State/UT": "Telangana",
+          "2019": 1523,
+          "2020": 1575,
+          "2021": 1952,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 34.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 56.7,
+          "Chargesheeting Rate (2021)": 70.8
+        },
+        {
+          "SL": 25,
+          "State/UT": "Tripura",
+          "2019": 19,
+          "2020": 13,
+          "2021": 8,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 2.9,
+          "Rate of Total Crime against Senior Citizen (2021)": 2.8,
+          "Chargesheeting Rate (2021)": 82.4
+        },
+        {
+          "SL": 26,
+          "State/UT": "Uttar Pradesh",
+          "2019": 475,
+          "2020": 353,
+          "2021": 423,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 154.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 2.7,
+          "Chargesheeting Rate (2021)": 83.3
+        },
+        {
+          "SL": 27,
+          "State/UT": "Uttarakhand",
+          "2019": 6,
+          "2020": 4,
+          "2021": 7,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 9,
+          "Rate of Total Crime against Senior Citizen (2021)": 0.8,
+          "Chargesheeting Rate (2021)": 100
+        },
+        {
+          "SL": 28,
+          "State/UT": "West Bengal",
+          "2019": 353,
+          "2020": 344,
+          "2021": 304,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 77.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 3.9,
+          "Chargesheeting Rate (2021)": 79.6
+        }
+      ],
+      "UNION TERRITORIES": [
+        {
+          "SL": 29,
+          "State/UT": "A&N Islands",
+          "2019": 6,
+          "2020": 17,
+          "2021": 14,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.3,
+          "Rate of Total Crime against Senior Citizen (2021)": 55.1,
+          "Chargesheeting Rate (2021)": 92.9
+        },
+        {
+          "SL": 30,
+          "State/UT": "Chandigarh",
+          "2019": 50,
+          "2020": 43,
+          "2021": 22,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.7,
+          "Rate of Total Crime against Senior Citizen (2021)": 32.8,
+          "Chargesheeting Rate (2021)": 56.5
+        },
+        {
+          "SL": 31,
+          "State/UT": "D&N Haveli and Daman & Diu",
+          "2019": 2,
+          "2020": 0,
+          "2021": 4,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.3,
+          "Rate of Total Crime against Senior Citizen (2021)": 15.8,
+          "Chargesheeting Rate (2021)": 100
+        },
+        {
+          "SL": 32,
+          "State/UT": "Delhi",
+          "2019": 1076,
+          "2020": 919,
+          "2021": 1167,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 11.5,
+          "Rate of Total Crime against Senior Citizen (2021)": 101.7,
+          "Chargesheeting Rate (2021)": 30.8
+        },
+        {
+          "SL": 33,
+          "State/UT": "Jammu & Kashmir",
+          "2019": 1,
+          "2020": 5,
+          "2021": 40,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 9,
+          "Rate of Total Crime against Senior Citizen (2021)": 4.4,
+          "Chargesheeting Rate (2021)": 85.7
+        },
+        {
+          "SL": 34,
+          "State/UT": "Ladakh",
+          "2019": null,
+          "2020": 0,
+          "2021": 0,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.2,
+          "Rate of Total Crime against Senior Citizen (2021)": 0,
+          "Chargesheeting Rate (2021)": null
+        },
+        {
+          "SL": 35,
+          "State/UT": "Lakshadweep",
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 0.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 0,
+          "Chargesheeting Rate (2021)": null
+        },
+        {
+          "SL": 36,
+          "State/UT": "Puducherry",
+          "2019": 0,
+          "2020": 0,
+          "2021": 0,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1.2,
+          "Rate of Total Crime against Senior Citizen (2021)": 0,
+          "Chargesheeting Rate (2021)": 0
+        }
+      ],
+      "TOTAL": {
+        "TOTAL STATE(S)": {
+          "2019": 26669,
+          "2020": 23810,
+          "2021": 24863,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1015.4,
+          "Rate of Total Crime against Senior Citizen (2021)": 24.5,
+          "Chargesheeting Rate (2021)": 81.1
+        },
+        "TOTAL UT(S)": {
+          "2019": 1135,
+          "2020": 984,
+          "2021": 1247,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 23.1,
+          "Rate of Total Crime against Senior Citizen (2021)": 53.9,
+          "Chargesheeting Rate (2021)": 33.4
+        },
+        "TOTAL ALL INDIA": {
+          "2019": 27804,
+          "2020": 24794,
+          "2021": 26110,
+          "Actual Senior Citizen Population (in Lakhs) (2011)": 1038.5,
+          "Rate of Total Crime against Senior Citizen (2021)": 25.1,
+          "Chargesheeting Rate (2021)": 78.7
+        }
+      }
+    }
+  }
+}
