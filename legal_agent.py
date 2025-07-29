@@ -583,9 +583,9 @@ class LegalAgent:
             try:
                 self.crime_analyzer, self.enhanced_route_engine = create_enhanced_legal_system()
                 self.data_integration_enabled = True
-                print("✅ Data integration enabled with crime statistics")
+                print("Data integration enabled with crime statistics")
             except Exception as e:
-                print(f"⚠️ Data integration failed: {e}")
+                print(f"Data integration failed: {e}")
 
         # Initialize constitutional integration
         self.constitutional_integration_enabled = False
@@ -595,9 +595,9 @@ class LegalAgent:
             try:
                 self.constitutional_advisor = create_constitutional_advisor()
                 self.constitutional_integration_enabled = True
-                print("✅ Legal agent with constitutional integration enabled")
+                print("Legal agent with constitutional integration enabled")
             except Exception as e:
-                print(f"⚠️ Constitutional integration failed: {e}")
+                print(f"Constitutional integration failed: {e}")
                 self.data_integration_enabled = False
 
     def process_query(self, query_input: LegalQueryInput) -> LegalAgentResponse:

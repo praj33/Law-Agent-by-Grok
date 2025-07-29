@@ -1,0 +1,297 @@
+{
+  "metadata": {
+    "total_examples": 67,
+    "domains_covered": [
+      "criminal_law",
+      "employment_law",
+      "cyber_crime",
+      "family_law",
+      "tenant_rights",
+      "consumer_complaint",
+      "elder_abuse",
+      "contract_dispute"
+    ],
+    "domain_distribution": {
+      "criminal_law": 31,
+      "employment_law": 5,
+      "cyber_crime": 8,
+      "family_law": 6,
+      "tenant_rights": 6,
+      "consumer_complaint": 7,
+      "elder_abuse": 3,
+      "contract_dispute": 1
+    },
+    "focus": "harassment_and_edge_cases",
+    "created_for": "improving_unknown_domain_classification"
+  },
+  "training_data": [
+    {
+      "text": "my neighbor is harassing me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor girl is being harassed",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor constantly bothering me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor making inappropriate comments",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor threatening me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor stalking me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "neighbor disturbing peace",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "someone is sexually harassing me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "being sexually harassed at work",
+      "domain": "employment_law"
+    },
+    {
+      "text": "boss making sexual advances",
+      "domain": "employment_law"
+    },
+    {
+      "text": "colleague touching inappropriately",
+      "domain": "employment_law"
+    },
+    {
+      "text": "supervisor asking for sexual favors",
+      "domain": "employment_law"
+    },
+    {
+      "text": "workplace sexual harassment",
+      "domain": "employment_law"
+    },
+    {
+      "text": "eve teasing on street",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "stranger following me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "someone harassing me online",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "being cyberbullied on social media",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "receiving threatening messages online",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "someone stalking me on internet",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "fake profiles created to harass me",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "online harassment and threats",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "cyberstalking and online abuse",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "husband harassing me",
+      "domain": "family_law"
+    },
+    {
+      "text": "in-laws harassing for dowry",
+      "domain": "family_law"
+    },
+    {
+      "text": "domestic harassment by spouse",
+      "domain": "family_law"
+    },
+    {
+      "text": "family members threatening me",
+      "domain": "family_law"
+    },
+    {
+      "text": "emotional abuse by husband",
+      "domain": "family_law"
+    },
+    {
+      "text": "wife constantly harassing me",
+      "domain": "family_law"
+    },
+    {
+      "text": "harassment in public transport",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "being harassed on street",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "public harassment and catcalling",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "harassment in market place",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "stranger harassing me in public",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "landlord harassing me",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "property owner threatening tenant",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "harassment by building society",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "neighbor harassing about property",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "company representatives harassing me",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "debt collectors harassing me",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "service provider threatening me",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "elderly person being harassed",
+      "domain": "elder_abuse"
+    },
+    {
+      "text": "harassment of senior citizen",
+      "domain": "elder_abuse"
+    },
+    {
+      "text": "old person being threatened",
+      "domain": "elder_abuse"
+    },
+    {
+      "text": "constant harassment and threats",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "psychological harassment",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "verbal harassment and abuse",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "intimidation and harassment",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "harassment causing mental trauma",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "property boundary dispute with neighbor",
+      "domain": "contract_dispute"
+    },
+    {
+      "text": "land grabbing by neighbor",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "illegal construction by neighbor",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "neighbor making too much noise",
+      "domain": "tenant_rights"
+    },
+    {
+      "text": "loud music disturbing peace",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "boyfriend threatening to share photos",
+      "domain": "cyber_crime"
+    },
+    {
+      "text": "ex-girlfriend blackmailing me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "relationship dispute and threats",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "money lender harassing for payment",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "bank officials threatening me",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "loan recovery agents harassing",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "teacher harassing student",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "college ragging and harassment",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "school bullying and threats",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "doctor behaving inappropriately",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "hospital staff harassing patient",
+      "domain": "consumer_complaint"
+    },
+    {
+      "text": "auto driver harassing me",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "cab driver inappropriate behavior",
+      "domain": "criminal_law"
+    },
+    {
+      "text": "public transport harassment",
+      "domain": "criminal_law"
+    }
+  ]
+}

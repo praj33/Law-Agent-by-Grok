@@ -1,36 +1,26 @@
 {
   "feedback_weights": {
-    "my landlord won't return my deposit": -0.30000000000000004,
-    "my bank charged me unfair fees": -0.1,
-    "my employer didn't pay overtime": 0.1,
-    "online scammer took my money": -0.1,
-    "my credit card company is charging hidden fees": -0.1,
-    "my landlord deposit issue": -0.1,
-    "not helpful": 0.1
+    "i was injured in a car accident": 0.1,
+    "my landlord won't return my security deposit": 0.1,
+    "someone hacked my phone": 0.2,
+    "my car was stolen": 0.1,
+    "my landlord is refusing to return my \u20b975,000 security deposit even though i left the apartment clean": 0.1,
+    "my phone got stolen at airport": -0.1
   },
   "confidence_adjustments": {
-    "tenant rights": -0.1,
-    "criminal law": -0.05,
-    "employment law": 0.05,
-    "cyber crime": -0.05,
-    "immigration law": -0.05,
-    "consumer complaint": -0.1,
-    "unknown": 0.05,
-    "elder abuse": 0.0
+    "personal injury": 0.1,
+    "tenant rights": 0.1,
+    "cyber crime": 0.05
   },
   "negative_feedback_queries": [
-    "my landlord won't return my deposit",
-    "my bank charged me unfair fees",
-    "online scammer took my money",
-    "my credit card company is charging hidden fees",
-    "my landlord deposit issue",
-    "my landlord won't return my deposit",
-    "my landlord won't return my deposit",
-my landlord won't return my deposit
+    "my phone got stolen at airport"
   ],
   "positive_feedback_queries": [
-    "my employer didn't pay overtime",
-    "my landlord won't return my deposit",
-    "not helpful"
+    "i was injured in a car accident",
+    "my landlord won't return my security deposit",
+    "someone hacked my phone",
+    "someone hacked my phone",
+    "my car was stolen",
+    "my landlord is refusing to return my \u20b975,000 security deposit even though i left the apartment clean"
   ]
 }

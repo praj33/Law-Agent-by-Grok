@@ -1,0 +1,16 @@
+{
+  "working_components": [
+    "ML Domain Classifier",
+    "Dataset-Driven Routes",
+    "Constitutional Integration",
+    "Working Enhanced Agent"
+  ],
+  "setup_date": "2025-07-22",
+  "version": "5.0.0-fixed",
+  "features": {
+    "ml_classification": true,
+    "dataset_routes": true,
+    "constitutional_backing": true,
+    "working_agent": true
+  }
+}
