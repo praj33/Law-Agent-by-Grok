@@ -5,14 +5,14 @@ pydantic==2.9.2
 
 # Data Processing and ML
 pandas==2.2.3
-numpy==1.24.3
+numpy>=1.24.3
 scikit-learn==1.5.2
 
-# NLP and Text Processing (optional)
-# spacy>=3.4.0
+# NLP and Text Processing
+spacy>=3.4.0
 # Run: python -m spacy download en_core_web_sm
 
 # Additional Utilities
 python-dateutil==2.8.2
-requests==2.31.0
+requests>=2.32.2
 

@@ -67,10 +67,16 @@ def main():
             safe_print(f"⏱️ Timeline: {response.timeline}")
             safe_print(f"📊 Success Rate: {response.success_rate:.1%}")
             safe_print(f"📝 Legal Route: {response.legal_route}")
-            
+
+            # Display detailed process steps
+            if hasattr(response, 'process_steps') and response.process_steps:
+                safe_print(f"\n📋 Detailed Process Steps:")
+                for step in response.process_steps:
+                    safe_print(f"   {step}")
+
             if response.constitutional_backing:
-                safe_print(f"🏛️ Constitutional Backing: Available")
-            
+                safe_print(f"\n🏛️ Constitutional Backing: Available")
+
             safe_print(f"⚡ Response Time: {response.response_time:.3f}s")
             
         except KeyboardInterrupt:

@@ -12,6 +12,8 @@ import json
 import time
 import sys
 import os
+import uuid
+from datetime import datetime
 from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass
 import logging
@@ -83,6 +85,7 @@ class SimpleEnhancedResponse:
     legal_route: str
     timeline: str
     success_rate: float
+    process_steps: List[str] = None
     constitutional_backing: Optional[str] = None
     response_time: float = 0.0
 
@@ -92,6 +95,9 @@ class WorkingEnhancedAgent:
 
     def __init__(self):
         """Initialize working enhanced agent"""
+
+        # Initialize process explainer
+        self.process_explainer = ProcessExplainer()
 
         # Feedback learning storage
         self.feedback_data = {}  # query -> {domain, confidence, feedback_count, positive_feedback}
@@ -137,7 +143,70 @@ class WorkingEnhancedAgent:
         safe_print(f"  ML Classification: {'Available' if self.ml_available else 'Not Available'}")
         safe_print(f"  Dataset Routes: {'Available' if self.routes_available else 'Not Available'}")
         safe_print(f"  Constitutional: {'Available' if self.constitutional_available else 'Not Available'}")
-    
+
+    def generate_session_id(self) -> str:
+        """Generate unique session ID"""
+        return f"working_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
+
+    def get_learned_confidence(self, query: str, original_confidence: float) -> float:
+        """Get confidence adjusted by feedback learning"""
+        query_lower = query.lower().strip()
+
+        if query_lower in self.confidence_boosts:
+            boost = self.confidence_boosts[query_lower]
+            adjusted_confidence = min(1.0, max(0.0, original_confidence + boost))
+            safe_print(f"🧠 Learning applied: {original_confidence:.3f} → {adjusted_confidence:.3f} (boost: {boost:+.3f})")
+            return adjusted_confidence
+
+        return original_confidence
+
+    def process_feedback(self, query: str, domain: str, confidence: float, feedback: str) -> None:
+        """Process user feedback and update confidence for future queries"""
+
+        query_lower = query.lower().strip()
+
+        # Initialize feedback data for this query if not exists
+        if query_lower not in self.feedback_data:
+            self.feedback_data[query_lower] = {
+                'domain': domain,
+                'original_confidence': confidence,
+                'feedback_count': 0,
+                'positive_feedback': 0,
+                'negative_feedback': 0
+            }
+
+        # Process feedback
+        feedback_lower = feedback.lower()
+        is_positive = any(word in feedback_lower for word in ['helpful', 'good', 'correct', 'right', 'yes', 'accurate'])
+        is_negative = any(word in feedback_lower for word in ['not helpful', 'wrong', 'incorrect', 'bad', 'no', 'inaccurate', 'not good'])
+
+        if is_negative:  # Check negative first to handle "not helpful" properly
+            self.feedback_data[query_lower]['negative_feedback'] += 1
+            safe_print(f"❌ Negative feedback recorded for: {domain}")
+        elif is_positive:
+            self.feedback_data[query_lower]['positive_feedback'] += 1
+            safe_print(f"✅ Positive feedback recorded for: {domain}")
+        else:
+            safe_print(f"ℹ️ Neutral feedback recorded for: {domain}")
+
+        self.feedback_data[query_lower]['feedback_count'] += 1
+
+        # Calculate confidence boost based on feedback
+        positive_ratio = (self.feedback_data[query_lower]['positive_feedback'] /
+                         max(1, self.feedback_data[query_lower]['feedback_count']))
+
+        # Boost confidence for positive feedback, reduce for negative
+        if positive_ratio > 0.5:  # More positive than negative
+            boost = min(0.3, positive_ratio * 0.4)  # Max boost of 0.3
+            self.confidence_boosts[query_lower] = boost
+            safe_print(f"🚀 Confidence boost applied: +{boost:.3f}")
+        elif positive_ratio < 0.5:  # More negative than positive
+            penalty = min(0.2, (1 - positive_ratio) * 0.3)  # Max penalty of 0.2
+            self.confidence_boosts[query_lower] = -penalty
+            safe_print(f"📉 Confidence penalty applied: -{penalty:.3f}")
+
+        safe_print(f"📊 Feedback stats for this query: {self.feedback_data[query_lower]['positive_feedback']} positive, {self.feedback_data[query_lower]['negative_feedback']} negative")
+
     def process_query(self, user_query: str) -> SimpleEnhancedResponse:
         """Process query with available enhanced features"""
         
@@ -202,6 +271,9 @@ class WorkingEnhancedAgent:
         # Apply learned confidence boost from feedback
         confidence = self.get_learned_confidence(user_query, confidence)
 
+        # Get detailed process steps
+        process_steps = self.process_explainer.get_process_steps(domain)
+
         # Create response
         response_time = time.time() - start_time
 
@@ -214,6 +286,7 @@ class WorkingEnhancedAgent:
             legal_route=legal_route,
             timeline=timeline,
             success_rate=success_rate,
+            process_steps=process_steps,
             constitutional_backing=constitutional_backing,
             response_time=response_time
         )
@@ -565,65 +638,127 @@ class WorkingEnhancedAgent:
 
         return False
 
-    def process_feedback(self, query: str, domain: str, confidence: float, feedback: str) -> None:
-        """Process user feedback and update confidence for future queries"""
 
-        query_lower = query.lower().strip()
+class ProcessExplainer:
+    """Explains step-by-step legal processes for different domains"""
 
-        # Initialize feedback data for this query if not exists
-        if query_lower not in self.feedback_data:
-            self.feedback_data[query_lower] = {
-                'domain': domain,
-                'original_confidence': confidence,
-                'feedback_count': 0,
-                'positive_feedback': 0,
-                'negative_feedback': 0
-            }
+    def __init__(self):
+        self.process_mapping = {
+            'tenant_rights': [
+                "1. Document the issue (photos, receipts, communications with landlord)",
+                "2. Review your lease agreement and local tenant protection laws",
+                "3. Send written notice to landlord via certified mail with return receipt",
+                "4. Wait for landlord response (typically 30 days as per local law)",
+                "5. File complaint with local rent tribunal or housing court",
+                "6. Attend mandatory mediation session if required by court",
+                "7. Present evidence at formal hearing (photos, receipts, witnesses)",
+                "8. Receive tribunal decision and follow enforcement procedures"
+            ],
+            'consumer_complaint': [
+                "1. Collect all receipts, warranties, and purchase documentation",
+                "2. Contact customer service and document all communications",
+                "3. File complaint with consumer forum (District/State/National level)",
+                "4. Pay prescribed fees and submit required forms",
+                "5. Present evidence during hearing (receipts, photos, expert reports)",
+                "6. Attend all scheduled hearings and follow court procedures",
+                "7. Receive consumer forum order for replacement/refund/compensation",
+                "8. Follow up on order execution within specified timeframe"
+            ],
+            'family_law': [
+                "1. Consult qualified family lawyer for case assessment",
+                "2. Gather marriage certificate, financial documents, property papers",
+                "3. File divorce petition in appropriate family court jurisdiction",
+                "4. Serve legal notice to spouse through court process",
+                "5. Attend mandatory counseling sessions as directed by court",
+                "6. Participate in mediation for mutual settlement attempts",
+                "7. Present evidence during trial (if settlement fails)",
+                "8. Receive final divorce decree with custody/alimony orders"
+            ],
+            'employment_law': [
+                "1. Document workplace issues (emails, witnesses, incident reports)",
+                "2. Review employment contract and company policies thoroughly",
+                "3. File complaint with HR department and maintain written records",
+                "4. Approach Labor Commissioner or appropriate labor authority",
+                "5. Submit required forms with supporting evidence and documentation",
+                "6. Attend conciliation meetings between employer and employee",
+                "7. Present case at labor court hearing if conciliation fails",
+                "8. Receive labor court order for reinstatement/compensation"
+            ],
+            'criminal_law': [
+                "1. File First Information Report (FIR) at nearest police station immediately",
+                "2. Provide detailed statement with all relevant facts and evidence",
+                "3. Cooperate with police investigation and provide additional information",
+                "4. Engage criminal lawyer for legal representation and guidance",
+                "5. Attend court hearings as witness or complainant as required",
+                "6. Present evidence and testimony during trial proceedings",
+                "7. Follow up on case progress and court orders regularly",
+                "8. Receive final judgment and follow appeal process if necessary"
+            ],
+            'cyber_crime': [
+                "1. Preserve digital evidence (screenshots, emails, transaction records)",
+                "2. File complaint with local Cyber Crime Cell or online portal",
+                "3. Submit detailed complaint with all supporting digital evidence",
+                "4. Provide access to affected accounts/devices for investigation",
+                "5. Cooperate with cyber crime investigation team",
+                "6. Attend hearings at designated cyber crime court",
+                "7. Present technical evidence and expert testimony if required",
+                "8. Follow court orders for recovery/compensation procedures"
+            ],
+            'personal_injury': [
+                "1. Seek immediate medical attention and preserve medical records",
+                "2. Document accident scene with photos and witness statements",
+                "3. Report incident to police and obtain official accident report",
+                "4. Notify insurance companies (yours and other party's) immediately",
+                "5. Consult personal injury lawyer for case evaluation",
+                "6. File insurance claims with comprehensive medical documentation",
+                "7. Negotiate settlement with insurance companies through lawyer",
+                "8. File civil lawsuit if fair settlement cannot be reached"
+            ],
+            'contract_dispute': [
+                "1. Review contract terms and identify specific breach clauses",
+                "2. Gather all contract-related documents and communications",
+                "3. Send legal notice to defaulting party demanding performance",
+                "4. Attempt negotiation and settlement through mutual discussion",
+                "5. File civil suit in appropriate court for contract enforcement",
+                "6. Present contract documents and evidence of breach in court",
+                "7. Attend hearings and follow court procedures for resolution",
+                "8. Receive court judgment for specific performance or damages"
+            ],
+            'elder_abuse': [
+                "1. Document evidence of abuse (medical records, photos, witnesses)",
+                "2. Contact Elder Helpline (14567) for immediate assistance",
+                "3. File police complaint if physical/financial abuse is involved",
+                "4. Approach Senior Citizen Tribunal for legal remedies",
+                "5. Submit application with medical/financial evidence of abuse",
+                "6. Attend tribunal hearings with supporting witnesses",
+                "7. Present case for protection order or compensation",
+                "8. Follow tribunal orders for elder protection and care"
+            ],
+            'immigration_law': [
+                "1. Determine eligibility for desired immigration benefit or status",
+                "2. Gather required documentation (passport, certificates, photos)",
+                "3. Complete appropriate immigration forms accurately and completely",
+                "4. Pay required government fees and submit application package",
+                "5. Attend biometrics appointment at designated service center",
+                "6. Participate in immigration interview if scheduled",
+                "7. Respond promptly to any requests for additional evidence",
+                "8. Receive decision and take appropriate next steps or appeals"
+            ],
+            'unknown': [
+                "1. Consult with qualified legal professional for case assessment",
+                "2. Gather all relevant documents and evidence related to issue",
+                "3. Research applicable laws and legal precedents",
+                "4. Determine appropriate legal forum or authority for complaint",
+                "5. File formal complaint or petition with supporting documentation",
+                "6. Follow prescribed legal procedures and attend required hearings",
+                "7. Present case with evidence and legal arguments",
+                "8. Receive legal decision and follow enforcement procedures"
+            ]
+        }
 
-        # Process feedback
-        feedback_lower = feedback.lower()
-        is_positive = any(word in feedback_lower for word in ['helpful', 'good', 'correct', 'right', 'yes', 'accurate'])
-        is_negative = any(word in feedback_lower for word in ['not helpful', 'wrong', 'incorrect', 'bad', 'no', 'inaccurate', 'not good'])
-
-        if is_negative:  # Check negative first to handle "not helpful" properly
-            self.feedback_data[query_lower]['negative_feedback'] += 1
-            safe_print(f"❌ Negative feedback recorded for: {domain}")
-        elif is_positive:
-            self.feedback_data[query_lower]['positive_feedback'] += 1
-            safe_print(f"✅ Positive feedback recorded for: {domain}")
-        else:
-            safe_print(f"ℹ️ Neutral feedback recorded for: {domain}")
-
-        self.feedback_data[query_lower]['feedback_count'] += 1
-
-        # Calculate confidence boost based on feedback
-        positive_ratio = (self.feedback_data[query_lower]['positive_feedback'] /
-                         max(1, self.feedback_data[query_lower]['feedback_count']))
-
-        # Boost confidence for positive feedback, reduce for negative
-        if positive_ratio > 0.5:  # More positive than negative
-            boost = min(0.3, positive_ratio * 0.4)  # Max boost of 0.3
-            self.confidence_boosts[query_lower] = boost
-            safe_print(f"🚀 Confidence boost applied: +{boost:.3f}")
-        elif positive_ratio < 0.5:  # More negative than positive
-            penalty = min(0.2, (1 - positive_ratio) * 0.3)  # Max penalty of 0.2
-            self.confidence_boosts[query_lower] = -penalty
-            safe_print(f"📉 Confidence penalty applied: -{penalty:.3f}")
-
-        safe_print(f"📊 Feedback stats for this query: {self.feedback_data[query_lower]['positive_feedback']} positive, {self.feedback_data[query_lower]['negative_feedback']} negative")
-
-    def get_learned_confidence(self, query: str, original_confidence: float) -> float:
-        """Get confidence adjusted by feedback learning"""
-
-        query_lower = query.lower().strip()
-
-        if query_lower in self.confidence_boosts:
-            boost = self.confidence_boosts[query_lower]
-            adjusted_confidence = min(1.0, max(0.0, original_confidence + boost))
-            safe_print(f"🧠 Learning applied: {original_confidence:.3f} → {adjusted_confidence:.3f} (boost: {boost:+.3f})")
-            return adjusted_confidence
-
-        return original_confidence
+    def get_process_steps(self, domain: str) -> List[str]:
+        """Get detailed process steps for a legal domain"""
+        return self.process_mapping.get(domain, self.process_mapping['unknown'])
 
     def _get_criminal_law_route(self, query: str) -> str:
         """Get specific criminal law route based on crime type"""
@@ -709,18 +844,14 @@ class WorkingEnhancedAgent:
         # Default fallback with enhanced advice
         return ("Consult with qualified legal professional and consider filing appropriate complaint with relevant authorities",
                "30-180 days", 0.60)
-    
-    def generate_session_id(self) -> str:
-        """Generate unique session ID"""
-        return f"working_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{str(uuid.uuid4())[:8]}"
-    
+
     def get_system_status(self) -> Dict[str, Any]:
         """Get system status"""
         return {
             'ml_classification': self.ml_available,
             'dataset_routes': self.routes_available,
             'constitutional_backing': self.constitutional_available,
-            'queries_processed': self.session_count
+            'queries_processed': getattr(self, 'session_count', 0)
         }
 
 

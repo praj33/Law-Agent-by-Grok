@@ -171,6 +171,12 @@ class LegalAgentCLI:
         print(f"\n📝 Legal Route:")
         print(f"   {response.legal_route}")
 
+        # Display detailed process steps
+        if hasattr(response, 'process_steps') and response.process_steps:
+            print(f"\n📋 Detailed Process Steps:")
+            for step in response.process_steps:
+                print(f"   {step}")
+
         if response.constitutional_backing:
             print(f"\n🏛️ Constitutional Backing:")
             print(f"   {response.constitutional_backing}")
