@@ -20,16 +20,29 @@ import sys
 import json
 from typing import Optional
 from legal_agent import LegalAgent, LegalQueryInput, create_legal_agent
-from adaptive_legal_agent import create_adaptive_legal_agent
 from working_enhanced_agent import create_working_enhanced_agent
+
+# Try to import adaptive agent (Task 2)
+try:
+    from adaptive_agent import create_adaptive_agent
+    ADAPTIVE_AGENT_AVAILABLE = True
+except ImportError:
+    ADAPTIVE_AGENT_AVAILABLE = False
 
 
 class LegalAgentCLI:
     """Command-line interface for the Legal Agent"""
-    
-    def __init__(self):
-        # Use enhanced working agent with all fixes
-        self.agent = create_working_enhanced_agent()
+
+    def __init__(self, use_adaptive=False):
+        # Choose agent type
+        if use_adaptive and ADAPTIVE_AGENT_AVAILABLE:
+            print("🧠 Using Adaptive Agent (Task 2) with learning capabilities")
+            self.adaptive_agent = create_adaptive_agent()
+            self.agent = self.adaptive_agent.base_agent  # Use base agent for display
+        else:
+            print("🔧 Using Enhanced Working Agent")
+            self.agent = create_working_enhanced_agent()
+
         self.session_id = None
         self.running = True
         self.last_query = None
@@ -59,6 +72,14 @@ class LegalAgentCLI:
         print("=" * 60)
         print("🏛️  LEGAL AGENT CLI INTERFACE")
         print("=" * 60)
+        
+        if ADAPTIVE_AGENT_AVAILABLE and hasattr(self, 'adaptive_agent'):
+            print("🏛️ CONSTITUTIONAL ANALYSIS ENABLED!")
+            print("   • Specific constitutional articles with confidence percentages")
+            print("   • Searches through 140+ constitutional articles")
+            print("   • Enhanced legal guidance with constitutional backing")
+            print()
+        
         print("Welcome to the Legal Agent! I can help you with legal queries.")
         print("\nCommands:")
         print("  help          - Show this help message")
@@ -68,8 +89,55 @@ class LegalAgentCLI:
         print("  clear         - Clear screen")
         print("  quit/exit     - Exit the program")
         print("\nOr just type your legal question directly!")
+        
+        if ADAPTIVE_AGENT_AVAILABLE and hasattr(self, 'adaptive_agent'):
+            print("\n🎯 TRY: 'Employee discloses all the company secrets to another company'")
+            print("     to see constitutional articles with confidence percentages!")
+        
         print("=" * 60)
     
+    def is_feedback_response(self, command_lower: str) -> bool:
+        """Check if the command is likely feedback on the previous response"""
+        if not self.last_query or not self.last_response:
+            return False
+
+        # Exact feedback keywords (single words)
+        exact_feedback_keywords = [
+            'helpful', 'unhelpful', 'good', 'bad', 'wrong', 'correct',
+            'excellent', 'poor', 'great', 'terrible', 'useful', 'useless',
+            'perfect', 'awful', 'thanks', 'yes', 'no', 'right', 'incorrect',
+            'accurate', 'inaccurate'
+        ]
+
+        # Multi-word feedback phrases
+        feedback_phrases = [
+            'not helpful', 'thank you', 'very good', 'very bad', 'not good',
+            'not useful', 'very helpful', 'not correct', 'completely wrong'
+        ]
+
+        # Check if the entire command is just a feedback keyword
+        command_stripped = command_lower.strip()
+        if command_stripped in exact_feedback_keywords:
+            return True
+
+        # Check for multi-word feedback phrases
+        if command_stripped in feedback_phrases:
+            return True
+
+        # Check if it's a very short response (1-2 words) with feedback keywords
+        words = command_stripped.split()
+        if len(words) <= 2:
+            for keyword in exact_feedback_keywords:
+                if keyword in command_stripped:
+                    return True
+
+        # Exclude obvious questions/queries even if they contain feedback words
+        question_indicators = ['what', 'how', 'when', 'where', 'why', 'can', 'should', 'will', 'do', 'does', 'is', 'are']
+        if any(word in words for word in question_indicators):
+            return False
+
+        return False
+
     def process_command(self, command: str):
         """Process user command"""
         command_lower = command.lower()
@@ -94,9 +162,15 @@ class LegalAgentCLI:
             
         elif command_lower == 'clear':
             self.clear_screen()
-            
+
+        # Check if it's feedback without the "feedback" prefix
+        elif self.is_feedback_response(command_lower):
+            print(f"🧠 Detected as FEEDBACK: '{command}'")
+            self.process_feedback(command)
+
         else:
             # Treat as a direct query
+            print(f"🔍 Detected as QUERY: '{command}'")
             self.process_query(command)
     
     def process_query(self, query_text: str):
@@ -111,18 +185,40 @@ class LegalAgentCLI:
         # Store query for feedback
         self.last_query = query_text
 
-        # Process query with enhanced agent
-        response = self.agent.process_query(query_text)
-
-        # Store session ID and response for feedback
-        self.session_id = response.session_id
-        self.last_response = response
-
-        # Display response
-        self.display_response(response)
+        # Process query differently based on agent type
+        if ADAPTIVE_AGENT_AVAILABLE and hasattr(self, 'adaptive_agent'):
+            # Use adaptive agent with structured output and constitutional articles
+            from legal_agent import LegalQueryInput
+            query_input = LegalQueryInput(
+                user_input=query_text,
+                session_id=self.session_id or "cli_session"
+            )
+            
+            # Get structured response with constitutional articles
+            if hasattr(self.adaptive_agent, 'process_query_with_structured_output'):
+                structured_response = self.adaptive_agent.process_query_with_structured_output(query_input)
+                print(structured_response)
+                
+                # Also get the base response for feedback
+                response = self.adaptive_agent.process_query_with_learning(query_input)
+                self.session_id = response.session_id
+                self.last_response = response
+            else:
+                response = self.adaptive_agent.process_query_with_learning(query_input)
+                self.session_id = response.session_id
+                self.last_response = response
+                self.display_response(response)
+        else:
+            # Use enhanced agent with string input
+            response = self.agent.process_query(query_text)
+            self.session_id = response.session_id
+            self.last_response = response
+            self.display_response(response)
 
         # Ask for feedback
-        print("\n💬 Was this response helpful? (Type 'feedback helpful' or 'feedback not helpful')")
+        print("\n💬 Was this response helpful?")
+        print("   You can simply type: 'helpful', 'not helpful', 'good', 'bad', etc.")
+        print("   Or use: 'feedback <your rating>')")
     
     def process_feedback(self, feedback_text: str):
         """Process user feedback with real learning"""
@@ -132,13 +228,24 @@ class LegalAgentCLI:
 
         print(f"🧠 Processing feedback: '{feedback_text}'")
 
-        # Process feedback through the agent's learning system
-        self.agent.process_feedback(
-            query=self.last_query,
-            domain=self.last_response.domain,
-            confidence=self.last_response.confidence,
-            feedback=feedback_text
-        )
+        # Try adaptive agent first (Task 2), then fall back to enhanced agent
+        if ADAPTIVE_AGENT_AVAILABLE and hasattr(self, 'adaptive_agent'):
+            # Use adaptive agent for Task 2 learning
+            from legal_agent import LegalQueryInput
+            feedback_query = LegalQueryInput(
+                user_input=self.last_query,
+                feedback=feedback_text,
+                session_id=self.session_id
+            )
+            self.adaptive_agent.process_query_with_learning(feedback_query)
+        else:
+            # Use enhanced agent feedback system
+            self.agent.process_feedback(
+                query=self.last_query,
+                domain=self.last_response.domain,
+                confidence=self.last_response.confidence,
+                feedback=feedback_text
+            )
 
         print("✅ Thank you! The agent has learned from your feedback.")
 
@@ -165,11 +272,19 @@ class LegalAgentCLI:
     def display_response(self, response):
         """Display the agent response in a formatted way"""
         print(f"📋 Domain: {response.domain.replace('_', ' ').title()} (Confidence: {response.confidence:.3f})")
-        print(f"⏱️  Timeline: {response.timeline}")
-        print(f"📊 Success Rate: {response.success_rate:.1%}")
 
-        print(f"\n📝 Legal Route:")
-        print(f"   {response.legal_route}")
+        # Timeline - handle different response types
+        if hasattr(response, 'timeline'):
+            print(f"⏱️  Timeline: {response.timeline}")
+
+        # Success rate - only if available
+        if hasattr(response, 'success_rate'):
+            print(f"📊 Success Rate: {response.success_rate:.1%}")
+
+        # Legal route
+        if hasattr(response, 'legal_route'):
+            print(f"\n📝 Legal Route:")
+            print(f"   {response.legal_route}")
 
         # Display detailed process steps
         if hasattr(response, 'process_steps') and response.process_steps:
@@ -177,12 +292,18 @@ class LegalAgentCLI:
             for step in response.process_steps:
                 print(f"   {step}")
 
-        if response.constitutional_backing:
+        # Constitutional backing
+        if hasattr(response, 'constitutional_backing') and response.constitutional_backing:
             print(f"\n🏛️ Constitutional Backing:")
             print(f"   {response.constitutional_backing}")
 
-        print(f"\n⚡ Response Time: {response.response_time:.3f}s")
-        print(f"🔗 Session ID: {response.session_id}")
+        # Response time
+        if hasattr(response, 'response_time'):
+            print(f"\n⚡ Response Time: {response.response_time:.3f}s")
+
+        # Session ID
+        if hasattr(response, 'session_id'):
+            print(f"🔗 Session ID: {response.session_id}")
     
     def show_stats(self):
         """Show system statistics"""
@@ -221,9 +342,22 @@ class LegalAgentCLI:
 
 def main():
     """Main function to run the CLI"""
-    cli = LegalAgentCLI()
+    import sys
+
+    # Check for adaptive agent option
+    use_adaptive = '--adaptive' in sys.argv or '-a' in sys.argv
+
+    if use_adaptive and not ADAPTIVE_AGENT_AVAILABLE:
+        print("❌ Adaptive agent not available. Using enhanced agent instead.")
+        use_adaptive = False
+
+    cli = LegalAgentCLI(use_adaptive=use_adaptive)
     cli.start()
 
 
 if __name__ == "__main__":
+    print("🏛️ Legal Agent CLI")
+    print("Usage: python cli_interface.py [--adaptive|-a]")
+    print("  --adaptive: Use Task 2 Adaptive Agent with learning")
+    print()
     main()

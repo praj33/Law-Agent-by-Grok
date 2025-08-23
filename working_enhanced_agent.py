@@ -229,18 +229,38 @@ class WorkingEnhancedAgent:
                     self._should_override_ml_classification(user_query, domain, enhanced_domain)):
                     if enhanced_confidence > confidence or enhanced_domain != domain:
                         domain, confidence = enhanced_domain, enhanced_confidence
-                        safe_print(f"Enhanced Classification: {domain} (confidence: {confidence:.3f})")
-                    else:
+
+                        # Get detailed classification
+                        detailed_info = self.get_detailed_classification(user_query, domain, confidence)
+
+                        safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
+                        safe_print(f"Enhanced analysis: {detailed_info['subcategory'].lower().replace(' ', '_')} + ML suggestion: {enhanced_domain}")
                         safe_print(f"ML Classification: {domain} (confidence: {confidence:.3f})")
+                        safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
+                    else:
+                        detailed_info = self.get_detailed_classification(user_query, domain, confidence)
+                        safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
+                        safe_print(f"ML Classification: {domain} (confidence: {confidence:.3f})")
+                        safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
                 else:
+                    detailed_info = self.get_detailed_classification(user_query, domain, confidence)
+                    safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
                     safe_print(f"ML Classification: {domain} (confidence: {confidence:.3f})")
+                    safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
             except Exception as e:
                 safe_print(f"ML classification error: {e}")
                 domain, confidence = self.enhanced_unknown_analysis(user_query, [])
+                detailed_info = self.get_detailed_classification(user_query, domain, confidence)
+                safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
+                safe_print(f"Enhanced Classification: {domain} (confidence: {confidence:.3f})")
+                safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
         else:
             # Fallback classification
             domain, confidence = self.fallback_classification(user_query)
+            detailed_info = self.get_detailed_classification(user_query, domain, confidence)
+            safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
             safe_print(f"Fallback Classification: {domain} (confidence: {confidence:.3f})")
+            safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
         
         # Step 2: Legal route generation with enhanced unknown handling
         if self.routes_available and domain != 'unknown':
@@ -295,22 +315,22 @@ class WorkingEnhancedAgent:
         return response
     
     def fallback_classification(self, user_query: str) -> Tuple[str, float]:
-        """Simple fallback classification using keywords"""
+        """Enhanced fallback classification using improved keywords"""
         
         query_lower = user_query.lower()
         
-        # Simple keyword-based classification
+        # Enhanced keyword-based classification with more patterns
         domain_keywords = {
-            'tenant_rights': ['landlord', 'rent', 'deposit', 'eviction', 'lease', 'apartment'],
-            'consumer_complaint': ['defective', 'warranty', 'refund', 'product', 'service', 'company'],
-            'family_law': ['divorce', 'custody', 'marriage', 'alimony', 'domestic', 'spouse'],
-            'employment_law': ['job', 'work', 'employer', 'harassment', 'termination', 'salary'],
-            'criminal_law': ['arrest', 'police', 'crime', 'bail', 'court', 'charges'],
-            'cyber_crime': ['hack', 'online', 'internet', 'cyber', 'digital', 'computer'],
+            'tenant_rights': ['landlord', 'rent', 'deposit', 'eviction', 'lease', 'apartment', 'housing', 'rental'],
+            'consumer_complaint': ['defective', 'warranty', 'refund', 'product', 'service', 'company', 'purchase', 'faulty'],
+            'family_law': ['divorce', 'custody', 'marriage', 'alimony', 'domestic', 'spouse', 'husband', 'wife'],
+            'employment_law': ['job', 'work', 'employer', 'harassment', 'termination', 'salary', 'boss', 'overtime', 'pay', 'workplace'],
+            'criminal_law': ['arrest', 'police', 'crime', 'bail', 'court', 'charges', 'criminal'],
+            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'cyber', 'digital', 'computer', 'phone'],
             'elder_abuse': ['elderly', 'senior', 'old', 'abuse', 'neglect', 'exploitation'],
             'personal_injury': ['accident', 'injury', 'hurt', 'damage', 'medical', 'hospital'],
             'contract_dispute': ['contract', 'agreement', 'breach', 'business', 'deal'],
-            'immigration_law': ['visa', 'citizenship', 'immigration', 'passport', 'green card']
+            'immigration_law': ['visa', 'citizenship', 'immigration', 'passport', 'green card', 'expired']
         }
         
         best_domain = 'unknown'
@@ -322,15 +342,21 @@ class WorkingEnhancedAgent:
                 best_score = score
                 best_domain = domain
         
-        confidence = min(0.8, best_score * 0.2) if best_score > 0 else 0.0
+        # Lower confidence threshold for fallback to ensure classification
+        confidence = min(0.9, best_score * 0.25) if best_score > 0 else 0.0
+        
+        # Boost confidence for strong matches
+        if best_score >= 2:
+            confidence = min(0.9, confidence + 0.2)
+        
         return best_domain, confidence
 
     def enhanced_unknown_analysis(self, user_query: str, ml_alternatives: List[Tuple[str, float]]) -> Tuple[str, float]:
-        """Enhanced analysis for unknown domain queries with harassment detection"""
+        """Enhanced analysis for unknown domain queries with detailed subcategory detection"""
 
         query_lower = user_query.lower()
 
-        # Comprehensive legal scenario patterns
+        # Comprehensive legal scenario patterns with subcategories
         legal_scenario_patterns = {
             # Criminal Law Cases
             'rape_assault': (['rape', 'sexual assault', 'molest', 'molestation', 'sexual abuse', 'forced', 'violated'], 'criminal_law', 0.95),
@@ -449,19 +475,19 @@ class WorkingEnhancedAgent:
 
         # Enhanced keyword-based classification for non-harassment queries
         enhanced_keywords = {
+            'immigration_law': ['passport', 'visa', 'citizenship', 'immigration', 'green card', 'expired', 'renewal', 'application'],
+            'employment_law': ['boss', 'employer', 'work', 'job', 'salary', 'overtime', 'pay', 'workplace', 'termination', 'fired'],
             'criminal_law': ['police', 'crime', 'illegal', 'theft', 'fraud', 'violence', 'assault', 'murder', 'robbery'],
             'family_law': ['marriage', 'divorce', 'custody', 'spouse', 'children', 'alimony', 'maintenance'],
-            'employment_law': ['job', 'work', 'salary', 'employer', 'employee', 'termination', 'resignation'],
             'consumer_complaint': ['product', 'service', 'company', 'warranty', 'refund', 'defective', 'purchase'],
-            'cyber_crime': ['hack', 'online', 'internet', 'digital', 'computer', 'website', 'email', 'password'],
+            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'digital', 'computer', 'website', 'email', 'password', 'phone'],
             'tenant_rights': ['rent', 'landlord', 'property', 'lease', 'apartment', 'deposit', 'eviction'],
             'contract_dispute': ['agreement', 'contract', 'business', 'deal', 'breach', 'violation'],
             'personal_injury': ['accident', 'injury', 'medical', 'hospital', 'damage', 'compensation'],
-            'immigration_law': ['visa', 'passport', 'citizenship', 'immigration', 'green card'],
             'elder_abuse': ['elderly', 'senior', 'old', 'aged', 'grandmother', 'grandfather', 'nursing home']
         }
 
-        best_domain = 'criminal_law'  # Default fallback
+        best_domain = 'unknown'  # Start with unknown, not criminal_law
         best_score = 0
 
         for domain, keywords in enhanced_keywords.items():
@@ -470,17 +496,172 @@ class WorkingEnhancedAgent:
                 best_score = score
                 best_domain = domain
 
+        # Only use criminal_law as default if no other domain matches
+        if best_domain == 'unknown' and best_score == 0:
+            best_domain = 'criminal_law'  # Fallback only when no matches
+            confidence = 0.3
+        else:
+            confidence = min(0.8, best_score * 0.25) if best_score > 0 else 0.3
+
         # Use ML alternatives if they have higher confidence
         if ml_alternatives:
             ml_domain, ml_confidence = ml_alternatives[0]
             if ml_confidence > 0.1 and ml_domain != 'unknown':
-                enhanced_confidence = min(0.6, best_score * 0.15 + ml_confidence)
+                enhanced_confidence = min(0.8, confidence + ml_confidence * 0.5)
                 safe_print(f"Enhanced analysis: {best_domain} + ML suggestion: {ml_domain}")
-                return ml_domain if ml_confidence > (best_score * 0.15) else best_domain, enhanced_confidence
+                return ml_domain if ml_confidence > confidence else best_domain, enhanced_confidence
 
-        confidence = min(0.6, best_score * 0.2) if best_score > 0 else 0.3
         safe_print(f"Enhanced keyword analysis: {best_domain}")
         return best_domain, confidence
+
+    def get_detailed_classification(self, user_query: str, domain: str, confidence: float) -> Dict[str, str]:
+        """Get detailed classification with subcategory and specific route"""
+
+        query_lower = user_query.lower()
+
+        # Detailed classification mapping
+        detailed_classifications = {
+            # Employment Law subcategories
+            'employment_law': {
+                'workplace_harassment': {
+                    'keywords': ['coworker', 'colleague', 'boss', 'supervisor', 'sexually harassing', 'workplace harassment', 'office harassment'],
+                    'subcategory': 'Workplace Harassment',
+                    'specific_route': 'workplace_harassment_complaint',
+                    'success_rate': 'high'
+                },
+                'wrongful_termination': {
+                    'keywords': ['fired', 'terminated', 'dismissal', 'unfair termination', 'sacked'],
+                    'subcategory': 'Wrongful Termination',
+                    'specific_route': 'labor_tribunal',
+                    'success_rate': 'medium'
+                },
+                'salary_issues': {
+                    'keywords': ['salary', 'wages', 'overtime', 'not paying', 'unpaid'],
+                    'subcategory': 'Salary Disputes',
+                    'specific_route': 'labor_commissioner',
+                    'success_rate': 'high'
+                },
+                'discrimination': {
+                    'keywords': ['discrimination', 'bias', 'unfair treatment', 'prejudice'],
+                    'subcategory': 'Workplace Discrimination',
+                    'specific_route': 'equal_opportunity_commission',
+                    'success_rate': 'medium'
+                }
+            },
+
+            # Criminal Law subcategories
+            'criminal_law': {
+                'sexual_assault': {
+                    'keywords': ['rape', 'sexual assault', 'molest', 'molestation'],
+                    'subcategory': 'Sexual Assault',
+                    'specific_route': 'fast_track_court',
+                    'success_rate': 'medium'
+                },
+                'theft_robbery': {
+                    'keywords': ['robbery', 'theft', 'stolen', 'burglar', 'snatched'],
+                    'subcategory': 'Theft & Robbery',
+                    'specific_route': 'police_complaint',
+                    'success_rate': 'low'
+                },
+                'fraud': {
+                    'keywords': ['fraud', 'cheated', 'scam', 'deceived'],
+                    'subcategory': 'Fraud & Cheating',
+                    'specific_route': 'economic_offences_court',
+                    'success_rate': 'medium'
+                }
+            },
+
+            # Family Law subcategories
+            'family_law': {
+                'divorce': {
+                    'keywords': ['divorce', 'separation', 'marriage problems'],
+                    'subcategory': 'Divorce & Separation',
+                    'specific_route': 'family_court',
+                    'success_rate': 'high'
+                },
+                'domestic_violence': {
+                    'keywords': ['domestic violence', 'wife beating', 'husband abuse'],
+                    'subcategory': 'Domestic Violence',
+                    'specific_route': 'protection_officer',
+                    'success_rate': 'high'
+                },
+                'child_custody': {
+                    'keywords': ['custody', 'child custody', 'visitation'],
+                    'subcategory': 'Child Custody',
+                    'specific_route': 'family_court',
+                    'success_rate': 'medium'
+                }
+            },
+
+            # Tenant Rights subcategories
+            'tenant_rights': {
+                'deposit_issues': {
+                    'keywords': ['deposit', 'security deposit', 'not returning'],
+                    'subcategory': 'Security Deposit',
+                    'specific_route': 'rent_tribunal',
+                    'success_rate': 'high'
+                },
+                'maintenance_issues': {
+                    'keywords': ['repair', 'maintenance', 'broken', 'fix'],
+                    'subcategory': 'Property Maintenance',
+                    'specific_route': 'housing_board',
+                    'success_rate': 'medium'
+                },
+                'eviction': {
+                    'keywords': ['eviction', 'evict', 'asking to leave'],
+                    'subcategory': 'Illegal Eviction',
+                    'specific_route': 'rent_control_court',
+                    'success_rate': 'high'
+                }
+            },
+
+            # Cyber Crime subcategories
+            'cyber_crime': {
+                'online_fraud': {
+                    'keywords': ['online fraud', 'internet fraud', 'phishing', 'fake website'],
+                    'subcategory': 'Online Fraud',
+                    'specific_route': 'cyber_crime_cell',
+                    'success_rate': 'medium'
+                },
+                'hacking': {
+                    'keywords': ['hacked', 'account hacked', 'unauthorized access'],
+                    'subcategory': 'Hacking & Data Breach',
+                    'specific_route': 'cyber_security_unit',
+                    'success_rate': 'low'
+                },
+                'cyberbullying': {
+                    'keywords': ['cyberbullying', 'online harassment', 'social media'],
+                    'subcategory': 'Cyberbullying',
+                    'specific_route': 'cyber_crime_portal',
+                    'success_rate': 'medium'
+                }
+            }
+        }
+
+        # Find best matching subcategory
+        if domain in detailed_classifications:
+            best_match = None
+            best_score = 0
+
+            for subcat_key, subcat_data in detailed_classifications[domain].items():
+                score = sum(1 for keyword in subcat_data['keywords'] if keyword in query_lower)
+                if score > best_score:
+                    best_score = score
+                    best_match = subcat_data
+
+            if best_match:
+                return {
+                    'subcategory': best_match['subcategory'],
+                    'specific_route': best_match['specific_route'],
+                    'success_rate': best_match['success_rate']
+                }
+
+        # Default classification
+        return {
+            'subcategory': domain.replace('_', ' ').title(),
+            'specific_route': 'general_court',
+            'success_rate': 'medium'
+        }
 
     def generate_enhanced_fallback_route(self, domain: str, user_query: str) -> Tuple[str, str, float]:
         """Generate enhanced fallback route based on domain and query analysis"""

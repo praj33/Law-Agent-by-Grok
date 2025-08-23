@@ -180,37 +180,317 @@ class ConstitutionalAdvisor:
         self.db = ConstitutionalDatabase(articles_file)
     
     def get_constitutional_backing(self, domain: str, query: str) -> Dict[str, Any]:
-        """Get constitutional articles relevant to a legal query"""
-        
-        # Get domain-specific articles
+        """Get constitutional articles relevant to a legal query with specific subcategory mapping"""
+
+        # Get specific constitutional articles based on query type
+        specific_articles = self._get_specific_constitutional_articles(domain, query)
+
+        # Get domain-specific articles as backup
         domain_articles = self.db.get_articles_for_domain(domain)
-        
+
         # Search for query-specific articles
-        query_articles = self.db.search_articles(query, limit=3)
-        
-        # Combine and deduplicate
-        all_articles = domain_articles + query_articles
+        query_articles = self.db.search_articles(query, limit=2)
+
+        # Prioritize specific articles first, then add others only if needed
         unique_articles = {}
-        for article in all_articles:
+
+        # Add specific articles first (highest priority)
+        for article in specific_articles:
             unique_articles[article.article_number] = article
-        
+
+        # Only add domain/query articles if we don't have enough specific ones
+        if len(unique_articles) < 3:
+            for article in domain_articles + query_articles:
+                if article.article_number not in unique_articles:
+                    unique_articles[article.article_number] = article
+                if len(unique_articles) >= 5:
+                    break
+
         relevant_articles = list(unique_articles.values())[:5]  # Limit to top 5
-        
+
         return {
             'relevant_articles': relevant_articles,
-            'constitutional_basis': self._generate_constitutional_basis(relevant_articles, domain),
+            'constitutional_basis': self._generate_constitutional_basis(relevant_articles, domain, query),
             'article_count': len(relevant_articles),
-            'domain': domain
+            'domain': domain,
+            'specific_articles': [f"Article {art.article_number}" for art in specific_articles[:3]]
         }
-    
-    def _generate_constitutional_basis(self, articles: List[ConstitutionalArticle], domain: str) -> str:
+
+    def _get_specific_constitutional_articles(self, domain: str, query: str) -> List[ConstitutionalArticle]:
+        """Get specific constitutional articles based on query subcategory"""
+
+        query_lower = query.lower()
+        specific_mappings = {
+            # Employment Law specific mappings
+            'workplace_harassment': ['Article 14', 'Article 15', 'Article 19', 'Article 21'],  # Equality, non-discrimination, profession, life & dignity
+            'sexual_harassment': ['Article 14', 'Article 15', 'Article 19', 'Article 21'],
+            'wrongful_termination': ['Article 19', 'Article 21', 'Article 14'],  # Right to profession, life, equality
+            'salary_issues': ['Article 23', 'Article 24', 'Article 21'],  # Against exploitation, child labor, life
+            'discrimination': ['Article 14', 'Article 15', 'Article 16'],  # Equality provisions
+
+            # Criminal Law specific mappings
+            'sexual_assault': ['Article 21', 'Article 14', 'Article 15'],  # Life & dignity, equality
+            'theft_robbery': ['Article 21', 'Article 300A'],  # Life, property rights
+            'fraud': ['Article 21', 'Article 300A', 'Article 14'],  # Life, property, equality
+            'murder': ['Article 21'],  # Right to life
+
+            # Family Law specific mappings
+            'domestic_violence': ['Article 21', 'Article 14', 'Article 15'],  # Life, equality, gender equality
+            'divorce': ['Article 25', 'Article 21', 'Article 14'],  # Personal law, life, equality
+            'child_custody': ['Article 21', 'Article 14', 'Article 15'],  # Child welfare, equality
+
+            # Tenant Rights specific mappings
+            'deposit_issues': ['Article 300A', 'Article 21', 'Article 14'],  # Property rights, life, equality
+            'eviction': ['Article 21', 'Article 19', 'Article 300A'],  # Shelter, movement, property
+            'maintenance': ['Article 21', 'Article 300A'],  # Life, property
+
+            # Cyber Crime specific mappings
+            'online_fraud': ['Article 21', 'Article 19', 'Article 14'],  # Privacy, expression, equality
+            'hacking': ['Article 21', 'Article 19'],  # Privacy, information
+            'cyberbullying': ['Article 21', 'Article 19', 'Article 14'],  # Dignity, expression, equality
+        }
+
+        # Find matching articles with better keyword matching
+        relevant_article_numbers = []
+
+        # Check for specific harassment patterns first
+        if any(word in query_lower for word in ['sexually harassing', 'sexual harassment', 'harassing', 'harassment']):
+            if any(word in query_lower for word in ['work', 'office', 'workplace', 'coworker', 'colleague', 'boss']):
+                relevant_article_numbers.extend(specific_mappings['workplace_harassment'])
+            else:
+                relevant_article_numbers.extend(specific_mappings['sexual_harassment'])
+        else:
+            # General pattern matching
+            for key, articles in specific_mappings.items():
+                if any(keyword in query_lower for keyword in key.split('_')):
+                    relevant_article_numbers.extend(articles)
+                    break
+
+        # If no specific match, use domain defaults
+        if not relevant_article_numbers:
+            domain_defaults = {
+                'employment_law': ['Article 14', 'Article 19', 'Article 21'],
+                'criminal_law': ['Article 21', 'Article 14', 'Article 20'],
+                'family_law': ['Article 21', 'Article 25', 'Article 14'],
+                'tenant_rights': ['Article 300A', 'Article 21', 'Article 19'],
+                'cyber_crime': ['Article 21', 'Article 19', 'Article 14'],
+                'consumer_complaint': ['Article 21', 'Article 14', 'Article 19']
+            }
+            relevant_article_numbers = domain_defaults.get(domain, ['Article 21', 'Article 14'])
+
+        # Get actual article objects
+        specific_articles = []
+        for article_num in relevant_article_numbers[:3]:  # Limit to top 3
+            article_obj = self.db.get_article(article_num.replace('Article ', ''))
+            if article_obj:
+                specific_articles.append(article_obj)
+
+        return specific_articles
+
+    def _generate_workplace_harassment_constitutional_basis(self) -> str:
+        """Generate comprehensive constitutional basis specifically for workplace harassment"""
+
+        constitutional_framework = []
+
+        # Core constitutional rights
+        constitutional_framework.append("🏛️ CONSTITUTIONAL FRAMEWORK FOR WORKPLACE HARASSMENT:")
+        constitutional_framework.append("")
+
+        # Article 14 - Right to Equality
+        constitutional_framework.append("📋 Article 14 - Right to Equality:")
+        constitutional_framework.append("   • Ensures equal treatment regardless of gender in workplace")
+        constitutional_framework.append("   • Prohibits discriminatory treatment based on sex")
+        constitutional_framework.append("   • Guarantees equal protection under law for harassment victims")
+        constitutional_framework.append("")
+
+        # Article 15 - Prohibition of discrimination
+        constitutional_framework.append("📋 Article 15 - Prohibition of Discrimination:")
+        constitutional_framework.append("   • Specifically prohibits discrimination on grounds of sex")
+        constitutional_framework.append("   • Covers workplace discrimination and harassment")
+        constitutional_framework.append("   • Empowers state to make special provisions for women's safety")
+        constitutional_framework.append("")
+
+        # Article 19(1)(g) - Right to profession
+        constitutional_framework.append("📋 Article 19(1)(g) - Right to Practice Profession:")
+        constitutional_framework.append("   • Guarantees right to work in harassment-free environment")
+        constitutional_framework.append("   • Protects against interference with professional activities")
+        constitutional_framework.append("   • Ensures workplace safety as fundamental right")
+        constitutional_framework.append("")
+
+        # Article 21 - Right to life and dignity
+        constitutional_framework.append("📋 Article 21 - Right to Life and Personal Dignity:")
+        constitutional_framework.append("   • Protects personal dignity and honor from harassment")
+        constitutional_framework.append("   • Covers psychological harm and mental trauma")
+        constitutional_framework.append("   • Ensures right to live with dignity at workplace")
+        constitutional_framework.append("")
+
+        # Article 51A(e) - Fundamental Duties
+        constitutional_framework.append("📋 Article 51A(e) - Fundamental Duties:")
+        constitutional_framework.append("   • Duty to promote harmony and dignity of women")
+        constitutional_framework.append("   • Obligation to renounce practices derogatory to women")
+        constitutional_framework.append("   • Creates societal responsibility to prevent harassment")
+        constitutional_framework.append("")
+
+        # Legal framework
+        constitutional_framework.append("⚖️ SUPPORTING LEGAL FRAMEWORK:")
+        constitutional_framework.append("   • Prevention of Sexual Harassment (POSH) Act, 2013")
+        constitutional_framework.append("   • Vishaka Guidelines (1997) - Supreme Court landmark judgment")
+        constitutional_framework.append("   • Indian Penal Code Sections 354, 354A, 354B, 354C, 354D")
+        constitutional_framework.append("   • Labour laws ensuring safe working conditions")
+        constitutional_framework.append("")
+
+        # Enforcement mechanisms
+        constitutional_framework.append("🛡️ CONSTITUTIONAL ENFORCEMENT:")
+        constitutional_framework.append("   • Right to approach High Court under Article 226 (Writ Jurisdiction)")
+        constitutional_framework.append("   • Right to approach Supreme Court under Article 32 (Right to Constitutional Remedies)")
+        constitutional_framework.append("   • Mandatory Internal Complaints Committee (ICC) under POSH Act")
+        constitutional_framework.append("   • State obligation to ensure effective implementation")
+
+        return "\\n".join(constitutional_framework)
+
+    def _generate_domestic_violence_constitutional_basis(self) -> str:
+        """Generate constitutional basis for domestic violence cases"""
+
+        framework = [
+            "🏛️ CONSTITUTIONAL FRAMEWORK FOR DOMESTIC VIOLENCE:",
+            "",
+            "📋 Article 21 - Right to Life and Personal Dignity:",
+            "   • Fundamental right to live without violence and abuse",
+            "   • Protection from physical and mental torture",
+            "   • Right to safe and secure living environment",
+            "",
+            "📋 Article 14 - Right to Equality:",
+            "   • Equal protection under law regardless of gender",
+            "   • Non-discriminatory access to justice and remedies",
+            "",
+            "📋 Article 15 - Prohibition of Discrimination:",
+            "   • Special protection for women against gender-based violence",
+            "   • State obligation to prevent discrimination",
+            "",
+            "⚖️ SUPPORTING LEGAL FRAMEWORK:",
+            "   • Protection of Women from Domestic Violence Act, 2005",
+            "   • Indian Penal Code Sections 498A, 323, 324, 506",
+            "   • Criminal Procedure Code provisions for immediate relief"
+        ]
+        return "\\n".join(framework)
+
+    def _generate_property_rights_constitutional_basis(self) -> str:
+        """Generate constitutional basis for property/tenant rights"""
+
+        framework = [
+            "🏛️ CONSTITUTIONAL FRAMEWORK FOR PROPERTY RIGHTS:",
+            "",
+            "📋 Article 300A - Right to Property:",
+            "   • No person shall be deprived of property save by authority of law",
+            "   • Protection against arbitrary seizure of security deposits",
+            "   • Legal procedure required for any property deprivation",
+            "",
+            "📋 Article 21 - Right to Life:",
+            "   • Right to shelter as part of right to life",
+            "   • Protection against illegal eviction",
+            "   • Dignified living conditions",
+            "",
+            "📋 Article 19(1)(e) - Right to Reside:",
+            "   • Freedom to reside and settle in any part of India",
+            "   • Protection against forced displacement",
+            "",
+            "⚖️ SUPPORTING LEGAL FRAMEWORK:",
+            "   • Rent Control Acts (State-specific)",
+            "   • Transfer of Property Act, 1882",
+            "   • Consumer Protection Act, 2019"
+        ]
+        return "\\n".join(framework)
+
+    def _generate_employment_rights_constitutional_basis(self) -> str:
+        """Generate constitutional basis for employment rights"""
+
+        framework = [
+            "🏛️ CONSTITUTIONAL FRAMEWORK FOR EMPLOYMENT RIGHTS:",
+            "",
+            "📋 Article 19(1)(g) - Right to Practice Profession:",
+            "   • Fundamental right to carry on any occupation or trade",
+            "   • Protection against arbitrary termination",
+            "   • Right to fair working conditions",
+            "",
+            "📋 Article 23 - Prohibition of Forced Labour:",
+            "   • Protection against exploitation and unpaid work",
+            "   • Right to fair wages for work done",
+            "",
+            "📋 Article 14 - Right to Equality:",
+            "   • Equal pay for equal work",
+            "   • Non-discriminatory employment practices",
+            "",
+            "⚖️ SUPPORTING LEGAL FRAMEWORK:",
+            "   • Industrial Disputes Act, 1947",
+            "   • Minimum Wages Act, 1948",
+            "   • Payment of Wages Act, 1936",
+            "   • Labour Laws (various state and central acts)"
+        ]
+        return "\\n".join(framework)
+
+    def _generate_criminal_law_constitutional_basis(self) -> str:
+        """Generate constitutional basis for criminal law matters"""
+
+        framework = [
+            "🏛️ CONSTITUTIONAL FRAMEWORK FOR CRIMINAL MATTERS:",
+            "",
+            "📋 Article 21 - Right to Life and Personal Liberty:",
+            "   • Protection from harm to life and property",
+            "   • Right to security and safety",
+            "   • Due process in criminal proceedings",
+            "",
+            "📋 Article 20 - Protection in Respect of Conviction:",
+            "   • Protection against double jeopardy",
+            "   • Right against self-incrimination",
+            "   • Ex-post facto law protection",
+            "",
+            "📋 Article 22 - Protection Against Arrest:",
+            "   • Right to be informed of grounds of arrest",
+            "   • Right to legal representation",
+            "   • Protection against arbitrary detention",
+            "",
+            "⚖️ SUPPORTING LEGAL FRAMEWORK:",
+            "   • Indian Penal Code, 1860",
+            "   • Criminal Procedure Code, 1973",
+            "   • Indian Evidence Act, 1872"
+        ]
+        return "\\n".join(framework)
+
+    def _generate_constitutional_basis(self, articles: List[ConstitutionalArticle], domain: str, query: str = "") -> str:
         """Generate constitutional basis text for legal advice"""
-        
+
         if not articles:
             return "Constitutional provisions may apply to this matter. Consult legal expert for specific constitutional references."
-        
+
+        # Debug: Print what articles we're getting
+        print(f"DEBUG: Articles received: {[f'Article {a.article_number}' for a in articles]}")
+
+        # Provide specific constitutional frameworks for different query types
+        query_lower = query.lower()
+
+        # Workplace harassment
+        if any(word in query_lower for word in ['harassment', 'harassing', 'sexually harassing']):
+            if any(word in query_lower for word in ['work', 'workplace', 'coworker', 'colleague', 'office']):
+                return self._generate_workplace_harassment_constitutional_basis()
+
+        # Domestic violence
+        if any(word in query_lower for word in ['domestic violence', 'wife beating', 'husband abuse', 'beating me']):
+            return self._generate_domestic_violence_constitutional_basis()
+
+        # Property/tenant rights
+        if any(word in query_lower for word in ['landlord', 'deposit', 'rent', 'eviction', 'tenant']):
+            return self._generate_property_rights_constitutional_basis()
+
+        # Employment issues
+        if any(word in query_lower for word in ['fired', 'terminated', 'salary', 'wages', 'overtime']):
+            return self._generate_employment_rights_constitutional_basis()
+
+        # Criminal matters
+        if any(word in query_lower for word in ['stolen', 'theft', 'robbery', 'fraud', 'cheated']):
+            return self._generate_criminal_law_constitutional_basis()
+
         basis_parts = []
-        
+
         # Add domain-specific constitutional context
         domain_contexts = {
             'criminal law': "Under the Constitution, you have fundamental rights including protection from arbitrary arrest and fair trial guarantees.",
@@ -220,10 +500,10 @@ class ConstitutionalAdvisor:
             'elder abuse': "The Constitution's right to life and dignity extends special protection to vulnerable populations including elderly citizens.",
             'cyber crime': "Constitutional rights to privacy and freedom of expression apply to digital spaces and cyber crimes."
         }
-        
+
         if domain in domain_contexts:
             basis_parts.append(domain_contexts[domain])
-        
+
         # Add specific article references
         if len(articles) <= 2:
             for article in articles:

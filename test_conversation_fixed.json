@@ -1,0 +1,115 @@
+{
+  "conversations": [
+    {
+      "session_id": "conv_20250823_114826_a985fe28",
+      "start_time": "2025-08-23T11:48:26.470297",
+      "end_time": "2025-08-23T11:48:26.496543",
+      "turns": [
+        {
+          "turn_id": "conv_20250823_114826_a985fe28_turn_1",
+          "timestamp": "2025-08-23T11:48:26.471851",
+          "user_input": "my landlord is not returning my security deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.7592622139120313,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250823_114826_a985fe28",
+            "timestamp": "2025-08-23T11:48:26.470297",
+            "raw_query": "my landlord is not returning my security deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "🏛️ CONSTITUTIONAL FRAMEWORK FOR PROPERTY RIGHTS:\\n\\n📋 Article 300A - Right to Property:\\n   • No person shall be deprived of property save by authority of law\\n   • Protection against arbitrary seizure of security deposits\\n   • Legal procedure required for any property deprivation\\n\\n📋 Article 21 - Right to Life:\\n   • Right to shelter as part of right to life\\n   • Protection against illegal eviction\\n   • Dignified living conditions\\n\\n📋 Article 19(1)(e) - Right to Reside:\\n   • Freedom to reside and settle in any part of India\\n   • Protection against forced displacement\\n\\n⚖️ SUPPORTING LEGAL FRAMEWORK:\\n   • Rent Control Acts (State-specific)\\n   • Transfer of Property Act, 1882\\n   • Consumer Protection Act, 2019",
+            "constitutional_articles": [
+              {
+                "article_number": "300A",
+                "title": "Right to Property",
+                "summary": "No person shall be deprived of his property save by authority of law"
+              },
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              }
+            ]
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.6092622139120313,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250823_114826_a985fe28_turn_2",
+          "timestamp": "2025-08-23T11:48:26.496543",
+          "user_input": "what legal action can I take",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250823_114826_a985fe28",
+            "timestamp": "2025-08-23T11:48:26.495048",
+            "raw_query": "what legal action can I take",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "clarification",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.0,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250823_114826_a985fe28_turn_2",
+          "feedback_type": "clarification",
+          "confidence_change": -0.6092622139120313,
+          "timestamp": "2025-08-23T11:48:26.496543"
+        }
+      ],
+      "final_satisfaction": "satisfied",
+      "improvement_score": 0.0
+    }
+  ],
+  "learning_patterns": {
+    "acknowledgment_patterns": {},
+    "clarification_patterns": {},
+    "dissatisfaction_patterns": {}
+  },
+  "last_updated": "2025-08-23T11:48:26.496543"
+}

@@ -60,8 +60,8 @@ class MLDomainClassifier:
         )
         
         self.nb_classifier = MultinomialNB(alpha=0.1)
-        self.cosine_threshold = 0.15
-        self.confidence_threshold = 0.20
+        self.cosine_threshold = 0.05  # Lowered from 0.15
+        self.confidence_threshold = 0.05  # Lowered from 0.20 to fix "unknown" issue
         
         # Training data and models
         self.training_data = []
