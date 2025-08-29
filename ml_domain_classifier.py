@@ -60,8 +60,8 @@ class MLDomainClassifier:
         )
         
         self.nb_classifier = MultinomialNB(alpha=0.1)
-        self.cosine_threshold = 0.05  # Lowered from 0.15
-        self.confidence_threshold = 0.05  # Lowered from 0.20 to fix "unknown" issue
+        self.cosine_threshold = 0.001  # Emergency fix - was 0.01
+        self.confidence_threshold = 0.001  # Emergency fix - was 0.01
         
         # Training data and models
         self.training_data = []
@@ -76,7 +76,9 @@ class MLDomainClassifier:
         
         # Initialize system
         self.load_or_create_training_data()
-        self.load_or_train_models()
+        # Force retrain to ensure latest data is used
+        if not self.train_models():
+            self.load_or_train_models()
     
     def load_or_create_training_data(self):
         """Load existing training data or create comprehensive initial dataset"""
@@ -123,6 +125,23 @@ class MLDomainClassifier:
             {"text": "airline cancelled flight without proper compensation", "domain": "consumer_complaint"},
             {"text": "e-commerce platform not delivering ordered items", "domain": "consumer_complaint"},
             
+            # Defective Product Examples (Consumer Complaint)
+            {"text": "defective product", "domain": "consumer_complaint"},
+            {"text": "defective product need refund", "domain": "consumer_complaint"},
+            {"text": "bought defective product", "domain": "consumer_complaint"},
+            {"text": "product is defective", "domain": "consumer_complaint"},
+            {"text": "faulty product", "domain": "consumer_complaint"},
+            {"text": "faulty product need replacement", "domain": "consumer_complaint"},
+            {"text": "broken product", "domain": "consumer_complaint"},
+            {"text": "damaged product", "domain": "consumer_complaint"},
+            {"text": "product not working", "domain": "consumer_complaint"},
+            {"text": "product stopped working", "domain": "consumer_complaint"},
+            {"text": "manufacturing defect", "domain": "consumer_complaint"},
+            {"text": "product quality issue", "domain": "consumer_complaint"},
+            {"text": "poor product quality", "domain": "consumer_complaint"},
+            {"text": "substandard product", "domain": "consumer_complaint"},
+            {"text": "product warranty claim", "domain": "consumer_complaint"},
+            
             # Family Law (50+ examples)
             {"text": "want to file for divorce from my spouse", "domain": "family_law"},
             {"text": "child custody battle with ex-husband", "domain": "family_law"},
@@ -146,6 +165,38 @@ class MLDomainClassifier:
             {"text": "pregnancy discrimination and maternity leave", "domain": "employment_law"},
             {"text": "wage theft and unpaid salary issues", "domain": "employment_law"},
             {"text": "non-compete agreement restricting job opportunities", "domain": "employment_law"},
+            {"text": "employee discloses all company secrets to another company", "domain": "employment_law"},
+            {"text": "employee sharing confidential information with competitors", "domain": "employment_law"},
+            {"text": "breach of confidentiality agreement by employee", "domain": "employment_law"},
+            {"text": "employee violated non-disclosure agreement", "domain": "employment_law"},
+            {"text": "worker leaked trade secrets to rival company", "domain": "employment_law"},
+            {"text": "staff member disclosed proprietary information", "domain": "employment_law"},
+            {"text": "employee betrayed company trust by sharing secrets", "domain": "employment_law"},
+            {"text": "confidentiality breach by former employee", "domain": "employment_law"},
+            {"text": "employee revealed sensitive business information", "domain": "employment_law"},
+            {"text": "worker violated company confidentiality policy", "domain": "employment_law"},
+            
+            # Job Termination and Firing (Employment Law)
+            {"text": "I was fired from work", "domain": "employment_law"},
+            {"text": "I was fired from my job", "domain": "employment_law"},
+            {"text": "fired from work without reason", "domain": "employment_law"},
+            {"text": "fired from job unfairly", "domain": "employment_law"},
+            {"text": "got fired from work", "domain": "employment_law"},
+            {"text": "was fired from my job", "domain": "employment_law"},
+            {"text": "employer fired me", "domain": "employment_law"},
+            {"text": "boss fired me", "domain": "employment_law"},
+            {"text": "company fired me", "domain": "employment_law"},
+            {"text": "terminated from work", "domain": "employment_law"},
+            {"text": "terminated from job", "domain": "employment_law"},
+            {"text": "job termination", "domain": "employment_law"},
+            {"text": "work termination", "domain": "employment_law"},
+            {"text": "dismissed from work", "domain": "employment_law"},
+            {"text": "dismissed from job", "domain": "employment_law"},
+            {"text": "lost my job", "domain": "employment_law"},
+            {"text": "lost job unfairly", "domain": "employment_law"},
+            {"text": "sacked from work", "domain": "employment_law"},
+            {"text": "sacked from job", "domain": "employment_law"},
+            {"text": "removed from job", "domain": "employment_law"},
             
             # Contract Dispute (50+ examples)
             {"text": "other party breached our business contract agreement", "domain": "contract_dispute"},
@@ -183,6 +234,50 @@ class MLDomainClassifier:
             {"text": "juvenile criminal charges for minor", "domain": "criminal_law"},
             {"text": "appeal criminal conviction to higher court", "domain": "criminal_law"},
             
+            # Phone Theft and Physical Theft (Criminal Law)
+            {"text": "my phone is stolen", "domain": "criminal_law"},
+            {"text": "my phone was stolen", "domain": "criminal_law"},
+            {"text": "phone is stolen", "domain": "criminal_law"},
+            {"text": "phone was stolen", "domain": "criminal_law"},
+            {"text": "mobile is stolen", "domain": "criminal_law"},
+            {"text": "mobile was stolen", "domain": "criminal_law"},
+            {"text": "someone stole my phone", "domain": "criminal_law"},
+            {"text": "someone stole my mobile", "domain": "criminal_law"},
+            {"text": "phone stolen from me", "domain": "criminal_law"},
+            {"text": "mobile stolen from me", "domain": "criminal_law"},
+            {"text": "phone theft incident", "domain": "criminal_law"},
+            {"text": "mobile theft case", "domain": "criminal_law"},
+            {"text": "phone snatched by thief", "domain": "criminal_law"},
+            {"text": "mobile snatched in street", "domain": "criminal_law"},
+            {"text": "phone pickpocketed", "domain": "criminal_law"},
+            {"text": "mobile pickpocketed", "domain": "criminal_law"},
+            {"text": "phone stolen in market", "domain": "criminal_law"},
+            {"text": "mobile stolen in bus", "domain": "criminal_law"},
+            {"text": "phone stolen at station", "domain": "criminal_law"},
+            {"text": "mobile stolen from pocket", "domain": "criminal_law"},
+            {"text": "phone robbed by criminal", "domain": "criminal_law"},
+            {"text": "mobile robbed in street", "domain": "criminal_law"},
+            {"text": "phone burglary at home", "domain": "criminal_law"},
+            {"text": "mobile burglary incident", "domain": "criminal_law"},
+            {"text": "phone stolen need police help", "domain": "criminal_law"},
+            {"text": "mobile stolen file complaint", "domain": "criminal_law"},
+            {"text": "phone theft police case", "domain": "criminal_law"},
+            {"text": "mobile theft FIR filing", "domain": "criminal_law"},
+            {"text": "stolen phone recovery", "domain": "criminal_law"},
+            {"text": "stolen mobile tracking", "domain": "criminal_law"},
+            
+            # Other Physical Theft (Criminal Law)
+            {"text": "wallet stolen from me", "domain": "criminal_law"},
+            {"text": "purse snatched by thief", "domain": "criminal_law"},
+            {"text": "bag stolen in public", "domain": "criminal_law"},
+            {"text": "laptop stolen from office", "domain": "criminal_law"},
+            {"text": "jewelry stolen from home", "domain": "criminal_law"},
+            {"text": "car stolen from parking", "domain": "criminal_law"},
+            {"text": "bike stolen near station", "domain": "criminal_law"},
+            {"text": "money stolen from account", "domain": "criminal_law"},
+            {"text": "documents stolen by thief", "domain": "criminal_law"},
+            {"text": "belongings stolen during travel", "domain": "criminal_law"},
+            
             # Immigration Law (50+ examples)
             {"text": "visa application denied need legal help", "domain": "immigration_law"},
             {"text": "green card process and permanent residency", "domain": "immigration_law"},
@@ -194,6 +289,50 @@ class MLDomainClassifier:
             {"text": "student visa and educational immigration", "domain": "immigration_law"},
             {"text": "immigration court hearing and representation", "domain": "immigration_law"},
             {"text": "overstayed visa and legal consequences", "domain": "immigration_law"},
+            
+            # Passport Expiry and Renewal (Immigration Law)
+            {"text": "my passport is expired", "domain": "immigration_law"},
+            {"text": "passport is expired", "domain": "immigration_law"},
+            {"text": "passport expired", "domain": "immigration_law"},
+            {"text": "passport has expired", "domain": "immigration_law"},
+            {"text": "expired passport", "domain": "immigration_law"},
+            {"text": "passport expiry", "domain": "immigration_law"},
+            {"text": "passport renewal", "domain": "immigration_law"},
+            {"text": "renew passport", "domain": "immigration_law"},
+            {"text": "passport renewal process", "domain": "immigration_law"},
+            {"text": "need to renew passport", "domain": "immigration_law"},
+            {"text": "passport renewal application", "domain": "immigration_law"},
+            {"text": "passport renewal documents", "domain": "immigration_law"},
+            {"text": "passport renewal fees", "domain": "immigration_law"},
+            {"text": "passport renewal urgent", "domain": "immigration_law"},
+            {"text": "passport renewal tatkal", "domain": "immigration_law"},
+            {"text": "passport office", "domain": "immigration_law"},
+            {"text": "passport seva kendra", "domain": "immigration_law"},
+            {"text": "passport application", "domain": "immigration_law"},
+            {"text": "new passport", "domain": "immigration_law"},
+            {"text": "fresh passport", "domain": "immigration_law"},
+            {"text": "passport validity", "domain": "immigration_law"},
+            {"text": "passport validity expired", "domain": "immigration_law"},
+            {"text": "passport extension", "domain": "immigration_law"},
+            {"text": "passport reissue", "domain": "immigration_law"},
+            {"text": "passport replacement", "domain": "immigration_law"},
+            
+            # Visa Expiry and Related (Immigration Law)
+            {"text": "my visa is expired", "domain": "immigration_law"},
+            {"text": "visa is expired", "domain": "immigration_law"},
+            {"text": "visa expired", "domain": "immigration_law"},
+            {"text": "visa has expired", "domain": "immigration_law"},
+            {"text": "expired visa", "domain": "immigration_law"},
+            {"text": "visa expiry", "domain": "immigration_law"},
+            {"text": "visa renewal", "domain": "immigration_law"},
+            {"text": "renew visa", "domain": "immigration_law"},
+            {"text": "visa extension", "domain": "immigration_law"},
+            {"text": "extend visa", "domain": "immigration_law"},
+            {"text": "visa validity", "domain": "immigration_law"},
+            {"text": "visa validity expired", "domain": "immigration_law"},
+            {"text": "visa overstay", "domain": "immigration_law"},
+            {"text": "overstayed visa", "domain": "immigration_law"},
+            {"text": "visa violation", "domain": "immigration_law"},
             
             # Elder Abuse (50+ examples)
             {"text": "elderly parent being abused in nursing home", "domain": "elder_abuse"},
@@ -209,6 +348,20 @@ class MLDomainClassifier:
             
             # Cyber Crime (50+ examples)
             {"text": "phone being hacked and privacy violated", "domain": "cyber_crime"},
+            {"text": "my phone is being hacked", "domain": "cyber_crime"},
+            {"text": "phone is being hacked", "domain": "cyber_crime"},
+            {"text": "someone is hacking my phone", "domain": "cyber_crime"},
+            {"text": "phone hacked by cybercriminal", "domain": "cyber_crime"},
+            {"text": "phone hacked remotely", "domain": "cyber_crime"},
+            {"text": "mobile being hacked", "domain": "cyber_crime"},
+            {"text": "mobile is being hacked", "domain": "cyber_crime"},
+            {"text": "someone hacked my mobile", "domain": "cyber_crime"},
+            {"text": "phone hacking incident", "domain": "cyber_crime"},
+            {"text": "mobile hacking case", "domain": "cyber_crime"},
+            {"text": "phone data hacked", "domain": "cyber_crime"},
+            {"text": "mobile data compromised", "domain": "cyber_crime"},
+            {"text": "phone privacy violated online", "domain": "cyber_crime"},
+            {"text": "mobile security breached", "domain": "cyber_crime"},
             {"text": "identity theft and online fraud", "domain": "cyber_crime"},
             {"text": "cyberbullying and online harassment", "domain": "cyber_crime"},
             {"text": "computer virus and malware attack", "domain": "cyber_crime"},

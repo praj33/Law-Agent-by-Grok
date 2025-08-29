@@ -106,7 +106,7 @@ Success rate (estimated): {self._estimate_success_rate(domain)}%"""
         # Step 3: User-Friendly Answer with Constitutional Articles
         domain_desc = self.domain_descriptions.get(domain, domain.title())
         
-        # Constitutional articles section
+        # Constitutional articles section - RESTORED with enhanced confidence display
         constitutional_section = ""
         if constitutional_analysis and constitutional_analysis.get('matching_articles', 0) > 0:
             constitutional_section = f"\n\n🏛️ RELEVANT CONSTITUTIONAL ARTICLES:\n"
@@ -119,10 +119,7 @@ Success rate (estimated): {self._estimate_success_rate(domain)}%"""
    🔍 Keywords: {', '.join(rec['matching_keywords'][:3])}
    💡 {rec['match_reasons'][0] if rec['match_reasons'] else 'Relevant to query'}"""
             
-            constitutional_section += f"\n\n📊 Constitutional Analysis Summary:"
-            constitutional_section += f"\n   • Total Articles Searched: {constitutional_analysis['total_articles_searched']}"
-            constitutional_section += f"\n   • Matching Articles Found: {constitutional_analysis['matching_articles']}"
-            constitutional_section += f"\n   • Top Match Confidence: {constitutional_analysis['confidence_summary']['top_match_confidence']}%"
+            # Constitutional Analysis Summary section removed as requested
         
         step3 = f"""🔹 Step 3: User-Friendly Answer (final output to user)
 
@@ -202,7 +199,14 @@ Success rate (estimated): {self._estimate_success_rate(domain)}%"""
     def _format_legal_steps(self, domain: str, response: LegalAgentResponse) -> str:
         """Format legal steps based on domain"""
         if hasattr(response, 'process_steps') and response.process_steps:
-            return '\n'.join([f"{i+1}. {step}" for i, step in enumerate(response.process_steps)])
+            # Check if process_steps already contain numbers
+            first_step = response.process_steps[0].strip() if response.process_steps else ""
+            if first_step and (first_step[0].isdigit() or first_step.startswith(('1.', '2.', '3.'))):
+                # Steps are already numbered, return as-is
+                return '\n'.join(response.process_steps)
+            else:
+                # Steps need numbering
+                return '\n'.join([f"{i+1}. {step}" for i, step in enumerate(response.process_steps)])
         
         # Default steps by domain
         default_steps = {
@@ -289,7 +293,7 @@ Success rate (estimated): {self._estimate_success_rate(domain)}%"""
         constitutional_ref = "Your fundamental rights are protected by the Constitution of India."
         if constitutional_analysis and constitutional_analysis.get('recommendations'):
             top_article = constitutional_analysis['recommendations'][0]
-            constitutional_ref = f"Your fundamental rights are protected by Article {top_article['article_number']} and other constitutional provisions."
+            constitutional_ref = f"Your fundamental rights are protected by Article {top_article['article_number']} ({top_article['confidence_percentage']}% confidence) and other constitutional provisions."
         
         return f"Your query about '{query}' is {action} {constitutional_ref}"
 

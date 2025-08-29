@@ -80,6 +80,66 @@
     "domain": "consumer_complaint"
   },
   {
+    "text": "defective product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "defective product need refund",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "bought defective product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "product is defective",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "faulty product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "faulty product need replacement",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "broken product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "damaged product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "product not working",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "product stopped working",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "manufacturing defect",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "product quality issue",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "poor product quality",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "substandard product",
+    "domain": "consumer_complaint"
+  },
+  {
+    "text": "product warranty claim",
+    "domain": "consumer_complaint"
+  },
+  {
     "text": "want to file for divorce from my spouse",
     "domain": "family_law"
   },
@@ -157,6 +217,126 @@
   },
   {
     "text": "non-compete agreement restricting job opportunities",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employee discloses all company secrets to another company",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employee sharing confidential information with competitors",
+    "domain": "employment_law"
+  },
+  {
+    "text": "breach of confidentiality agreement by employee",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employee violated non-disclosure agreement",
+    "domain": "employment_law"
+  },
+  {
+    "text": "worker leaked trade secrets to rival company",
+    "domain": "employment_law"
+  },
+  {
+    "text": "staff member disclosed proprietary information",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employee betrayed company trust by sharing secrets",
+    "domain": "employment_law"
+  },
+  {
+    "text": "confidentiality breach by former employee",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employee revealed sensitive business information",
+    "domain": "employment_law"
+  },
+  {
+    "text": "worker violated company confidentiality policy",
+    "domain": "employment_law"
+  },
+  {
+    "text": "I was fired from work",
+    "domain": "employment_law"
+  },
+  {
+    "text": "I was fired from my job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "fired from work without reason",
+    "domain": "employment_law"
+  },
+  {
+    "text": "fired from job unfairly",
+    "domain": "employment_law"
+  },
+  {
+    "text": "got fired from work",
+    "domain": "employment_law"
+  },
+  {
+    "text": "was fired from my job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "employer fired me",
+    "domain": "employment_law"
+  },
+  {
+    "text": "boss fired me",
+    "domain": "employment_law"
+  },
+  {
+    "text": "company fired me",
+    "domain": "employment_law"
+  },
+  {
+    "text": "terminated from work",
+    "domain": "employment_law"
+  },
+  {
+    "text": "terminated from job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "job termination",
+    "domain": "employment_law"
+  },
+  {
+    "text": "work termination",
+    "domain": "employment_law"
+  },
+  {
+    "text": "dismissed from work",
+    "domain": "employment_law"
+  },
+  {
+    "text": "dismissed from job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "lost my job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "lost job unfairly",
+    "domain": "employment_law"
+  },
+  {
+    "text": "sacked from work",
+    "domain": "employment_law"
+  },
+  {
+    "text": "sacked from job",
+    "domain": "employment_law"
+  },
+  {
+    "text": "removed from job",
     "domain": "employment_law"
   },
   {
@@ -280,6 +460,166 @@
     "domain": "criminal_law"
   },
   {
+    "text": "my phone is stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my phone was stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone is stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone was stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile is stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile was stolen",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone stole my phone",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone stole my mobile",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone stolen from me",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile stolen from me",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone theft incident",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile theft case",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone snatched by thief",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile snatched in street",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone pickpocketed",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile pickpocketed",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone stolen in market",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile stolen in bus",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone stolen at station",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile stolen from pocket",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone robbed by criminal",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile robbed in street",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone burglary at home",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile burglary incident",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone stolen need police help",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile stolen file complaint",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "phone theft police case",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "mobile theft FIR filing",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "stolen phone recovery",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "stolen mobile tracking",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "wallet stolen from me",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "purse snatched by thief",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "bag stolen in public",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "laptop stolen from office",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "jewelry stolen from home",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "car stolen from parking",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "bike stolen near station",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "money stolen from account",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "documents stolen by thief",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "belongings stolen during travel",
+    "domain": "criminal_law"
+  },
+  {
     "text": "visa application denied need legal help",
     "domain": "immigration_law"
   },
@@ -317,6 +657,166 @@
   },
   {
     "text": "overstayed visa and legal consequences",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "my passport is expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport is expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport has expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "expired passport",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport expiry",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "renew passport",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal process",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "need to renew passport",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal application",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal documents",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal fees",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal urgent",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport renewal tatkal",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport office",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport seva kendra",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport application",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "new passport",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "fresh passport",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport validity",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport validity expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport extension",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport reissue",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "passport replacement",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "my visa is expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa is expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa has expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "expired visa",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa expiry",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa renewal",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "renew visa",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa extension",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "extend visa",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa validity",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa validity expired",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa overstay",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "overstayed visa",
+    "domain": "immigration_law"
+  },
+  {
+    "text": "visa violation",
     "domain": "immigration_law"
   },
   {
@@ -361,6 +861,62 @@
   },
   {
     "text": "phone being hacked and privacy violated",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "my phone is being hacked",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone is being hacked",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "someone is hacking my phone",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone hacked by cybercriminal",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone hacked remotely",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "mobile being hacked",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "mobile is being hacked",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "someone hacked my mobile",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone hacking incident",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "mobile hacking case",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone data hacked",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "mobile data compromised",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "phone privacy violated online",
+    "domain": "cyber_crime"
+  },
+  {
+    "text": "mobile security breached",
     "domain": "cyber_crime"
   },
   {
@@ -418,273 +974,5 @@
   {
     "text": "revenge porn and image abuse",
     "domain": "cyber_crime"
-  },
-  {
-    "text": "my neighbor is harassing me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor girl is being harassed",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor constantly bothering me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor making inappropriate comments",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor threatening me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor stalking me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "neighbor disturbing peace",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "someone is sexually harassing me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "being sexually harassed at work",
-    "domain": "employment_law"
-  },
-  {
-    "text": "boss making sexual advances",
-    "domain": "employment_law"
-  },
-  {
-    "text": "colleague touching inappropriately",
-    "domain": "employment_law"
-  },
-  {
-    "text": "supervisor asking for sexual favors",
-    "domain": "employment_law"
-  },
-  {
-    "text": "workplace sexual harassment",
-    "domain": "employment_law"
-  },
-  {
-    "text": "eve teasing on street",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "stranger following me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "someone harassing me online",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "being cyberbullied on social media",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "receiving threatening messages online",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "someone stalking me on internet",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "fake profiles created to harass me",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "online harassment and threats",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "cyberstalking and online abuse",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "husband harassing me",
-    "domain": "family_law"
-  },
-  {
-    "text": "in-laws harassing for dowry",
-    "domain": "family_law"
-  },
-  {
-    "text": "domestic harassment by spouse",
-    "domain": "family_law"
-  },
-  {
-    "text": "family members threatening me",
-    "domain": "family_law"
-  },
-  {
-    "text": "emotional abuse by husband",
-    "domain": "family_law"
-  },
-  {
-    "text": "wife constantly harassing me",
-    "domain": "family_law"
-  },
-  {
-    "text": "harassment in public transport",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "being harassed on street",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "public harassment and catcalling",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "harassment in market place",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "stranger harassing me in public",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "landlord harassing me",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "property owner threatening tenant",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "harassment by building society",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "neighbor harassing about property",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "company representatives harassing me",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "debt collectors harassing me",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "service provider threatening me",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "elderly person being harassed",
-    "domain": "elder_abuse"
-  },
-  {
-    "text": "harassment of senior citizen",
-    "domain": "elder_abuse"
-  },
-  {
-    "text": "old person being threatened",
-    "domain": "elder_abuse"
-  },
-  {
-    "text": "constant harassment and threats",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "psychological harassment",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "verbal harassment and abuse",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "intimidation and harassment",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "harassment causing mental trauma",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "property boundary dispute with neighbor",
-    "domain": "contract_dispute"
-  },
-  {
-    "text": "land grabbing by neighbor",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "illegal construction by neighbor",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "neighbor making too much noise",
-    "domain": "tenant_rights"
-  },
-  {
-    "text": "loud music disturbing peace",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "boyfriend threatening to share photos",
-    "domain": "cyber_crime"
-  },
-  {
-    "text": "ex-girlfriend blackmailing me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "relationship dispute and threats",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "money lender harassing for payment",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "bank officials threatening me",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "loan recovery agents harassing",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "teacher harassing student",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "college ragging and harassment",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "school bullying and threats",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "doctor behaving inappropriately",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "hospital staff harassing patient",
-    "domain": "consumer_complaint"
-  },
-  {
-    "text": "auto driver harassing me",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "cab driver inappropriate behavior",
-    "domain": "criminal_law"
-  },
-  {
-    "text": "public transport harassment",
-    "domain": "criminal_law"
   }
 ]

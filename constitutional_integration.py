@@ -1,6 +1,6 @@
 """
-Constitutional Articles Integration Module
-=========================================
+Constitutional Articles Integration Module - Enhanced
+=====================================================
 
 This module integrates Indian Constitutional articles with the Legal Agent system
 to provide constitutional backing for legal advice and enhance system credibility.
@@ -8,12 +8,13 @@ to provide constitutional backing for legal advice and enhance system credibilit
 Features:
 - Constitutional article search and retrieval
 - Domain-specific constitutional references
-- Article-based legal precedent support
-- Enhanced legal advice with constitutional backing
+- Enhanced legal backing with proper legal acts
+- Production-grade legal references without misleading confidence percentages
+- Proper constitutional articles based on legal context
 
 Author: Legal Agent Team
-Version: 4.0.0 - Constitutional Integration
-Date: 2025-07-22
+Version: 5.0.0 - Enhanced Legal Backing
+Date: 2025-08-28
 """
 
 import json
@@ -22,6 +23,22 @@ from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass
 import logging
 from pathlib import Path
+
+# Import enhanced legal backing system
+try:
+    from enhanced_legal_backing import create_enhanced_legal_backing_system, EnhancedLegalBacking
+    ENHANCED_BACKING_AVAILABLE = True
+except ImportError:
+    ENHANCED_BACKING_AVAILABLE = False
+    print("Enhanced legal backing not available, using basic system")
+
+# Import existing constitutional matcher for fallback
+try:
+    from constitutional_article_matcher import get_constitutional_articles_with_confidence
+    CONSTITUTIONAL_MATCHER_AVAILABLE = True
+except ImportError:
+    CONSTITUTIONAL_MATCHER_AVAILABLE = False
+    print("Constitutional matcher not available")
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -173,15 +190,85 @@ class ConstitutionalDatabase:
 
 
 class ConstitutionalAdvisor:
-    """Provides constitutional backing for legal advice"""
+    """Provides enhanced constitutional backing for legal advice with proper legal acts"""
     
     def __init__(self, articles_file: str = "article.json"):
-        """Initialize constitutional advisor"""
+        """Initialize constitutional advisor with enhanced backing"""
         self.db = ConstitutionalDatabase(articles_file)
+        
+        # Initialize enhanced legal backing system if available
+        if ENHANCED_BACKING_AVAILABLE:
+            self.enhanced_backing = create_enhanced_legal_backing_system()
+            self.use_enhanced = True
+            logger.info("Enhanced legal backing system initialized")
+        else:
+            self.enhanced_backing = None
+            self.use_enhanced = False
+            logger.warning("Enhanced legal backing not available, using basic system")
     
     def get_constitutional_backing(self, domain: str, query: str) -> Dict[str, Any]:
-        """Get constitutional articles relevant to a legal query with specific subcategory mapping"""
-
+        """Get enhanced constitutional backing with proper legal acts and constitutional articles"""
+        
+        if self.use_enhanced:
+            return self._get_enhanced_backing(domain, query)
+        else:
+            return self._get_basic_backing(domain, query)
+    
+    def _get_enhanced_backing(self, domain: str, query: str) -> Dict[str, Any]:
+        """Get enhanced legal backing with proper legal acts"""
+        
+        try:
+            # Get comprehensive legal backing
+            enhanced_backing = self.enhanced_backing.get_enhanced_legal_backing(domain, query)
+            
+            # Convert to expected format for compatibility
+            articles_detailed = []
+            for article in enhanced_backing.constitutional_articles:
+                articles_detailed.append({
+                    'article_number': article.article_number,
+                    'title': article.title,
+                    'content_summary': article.relevance_reason,
+                    'is_primary': article.is_primary,
+                    'relevance_type': 'PRIMARY' if article.is_primary else 'SUPPORTING'
+                })
+            
+            # Format legal acts for display
+            legal_acts_formatted = []
+            for act in enhanced_backing.legal_acts:
+                legal_acts_formatted.append({
+                    'act_name': act.act_name,
+                    'sections': act.sections,
+                    'description': act.description,
+                    'relevance_reason': act.relevance_reason
+                })
+            
+            # Generate enhanced constitutional basis
+            constitutional_basis = self._generate_enhanced_basis(
+                enhanced_backing.constitutional_articles,
+                enhanced_backing.legal_acts,
+                enhanced_backing.primary_laws,
+                domain
+            )
+            
+            return {
+                'relevant_articles': [],  # Keep for compatibility
+                'articles': articles_detailed,
+                'legal_acts': legal_acts_formatted,
+                'primary_laws': enhanced_backing.primary_laws,
+                'constitutional_basis': constitutional_basis,
+                'article_count': len(articles_detailed),
+                'domain': domain,
+                'enhanced_backing': enhanced_backing,
+                'backing_summary': enhanced_backing.backing_summary
+            }
+            
+        except Exception as e:
+            logger.error(f"Enhanced backing failed: {e}")
+            return self._get_basic_backing(domain, query)
+    
+    def _get_basic_backing(self, domain: str, query: str) -> Dict[str, Any]:
+        """Fallback to basic constitutional backing"""
+        
         # Get specific constitutional articles based on query type
         specific_articles = self._get_specific_constitutional_articles(domain, query)
 
@@ -208,13 +295,63 @@ class ConstitutionalAdvisor:
 
         relevant_articles = list(unique_articles.values())[:5]  # Limit to top 5
 
+        # Build articles without misleading confidence percentages
+        articles_detailed = []
+        for article in relevant_articles[:3]:
+            articles_detailed.append({
+                'article_number': article.article_number,
+                'title': article.clean_title,
+                'content_summary': article.summary or 'Constitutional article',
+                'relevance_type': 'RELEVANT'
+            })
+
+        # Generate base constitutional basis text (domain/context specific)
+        base_text = self._generate_constitutional_basis(relevant_articles, domain, query)
+
         return {
             'relevant_articles': relevant_articles,
-            'constitutional_basis': self._generate_constitutional_basis(relevant_articles, domain, query),
+            'articles': articles_detailed,
+            'constitutional_basis': base_text.strip(),
             'article_count': len(relevant_articles),
             'domain': domain,
             'specific_articles': [f"Article {art.article_number}" for art in specific_articles[:3]]
         }
+    
+    def _generate_enhanced_basis(self, articles, legal_acts, primary_laws, domain) -> str:
+        """Generate enhanced constitutional basis with legal acts"""
+        
+        parts = []
+        
+        # Constitutional foundation
+        if articles:
+            primary_articles = [art for art in articles if art.is_primary]
+            if primary_articles:
+                primary_nums = [f"Article {art.article_number}" for art in primary_articles]
+                parts.append(f"Constitutional foundation: {', '.join(primary_nums)} provide fundamental rights protection.")
+        
+        # Legal framework
+        if primary_laws:
+            parts.append(f"Primary legal framework: {', '.join(primary_laws)} govern this matter.")
+        
+        # Specific legal provisions
+        if legal_acts:
+            act_names = [act.act_name for act in legal_acts]
+            parts.append(f"Specific provisions under {', '.join(act_names[:2])} apply directly.")
+        
+        # Domain-specific guidance
+        domain_guidance = {
+            'cyber_crime': 'IT Act 2000 provides comprehensive framework for cyber offences.',
+            'employment_law': 'Employment matters governed by contract law and labor legislation.',
+            'tenant_rights': 'Tenant protection under state Rent Control Acts.',
+            'consumer_complaint': 'Consumer Protection Act 2019 provides dispute resolution.',
+            'family_law': 'Family matters under personal laws and constitutional equality.',
+            'criminal_law': 'Criminal justice ensures due process and constitutional safeguards.'
+        }
+        
+        if domain.lower() in domain_guidance:
+            parts.append(domain_guidance[domain.lower()])
+        
+        return ' '.join(parts)
 
     def _get_specific_constitutional_articles(self, domain: str, query: str) -> List[ConstitutionalArticle]:
         """Get specific constitutional articles based on query subcategory"""
@@ -245,9 +382,9 @@ class ConstitutionalAdvisor:
             'maintenance': ['Article 21', 'Article 300A'],  # Life, property
 
             # Cyber Crime specific mappings
-            'online_fraud': ['Article 21', 'Article 19', 'Article 14'],  # Privacy, expression, equality
-            'hacking': ['Article 21', 'Article 19'],  # Privacy, information
-            'cyberbullying': ['Article 21', 'Article 19', 'Article 14'],  # Dignity, expression, equality
+            'online_fraud': ['Article 19', 'Article 21', 'Article 300A'],  # Expression, privacy, property
+            'hacking': ['Article 19', 'Article 21', 'Article 300A'],  # Communication, privacy, digital property
+            'cyberbullying': ['Article 19', 'Article 21', 'Article 300A'],  # Expression, dignity, digital property
         }
 
         # Find matching articles with better keyword matching
@@ -273,7 +410,7 @@ class ConstitutionalAdvisor:
                 'criminal_law': ['Article 21', 'Article 14', 'Article 20'],
                 'family_law': ['Article 21', 'Article 25', 'Article 14'],
                 'tenant_rights': ['Article 300A', 'Article 21', 'Article 19'],
-                'cyber_crime': ['Article 21', 'Article 19', 'Article 14'],
+                'cyber_crime': ['Article 19', 'Article 21', 'Article 300A'],
                 'consumer_complaint': ['Article 21', 'Article 14', 'Article 19']
             }
             relevant_article_numbers = domain_defaults.get(domain, ['Article 21', 'Article 14'])
@@ -462,8 +599,8 @@ class ConstitutionalAdvisor:
         if not articles:
             return "Constitutional provisions may apply to this matter. Consult legal expert for specific constitutional references."
 
-        # Debug: Print what articles we're getting
-        print(f"DEBUG: Articles received: {[f'Article {a.article_number}' for a in articles]}")
+        # Debug: Print what articles we're getting from our enhanced matcher
+        # print(f"DEBUG: Articles received: {[f'Article {a.article_number}' for a in articles]}")
 
         # Provide specific constitutional frameworks for different query types
         query_lower = query.lower()
@@ -511,9 +648,7 @@ class ConstitutionalAdvisor:
                     basis_parts.append(f"Article {article.article_number}: {article.summary}")
                 else:
                     basis_parts.append(f"Article {article.article_number}: {article.clean_title}")
-        else:
-            article_numbers = [f"Article {a.article_number}" for a in articles[:3]]
-            basis_parts.append(f"Relevant constitutional provisions include {', '.join(article_numbers)}.")
+        # Note: Removed the line that says "Relevant constitutional provisions include..." as per user request
         
         return " ".join(basis_parts)
     

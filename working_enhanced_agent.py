@@ -76,7 +76,7 @@ except ImportError as e:
 
 @dataclass
 class SimpleEnhancedResponse:
-    """Simplified enhanced response"""
+    """Simplified enhanced response with constitutional articles"""
     session_id: str
     timestamp: str
     user_query: str
@@ -87,6 +87,7 @@ class SimpleEnhancedResponse:
     success_rate: float
     process_steps: List[str] = None
     constitutional_backing: Optional[str] = None
+    constitutional_articles: Optional[List[Dict]] = None
     response_time: float = 0.0
 
 
@@ -214,20 +215,22 @@ class WorkingEnhancedAgent:
         session_id = self.generate_session_id()
         self.session_count += 1
         
+        # Normalize query text for better classification
+        normalized_query = self.normalize_query_text(user_query)
+        
         safe_print(f"\nProcessing query {session_id}: {user_query[:50]}...")
+        if normalized_query != user_query.lower():
+            safe_print(f"Text normalized: '{user_query}' → '{normalized_query}'")
 
         # Step 1: Domain classification with smart unknown handling
         if self.ml_available:
             try:
-                domain, confidence, alternatives = self.ml_classifier.classify_with_confidence(user_query)
+                domain, confidence, alternatives = self.ml_classifier.classify_with_confidence(normalized_query)
 
-                # Enhanced analysis for better classification
-                enhanced_domain, enhanced_confidence = self.enhanced_unknown_analysis(user_query, alternatives)
-
-                # Use enhanced analysis if it provides better classification
-                if (domain == "unknown" or confidence < 0.15 or
-                    self._should_override_ml_classification(user_query, domain, enhanced_domain)):
-                    if enhanced_confidence > confidence or enhanced_domain != domain:
+                # Trust ML classifier results - only use enhanced analysis as absolute last resort
+                if domain == "unknown" and confidence < 0.001:
+                    enhanced_domain, enhanced_confidence = self.enhanced_unknown_analysis(normalized_query, alternatives)
+                    if enhanced_confidence > 0.1:  # Only if enhanced analysis is confident
                         domain, confidence = enhanced_domain, enhanced_confidence
 
                         # Get detailed classification
@@ -256,7 +259,7 @@ class WorkingEnhancedAgent:
                 safe_print(f"Dataset Route: {detailed_info['specific_route']}, success rate: {detailed_info['success_rate']}")
         else:
             # Fallback classification
-            domain, confidence = self.fallback_classification(user_query)
+            domain, confidence = self.fallback_classification(normalized_query)
             detailed_info = self.get_detailed_classification(user_query, domain, confidence)
             safe_print(f"{domain.replace('_', ' ').title()} → {detailed_info['subcategory']}")
             safe_print(f"Fallback Classification: {domain} (confidence: {confidence:.3f})")
@@ -277,12 +280,32 @@ class WorkingEnhancedAgent:
             # Enhanced fallback route based on query analysis
             legal_route, timeline, success_rate = self.generate_enhanced_fallback_route(domain, user_query)
         
-        # Step 3: Constitutional backing
+        # Step 3: Constitutional backing with detailed articles
         constitutional_backing = None
+        constitutional_articles = []
         if self.constitutional_available and domain != 'unknown':
             try:
                 constitutional_info = self.constitutional_advisor.get_constitutional_backing(domain, user_query)
                 constitutional_backing = constitutional_info.get('constitutional_basis')
+                
+                # Get detailed articles with confidence percentages from the constitutional_info
+                articles_detailed = constitutional_info.get('articles', [])
+                if articles_detailed:
+                    # Transform to expected format for display
+                    constitutional_articles = []
+                    for article in articles_detailed[:3]:  # Top 3 articles
+                        constitutional_articles.append({
+                            'article_number': article.get('article_number'),
+                            'title': article.get('title'), 
+                            'summary': article.get('content_summary'),
+                            'confidence_percentage': article.get('confidence_percentage', 0),
+                            'matching_keywords': article.get('matching_keywords', []),
+                            'relevance_score': article.get('relevance_score', 0)
+                        })
+                    
+                    article_names = [f"Article {art['article_number']}" for art in constitutional_articles]
+                    safe_print(f"DEBUG: Articles received: {article_names}")
+                
                 if constitutional_backing:
                     safe_print(f"Constitutional backing provided")
             except Exception as e:
@@ -308,25 +331,98 @@ class WorkingEnhancedAgent:
             success_rate=success_rate,
             process_steps=process_steps,
             constitutional_backing=constitutional_backing,
+            constitutional_articles=constitutional_articles,
             response_time=response_time
         )
 
         safe_print(f"Query processed in {response_time:.2f}s")
         return response
     
-    def fallback_classification(self, user_query: str) -> Tuple[str, float]:
-        """Enhanced fallback classification using improved keywords"""
+    def normalize_query_text(self, query: str) -> str:
+        """Normalize query text by correcting common spelling errors and standardizing terms"""
         
-        query_lower = user_query.lower()
+        # Common spelling corrections for legal terms
+        spelling_corrections = {
+            'hijaced': 'hijacked',
+            'proprety': 'property',
+            'propery': 'property',
+            'posession': 'possession',
+            'encroachement': 'encroachment',
+            'employement': 'employment',
+            'harasment': 'harassment',
+            'divorse': 'divorce',
+            'seperaton': 'separation',
+            'cybercrime': 'cyber crime',
+            'cybersecurity': 'cyber security'
+        }
+        
+        normalized_query = query.lower()
+        
+        # Apply spelling corrections
+        for incorrect, correct in spelling_corrections.items():
+            normalized_query = normalized_query.replace(incorrect, correct)
+        
+        return normalized_query
+    
+    def get_subcategory_for_domain(self, domain: str, query: str) -> str:
+        """Get specific subcategory based on domain and query content"""
+        
+        query_lower = query.lower()
+        
+        subcategory_mapping = {
+            'property_disputes': {
+                'illegal_possession': ['hijacked', 'grabbed', 'possession', 'takeover', 'occupied', 'encroachment'],
+                'property_hijacking': ['hijacked', 'misappropriation', 'grabbed', 'stolen property'],
+                'landlord_tenant': ['landlord', 'tenant', 'rent', 'lease'],
+                'inheritance': ['inheritance', 'will', 'succession', 'heir']
+            },
+            'cyber_crime': {
+                'hacking_data_breach': ['hacked', 'hack', 'data breach', 'unauthorized access'],
+                'online_fraud': ['online fraud', 'phishing', 'scam', 'fake website'],
+                'identity_theft': ['identity theft', 'stolen identity', 'personal data']
+            },
+            'employment_law': {
+                'workplace_harassment': ['harassment', 'sexual harassment', 'bullying'],
+                'wrongful_termination': ['fired', 'termination', 'dismissed'],
+                'wage_disputes': ['overtime', 'salary', 'pay', 'wages']
+            }
+        }
+        
+        if domain in subcategory_mapping:
+            domain_subcategories = subcategory_mapping[domain]
+            
+            # Find the best matching subcategory
+            best_subcategory = 'general'
+            best_score = 0
+            
+            for subcategory, keywords in domain_subcategories.items():
+                score = sum(1 for keyword in keywords if keyword in query_lower)
+                if score > best_score:
+                    best_score = score
+                    best_subcategory = subcategory
+            
+            return best_subcategory
+        
+        return 'general'
+
+    def fallback_classification(self, user_query: str) -> Tuple[str, float]:
+        """Enhanced fallback classification using improved keywords with spelling correction"""
+        
+        # Normalize the query text first
+        normalized_query = self.normalize_query_text(user_query)
+        query_lower = normalized_query.lower()
+        
+        safe_print(f"Normalized query: '{user_query}' → '{normalized_query}'") if normalized_query != user_query.lower() else None
         
         # Enhanced keyword-based classification with more patterns
         domain_keywords = {
+            'property_disputes': ['property', 'land', 'house', 'flat', 'ownership', 'encroachment', 'hijacked', 'hijaced', 'grabbed', 'possession', 'takeover', 'occupied', 'illegal possession', 'misappropriation'],
             'tenant_rights': ['landlord', 'rent', 'deposit', 'eviction', 'lease', 'apartment', 'housing', 'rental'],
             'consumer_complaint': ['defective', 'warranty', 'refund', 'product', 'service', 'company', 'purchase', 'faulty'],
             'family_law': ['divorce', 'custody', 'marriage', 'alimony', 'domestic', 'spouse', 'husband', 'wife'],
             'employment_law': ['job', 'work', 'employer', 'harassment', 'termination', 'salary', 'boss', 'overtime', 'pay', 'workplace'],
-            'criminal_law': ['arrest', 'police', 'crime', 'bail', 'court', 'charges', 'criminal'],
-            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'cyber', 'digital', 'computer', 'phone'],
+            'criminal_law': ['arrest', 'police', 'crime', 'bail', 'court', 'charges', 'criminal', 'theft', 'stolen', 'robbery', 'fraud'],
+            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'cyber', 'digital', 'computer', 'website', 'email', 'password', 'hacking'],
             'elder_abuse': ['elderly', 'senior', 'old', 'abuse', 'neglect', 'exploitation'],
             'personal_injury': ['accident', 'injury', 'hurt', 'damage', 'medical', 'hospital'],
             'contract_dispute': ['contract', 'agreement', 'breach', 'business', 'deal'],
@@ -475,13 +571,14 @@ class WorkingEnhancedAgent:
 
         # Enhanced keyword-based classification for non-harassment queries
         enhanced_keywords = {
+            'property_disputes': ['property', 'land', 'house', 'flat', 'ownership', 'encroachment', 'hijacked', 'hijaced', 'grabbed', 'possession', 'takeover', 'occupied', 'illegal possession', 'misappropriation'],
             'immigration_law': ['passport', 'visa', 'citizenship', 'immigration', 'green card', 'expired', 'renewal', 'application'],
             'employment_law': ['boss', 'employer', 'work', 'job', 'salary', 'overtime', 'pay', 'workplace', 'termination', 'fired'],
-            'criminal_law': ['police', 'crime', 'illegal', 'theft', 'fraud', 'violence', 'assault', 'murder', 'robbery'],
+            'criminal_law': ['police', 'crime', 'illegal', 'theft', 'fraud', 'violence', 'assault', 'murder', 'robbery', 'stolen'],
             'family_law': ['marriage', 'divorce', 'custody', 'spouse', 'children', 'alimony', 'maintenance'],
             'consumer_complaint': ['product', 'service', 'company', 'warranty', 'refund', 'defective', 'purchase'],
-            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'digital', 'computer', 'website', 'email', 'password', 'phone'],
-            'tenant_rights': ['rent', 'landlord', 'property', 'lease', 'apartment', 'deposit', 'eviction'],
+            'cyber_crime': ['hack', 'hacked', 'online', 'internet', 'digital', 'computer', 'website', 'email', 'password'],  # Removed 'phone' from cyber_crime
+            'tenant_rights': ['rent', 'landlord', 'lease', 'apartment', 'deposit', 'eviction'],
             'contract_dispute': ['agreement', 'contract', 'business', 'deal', 'breach', 'violation'],
             'personal_injury': ['accident', 'injury', 'medical', 'hospital', 'damage', 'compensation'],
             'elder_abuse': ['elderly', 'senior', 'old', 'aged', 'grandmother', 'grandfather', 'nursing home']
@@ -496,12 +593,22 @@ class WorkingEnhancedAgent:
                 best_score = score
                 best_domain = domain
 
-        # Only use criminal_law as default if no other domain matches
+        # Only use criminal_law as default for truly criminal patterns
         if best_domain == 'unknown' and best_score == 0:
-            best_domain = 'criminal_law'  # Fallback only when no matches
-            confidence = 0.3
+            # Check if it's clearly criminal before defaulting
+            criminal_indicators = ['crime', 'criminal', 'police', 'arrest', 'theft', 'robbery', 'assault']
+            if any(indicator in query_lower for indicator in criminal_indicators):
+                best_domain = 'criminal_law'
+                confidence = 0.3
+            else:
+                confidence = 0.0
         else:
-            confidence = min(0.8, best_score * 0.25) if best_score > 0 else 0.3
+            # Calculate confidence based on keyword matches
+            confidence = min(0.8, best_score * 0.25) if best_score > 0 else 0.0
+            
+            # Boost confidence for strong matches
+            if best_score >= 2:
+                confidence = min(0.8, confidence + 0.2)
 
         # Use ML alternatives if they have higher confidence
         if ml_alternatives:
@@ -517,7 +624,96 @@ class WorkingEnhancedAgent:
     def get_detailed_classification(self, user_query: str, domain: str, confidence: float) -> Dict[str, str]:
         """Get detailed classification with subcategory and specific route"""
 
-        query_lower = user_query.lower()
+        normalized_query = self.normalize_query_text(user_query)
+        subcategory = self.get_subcategory_for_domain(domain, normalized_query)
+        
+        # Enhanced domain descriptions
+        domain_info = {
+            'property_disputes': {
+                'description': 'Property/Real Estate Law',
+                'subcategories': {
+                    'illegal_possession': 'Illegal Possession/Encroachment',
+                    'property_hijacking': 'Property Hijacking/Misappropriation', 
+                    'landlord_tenant': 'Landlord-Tenant Issues',
+                    'inheritance': 'Property Inheritance Disputes',
+                    'general': 'Property Disputes (General)'
+                },
+                'routes': {
+                    'illegal_possession': 'civil_court / police_station',
+                    'property_hijacking': 'police_station / civil_court',
+                    'landlord_tenant': 'rent_tribunal / housing_court',
+                    'inheritance': 'civil_court / probate_court',
+                    'general': 'civil_court'
+                },
+                'success_rates': {
+                    'illegal_possession': '65-70%',
+                    'property_hijacking': '60-65%', 
+                    'landlord_tenant': '70-75%',
+                    'inheritance': '55-60%',
+                    'general': '60%'
+                }
+            },
+            'cyber_crime': {
+                'description': 'Cyber Crime (Digital Security)',
+                'subcategories': {
+                    'hacking_data_breach': 'Hacking & Data Breach',
+                    'online_fraud': 'Online Fraud',
+                    'identity_theft': 'Identity Theft',
+                    'general': 'Cyber Crime (General)'
+                },
+                'routes': {
+                    'hacking_data_breach': 'cyber_cell / police_station',
+                    'online_fraud': 'cyber_cell / consumer_forum',
+                    'identity_theft': 'cyber_cell / police_station',
+                    'general': 'cyber_cell'
+                },
+                'success_rates': {
+                    'hacking_data_breach': '70%',
+                    'online_fraud': '75%',
+                    'identity_theft': '65%',
+                    'general': '70%'
+                }
+            }
+        }
+        
+        # Add default entries for other domains
+        default_domains = {
+            'tenant_rights': ('Property/Rental Law (Tenant Rights)', 'rental_disputes', 'rent_tribunal', '75%'),
+            'employment_law': ('Employment/Labor Law', 'workplace_rights', 'labour_court', '65%'),
+            'family_law': ('Family Law (Marriage/Divorce)', 'family_matters', 'family_court', '60%'),
+            'criminal_law': ('Criminal Law (Offenses)', 'legal_proceedings', 'police_station', '80%'),
+            'consumer_complaint': ('Consumer Protection Law', 'service_disputes', 'consumer_forum', '85%'),
+            'immigration_law': ('Immigration/Visa Law', 'visa_matters', 'immigration_office', '70%'),
+            'unknown': ('Unknown Legal Matter', 'general_legal', 'legal_consultation', '50%')
+        }
+        
+        if domain in domain_info:
+            info = domain_info[domain]
+            subcategory_desc = info['subcategories'].get(subcategory, subcategory)
+            route = info['routes'].get(subcategory, 'appropriate_court')
+            success_rate = info['success_rates'].get(subcategory, '60%')
+            
+            return {
+                'description': info['description'],
+                'subcategory': subcategory_desc,
+                'specific_route': route,
+                'success_rate': success_rate
+            }
+        elif domain in default_domains:
+            desc, subcat, route, rate = default_domains[domain]
+            return {
+                'description': desc,
+                'subcategory': subcat,
+                'specific_route': route,
+                'success_rate': rate
+            }
+        else:
+            return {
+                'description': domain.replace('_', ' ').title(),
+                'subcategory': 'general_legal_matter',
+                'specific_route': 'appropriate_court',
+                'success_rate': '60%'
+            }
 
         # Detailed classification mapping
         detailed_classifications = {
@@ -742,21 +938,33 @@ class WorkingEnhancedAgent:
 
         # Priority rules for better classification
 
-        # Rule 1: Physical theft vs cyber crime
-        physical_theft_indicators = ['airport', 'street', 'bus', 'train', 'market', 'shop', 'home', 'office', 'pocket', 'bag', 'purse']
-        cyber_indicators = ['online', 'internet', 'website', 'email', 'account', 'password', 'login', 'digital']
+        # Rule 1: Physical theft vs cyber crime (ENHANCED)
+        physical_theft_indicators = ['airport', 'street', 'bus', 'train', 'market', 'shop', 'home', 'office', 'pocket', 'bag', 'purse', 'wallet', 'stolen from', 'stolen at', 'stolen in', 'stolen while', 'someone stole', 'theft of', 'pickpocket', 'snatched', 'grabbed', 'took my', 'stolen my']
+        cyber_indicators = ['online', 'internet', 'website', 'email', 'account', 'password', 'login', 'digital', 'hacked', 'hacking', 'cyber', 'data breach', 'unauthorized access']
 
         has_physical_context = any(indicator in query_lower for indicator in physical_theft_indicators)
         has_cyber_context = any(indicator in query_lower for indicator in cyber_indicators)
+
+        # Enhanced physical theft detection
+        physical_theft_patterns = ['phone is stolen', 'mobile is stolen', 'phone was stolen', 'mobile was stolen', 'stolen my phone', 'stolen my mobile', 'phone stolen', 'mobile stolen']
+        has_physical_theft_pattern = any(pattern in query_lower for pattern in physical_theft_patterns)
 
         # If both theft and cyber scenarios detected, prioritize based on context
         theft_scenarios = [s for s in detected_scenarios if s[0] == 'robbery_theft']
         cyber_scenarios = [s for s in detected_scenarios if 'cyber' in s[1] or s[0] in ['hacking_fraud', 'online_fraud', 'cyberbullying']]
 
         if theft_scenarios and cyber_scenarios:
-            if has_physical_context and not has_cyber_context:
+            # Prioritize physical theft if:
+            # 1. Has physical context OR
+            # 2. Has physical theft pattern without cyber context OR
+            # 3. Simple "stolen" without cyber indicators
+            if (has_physical_context or 
+                (has_physical_theft_pattern and not has_cyber_context) or
+                ('stolen' in query_lower and not has_cyber_context)):
                 # Physical context suggests theft, not cyber crime
-                return max(theft_scenarios, key=lambda x: x[2])
+                best_theft = max(theft_scenarios, key=lambda x: x[2])
+                # Boost confidence for clear physical theft
+                return (best_theft[0], best_theft[1], min(0.95, best_theft[2] + 0.15))
             elif has_cyber_context and not has_physical_context:
                 # Cyber context suggests cyber crime
                 return max(cyber_scenarios, key=lambda x: x[2])
@@ -1077,6 +1285,7 @@ def interactive_cli():
             safe_print(f"  Timeline: {response.timeline}")
             safe_print(f"  Success Rate: {response.success_rate:.1%}")
 
+            # Constitutional backing - RESTORED
             if response.constitutional_backing:
                 safe_print(f"  Constitutional Backing: {response.constitutional_backing[:100]}...")
 

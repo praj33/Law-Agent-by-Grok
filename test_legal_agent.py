@@ -44,7 +44,7 @@ def test_working_enhanced_agent():
             for i, step in enumerate(response.process_steps, 1):
                 print(f"   {i}. {step}")
         
-        # Constitutional backing
+        # Constitutional backing - RESTORED with enhanced display
         if hasattr(response, 'constitutional_backing') and response.constitutional_backing:
             print(f"\n🏛️ CONSTITUTIONAL BACKING:")
             print(f"   {response.constitutional_backing}")
@@ -88,7 +88,7 @@ def test_enhanced_legal_agent():
         print(f"📊 SUCCESS RATE: {response.success_rate:.1%}")
         print(f"🏛️ JURISDICTION: {response.jurisdiction}")
         
-        # Constitutional backing
+        # Constitutional backing - RESTORED with enhanced article details
         if response.constitutional_backing:
             print(f"\n🏛️ CONSTITUTIONAL BACKING:")
             print(f"   {response.constitutional_backing}")
@@ -96,8 +96,24 @@ def test_enhanced_legal_agent():
             if response.constitutional_articles:
                 print(f"\n📜 RELEVANT CONSTITUTIONAL ARTICLES:")
                 for article in response.constitutional_articles:
-                    print(f"   • Article {article['article_number']}: {article['title']}")
-                    print(f"     Summary: {article['summary']}")
+                    article_num = article.get('article_number', 'N/A')
+                    title = article.get('title', 'N/A')
+                    confidence = article.get('confidence_percentage')
+                    
+                    if confidence:
+                        if confidence >= 70:
+                            conf_icon = "🟢"  # Green
+                        elif confidence >= 40:
+                            conf_icon = "🟡"  # Yellow  
+                        else:
+                            conf_icon = "🔴"  # Red
+                        print(f"   {conf_icon} Article {article_num}: {title} ({confidence}% confidence)")
+                    else:
+                        print(f"   • Article {article_num}: {title}")
+                    
+                    if article.get('summary'):
+                        summary = article['summary'][:150] + "..." if len(article.get('summary', '')) > 150 else article.get('summary')
+                        print(f"     Summary: {summary}")
         
         # Process steps
         if response.process_steps:

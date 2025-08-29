@@ -68,6 +68,7 @@ class LegalAgentResponse:
     risk_assessment: Optional[str] = None
     constitutional_backing: Optional[str] = None
     constitutional_articles: Optional[List[Dict]] = None
+    legal_acts: Optional[List[Dict[str, Any]]] = None  # Add legal acts field
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert response to dictionary"""
@@ -645,22 +646,45 @@ class LegalAgent:
                     data_driven_advice = location_insights['advice']
                     risk_assessment = location_insights['risk_level']
 
-        # Get constitutional backing if available
+        # Get constitutional backing with enhanced legal acts if available
         constitutional_backing = None
         constitutional_articles = None
+        legal_acts = None
 
         if self.constitutional_integration_enabled and domain != 'unknown':
             try:
                 constitutional_info = self.constitutional_advisor.get_constitutional_backing(domain, query_input.user_input)
                 constitutional_backing = constitutional_info['constitutional_basis']
-                constitutional_articles = [
-                    {
-                        'article_number': article.article_number,
-                        'title': article.clean_title,
-                        'summary': article.summary
-                    }
-                    for article in constitutional_info['relevant_articles'][:3]  # Limit to top 3
-                ]
+
+                # Process enhanced constitutional articles and legal acts
+                detailed = constitutional_info.get('articles')
+                if detailed:
+                    constitutional_articles = [
+                        {
+                            'article_number': a.get('article_number'),
+                            'title': a.get('title'),
+                            'summary': a.get('content_summary'),
+                            'relevance_type': a.get('relevance_type', 'RELEVANT'),
+                            'is_primary': a.get('is_primary', False)
+                        }
+                        for a in detailed[:4]  # Limit to top 4 articles
+                    ]
+                else:
+                    # Fallback to basic relevant articles (no misleading confidence)
+                    constitutional_articles = [
+                        {
+                            'article_number': article.article_number,
+                            'title': article.clean_title,
+                            'summary': article.summary,
+                            'relevance_type': 'RELEVANT'
+                        }
+                        for article in constitutional_info.get('relevant_articles', [])[:3]
+                    ]
+                
+                # Extract legal acts if available (NEW FEATURE)
+                if 'legal_acts' in constitutional_info:
+                    legal_acts = constitutional_info['legal_acts']
+                    
             except Exception as e:
                 print(f"⚠️ Constitutional backing failed: {e}")
 
@@ -673,7 +697,7 @@ class LegalAgent:
                 session_id
             )
 
-        # Create response
+        # Create response with enhanced legal backing
         response = LegalAgentResponse(
             domain=domain,
             confidence=confidence,
@@ -689,7 +713,8 @@ class LegalAgent:
             data_driven_advice=data_driven_advice,
             risk_assessment=risk_assessment,
             constitutional_backing=constitutional_backing,
-            constitutional_articles=constitutional_articles
+            constitutional_articles=constitutional_articles,
+            legal_acts=legal_acts  # Add legal acts to response
         )
 
         return response

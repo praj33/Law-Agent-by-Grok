@@ -27,6 +27,7 @@ try:
     from adaptive_agent import create_adaptive_agent
     ADAPTIVE_AGENT_AVAILABLE = True
 except ImportError:
+    create_adaptive_agent = None
     ADAPTIVE_AGENT_AVAILABLE = False
 
 
@@ -35,7 +36,7 @@ class LegalAgentCLI:
 
     def __init__(self, use_adaptive=False):
         # Choose agent type
-        if use_adaptive and ADAPTIVE_AGENT_AVAILABLE:
+        if use_adaptive and ADAPTIVE_AGENT_AVAILABLE and create_adaptive_agent is not None:
             print("🧠 Using Adaptive Agent (Task 2) with learning capabilities")
             self.adaptive_agent = create_adaptive_agent()
             self.agent = self.adaptive_agent.base_agent  # Use base agent for display
@@ -292,10 +293,47 @@ class LegalAgentCLI:
             for step in response.process_steps:
                 print(f"   {step}")
 
-        # Constitutional backing
+        # Constitutional backing - ENHANCED with proper legal acts
         if hasattr(response, 'constitutional_backing') and response.constitutional_backing:
-            print(f"\n🏛️ Constitutional Backing:")
+            print(f"\n🏛️ CONSTITUTIONAL & LEGAL BACKING:")
             print(f"   {response.constitutional_backing}")
+            
+            # Display constitutional articles WITHOUT misleading confidence percentages
+            if hasattr(response, 'constitutional_articles') and response.constitutional_articles:
+                print(f"\n📜 RELEVANT CONSTITUTIONAL ARTICLES:")
+                for i, article in enumerate(response.constitutional_articles, 1):
+                    article_num = article.get('article_number', 'N/A')
+                    title = article.get('title', 'N/A')
+                    relevance_type = article.get('relevance_type', article.get('is_primary', False))
+                    
+                    # Use relevance type instead of misleading confidence percentages
+                    if relevance_type == 'PRIMARY' or relevance_type == True:
+                        priority_icon = "🔴"  # Red for primary
+                    elif relevance_type == 'SUPPORTING':
+                        priority_icon = "🟡"  # Yellow for supporting
+                    else:
+                        priority_icon = "🟢"  # Green for relevant
+                    
+                    priority_text = "PRIMARY" if (relevance_type == 'PRIMARY' or relevance_type == True) else "SUPPORTING" if relevance_type == 'SUPPORTING' else "RELEVANT"
+                    print(f"   {priority_icon} Article {article_num}: {title} ({priority_text})")
+                    
+                    # Show relevance reason instead of summary
+                    if article.get('content_summary'):
+                        print(f"     Relevance: {article['content_summary']}")
+                    elif article.get('summary'):
+                        summary = article['summary'][:100] + "..." if len(article.get('summary', '')) > 100 else article.get('summary')
+                        print(f"     Summary: {summary}")
+            
+            # Display applicable legal acts (NEW FEATURE)
+            if hasattr(response, 'legal_acts') and response.legal_acts:
+                print(f"\n⚖️ APPLICABLE LEGAL FRAMEWORK:")
+                for act in response.legal_acts:
+                    print(f"   📜 {act.get('act_name', 'Legal Act')}:")
+                    for section in act.get('sections', []):
+                        print(f"     - {section}")
+                    if act.get('relevance_reason'):
+                        print(f"     Relevance: {act['relevance_reason']}")
+                    print()  # Add spacing between acts
 
         # Response time
         if hasattr(response, 'response_time'):
