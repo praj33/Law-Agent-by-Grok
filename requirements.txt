@@ -2,6 +2,7 @@
 fastapi==0.115.2
 uvicorn==0.32.0
 pydantic==2.9.2
+flask==3.0.0
 
 # Data Processing and ML
 pandas==2.2.3
