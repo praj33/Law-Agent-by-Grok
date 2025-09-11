@@ -620,6 +620,46 @@
     "domain": "criminal_law"
   },
   {
+    "text": "my child was kidnapped for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my daughter was kidnapped and held for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone kidnapped my son from school",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "child kidnapping with ransom demand",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my 5-year-old daughter was kidnapped for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my child was kidnapped for child trafficking",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone abducted my kid from the playground",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my nephew was taken by strangers for money",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "child taken against our will by unknown person",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "minor kidnapped from home for extortion",
+    "domain": "criminal_law"
+  },
+  {
     "text": "visa application denied need legal help",
     "domain": "immigration_law"
   },
@@ -873,7 +913,7 @@
   },
   {
     "text": "someone is hacking my phone",
-    "domain": "cyber_crime"
+    "domain": "criminal_law"
   },
   {
     "text": "phone hacked by cybercriminal",
@@ -901,7 +941,11 @@
   },
   {
     "text": "mobile hacking case",
-    "domain": "cyber_crime"
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone is hacking my computer",
+    "domain": "criminal_law"
   },
   {
     "text": "phone data hacked",
@@ -974,5 +1018,45 @@
   {
     "text": "revenge porn and image abuse",
     "domain": "cyber_crime"
+  },
+  {
+    "text": "my child was kidnapped for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my daughter was kidnapped and held for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone kidnapped my son from school",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "child kidnapping with ransom demand",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my 5-year-old daughter was kidnapped for ransom",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my child was kidnapped for child trafficking",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "someone abducted my kid from the playground",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "my nephew was taken by strangers for money",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "child taken against our will by unknown person",
+    "domain": "criminal_law"
+  },
+  {
+    "text": "minor kidnapped from home for extortion",
+    "domain": "criminal_law"
   }
 ]

@@ -61,7 +61,11 @@ class MLDomainClassifier:
         
         self.nb_classifier = MultinomialNB(alpha=0.1)
         self.cosine_threshold = 0.001  # Emergency fix - was 0.01
-        self.confidence_threshold = 0.001  # Emergency fix - was 0.01
+        self.confidence_threshold = 0.05  # Increased from 0.001 to better handle 30+ domains
+        
+        # Enhanced thresholds for better accuracy
+        self.min_confidence_for_classification = 0.1
+        self.high_confidence_threshold = 0.8
         
         # Training data and models
         self.training_data = []
@@ -81,21 +85,22 @@ class MLDomainClassifier:
             self.load_or_train_models()
     
     def load_or_create_training_data(self):
-        """Load existing training data or create comprehensive initial dataset"""
-        
-        if Path(self.training_data_file).exists():
-            try:
-                with open(self.training_data_file, 'r', encoding='utf-8') as f:
-                    self.training_data = json.load(f)
-                logger.info(f"Loaded {len(self.training_data)} training examples")
-                return
-            except Exception as e:
-                logger.warning(f"Error loading training data: {e}")
-        
-        # Create comprehensive training dataset
-        self.training_data = self._create_comprehensive_training_data()
-        self.save_training_data()
-        logger.info(f"Created {len(self.training_data)} training examples")
+        """Load existing training data or create new comprehensive dataset"""
+        try:
+            # Try to load existing training data
+            with open(self.training_data_file, 'r', encoding='utf-8') as f:
+                self.training_data = json.load(f)
+            logger.info(f"Loaded {len(self.training_data)} training examples from file")
+        except FileNotFoundError:
+            # Create comprehensive training data if file doesn't exist
+            logger.info("Training data file not found, creating comprehensive dataset")
+            self.training_data = self._create_comprehensive_training_data()
+            self.save_training_data()
+        except Exception as e:
+            logger.error(f"Error loading training data: {e}")
+            # Fallback to creating comprehensive data
+            self.training_data = self._create_comprehensive_training_data()
+            self.save_training_data()
     
     def _create_comprehensive_training_data(self) -> List[Dict]:
         """Create comprehensive training dataset for all legal domains"""
@@ -145,6 +150,10 @@ class MLDomainClassifier:
             # Family Law (50+ examples)
             {"text": "want to file for divorce from my spouse", "domain": "family_law"},
             {"text": "child custody battle with ex-husband", "domain": "family_law"},
+            {"text": "need custody of my children", "domain": "family_law"},
+            {"text": "fighting for child custody rights", "domain": "family_law"},
+            {"text": "custody dispute with ex-spouse", "domain": "family_law"},
+            {"text": "child custody legal proceedings", "domain": "family_law"},
             {"text": "domestic violence and need protection order", "domain": "family_law"},
             {"text": "alimony and child support payment issues", "domain": "family_law"},
             {"text": "adoption process and legal requirements", "domain": "family_law"},
@@ -233,6 +242,22 @@ class MLDomainClassifier:
             {"text": "victim of crime need legal protection", "domain": "criminal_law"},
             {"text": "juvenile criminal charges for minor", "domain": "criminal_law"},
             {"text": "appeal criminal conviction to higher court", "domain": "criminal_law"},
+            {"text": "child kidnapped for ransom", "domain": "criminal_law"},
+            {"text": "daughter kidnapped for ransom", "domain": "criminal_law"},
+            {"text": "son kidnapped for ransom", "domain": "criminal_law"},
+            {"text": "family member kidnapped for ransom", "domain": "criminal_law"},
+            {"text": "person kidnapped for ransom", "domain": "criminal_law"},
+            {"text": "kidnapped for ransom by criminals", "domain": "criminal_law"},
+            {"text": "raped by neighbor", "domain": "criminal_law"},
+            {"text": "raped by family member", "domain": "criminal_law"},
+            {"text": "raped by stranger", "domain": "criminal_law"},
+            {"text": "sexual assault by coworker", "domain": "criminal_law"},
+            {"text": "sexual abuse by relative", "domain": "criminal_law"},
+            {"text": "molested by family friend", "domain": "criminal_law"},
+            {"text": "someone is hacking my computer", "domain": "criminal_law"},
+            {"text": "computer being hacked by someone", "domain": "criminal_law"},
+            {"text": "hacking into my computer system", "domain": "criminal_law"},
+            {"text": "unauthorized access to my computer", "domain": "criminal_law"},
             
             # Phone Theft and Physical Theft (Criminal Law)
             {"text": "my phone is stolen", "domain": "criminal_law"},
@@ -347,21 +372,21 @@ class MLDomainClassifier:
             {"text": "unsafe living conditions for elderly person", "domain": "elder_abuse"},
             
             # Cyber Crime (50+ examples)
-            {"text": "phone being hacked and privacy violated", "domain": "cyber_crime"},
-            {"text": "my phone is being hacked", "domain": "cyber_crime"},
-            {"text": "phone is being hacked", "domain": "cyber_crime"},
-            {"text": "someone is hacking my phone", "domain": "cyber_crime"},
-            {"text": "phone hacked by cybercriminal", "domain": "cyber_crime"},
-            {"text": "phone hacked remotely", "domain": "cyber_crime"},
-            {"text": "mobile being hacked", "domain": "cyber_crime"},
-            {"text": "mobile is being hacked", "domain": "cyber_crime"},
-            {"text": "someone hacked my mobile", "domain": "cyber_crime"},
-            {"text": "phone hacking incident", "domain": "cyber_crime"},
-            {"text": "mobile hacking case", "domain": "cyber_crime"},
-            {"text": "phone data hacked", "domain": "cyber_crime"},
-            {"text": "mobile data compromised", "domain": "cyber_crime"},
-            {"text": "phone privacy violated online", "domain": "cyber_crime"},
-            {"text": "mobile security breached", "domain": "cyber_crime"},
+            {"text": "phone being hacked and privacy violated", "domain": "criminal_law"},
+            {"text": "my phone is being hacked", "domain": "criminal_law"},
+            {"text": "phone is being hacked", "domain": "criminal_law"},
+            {"text": "someone is hacking my phone", "domain": "criminal_law"},
+            {"text": "phone hacked by cybercriminal", "domain": "criminal_law"},
+            {"text": "phone hacked remotely", "domain": "criminal_law"},
+            {"text": "mobile being hacked", "domain": "criminal_law"},
+            {"text": "mobile is being hacked", "domain": "criminal_law"},
+            {"text": "someone hacked my mobile", "domain": "criminal_law"},
+            {"text": "phone hacking incident", "domain": "criminal_law"},
+            {"text": "mobile hacking case", "domain": "criminal_law"},
+            {"text": "phone data hacked", "domain": "criminal_law"},
+            {"text": "mobile data compromised", "domain": "criminal_law"},
+            {"text": "phone privacy violated online", "domain": "criminal_law"},
+            {"text": "mobile security breached", "domain": "criminal_law"},
             {"text": "identity theft and online fraud", "domain": "cyber_crime"},
             {"text": "cyberbullying and online harassment", "domain": "cyber_crime"},
             {"text": "computer virus and malware attack", "domain": "cyber_crime"},
@@ -375,7 +400,152 @@ class MLDomainClassifier:
             {"text": "my computer has malware", "domain": "cyber_crime"},
             {"text": "cybersecurity breach at work", "domain": "cyber_crime"},
             {"text": "online banking fraud and theft", "domain": "cyber_crime"},
-            {"text": "revenge porn and image abuse", "domain": "cyber_crime"}
+            {"text": "revenge porn and image abuse", "domain": "cyber_crime"},
+            
+            # Add examples for all expanded domains
+            {"text": "cyber attack on my business network", "domain": "cyber_crime"},
+            {"text": "data breach at my company", "domain": "cyber_crime"},
+            {"text": "online harassment and cyberbullying", "domain": "cyber_crime"},
+            {"text": "identity theft and financial fraud online", "domain": "cyber_crime"},
+            {"text": "ransomware attack on hospital systems", "domain": "cyber_crime"},
+            
+            {"text": "drug trafficking across state borders", "domain": "drug_crimes"},
+            {"text": "possession of narcotics with intent to distribute", "domain": "drug_crimes"},
+            {"text": "manufacturing illegal substances in a lab", "domain": "drug_crimes"},
+            {"text": "caught with drugs at airport customs", "domain": "drug_crimes"},
+            {"text": "prescription fraud for controlled substances", "domain": "drug_crimes"},
+            
+            {"text": "financial fraud and embezzlement at corporation", "domain": "financial_crimes"},
+            {"text": "insider trading of stocks for profit", "domain": "financial_crimes"},
+            {"text": "tax evasion and money laundering schemes", "domain": "financial_crimes"},
+            {"text": "ponzi scheme defrauding investors", "domain": "financial_crimes"},
+            {"text": "bankruptcy fraud to avoid debts", "domain": "financial_crimes"},
+            
+            {"text": "public protest turning into violent riots", "domain": "public_order"},
+            {"text": "sedition against government authorities", "domain": "public_order"},
+            {"text": "terrorism and bomb threats in city", "domain": "public_order"},
+            {"text": "hate speech inciting communal violence", "domain": "public_order"},
+            {"text": "unlawful assembly disrupting public peace", "domain": "public_order"},
+            
+            {"text": "defective product causing consumer injury", "domain": "consumer_protection"},
+            {"text": "false advertising of health products", "domain": "consumer_protection"},
+            {"text": "warranty breach on electronic device", "domain": "consumer_protection"},
+            {"text": "unfair business practices and scams", "domain": "consumer_protection"},
+            {"text": "product recall due to safety concerns", "domain": "consumer_protection"},
+            
+            {"text": "medical malpractice during surgery", "domain": "medical_law"},
+            {"text": "negligence by healthcare provider", "domain": "medical_law"},
+            {"text": "wrongful death due to hospital error", "domain": "medical_law"},
+            {"text": "informed consent violation by doctor", "domain": "medical_law"},
+            {"text": "pharmaceutical company liability for side effects", "domain": "medical_law"},
+            
+            {"text": "real estate fraud in property transaction", "domain": "real_estate_law"},
+            {"text": "landlord tenant dispute over lease terms", "domain": "real_estate_law"},
+            {"text": "property boundary and ownership dispute", "domain": "real_estate_law"},
+            {"text": "construction defect in new building", "domain": "real_estate_law"},
+            {"text": "title dispute and adverse possession claim", "domain": "real_estate_law"},
+            
+            {"text": "breach of contract in business deal", "domain": "contract_law"},
+            {"text": "contract formation and validity issues", "domain": "contract_law"},
+            {"text": "performance and discharge of contractual obligations", "domain": "contract_law"},
+            {"text": "contractual dispute over terms and conditions", "domain": "contract_law"},
+            {"text": "specific performance of contractual agreement", "domain": "contract_law"},
+            
+            {"text": "patent infringement of innovative technology", "domain": "intellectual_property"},
+            {"text": "trademark violation and brand counterfeiting", "domain": "intellectual_property"},
+            {"text": "copyright infringement of creative work", "domain": "intellectual_property"},
+            {"text": "trade secret misappropriation by competitor", "domain": "intellectual_property"},
+            {"text": "intellectual property licensing dispute", "domain": "intellectual_property"},
+            
+            {"text": "environmental pollution affecting community", "domain": "environmental_law"},
+            {"text": "industrial waste disposal violation", "domain": "environmental_law"},
+            {"text": "wildlife protection and conservation", "domain": "environmental_law"},
+            {"text": "climate change litigation against corporation", "domain": "environmental_law"},
+            {"text": "environmental impact assessment compliance", "domain": "environmental_law"},
+            
+            {"text": "tax evasion and avoidance schemes", "domain": "tax_law"},
+            {"text": "income tax assessment dispute", "domain": "tax_law"},
+            {"text": "gst compliance and refund issues", "domain": "tax_law"},
+            {"text": "customs duty evasion at border", "domain": "tax_law"},
+            {"text": "tax audit and investigation procedures", "domain": "tax_law"},
+            
+            {"text": "visa application denial and appeal", "domain": "immigration_law"},
+            {"text": "asylum and refugee protection claim", "domain": "immigration_law"},
+            {"text": "deportation and removal proceedings", "domain": "immigration_law"},
+            {"text": "immigration fraud and document forgery", "domain": "immigration_law"},
+            {"text": "citizenship and naturalization process", "domain": "immigration_law"},
+            
+            {"text": "corporate governance and compliance", "domain": "corporate_law"},
+            {"text": "merger and acquisition legal issues", "domain": "corporate_law"},
+            {"text": "shareholder rights and disputes", "domain": "corporate_law"},
+            {"text": "director liability and fiduciary duties", "domain": "corporate_law"},
+            {"text": "corporate insolvency and bankruptcy", "domain": "corporate_law"},
+            
+            {"text": "banking fraud and financial crime", "domain": "banking_law"},
+            {"text": "loan default and debt recovery", "domain": "banking_law"},
+            {"text": "banking regulation and compliance", "domain": "banking_law"},
+            {"text": "cheque bounce and negotiable instruments", "domain": "banking_law"},
+            {"text": "bank customer protection rights", "domain": "banking_law"},
+            
+            {"text": "insurance claim denial and dispute", "domain": "insurance_law"},
+            {"text": "insurance fraud and misrepresentation", "domain": "insurance_law"},
+            {"text": "policy interpretation and coverage", "domain": "insurance_law"},
+            {"text": "insurance regulation and compliance", "domain": "insurance_law"},
+            {"text": "third party liability and indemnity", "domain": "insurance_law"},
+            
+            {"text": "student rights and educational discrimination", "domain": "education_law"},
+            {"text": "academic misconduct and disciplinary action", "domain": "education_law"},
+            {"text": "educational institution regulation", "domain": "education_law"},
+            {"text": "special education and disability rights", "domain": "education_law"},
+            {"text": "research ethics and intellectual property", "domain": "education_law"},
+            
+            {"text": "traffic violation and road accident", "domain": "transport_law"},
+            {"text": "vehicle registration and licensing", "domain": "transport_law"},
+            {"text": "transportation regulation and safety", "domain": "transport_law"},
+            {"text": "commercial vehicle operation permit", "domain": "transport_law"},
+            {"text": "public transport and infrastructure", "domain": "transport_law"},
+            
+            {"text": "sports doping and performance enhancement", "domain": "sports_law"},
+            {"text": "sports betting and gambling regulation", "domain": "sports_law"},
+            {"text": "athlete contract and endorsement deals", "domain": "sports_law"},
+            {"text": "sports governance and regulatory compliance", "domain": "sports_law"},
+            {"text": "event organization and spectator safety", "domain": "sports_law"},
+            
+            {"text": "media defamation and libel claims", "domain": "media_law"},
+            {"text": "press freedom and censorship issues", "domain": "media_law"},
+            {"text": "journalist rights and source protection", "domain": "media_law"},
+            {"text": "broadcast regulation and licensing", "domain": "media_law"},
+            {"text": "digital media and online content regulation", "domain": "media_law"},
+            
+            {"text": "human rights violation by state actors", "domain": "human_rights"},
+            {"text": "freedom of expression and assembly", "domain": "human_rights"},
+            {"text": "discrimination and equal protection", "domain": "human_rights"},
+            {"text": "torture and cruel treatment prohibition", "domain": "human_rights"},
+            {"text": "right to privacy and data protection", "domain": "human_rights"},
+            
+            {"text": "government regulation and administrative action", "domain": "administrative_law"},
+            {"text": "public authority decision review", "domain": "administrative_law"},
+            {"text": "administrative tribunal proceedings", "domain": "administrative_law"},
+            {"text": "public information and transparency", "domain": "administrative_law"},
+            {"text": "regulatory compliance and enforcement", "domain": "administrative_law"},
+            
+            {"text": "constitutional interpretation and judicial review", "domain": "constitutional_law"},
+            {"text": "fundamental rights protection", "domain": "constitutional_law"},
+            {"text": "separation of powers and checks", "domain": "constitutional_law"},
+            {"text": "federal and state jurisdiction", "domain": "constitutional_law"},
+            {"text": "constitutional amendment procedures", "domain": "constitutional_law"},
+            
+            {"text": "election fraud and voting rights", "domain": "election_law"},
+            {"text": "campaign finance and expenditure", "domain": "election_law"},
+            {"text": "electoral dispute and resolution", "domain": "election_law"},
+            {"text": "candidate eligibility and nomination", "domain": "election_law"},
+            {"text": "election commission authority and powers", "domain": "election_law"},
+            
+            {"text": "international treaty and agreement", "domain": "international_law"},
+            {"text": "diplomatic immunity and privileges", "domain": "international_law"},
+            {"text": "international criminal law and tribunals", "domain": "international_law"},
+            {"text": "extradition and mutual legal assistance", "domain": "international_law"},
+            {"text": "international trade and investment law", "domain": "international_law"}
         ]
         
         return training_examples
@@ -521,6 +691,11 @@ class MLDomainClassifier:
         if primary_confidence < self.confidence_threshold:
             return "unknown", primary_confidence, sorted_domains[:3]
         
+        # Enhanced confidence handling
+        if primary_confidence < self.min_confidence_for_classification:
+            # For low confidence, return unknown but provide alternatives
+            return "unknown", primary_confidence, sorted_domains[:3]
+        
         # Record classification
         self.classification_history.append({
             'query': user_query,
@@ -586,6 +761,14 @@ class MLDomainClassifier:
     def get_model_stats(self) -> Dict[str, Any]:
         """Get model performance statistics"""
         
+        # Calculate accuracy if we have feedback data
+        accuracy = 0.0
+        if self.feedback_data:
+            correct_feedback = sum(1 for feedback in self.feedback_data 
+                                 if feedback.get('actual_domain') == feedback.get('predicted_domain')
+                                 and feedback.get('helpful', False))
+            accuracy = correct_feedback / len(self.feedback_data) if self.feedback_data else 0.0
+        
         return {
             'is_trained': self.is_trained,
             'training_examples': len(self.training_data),
@@ -593,7 +776,10 @@ class MLDomainClassifier:
             'domains': self.domain_labels,
             'classifications_made': len(self.classification_history),
             'feedback_received': len(self.feedback_data),
+            'model_accuracy': accuracy,
             'confidence_threshold': self.confidence_threshold,
+            'min_confidence_for_classification': self.min_confidence_for_classification,
+            'high_confidence_threshold': self.high_confidence_threshold,
             'model_type': 'TF-IDF + Naive Bayes + Cosine Similarity'
         }
     

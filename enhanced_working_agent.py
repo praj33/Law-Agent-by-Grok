@@ -18,6 +18,7 @@ import uuid
 from working_enhanced_agent import create_working_enhanced_agent
 from enhanced_legal_provisions import EnhancedLegalProvisionsEngine
 from confidence_booster import apply_confidence_boost
+from subdomain_classifier import create_subdomain_classifier
 
 class EnhancedWorkingAgent:
     """Enhanced working agent with detailed legal provisions"""

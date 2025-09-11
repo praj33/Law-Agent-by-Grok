@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal AI Agent</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .query-section {
+            margin-bottom: 30px;
+        }
+
+        .query-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+
+        .query-section p {
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .query-form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .query-input {
+            flex: 1;
+            padding: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .query-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .query-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .query-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .query-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .query-examples {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .query-examples h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .example-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .example-query {
+            background: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #667eea;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .example-query:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 25px;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .classification-results {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .classification-results h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .classification-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .classification-item h4 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .classification-value {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .legal-sections {
+            margin-top: 30px;
+        }
+
+        .legal-sections h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .sections-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e9ecef;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #6c757d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: box-shadow 0.3s;
+        }
+
+        .section-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .section-number {
+            background: #667eea;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .section-description {
+            color: #6c757d;
+            line-height: 1.6;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .guidance-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .guidance-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .guidance-item {
+            margin-bottom: 20px;
+        }
+
+        .guidance-item h4 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+
+        .guidance-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .guidance-list li {
+            background: white;
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-size: 1em;
+        }
+
+        .feedback-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .star {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star.active {
+            color: #ffd700;
+        }
+
+        .feedback-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .output-section {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .output-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .output-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+        }
+
+        @media (max-width: 768px) {
+            .query-form {
+                flex-direction: column;
+            }
+            
+            .classification-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sections-tabs {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .tab-button {
+                text-align: left;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚖️ Legal AI Agent</h1>
+            <p>Comprehensive Legal Analysis for ANY Query Type</p>
+            <div style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.15); border-radius: 8px; display: inline-block;">
+                <strong>🔗 Access URL: </strong><code style="background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px;">http://localhost:5001</code>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="query-section">
+                <h2>🔍 Legal Query Analysis</h2>
+                <p>Enter ANY type of legal question - from murder to cyber crime, family disputes to employment issues. Our system provides comprehensive legal analysis.</p>
+                
+                <div class="query-examples">
+                    <h3>💡 Example Queries (Click to use):</h3>
+                    <div class="example-queries">
+                        <span class="example-query" onclick="setQuery('Someone murdered my brother in cold blood')">Murder Case</span>
+                        <span class="example-query" onclick="setQuery('My child was kidnapped for ransom')">Kidnapping</span>
+                        <span class="example-query" onclick="setQuery('I was raped by my colleague')">Sexual Assault</span>
+                        <span class="example-query" onclick="setQuery('Hackers stole money from my bank account')">Cyber Crime</span>
+                        <span class="example-query" onclick="setQuery('My boss fired me for reporting harassment')">Employment Issue</span>
+                        <span class="example-query" onclick="setQuery('My husband beats me daily')">Domestic Violence</span>
+                        <span class="example-query" onclick="setQuery('Business partner embezzled funds')">Financial Crime</span>
+                        <span class="example-query" onclick="setQuery('Caught with drugs at airport')">Drug Crime</span>
+                        <span class="example-query" onclick="setQuery('Landlord won\'t return security deposit')">Tenant Rights</span>
+                        <span class="example-query" onclick="setQuery('Company sold defective product')">Consumer Protection</span>
+                    </div>
+                </div>
+                
+                <div class="query-form">
+                    <input type="text" id="queryInput" class="query-input" 
+                           placeholder="Enter ANY legal question: murder, kidnapping, rape, theft, cyber crime, employment, family, etc..." 
+                           maxlength="500">
+                    <button id="analyzeButton" class="query-button">Analyze Legal Query</button>
+                </div>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Processing legal analysis...</p>
+                </div>
+
+                <div id="error" class="error" style="display: none;"></div>
+            </div>
+
+            <div id="results" class="results">
+                <div class="classification-results">
+                    <h3>🏛️ Legal Classification</h3>
+                    <div class="classification-grid">
+                        <div class="classification-item">
+                            <h4>Primary Legal Domain</h4>
+                            <div class="classification-value" id="domainValue">-</div>
+                        </div>
+                        <div class="classification-item">
+                            <h4>Specific Subdomain</h4>
+                            <div class="classification-value" id="subdomainValue">-</div>
+                        </div>
+                        <div class="classification-item">
+                            <h4>Legal Sections Identified</h4>
+                            <div class="classification-value"><span id="totalSections">0</span> Sections</div>
+                            <div>BNS + IPC + CrPC</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="legal-sections">
+                    <h3>📚 Legal Sections & Provisions</h3>
+                    <div class="sections-tabs">
+                        <button class="tab-button active" data-tab="constitutional" onclick="switchTab('constitutional')">Constitutional Articles</button>
+                        <button class="tab-button" data-tab="bns" onclick="switchTab('bns')">Bharatiya Nyaya Sanhita (BNS)</button>
+                        <button class="tab-button" data-tab="ipc" onclick="switchTab('ipc')">Indian Penal Code (IPC)</button>
+                        <button class="tab-button" data-tab="crpc" onclick="switchTab('crpc')">Code of Criminal Procedure (CrPC)</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="constitutional-tab">
+                        <div id="constitutionalSections"></div>
+                    </div>
+                    <div class="tab-content" id="bns-tab">
+                        <div id="bnsSections"></div>
+                    </div>
+                    <div class="tab-content" id="ipc-tab">
+                        <div id="ipcSections"></div>
+                    </div>
+                    <div class="tab-content" id="crpc-tab">
+                        <div id="crpcSections"></div>
+                    </div>
+                </div>
+
+                <div class="guidance-section">
+                    <h3>📋 Legal Guidance</h3>
+                    <div id="legalGuidance"></div>
+                </div>
+
+                <div class="output-section">
+                    <h3>📄 Formatted Output</h3>
+                    <div class="output-content" id="formattedOutput"></div>
+                </div>
+
+                <div class="feedback-section">
+                    <h3>📊 Provide Feedback</h3>
+                    <p>Your feedback helps improve our analysis accuracy.</p>
+                    <div class="feedback-form">
+                        <div>
+                            <label>Rate this analysis:</label>
+                            <div class="rating-stars" id="ratingStars">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+                        <textarea id="feedbackText" class="feedback-input" placeholder="How was this analysis? Was it helpful? Any suggestions for improvement?" rows="3"></textarea>
+                        <button id="submitFeedback" class="feedback-button">Submit Feedback</button>
+                    </div>
+                    <div id="feedbackResult" style="display: none; margin-top: 15px; padding: 10px; background: #d4edda; border-radius: 5px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentResponse = null;
+        let selectedRating = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            // Set up event listeners
+            document.getElementById('analyzeButton').addEventListener('click', processQuery);
+            document.getElementById('queryInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    processQuery();
+                }
+            });
+
+            // Set up tab switching
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    switchTab(this.dataset.tab);
+                });
+            });
+
+            // Set up rating stars
+            document.querySelectorAll('.star').forEach(star => {
+                star.addEventListener('click', function() {
+                    selectedRating = parseInt(this.dataset.rating);
+                    updateStars();
+                });
+            });
+
+            // Set up feedback submission
+            document.getElementById('submitFeedback').addEventListener('click', submitFeedback);
+        }
+
+        function setQuery(query) {
+            document.getElementById('queryInput').value = query;
+        }
+
+        async function processQuery() {
+            const query = document.getElementById('queryInput').value.trim();
+            
+            if (!query) {
+                showError('Please enter a legal question to analyze.');
+                return;
+            }
+
+            // Show loading state
+            showLoading(true);
+            hideError();
+            hideResults();
+
+            try {
+                const response = await fetch('/api/legal-analysis', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: query })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentResponse = data;
+                    displayResults(data);
+                } else {
+                    showError(data.message || data.error || 'Analysis failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error processing query:', error);
+                showError('Network error. Please check your connection and try again.');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function displayResults(data) {
+            // Update classification results
+            document.getElementById('domainValue').textContent = data.domain;
+            document.getElementById('subdomainValue').textContent = data.subdomain;
+            
+            const totalSections = (data.bns_sections?.length || 0) + 
+                                 (data.ipc_sections?.length || 0) + 
+                                 (data.crpc_sections?.length || 0);
+            document.getElementById('totalSections').textContent = totalSections;
+
+            // Display legal sections
+            displaySections('constitutionalSections', data.constitutional_articles, 'Article');
+            displaySections('bnsSections', data.bns_sections, 'BNS');
+            displaySections('ipcSections', data.ipc_sections, 'IPC');
+            displaySections('crpcSections', data.crpc_sections, 'CrPC');
+
+            // Display legal guidance
+            displayLegalGuidance(data);
+
+            // Display formatted output
+            document.getElementById('formattedOutput').textContent = data.formatted_output;
+
+            // Show results
+            showResults();
+        }
+
+        function displaySections(containerId, sections, type) {
+            const container = document.getElementById(containerId);
+            
+            if (!sections || sections.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px; font-size: 1.1em;">No specific ' + type + ' sections identified for this query type.</p>';
+                return;
+            }
+
+            container.innerHTML = sections.map(section => `
+                <div class="section-item">
+                    <div class="section-header">
+                        <span class="section-number">${type} ${section.section_number || section.article_number}</span>
+                        <span class="section-title">${section.title}</span>
+                    </div>
+                    ${section.description ? `<div class="section-description">${section.description}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function displayLegalGuidance(data) {
+            const container = document.getElementById('legalGuidance');
+            
+            let html = '';
+
+            // Legal Process
+            if (data.legal_process) {
+                html += `
+                    <div class="guidance-item">
+                        <h4>📋 Step-by-step Legal Process</h4>
+                        <div style="background: white; padding: 18px; border-radius: 8px; border-left: 4px solid #667eea; font-size: 1.05em;">
+                            ${data.legal_process}
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Important Notes
+            if (data.important_notes && data.important_notes.length > 0) {
+                html += `
+                    <div class="guidance-item">
+                        <h4>⚠️ Important Notes / Safeguards</h4>
+                        <ul class="guidance-list">
+                            ${data.important_notes.map(note => `<li>${note}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            // Emergency Contacts
+            if (data.emergency_contacts && Object.keys(data.emergency_contacts).length > 0) {
+                html += `
+                    <div class="guidance-item">
+                        <h4>📞 Emergency Contacts</h4>
+                        <ul class="guidance-list">
+                            ${Object.entries(data.emergency_contacts).map(([service, number]) => `<li>${service}: <strong>${number}</strong></li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html || '<p style="color: #6c757d; text-align: center; padding: 25px;">Legal guidance will be provided based on your specific case.</p>';
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        function updateStars() {
+            document.querySelectorAll('.star').forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        async function submitFeedback() {
+            if (!currentResponse) {
+                showError('No analysis available to provide feedback on.');
+                return;
+            }
+
+            const feedback = document.getElementById('feedbackText').value.trim();
+            if (!feedback) {
+                showError('Please enter your feedback.');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: currentResponse.query,
+                        feedback: feedback,
+                        rating: selectedRating
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    const resultDiv = document.getElementById('feedbackResult');
+                    resultDiv.innerHTML = `<strong>✅ Feedback Submitted!</strong><br>${data.message}`;
+                    resultDiv.style.display = 'block';
+                    
+                    // Clear form
+                    document.getElementById('feedbackText').value = '';
+                    selectedRating = 0;
+                    updateStars();
+                } else {
+                    showError('Failed to submit feedback: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                showError('Network error while submitting feedback. Please try again.');
+            }
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+            document.getElementById('analyzeButton').disabled = show;
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        function showResults() {
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function hideResults() {
+            document.getElementById('results').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

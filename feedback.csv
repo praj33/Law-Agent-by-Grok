@@ -290,3 +290,11 @@ timestamp,query,domain,feedback,session_id
 2025-08-29T12:28:05.658870,My bank account money was stolen through online fraud.,cyber crime,Good,cli_session
 2025-08-29T13:19:20.430273,My Phone is Stolen,cyber crime,bad,cli_session
 2025-08-29T13:52:49.597640,My Phone is Hacked,cyber crime,good,cli_session
+2025-09-08T11:39:26.948698,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-09-08T11:39:27.003643,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-09-08T11:39:27.244274,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-09-08T11:39:27.296037,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-09-08T11:39:27.359925,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-09-08T11:39:27.411682,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-09-08T11:39:27.461515,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-09-08T11:39:27.538358,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain

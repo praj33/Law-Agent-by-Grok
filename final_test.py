@@ -1,53 +1,37 @@
 #!/usr/bin/env python3
 """
-Final Test - Constitutional Articles Integration
-===============================================
+Final test to verify kidnapping classification is working
 """
 
-from legal_agent import create_legal_agent, LegalQueryInput
+from enhanced_legal_agent import create_enhanced_legal_agent
 
-def test_final_integration():
-    """Test final integration with improved constitutional articles"""
+def test_kidnapping_with_agent():
+    """Test kidnapping queries with the full legal agent"""
     
-    print("=== FINAL INTEGRATION TEST ===")
+    # Create agent
+    agent = create_enhanced_legal_agent()
+    
+    # Test kidnapping query
+    query = "My 5-year-old daughter was kidnapped for ransom"
+    
+    print("Testing Kidnapping Query with Enhanced Legal Agent")
+    print("=" * 55)
+    print(f"Query: \"{query}\"")
     print()
     
-    agent = create_legal_agent()
-    query = LegalQueryInput(user_input="my phone is being hacked by someone")
-    response = agent.process_query(query)
+    # Process query
+    response = agent.process_enhanced_query(query)
     
-    print(f"🔍 Query: 'my phone is being hacked by someone'")
-    print(f"📋 Domain: {response.domain}")
-    print(f"📊 Confidence: {response.confidence:.3f}")
+    print(f"Domain: {response.domain}")
+    print(f"Confidence: {response.confidence:.3f}")
+    print(f"Legal Route: {response.legal_route}")
+    print(f"Jurisdiction: {response.jurisdiction}")
     print()
     
-    if hasattr(response, 'constitutional_articles') and response.constitutional_articles:
-        print("🏛️ Constitutional Articles:")
-        for i, article in enumerate(response.constitutional_articles, 1):
-            print(f"  {i}. Article {article.get('article_number', 'N/A')}")
-            print(f"     Title: {article.get('title', 'N/A')}")
-            print(f"     Confidence: {article.get('confidence_percentage', 0)}%")
-            print()
-        
-        print("✅ SUCCESS: Constitutional articles with confidence returned!")
+    if response.domain == "criminal_law":
+        print("✅ SUCCESS: Kidnapping correctly classified as criminal_law")
     else:
-        print("❌ ISSUE: No constitutional articles returned")
-    
-    # Test constitutional backing text
-    if hasattr(response, 'constitutional_backing') and response.constitutional_backing:
-        print("📜 Constitutional Backing Preview:")
-        preview = response.constitutional_backing[:300] + "..." if len(response.constitutional_backing) > 300 else response.constitutional_backing
-        print(preview)
-        print()
-        
-        # Check if it contains confidence percentages
-        if "Confidence:" in response.constitutional_backing:
-            print("✅ SUCCESS: Constitutional backing includes confidence percentages!")
-        else:
-            print("⚠️ NOTICE: Constitutional backing may not include confidence percentages")
-    
-    print("=" * 60)
-    print("✅ Final integration test completed!")
+        print(f"❌ ERROR: Expected criminal_law, got {response.domain}")
 
 if __name__ == "__main__":
-    test_final_integration()
+    test_kidnapping_with_agent()

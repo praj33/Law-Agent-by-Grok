@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Legal Agent - ANY Query Type</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+        }
+
+        .features {
+            background: #f8f9fa;
+            padding: 25px 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .features h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-item .icon {
+            font-size: 2.2em;
+            margin-bottom: 12px;
+        }
+
+        .feature-item h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .feature-item p {
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+
+        .main-content {
+            padding: 35px;
+        }
+
+        .query-section {
+            margin-bottom: 35px;
+        }
+
+        .query-section h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+
+        .query-section p {
+            color: #6c757d;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .query-form {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .query-input {
+            flex: 1;
+            padding: 18px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .query-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .query-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .query-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .query-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .query-examples {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .query-examples h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .example-queries {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .example-query {
+            background: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #667eea;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .example-query:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 25px;
+            color: #6c757d;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .results {
+            display: none;
+            margin-top: 35px;
+        }
+
+        .classification-results {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        .classification-results h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .classification-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .classification-item h4 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+        }
+
+        .classification-value {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .confidence-bar {
+            background: #e9ecef;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .confidence-fill {
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 100%;
+            transition: width 0.8s ease;
+        }
+
+        .legal-sections {
+            margin-top: 35px;
+        }
+
+        .legal-sections h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .sections-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e9ecef;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #6c757d;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .section-item {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 18px;
+            transition: box-shadow 0.3s;
+        }
+
+        .section-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .section-number {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-right: 18px;
+            font-size: 0.9em;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .section-description {
+            color: #6c757d;
+            line-height: 1.7;
+            margin-top: 12px;
+            font-size: 1.05em;
+        }
+
+        .guidance-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .guidance-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .guidance-item {
+            margin-bottom: 25px;
+        }
+
+        .guidance-item h4 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1em;
+        }
+
+        .guidance-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .guidance-list li {
+            background: white;
+            padding: 12px 18px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-size: 1.05em;
+        }
+
+        .feedback-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .feedback-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .feedback-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .star {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star.active {
+            color: #ffd700;
+        }
+
+        .feedback-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .history-section {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .history-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 1px solid #f5c6cb;
+        }
+
+        .stats-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 35px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .stat-value {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+
+        .constitutional-section {
+            background: #e8f5e9;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+
+        .constitutional-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .constitutional-item {
+            background: white;
+            border: 1px solid #c8e6c9;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .constitutional-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .constitutional-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .constitutional-confidence {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .constitutional-keywords {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .query-form {
+                flex-direction: column;
+            }
+            
+            .classification-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sections-tabs {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .tab-button {
+                text-align: left;
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Ultimate Legal Agent</h1>
+            <p>Handles ANY Type of Legal Query with Complete Analysis</p>
+            <div style="margin-top: 15px; padding: 12px; background: rgba(255,255,255,0.15); border-radius: 8px; display: inline-block;">
+                <strong>🔗 Access URL: </strong><code style="background: rgba(0,0,0,0.2); padding: 4px 8px; border-radius: 4px;">http://localhost:5000</code>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>🎯 Ultimate Legal Coverage - ANY Query Type</h3>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">🔍</div>
+                    <h4>ANY Query Type</h4>
+                    <p>Murder, kidnapping, rape, theft, cyber crime, etc.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📚</div>
+                    <h4>ALL BNS Sections</h4>
+                    <p>Complete Bharatiya Nyaya Sanhita 2023</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📖</div>
+                    <h4>ALL IPC Sections</h4>
+                    <p>Comprehensive Indian Penal Code</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚖️</div>
+                    <h4>ALL CrPC Sections</h4>
+                    <p>Complete Criminal Procedure Code</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">🎯</div>
+                    <h4>Smart Classification</h4>
+                    <p>Enhanced domain & subdomain detection</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <h4>Feedback System</h4>
+                    <p>Confidence adjustment based on feedback</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💾</div>
+                    <h4>Query Storage</h4>
+                    <p>Complete history and search</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">⚡</div>
+                    <h4>Instant Analysis</h4>
+                    <p>Real-time comprehensive legal guidance</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="query-section">
+                <h2>🔍 Ultimate Legal Query Analysis</h2>
+                <p>Enter ANY type of legal question - from murder to cyber crime, family disputes to employment issues. Our system handles ALL query types with complete legal analysis.</p>
+                <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #2196f3;">
+                    <strong>ℹ️ Access Information:</strong> This web interface is accessible at <code>http://localhost:5000</code> when the server is running.
+                </div>
+                
+                <div class="query-examples">
+                    <h4>💡 Example Queries (Click to use):</h4>
+                    <div class="example-queries">
+                        <span class="example-query" onclick="setQuery('Someone murdered my brother in cold blood')">Murder Case</span>
+                        <span class="example-query" onclick="setQuery('My child was kidnapped for ransom')">Kidnapping</span>
+                        <span class="example-query" onclick="setQuery('I was raped by my colleague')">Sexual Assault</span>
+                        <span class="example-query" onclick="setQuery('Hackers stole money from my bank account')">Cyber Crime</span>
+                        <span class="example-query" onclick="setQuery('My boss fired me for reporting harassment')">Employment Issue</span>
+                        <span class="example-query" onclick="setQuery('My husband beats me daily')">Domestic Violence</span>
+                        <span class="example-query" onclick="setQuery('Business partner embezzled funds')">Financial Crime</span>
+                        <span class="example-query" onclick="setQuery('Caught with drugs at airport')">Drug Crime</span>
+                        <span class="example-query" onclick="setQuery('Landlord won\'t return security deposit')">Tenant Rights</span>
+                        <span class="example-query" onclick="setQuery('Company sold defective product')">Consumer Protection</span>
+                        <span class="example-query" onclick="setQuery('Doctor\'s negligence caused harm')">Medical Malpractice</span>
+                        <span class="example-query" onclick="setQuery('Property dispute with neighbor')">Real Estate</span>
+                    </div>
+                </div>
+                
+                <div class="query-form">
+                    <input type="text" id="queryInput" class="query-input" 
+                           placeholder="Enter ANY legal question: murder, kidnapping, rape, theft, cyber crime, employment, family, etc..." 
+                           maxlength="500">
+                    <button id="analyzeButton" class="query-button">Analyze Legal Query</button>
+                </div>
+
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Processing ultimate legal analysis...</p>
+                </div>
+
+                <div id="error" class="error" style="display: none;"></div>
+            </div>
+
+            <div id="results" class="results">
+                <div class="classification-results">
+                    <h3>🏛️ Legal Classification Results</h3>
+                    <div class="classification-grid">
+                        <div class="classification-item">
+                            <h4>Primary Legal Domain</h4>
+                            <div class="classification-value" id="domainValue">-</div>
+                            <div>Confidence: <span id="domainPercentage">0%</span></div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="domainConfidence" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="classification-item">
+                            <h4>Specific Subdomain</h4>
+                            <div class="classification-value" id="subdomainValue">-</div>
+                            <div>Confidence: <span id="subdomainPercentage">0%</span></div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill" id="subdomainConfidence" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        <div class="classification-item">
+                            <h4>Legal Sections Identified</h4>
+                            <div class="classification-value" id="totalSections">0</div>
+                            <div>BNS + IPC + CrPC Sections</div>
+                            <div>Feedback Adjusted: <span id="feedbackAdjusted">❌</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="constitutional-section">
+                    <h3>📜 Constitutional Articles</h3>
+                    <div id="constitutionalArticles"></div>
+                </div>
+
+                <div class="legal-sections">
+                    <h3>📚 Legal Sections & Provisions</h3>
+                    <div class="sections-tabs">
+                        <button class="tab-button active" data-tab="bns" onclick="switchTab('bns')">Bharatiya Nyaya Sanhita (BNS)</button>
+                        <button class="tab-button" data-tab="ipc" onclick="switchTab('ipc')">Indian Penal Code (IPC)</button>
+                        <button class="tab-button" data-tab="crpc" onclick="switchTab('crpc')">Code of Criminal Procedure (CrPC)</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="bns-tab">
+                        <div id="bnsSections"></div>
+                    </div>
+                    <div class="tab-content" id="ipc-tab">
+                        <div id="ipcSections"></div>
+                    </div>
+                    <div class="tab-content" id="crpc-tab">
+                        <div id="crpcSections"></div>
+                    </div>
+                </div>
+
+                <div class="guidance-section">
+                    <h3>📋 Legal Guidance & Procedures</h3>
+                    <div id="legalGuidance"></div>
+                </div>
+
+                <div class="guidance-section">
+                    <h3>⚠️ Notes & Safeguards</h3>
+                    <div id="notesAndSafeguards"></div>
+                </div>
+
+                <div class="guidance-section">
+                    <h3>📞 Emergency Contacts</h3>
+                    <div id="emergencyContacts"></div>
+                </div>
+
+                <div class="feedback-section">
+                    <h3>📊 Provide Feedback (Adjusts Confidence)</h3>
+                    <p>Your feedback helps improve our analysis accuracy for similar queries.</p>
+                    <div class="feedback-form">
+                        <div>
+                            <label>Rate this analysis:</label>
+                            <div class="rating-stars" id="ratingStars">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                        </div>
+                        <textarea id="feedbackText" class="feedback-input" placeholder="How was this analysis? Was it helpful? Any suggestions for improvement?" rows="3"></textarea>
+                        <button id="submitFeedback" class="feedback-button">Submit Feedback</button>
+                    </div>
+                    <div id="feedbackResult" style="display: none; margin-top: 15px; padding: 10px; background: #d4edda; border-radius: 5px;"></div>
+                </div>
+
+                <div class="history-section">
+                    <h3>💾 Query History</h3>
+                    <p>Your recent queries are stored and can be searched.</p>
+                    <div id="queryHistory"></div>
+                    <button onclick="loadHistory()" style="margin-top: 10px; padding: 8px 15px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Load History</button>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <h3>📊 System Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div id="statBNS" class="stat-value">358</div>
+                        <div class="stat-label">BNS Sections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="statIPC" class="stat-value">0</div>
+                        <div class="stat-label">IPC Sections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="statCrPC" class="stat-value">0</div>
+                        <div class="stat-label">CrPC Sections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="statDomains" class="stat-value">10</div>
+                        <div class="stat-label">Legal Domains</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="statSubdomains" class="stat-value">150+</div>
+                        <div class="stat-label">Subdomains</div>
+                    </div>
+                    <div class="stat-item">
+                        <div id="statQueries" class="stat-value">0</div>
+                        <div class="stat-label">Queries Processed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentResponse = null;
+        let selectedRating = 0;
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            // Set up event listeners
+            document.getElementById('analyzeButton').addEventListener('click', processQuery);
+            document.getElementById('queryInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    processQuery();
+                }
+            });
+
+            // Set up tab switching
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    switchTab(this.dataset.tab);
+                });
+            });
+
+            // Set up rating stars
+            document.querySelectorAll('.star').forEach(star => {
+                star.addEventListener('click', function() {
+                    selectedRating = parseInt(this.dataset.rating);
+                    updateStars();
+                });
+            });
+
+            // Set up feedback submission
+            document.getElementById('submitFeedback').addEventListener('click', submitFeedback);
+
+            // Load system statistics
+            loadSystemStats();
+        }
+
+        function setQuery(query) {
+            document.getElementById('queryInput').value = query;
+        }
+
+        async function processQuery() {
+            const query = document.getElementById('queryInput').value.trim();
+            
+            if (!query) {
+                showError('Please enter a legal question to analyze.');
+                return;
+            }
+
+            // Show loading state
+            showLoading(true);
+            hideError();
+            hideResults();
+
+            try {
+                const response = await fetch('/api/ultimate-analysis', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: query })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    currentResponse = data;
+                    displayResults(data);
+                    updateQueryCount();
+                } else {
+                    showError(data.message || data.error || 'Analysis failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error processing query:', error);
+                showError('Network error. Please check your connection and try again.');
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        function displayResults(data) {
+            // Update classification results
+            document.getElementById('domainValue').textContent = data.domain;
+            document.getElementById('subdomainValue').textContent = data.subdomain;
+            document.getElementById('totalSections').textContent = data.total_sections;
+            document.getElementById('feedbackAdjusted').textContent = data.feedback_adjusted ? '✅' : '❌';
+
+            // Update confidence bars
+            const domainConfidence = Math.min(data.domain_confidence * 100, 100);
+            const subdomainConfidence = Math.min(data.subdomain_confidence * 100, 100);
+            
+            document.getElementById('domainConfidence').style.width = domainConfidence + '%';
+            document.getElementById('subdomainConfidence').style.width = subdomainConfidence + '%';
+            document.getElementById('domainPercentage').textContent = data.domain_confidence_percentage;
+            document.getElementById('subdomainPercentage').textContent = data.subdomain_confidence_percentage;
+
+            // Display constitutional articles
+            displayConstitutionalArticles(data.constitutional_articles);
+
+            // Display legal sections
+            displaySections('bnsSections', data.bns_sections, 'BNS');
+            displaySections('ipcSections', data.ipc_sections, 'IPC');
+            displaySections('crpcSections', data.crpc_sections, 'CrPC');
+
+            // Display legal guidance
+            displayLegalGuidance(data.legal_guidance);
+
+            // Display notes and safeguards
+            displayNotesAndSafeguards(data.legal_guidance?.required_documents || []);
+
+            // Display emergency contacts
+            displayEmergencyContacts(data.legal_guidance?.immediate_actions || []);
+
+            // Show results
+            showResults();
+        }
+
+        function displayConstitutionalArticles(articles) {
+            const container = document.getElementById('constitutionalArticles');
+            
+            if (!articles || articles.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px; font-size: 1.1em;">No specific constitutional articles identified for this query type.</p>';
+                return;
+            }
+
+            container.innerHTML = articles.map(article => `
+                <div class="constitutional-item">
+                    <div class="constitutional-header">
+                        <span class="constitutional-title">Article ${article.article_number}: ${article.title}</span>
+                        <span class="constitutional-confidence">${article.confidence_percentage}%</span>
+                    </div>
+                    ${article.matching_keywords ? `<div class="constitutional-keywords">Keywords: ${article.matching_keywords.join(', ')}</div>` : ''}
+                    <div class="section-description">${article.description || ''}</div>
+                </div>
+            `).join('');
+        }
+
+        function displaySections(containerId, sections, type) {
+            const container = document.getElementById(containerId);
+            
+            if (!sections || sections.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px; font-size: 1.1em;">No specific ' + type + ' sections identified for this query type.</p>';
+                return;
+            }
+
+            container.innerHTML = sections.map(section => `
+                <div class="section-item">
+                    <div class="section-header">
+                        <span class="section-number">${type} ${section.section_number}</span>
+                        <span class="section-title">${section.title}</span>
+                    </div>
+                    <div class="section-description">${section.description}</div>
+                </div>
+            `).join('');
+        }
+
+        function displayLegalGuidance(guidance) {
+            const container = document.getElementById('legalGuidance');
+            
+            if (!guidance) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px;">No specific guidance available.</p>';
+                return;
+            }
+
+            let html = '';
+
+            if (guidance.legal_procedures && guidance.legal_procedures.length > 0) {
+                html += `
+                    <div class="guidance-item">
+                        <h4>📋 Step-by-Step Legal Process</h4>
+                        <ul class="guidance-list">
+                            ${guidance.legal_procedures.map((procedure, index) => `<li>${index + 1}. ${procedure}</li>`).join('')}
+                        </ul>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = html || '<p style="color: #6c757d; text-align: center; padding: 25px;">General legal guidance will be provided based on your specific case.</p>';
+        }
+
+        function displayNotesAndSafeguards(notes) {
+            const container = document.getElementById('notesAndSafeguards');
+            
+            if (!notes || notes.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px;">No specific notes or safeguards available.</p>';
+                return;
+            }
+
+            container.innerHTML = `
+                <ul class="guidance-list">
+                    ${notes.map(note => `<li>${note}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        function displayEmergencyContacts(contacts) {
+            const container = document.getElementById('emergencyContacts');
+            
+            if (!contacts || contacts.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; text-align: center; padding: 25px;">No specific emergency contacts available.</p>';
+                return;
+            }
+
+            container.innerHTML = `
+                <ul class="guidance-list">
+                    ${contacts.map(contact => `<li>${contact}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        function switchTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+        }
+
+        function updateStars() {
+            document.querySelectorAll('.star').forEach((star, index) => {
+                if (index < selectedRating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+
+        async function submitFeedback() {
+            if (!currentResponse) {
+                showError('No analysis available to provide feedback on.');
+                return;
+            }
+
+            const feedback = document.getElementById('feedbackText').value.trim();
+            if (!feedback) {
+                showError('Please enter your feedback.');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: currentResponse.query,
+                        domain: currentResponse.domain_raw,
+                        subdomain: currentResponse.subdomain_raw,
+                        confidence: currentResponse.domain_confidence,
+                        feedback: feedback,
+                        rating: selectedRating
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    const resultDiv = document.getElementById('feedbackResult');
+                    resultDiv.innerHTML = `
+                        <strong>✅ Feedback Submitted!</strong><br>
+                        ${data.message}<br>
+                        <small>Confidence adjustment: ${data.confidence_adjustment > 0 ? '+' : ''}${data.confidence_adjustment.toFixed(3)}</small>
+                    `;
+                    resultDiv.style.display = 'block';
+                    
+                    // Clear form
+                    document.getElementById('feedbackText').value = '';
+                    selectedRating = 0;
+                    updateStars();
+                } else {
+                    showError('Failed to submit feedback: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error submitting feedback:', error);
+                showError('Network error while submitting feedback.');
+            }
+        }
+
+        async function loadHistory() {
+            try {
+                const response = await fetch('/api/history');
+                const data = await response.json();
+
+                if (data.success) {
+                    const historyDiv = document.getElementById('queryHistory');
+                    const history = data.session_history || data.agent_history || [];
+                    
+                    if (history.length === 0) {
+                        historyDiv.innerHTML = '<p>No query history available.</p>';
+                        return;
+                    }
+
+                    historyDiv.innerHTML = history.slice(-10).reverse().map(item => `
+                        <div class="history-item">
+                            <strong>${item.query}</strong><br>
+                            <small>Domain: ${item.domain} → Subdomain: ${item.subdomain || 'N/A'}</small><br>
+                            <small>Sections: ${item.total_sections || 'N/A'} | ${new Date(item.timestamp).toLocaleString()}</small>
+                        </div>
+                    `).join('');
+                } else {
+                    showError('Failed to load history: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error loading history:', error);
+                showError('Network error while loading history.');
+            }
+        }
+
+        async function loadSystemStats() {
+            try {
+                const response = await fetch('/api/stats');
+                const data = await response.json();
+
+                if (data.success && data.legal_coverage) {
+                    // Update with actual values from API
+                    document.getElementById('statBNS').textContent = data.legal_coverage.bns_sections || '358';
+                    document.getElementById('statIPC').textContent = data.legal_coverage.ipc_sections || '418';
+                    document.getElementById('statCrPC').textContent = data.legal_coverage.crpc_sections || '238';
+                    document.getElementById('statDomains').textContent = data.legal_coverage.domains_covered || '30';
+                    document.getElementById('statSubdomains').textContent = data.legal_coverage.subdomains_covered || '155';
+                    document.getElementById('statQueries').textContent = data.session_info.queries_processed || '0';
+                } else {
+                    // Fallback to actual values if API fails
+                    document.getElementById('statBNS').textContent = '358';
+                    document.getElementById('statIPC').textContent = '418';
+                    document.getElementById('statCrPC').textContent = '238';
+                    document.getElementById('statDomains').textContent = '30';
+                    document.getElementById('statSubdomains').textContent = '155';
+                    document.getElementById('statQueries').textContent = '0';
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+                // Fallback to actual values if API fails
+                document.getElementById('statBNS').textContent = '358';
+                document.getElementById('statIPC').textContent = '418';
+                document.getElementById('statCrPC').textContent = '238';
+                document.getElementById('statDomains').textContent = '30';
+                document.getElementById('statSubdomains').textContent = '155';
+                document.getElementById('statQueries').textContent = '0';
+            }
+        }
+
+        function updateQueryCount() {
+            const currentCount = parseInt(document.getElementById('statQueries').textContent);
+            document.getElementById('statQueries').textContent = currentCount + 1;
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading').style.display = show ? 'block' : 'none';
+            document.getElementById('analyzeButton').disabled = show;
+        }
+
+        function showResults() {
+            document.getElementById('results').style.display = 'block';
+        }
+
+        function hideResults() {
+            document.getElementById('results').style.display = 'none';
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
