@@ -93,7 +93,7 @@ class EnhancedSubdomainClassifier:
             },
             
             "cyber_crime": {
-                "hacking": ["hacking", "unauthorized access", "computer intrusion"],
+                "hacking": ["hacking", "hacked", "unauthorized access", "computer intrusion", "phone hacked"],
                 "identity_theft": ["identity theft", "personal data theft", "account takeover"],
                 "online_fraud": ["online fraud", "internet scam", "e-commerce fraud"],
                 "cyberbullying": ["cyberbullying", "online harassment", "digital abuse"],

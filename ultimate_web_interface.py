@@ -61,7 +61,7 @@ def process_ultimate_analysis():
             return jsonify({
                 'error': 'Ultimate Legal Agent initialization failed',
                 'success': False,
-                'message': 'The legal analysis system is currently unavailable. Please try again later.'
+                'message': 'The legal analysis system is currently unavailable. Please check the server console for initialization errors and restart the server.'
             }), 500
         
         data = request.get_json()
@@ -108,6 +108,9 @@ def process_ultimate_analysis():
             'ipc_sections': response['ipc_sections'],
             'crpc_sections': response['crpc_sections'],
             'total_sections': response['total_sections'],
+            
+            # Constitutional Articles
+            'constitutional_articles': response.get('constitutional_articles', []),
             
             # Legal Analysis
             'legal_guidance': response['legal_guidance'],

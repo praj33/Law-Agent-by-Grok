@@ -9,7 +9,7 @@
     "criminal_law_general": 0.45000000000000007,
     "drug_crimes_general": 0.15000000000000002,
     "drug_crimes_smuggling": 0.15000000000000002,
-    "criminal_law_murder": 0.30000000000000004,
+    "criminal_law_murder": 0.45000000000000007,
     "violent_crimes_general": 0.15000000000000002,
     "employment_law_general": 0.15000000000000002,
     "financial_crimes_money_laundering": 0.15000000000000002,
@@ -246,6 +246,15 @@
     {
       "timestamp": "2025-09-10T16:04:00.707291",
       "query": "Someone murdered my brother in cold blood",
+      "domain": "criminal_law",
+      "subdomain": "murder",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-13T12:47:27.569839",
+      "query": "Someone murdered my brother",
       "domain": "criminal_law",
       "subdomain": "murder",
       "feedback": "This analysis was very helpful",

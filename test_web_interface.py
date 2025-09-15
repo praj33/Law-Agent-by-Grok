@@ -1,99 +1,107 @@
 #!/usr/bin/env python3
 """
-Test the web interface to verify section display
+Test script to verify the web interface is working correctly
 """
 
 import requests
-import json
+import time
 
 def test_web_interface():
-    """Test the web interface with various queries"""
+    """Test the web interface endpoints"""
+    base_url = "http://localhost:5000"
     
-    print("🔍 Testing web interface...")
+    print("Testing Ultimate Legal Agent Web Interface")
+    print("=" * 50)
     
-    # API endpoint
-    url = "http://localhost:5000/api/ultimate-analysis"
-    
-    # Test queries
-    test_queries = [
-        # Test with a general query that should return all sections
-        {
-            "query": "legal advice",
-            "description": "General legal advice query"
-        },
-        # Test with a specific query that should return specific sections
-        {
-            "query": "someone stole my phone",
-            "description": "Theft-related query"
-        },
-        # Test with another specific query
-        {
-            "query": "murder case",
-            "description": "Murder-related query"
-        }
-    ]
-    
-    for test_case in test_queries:
-        query = test_case["query"]
-        description = test_case["description"]
-        
-        print(f"\n📝 {description}: '{query}'")
-        
-        # Test data
-        data = {
-            "query": query
-        }
-        
-        try:
-            # Make request to the API
-            response = requests.post(url, json=data, timeout=30)
-            
-            if response.status_code == 200:
-                result = response.json()
-                
-                if result.get("success"):
-                    bns_count = len(result.get('bns_sections', []))
-                    ipc_count = len(result.get('ipc_sections', []))
-                    crpc_count = len(result.get('crpc_sections', []))
-                    total = result.get('total_sections', 0)
-                    
-                    print(f"✅ Success - Total Sections: {total}")
-                    print(f"   BNS: {bns_count} | IPC: {ipc_count} | CrPC: {crpc_count}")
-                    
-                    # Show some examples of sections returned
-                    if bns_count > 0:
-                        bns_sections = result.get('bns_sections', [])[:3]
-                        bns_nums = [s.get('section_number') for s in bns_sections]
-                        print(f"   BNS Examples: {bns_nums}")
-                    
-                    if ipc_count > 0:
-                        ipc_sections = result.get('ipc_sections', [])[:3]
-                        ipc_nums = [s.get('section_number') for s in ipc_sections]
-                        print(f"   IPC Examples: {ipc_nums}")
-                    
-                    if crpc_count > 0:
-                        crpc_sections = result.get('crpc_sections', [])[:3]
-                        crpc_nums = [s.get('section_number') for s in crpc_sections]
-                        print(f"   CrPC Examples: {crpc_nums}")
-                        
-                else:
-                    print(f"❌ API Error: {result.get('error')}")
+    # Test 1: Health check
+    print("Test 1: Health Check")
+    try:
+        response = requests.get(f"{base_url}/api/health", timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                print("✅ Health check passed")
+                print(f"   Components: {data.get('components', {})}")
             else:
-                print(f"❌ HTTP Error: {response.status_code}")
-                
-        except requests.exceptions.ConnectionError:
-            print("❌ Connection Error: Make sure the web server is running")
-            return False
-        except Exception as e:
-            print(f"❌ Unexpected Error: {str(e)}")
-            return False
+                print("❌ Health check failed")
+        else:
+            print(f"❌ Health check failed with status {response.status_code}")
+    except Exception as e:
+        print(f"❌ Health check error: {e}")
     
-    return True
+    # Test 2: Stats endpoint
+    print("\nTest 2: Stats Endpoint")
+    try:
+        response = requests.get(f"{base_url}/api/stats", timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                print("✅ Stats endpoint working")
+                coverage = data.get("legal_coverage", {})
+                print(f"   BNS Sections: {coverage.get('bns_sections', 'N/A')}")
+                print(f"   IPC Sections: {coverage.get('ipc_sections', 'N/A')}")
+                print(f"   CrPC Sections: {coverage.get('crpc_sections', 'N/A')}")
+            else:
+                print("❌ Stats endpoint failed")
+        else:
+            print(f"❌ Stats endpoint failed with status {response.status_code}")
+    except Exception as e:
+        print(f"❌ Stats endpoint error: {e}")
+    
+    # Test 3: Ultimate analysis
+    print("\nTest 3: Ultimate Analysis")
+    test_query = "Someone murdered my brother"
+    try:
+        response = requests.post(
+            f"{base_url}/api/ultimate-analysis",
+            json={"query": test_query},
+            timeout=30
+        )
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                print("✅ Ultimate analysis working")
+                print(f"   Query: {data.get('query', 'N/A')}")
+                print(f"   Domain: {data.get('domain', 'N/A')}")
+                print(f"   Subdomain: {data.get('subdomain', 'N/A')}")
+                print(f"   Total Sections: {data.get('total_sections', 'N/A')}")
+            else:
+                print("❌ Ultimate analysis failed")
+                print(f"   Error: {data.get('error', 'Unknown')}")
+        else:
+            print(f"❌ Ultimate analysis failed with status {response.status_code}")
+    except Exception as e:
+        print(f"❌ Ultimate analysis error: {e}")
+    
+    # Test 4: Feedback submission
+    print("\nTest 4: Feedback Submission")
+    try:
+        response = requests.post(
+            f"{base_url}/api/feedback",
+            json={
+                "query": test_query,
+                "domain": "criminal_law",
+                "subdomain": "murder",
+                "confidence": 0.85,
+                "feedback": "This analysis was very helpful",
+                "rating": 5
+            },
+            timeout=15
+        )
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("success"):
+                print("✅ Feedback submission working")
+                print(f"   Message: {data.get('message', 'N/A')}")
+            else:
+                print("❌ Feedback submission failed")
+        else:
+            print(f"❌ Feedback submission failed with status {response.status_code}")
+    except Exception as e:
+        print(f"❌ Feedback submission error: {e}")
+    
+    print("\n" + "=" * 50)
+    print("Testing complete!")
 
 if __name__ == "__main__":
-    print("🌐 WEB INTERFACE TEST")
-    print("=" * 40)
-    
     test_web_interface()
-    
-    print(f"\n🏁 Web interface test completed")
