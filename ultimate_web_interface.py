@@ -28,9 +28,15 @@ except ImportError as e:
     print(f"⚠️ Ultimate legal agent not available: {e}")
     AGENT_AVAILABLE = False
 
+# Import CORS
+from flask_cors import CORS
+
 # Use environment variable for secret key, with fallback
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'ultimate_legal_agent_2025_render_deployment')
+
+# Enable CORS for all routes
+CORS(app)
 
 # Global agent instance
 ultimate_agent = None
