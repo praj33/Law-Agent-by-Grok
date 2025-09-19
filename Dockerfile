@@ -7,6 +7,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE $PORT
+# Expose default port 5000
+EXPOSE 5000
 
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "ultimate_web_interface:app"]
+# Use a startup script to handle the PORT environment variable
+CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:${PORT:-5000} ultimate_web_interface:app"]
