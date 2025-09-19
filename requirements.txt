@@ -1,19 +1,21 @@
 # Core Framework
-fastapi
-uvicorn
-pydantic
-flask
+fastapi>=0.68.0,<0.69.0
+uvicorn>=0.15.0,<0.16.0
+pydantic>=1.8.0,<2.0.0
+flask==2.3.3
 
 # Data Processing and ML
-pandas
-numpy
-scikit-learn
+pandas>=2.0.3,<3.0.0
+numpy>=1.24.3,<1.25.0
+scikit-learn>=1.3.0,<1.4.0
 
 # NLP and Text Processing
-spacy
-# Run: python -m spacy download en_core_web_sm
+spacy>=3.4.0,<4.0.0
 
 # Additional Utilities
-python-dateutil
-requests
-streamlit
+python-dateutil>=2.8.0,<3.0.0
+requests>=2.25.0,<3.0.0
+streamlit>=1.0.0,<2.0.0
+
+# Web Server for Render
+gunicorn>=20.1.0,<21.0.0

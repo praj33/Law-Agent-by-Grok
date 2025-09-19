@@ -28,8 +28,9 @@ except ImportError as e:
     print(f"⚠️ Ultimate legal agent not available: {e}")
     AGENT_AVAILABLE = False
 
+# Use environment variable for secret key, with fallback
 app = Flask(__name__)
-app.secret_key = 'ultimate_legal_agent_2025'
+app.secret_key = os.environ.get('SECRET_KEY', 'ultimate_legal_agent_2025_render_deployment')
 
 # Global agent instance
 ultimate_agent = None
@@ -441,7 +442,10 @@ if __name__ == '__main__':
     if initialize_ultimate_agent():
         print("✅ Ultimate Legal Agent ready!")
         print("🌐 Starting web server...")
-        print("📱 Access URL: http://localhost:5000")
+        
+        # Get port from environment variable (Render) or default to 5000
+        port = int(os.environ.get('PORT', 5000))
+        print(f"📍 Server will be available at: http://0.0.0.0:{port}")
         print("🔗 API Endpoints:")
         print("   • POST /api/ultimate-analysis - Ultimate legal analysis")
         print("   • POST /api/feedback - Submit feedback (adjusts confidence)")
@@ -451,7 +455,8 @@ if __name__ == '__main__':
         print("   • GET /api/health - Health check")
         print("=" * 80)
         
-        app.run(debug=True, host='0.0.0.0', port=5000)
+        # Run the app (bind to 0.0.0.0 for external access)
+        app.run(debug=False, host='0.0.0.0', port=port)
     else:
         print("❌ Failed to start - Ultimate Legal Agent initialization failed")
         print("💡 Please ensure all required components are available:")
