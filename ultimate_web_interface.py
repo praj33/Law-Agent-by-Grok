@@ -35,8 +35,26 @@ from flask_cors import CORS
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'ultimate_legal_agent_2025_render_deployment')
 
-# Enable CORS for all routes
-CORS(app)
+# Enable CORS for all routes with specific configuration
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["*"],  # Allow all origins for API routes
+        "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type", "Authorization"],
+        "supports_credentials": True
+    }
+})
+
+# Handle OPTIONS requests explicitly
+@app.before_request
+def handle_options():
+    if request.method == 'OPTIONS':
+        # Respond to OPTIONS requests immediately
+        response = jsonify({'status': 'ok'})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        return response
 
 # Global agent instance
 ultimate_agent = None
@@ -59,6 +77,41 @@ def initialize_ultimate_agent():
 def index():
     """Main page with ultimate legal analysis"""
     return render_template('ultimate_index.html')
+
+@app.route('/api')
+def api_endpoints():
+    """List all available API endpoints"""
+    return jsonify({
+        'message': 'Available API endpoints',
+        'endpoints': {
+            'POST /api/ultimate-analysis': 'Process legal queries and get analysis',
+            'POST /api/feedback': 'Submit feedback for queries',
+            'GET /api/history': 'Get query history',
+            'GET /api/search-history': 'Search query history',
+            'GET /api/stats': 'Get system statistics',
+            'GET /api/health': 'Health check endpoint',
+            'GET /api': 'This endpoint - list all API endpoints'
+        },
+        'timestamp': datetime.now().isoformat()
+    })
+
+@app.route('/api/test', methods=['GET', 'POST'])
+def test_api():
+    """Simple test endpoint to verify API is working"""
+    return jsonify({
+        'success': True,
+        'message': 'API is working correctly!',
+        'method': request.method,
+        'timestamp': datetime.now().isoformat(),
+        'endpoints': [
+            '/api/ultimate-analysis',
+            '/api/feedback',
+            '/api/history',
+            '/api/search-history',
+            '/api/stats',
+            '/api/health'
+        ]
+    })
 
 @app.route('/api/ultimate-analysis', methods=['POST'])
 def process_ultimate_analysis():
