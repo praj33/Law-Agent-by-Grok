@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test JS Classification</title>
+</head>
+<body>
+    <h1>Test JavaScript Classification</h1>
+    <script>
+        // Legal domain taxonomy mapping - UPDATED TO MATCH YOUR SPECIFIC TAXONOMY
+        const LEGAL_DOMAINS = {
+            "Criminal Law": {
+                "Murder": ["murder", "homicide", "kill", "manslaughter"],
+                "Kidnapping / Abduction": ["kidnap", "abduct", "ransom", "hostage"],
+                "Sexual Offences": ["rape", "sexual assault", "molestation"],
+                "Drug Crime": [
+                    "drugs",
+                    "narcotics",
+                    "smuggling",
+                    "caught with drugs at airport",
+                    "caught with drugs at an airport",
+                    "airport drug possession",
+                    "drug possession airport",
+                    "NDPS at airport"
+                ],
+                "Financial Crime": ["fraud", "cheating", "scam", "money laundering"],
+                "Cyber Crime": ["hacking", "hacked", "phone hacked", "online scam", "cyber fraud", "phishing", "phone is hacked"]
+            },
+            "Family Law": {
+                "Domestic Violence": ["domestic violence", "dowry", "husband beats", "cruelty"],
+                "Marriage & Divorce": ["divorce", "alimony", "separation"],
+                "Child Custody & Maintenance": ["child custody", "maintenance", "child support"]
+            },
+            "Property & Land Law": {
+                "Tenant Rights": ["tenant", "rent", "landlord", "eviction"],
+                "Real Estate & Land Disputes": ["land dispute", "property fraud", "illegal possession"]
+            },
+            "Traffic & Motor Vehicle Law": {
+                "Road Accidents": ["car accident", "bike accident", "hit and run"],
+                "Drunk Driving": ["drink and drive", "alcohol driving", "rash driving"]
+            },
+            "Employment & Labor Law": {
+                "Employment Issues": ["salary not paid", "wrongful termination", "unpaid wages"],
+                "Workplace Harassment": ["workplace harassment", "sexual harassment at work"]
+            },
+            "Consumer Law": {
+                "Consumer Protection": ["consumer complaint", "defective product", "refund not given"],
+                "Medical Malpractice": ["wrong treatment", "hospital negligence", "doctor negligence"]
+            },
+            "Social Offences": {
+                "Superstition & Black Magic": ["black magic", "superstition", "inhuman practice", "witch hunting"]
+            }
+        };
+
+        // Function to classify query according to the taxonomy
+        function classifyQuery(query) {
+            const queryLower = query.toLowerCase();
+            let bestDomain = null;
+            let bestSubdomain = null;
+            let maxMatches = 0;
+
+            // Iterate through domains and subdomains
+            for (const [domain, subdomains] of Object.entries(LEGAL_DOMAINS)) {
+                for (const [subdomain, keywords] of Object.entries(subdomains)) {
+                    const matches = keywords.filter(keyword => queryLower.includes(keyword)).length;
+                    if (matches > maxMatches) {
+                        maxMatches = matches;
+                        bestDomain = domain;
+                        bestSubdomain = subdomain;
+                    }
+                }
+            }
+
+            // Special handling for medical malpractice cases (highest priority)
+            const medicalTerms = ["wrong treatment", "hospital negligence", "doctor negligence", 
+                                "medical malpractice"];
+            if (medicalTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Consumer Law";
+                bestSubdomain = "Medical Malpractice";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Special handling for workplace harassment (high priority)
+            const harassmentTerms = ["workplace harassment", "sexual harassment at work"];
+            if (harassmentTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Employment & Labor Law";
+                bestSubdomain = "Workplace Harassment";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Special handling for sexual assault at workplace
+            if (queryLower.includes("sexual assault at workplace")) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Sexual Offences";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Special handling for drug crimes at airport
+            const drugAirportTerms = ["caught with drugs at airport", "caught with drugs at an airport", 
+                                    "airport drug possession", "drug possession airport", "NDPS at airport"];
+            if (drugAirportTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Drug Crime";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Special handling for kidnapping cases
+            const kidnappingTerms = ["kidnap", "abduct", "ransom", "hostage"];
+            if (kidnappingTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Kidnapping / Abduction";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for employment issues (but not harassment)
+            const employmentTerms = ["salary not paid", "wrongful termination", "unpaid wages"];
+            const harassmentTermsCheck = ["workplace harassment", "sexual harassment at work"];
+            if (employmentTerms.some(term => queryLower.includes(term)) && 
+                !harassmentTermsCheck.some(term => queryLower.includes(term))) {
+                bestDomain = "Employment & Labor Law";
+                bestSubdomain = "Employment Issues";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for traffic law cases
+            const roadAccidentTerms = ["car accident", "bike accident", "hit and run"];
+            if (roadAccidentTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Traffic & Motor Vehicle Law";
+                bestSubdomain = "Road Accidents";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            const drunkDrivingTerms = ["drink and drive", "alcohol driving", "rash driving"];
+            if (drunkDrivingTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Traffic & Motor Vehicle Law";
+                bestSubdomain = "Drunk Driving";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for tenant rights
+            const tenantTerms = ["tenant", "rent", "landlord", "eviction"];
+            if (tenantTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Property & Land Law";
+                bestSubdomain = "Tenant Rights";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for property disputes
+            const propertyTerms = ["land dispute", "property fraud", "illegal possession"];
+            const tenantTermsCheck = ["tenant", "rent", "landlord", "eviction"];
+            if (propertyTerms.some(term => queryLower.includes(term)) && 
+                !tenantTermsCheck.some(term => queryLower.includes(term))) {
+                bestDomain = "Property & Land Law";
+                bestSubdomain = "Real Estate & Land Disputes";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for financial crimes
+            const financialTerms = ["fraud", "cheating", "scam", "money laundering"];
+            if (financialTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Financial Crime";
+                maxMatches = Math.max(maxMatches, 2); // Ensure good confidence
+            }
+
+            // Special handling for airport drug possession case
+            if (queryLower.includes("airport drug possession case")) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Drug Crime";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Special handling for cyber crime - UPDATED TO MATCH THE PYTHON IMPLEMENTATION
+            const cyberTerms = ["hacking", "hacked", "phone hacked", "cyber", "online", "internet", "digital", 
+                              "computer", "phishing", "malware", "data breach", "identity theft", 
+                              "cyberbullying", "online fraud", "stole money from bank", "hackers stole", "phone is hacked"];
+            if (cyberTerms.some(term => queryLower.includes(term))) {
+                bestDomain = "Criminal Law";
+                bestSubdomain = "Cyber Crime";
+                maxMatches = Math.max(maxMatches, 3); // Ensure good confidence
+            }
+
+            // Calculate confidence
+            const baseConfidence = maxMatches > 0 ? Math.min(maxMatches / 3, 0.95) : 0.3;
+            
+            return {
+                domain: bestDomain || "General Legal Query",
+                subdomain: bestSubdomain || "General",
+                confidence: baseConfidence
+            };
+        }
+
+        // Test the query
+        const testQuery = "My phone is hacked";
+        const result = classifyQuery(testQuery);
+        
+        document.write("<p>Query: " + testQuery + "</p>");
+        document.write("<p>Domain: " + result.domain + "</p>");
+        document.write("<p>Subdomain: " + result.subdomain + "</p>");
+        document.write("<p>Confidence: " + result.confidence + "</p>");
+    </script>
+</body>
+</html>

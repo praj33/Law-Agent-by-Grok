@@ -1,0 +1,100 @@
+DEMONSTRATION: STRUCTURED OUTPUT FORMAT
+======================================
+
+When you ask: "phone being hacked"
+
+Your adaptive legal agent will now respond in this exact format:
+
+🔹 Step 1: Domain Classification
+
+Query detected: "phone being hacked"
+Domain classifier output: cyber_crime
+Subcategory: cyber_security / hacking
+
+🔹 Step 2: ML Classification Output (internal logs style)
+
+(this is what your agent generates internally, but may or may not show to user)
+
+Enhanced analysis: cyber_crime + ML suggestion: cyber_crime
+ML Classification: cyber_crime (confidence ~0.82)
+Dataset Route: police_station (cyber cell)
+Success rate (estimated): 70%
+
+🔹 Step 3: User-Friendly Answer (final output to user)
+
+📋 Domain Identified: Cyber Crime (Digital Security)
+
+🛑 Issue: Unauthorized access or control of your digital devices/accounts, which is a punishable offence under the Information Technology Act, 2000 and Indian Penal Code.
+
+✅ Legal Route (What you should do):
+
+1. Document evidence
+   • Take screenshots of suspicious activities
+   • Save logs, emails, transaction details
+   
+2. Immediate actions
+   • Change all passwords immediately
+   • Enable two-factor authentication
+   • Run security scans on devices
+   
+3. File complaint
+   • Report at nearest police station or cyber cell
+   • File online at https://cybercrime.gov.in
+   
+4. Legal process
+   • Police registers FIR under IT Act
+   • Investigation by Cyber Cell
+   • Court proceedings if required
+
+⚖️ Constitutional Backing:
+
+Article 21 → Right to life and personal liberty → includes right to privacy & security of communication.
+Article 14 → Equality before law → ensures fair treatment in investigation.
+
+⏱️ Timeline:
+
+FIR registration: Immediate (same day).
+Investigation: 1–6 months depending on complexity.
+Court trial (if needed): 6 months–2 years.
+
+📊 Success Rate: 70% (depends on evidence & tracing ability of cyber police)
+
+🔹 Step 4: Example Final Response (human-readable)
+
+Your query about 'phone being hacked' is a cyber crime. You should immediately secure your accounts, collect evidence, and file a complaint with the cyber cell. Your fundamental rights are protected by the Constitution of India.
+
+====================================================================
+
+HOW TO USE THIS FORMAT:
+
+1. Standard Response (existing functionality):
+   agent.process_query_with_learning(query_input)
+
+2. NEW: Structured Step-by-Step Response:
+   agent.process_query_with_structured_output(query_input)
+
+3. CLI Usage:
+   python cli_interface.py --adaptive
+
+4. API Usage:
+   The structured format can be requested via API parameter
+
+====================================================================
+
+✅ YOUR AGENT IS NOW READY WITH THIS STRUCTURED FORMAT!
+
+The adaptive agent will:
+- Classify the domain correctly
+- Show internal ML processing logs
+- Provide detailed step-by-step legal guidance
+- Reference constitutional articles
+- Give realistic timelines and success rates
+- Provide a human-readable summary
+
+This follows exactly the format you requested with:
+Step 1: Domain Classification
+Step 2: ML Classification Output 
+Step 3: User-Friendly Answer
+Step 4: Final Response
+
+The agent maintains all its adaptive learning capabilities while providing this structured, professional output format.

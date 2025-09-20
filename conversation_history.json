@@ -1,0 +1,707 @@
+{
+  "conversations": [
+    {
+      "session_id": "conv_20250815_173352_6716d40a",
+      "start_time": "2025-08-15T17:33:52.044074",
+      "end_time": "2025-08-15T17:33:52.082610",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173352_6716d40a_turn_1",
+          "timestamp": "2025-08-15T17:33:52.047382",
+          "user_input": "test query",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173352_6716d40a",
+            "timestamp": "2025-08-15T17:33:52.044074",
+            "raw_query": "test query",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173352_6716d40a_turn_2",
+          "timestamp": "2025-08-15T17:33:52.082610",
+          "user_input": "follow up",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173352_6716d40a",
+            "timestamp": "2025-08-15T17:33:52.078585",
+            "raw_query": "follow up",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "neutral",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [],
+      "final_satisfaction": null,
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250815_173734_4f64be53",
+      "start_time": "2025-08-15T17:37:34.440879",
+      "end_time": "2025-08-15T17:37:34.571973",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173734_4f64be53_turn_1",
+          "timestamp": "2025-08-15T17:37:34.448886",
+          "user_input": "my landlord is not returning my security deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.6092622139120313,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250815_173734_4f64be53",
+            "timestamp": "2025-08-15T17:37:34.440879",
+            "raw_query": "my landlord is not returning my security deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 3, Article 6, Article 5.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "6",
+                "title": "Rights of citizenship of certain persons who have migrated to India from Pakistan Notwithstanding anything in Article 5, a person who has migrated to the territory of India from the territory now included in Pakistan shall be deemed to be a citizen of India at the commencement of this Constitution if",
+                "summary": "(a) he or either of his parents or any of his grand parents was born in India as defined in the Gove..."
+              },
+              {
+                "article_number": "5",
+                "title": "Citizenship at the commencement of the Constitution At the commencement of this Constitution every person who has his domicile in the territory of India and",
+                "summary": "(a) who was born in the territory of India; or\n(b) either of whose parents was born in the territory..."
+              }
+            ]
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.6092622139120313,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173734_4f64be53_turn_2",
+          "timestamp": "2025-08-15T17:37:34.485460",
+          "user_input": "thank you, that was helpful",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173734_4f64be53",
+            "timestamp": "2025-08-15T17:37:34.482446",
+            "raw_query": "thank you, that was helpful",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "clarification",
+          "feedback_type": "neutral",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.0,
+          "learning_applied": true
+        },
+        {
+          "turn_id": "conv_20250815_173734_4f64be53_turn_3",
+          "timestamp": "2025-08-15T17:37:34.529071",
+          "user_input": "what documents do I need for this?",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173734_4f64be53",
+            "timestamp": "2025-08-15T17:37:34.526774",
+            "raw_query": "what documents do I need for this?",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "not helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173734_4f64be53_turn_4",
+          "timestamp": "2025-08-15T17:37:34.569960",
+          "user_input": "this advice is not helpful",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173734_4f64be53",
+            "timestamp": "2025-08-15T17:37:34.567251",
+            "raw_query": "this advice is not helpful",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "not helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        }
+      ],
+      "total_turns": 4,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250815_173734_4f64be53_turn_2",
+          "feedback_type": "acknowledgment",
+          "confidence_change": -0.6092622139120313,
+          "timestamp": "2025-08-15T17:37:34.485460"
+        }
+      ],
+      "final_satisfaction": "satisfied",
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250815_173909_d3732187",
+      "start_time": "2025-08-15T17:39:09.030432",
+      "end_time": "2025-08-15T17:39:09.073943",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173909_d3732187_turn_1",
+          "timestamp": "2025-08-15T17:39:09.038511",
+          "user_input": "my landlord is not returning my security deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.6092622139120313,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250815_173909_d3732187",
+            "timestamp": "2025-08-15T17:39:09.030432",
+            "raw_query": "my landlord is not returning my security deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 3, Article 6, Article 5.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "6",
+                "title": "Rights of citizenship of certain persons who have migrated to India from Pakistan Notwithstanding anything in Article 5, a person who has migrated to the territory of India from the territory now included in Pakistan shall be deemed to be a citizen of India at the commencement of this Constitution if",
+                "summary": "(a) he or either of his parents or any of his grand parents was born in India as defined in the Gove..."
+              },
+              {
+                "article_number": "5",
+                "title": "Citizenship at the commencement of the Constitution At the commencement of this Constitution every person who has his domicile in the territory of India and",
+                "summary": "(a) who was born in the territory of India; or\n(b) either of whose parents was born in the territory..."
+              }
+            ]
+          },
+          "user_feedback": "wrong domain",
+          "feedback_type": "dissatisfaction",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.6092622139120313,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173909_d3732187_turn_2",
+          "timestamp": "2025-08-15T17:39:09.073943",
+          "user_input": "what legal action can I take against landlord for deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.3964844116415583,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250815_173909_d3732187",
+            "timestamp": "2025-08-15T17:39:09.066991",
+            "raw_query": "what legal action can I take against landlord for deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 3, Article 4, Article 5.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "4",
+                "title": "Laws made under Articles 2 and 3 to provide for the amendment of the First and the Fourth Schedules and supplemental, incidental and consequential matters",
+                "summary": "(1) Any law referred to in Article 2 or Article 3 shall contain such provisions for the amendment of..."
+              },
+              {
+                "article_number": "5",
+                "title": "Citizenship at the commencement of the Constitution At the commencement of this Constitution every person who has his domicile in the territory of India and",
+                "summary": "(a) who was born in the territory of India; or\n(b) either of whose parents was born in the territory..."
+              }
+            ]
+          },
+          "user_feedback": "wrong domain",
+          "feedback_type": "clarification",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.3964844116415583,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250815_173909_d3732187_turn_2",
+          "feedback_type": "clarification",
+          "confidence_change": -0.212777802270473,
+          "timestamp": "2025-08-15T17:39:09.073943"
+        }
+      ],
+      "final_satisfaction": null,
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250815_173909_9ba99158",
+      "start_time": "2025-08-15T17:39:09.078651",
+      "end_time": "2025-08-15T17:39:09.118308",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173909_9ba99158_turn_1",
+          "timestamp": "2025-08-15T17:39:09.079699",
+          "user_input": "someone hacked my bank account and stole money",
+          "agent_response": {
+            "domain": "cyber crime",
+            "confidence": 0.14717350382760766,
+            "legal_route": "Report to Cyber Crime Cell and file complaint under IT Act, 2000.",
+            "timeline": "1-8 months",
+            "outcome": "Investigation, recovery of funds, or prosecution.",
+            "process_steps": [
+              "1. Preserve all digital evidence (screenshots, emails, messages)",
+              "2. Report immediately to local Cyber Crime Cell",
+              "3. File FIR at nearest police station",
+              "4. Submit complaint on National Cyber Crime Portal",
+              "5. Freeze affected bank accounts if financial fraud",
+              "6. Cooperate with investigation agencies",
+              "7. Provide additional evidence as requested",
+              "8. Follow up on case progress and recovery"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173909_9ba99158",
+            "timestamp": "2025-08-15T17:39:09.078651",
+            "raw_query": "someone hacked my bank account and stole money",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Constitutional rights to privacy and freedom of expression apply to digital spaces and cyber crimes. Relevant constitutional provisions include Article 1, Article 3, Article 4.",
+            "constitutional_articles": [
+              {
+                "article_number": "1",
+                "title": "Name and territory of the Union",
+                "summary": "(1) India, that is Bharat, shall be a Union of States\n(2) The States and the territories thereof sha..."
+              },
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "4",
+                "title": "Laws made under Articles 2 and 3 to provide for the amendment of the First and the Fourth Schedules and supplemental, incidental and consequential matters",
+                "summary": "(1) Any law referred to in Article 2 or Article 3 shall contain such provisions for the amendment of..."
+              }
+            ]
+          },
+          "user_feedback": "confusing",
+          "feedback_type": "neutral",
+          "confidence_before": 0.14717350382760766,
+          "confidence_after": 0.14717350382760766,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173909_9ba99158_turn_2",
+          "timestamp": "2025-08-15T17:39:09.118308",
+          "user_input": "how to report cybercrime to police",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173909_9ba99158",
+            "timestamp": "2025-08-15T17:39:09.115500",
+            "raw_query": "how to report cybercrime to police",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "confusing",
+          "feedback_type": "clarification",
+          "confidence_before": 0.14717350382760766,
+          "confidence_after": 0.0,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250815_173909_9ba99158_turn_2",
+          "feedback_type": "clarification",
+          "confidence_change": -0.14717350382760766,
+          "timestamp": "2025-08-15T17:39:09.118308"
+        }
+      ],
+      "final_satisfaction": null,
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250815_173909_67702c09",
+      "start_time": "2025-08-15T17:39:09.124082",
+      "end_time": "2025-08-15T17:39:09.171783",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173909_67702c09_turn_1",
+          "timestamp": "2025-08-15T17:39:09.127157",
+          "user_input": "friend borrowed money and not returning",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.28035681610650437,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250815_173909_67702c09",
+            "timestamp": "2025-08-15T17:39:09.124082",
+            "raw_query": "friend borrowed money and not returning",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 3, Article 6, Article 1.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "6",
+                "title": "Rights of citizenship of certain persons who have migrated to India from Pakistan Notwithstanding anything in Article 5, a person who has migrated to the territory of India from the territory now included in Pakistan shall be deemed to be a citizen of India at the commencement of this Constitution if",
+                "summary": "(a) he or either of his parents or any of his grand parents was born in India as defined in the Gove..."
+              },
+              {
+                "article_number": "1",
+                "title": "Name and territory of the Union",
+                "summary": "(1) India, that is Bharat, shall be a Union of States\n(2) The States and the territories thereof sha..."
+              }
+            ]
+          },
+          "user_feedback": "very helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.28035681610650437,
+          "confidence_after": 0.28035681610650437,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173909_67702c09_turn_2",
+          "timestamp": "2025-08-15T17:39:09.166632",
+          "user_input": "legal notice for money recovery",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.28035681610650437,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250815_173909_67702c09",
+            "timestamp": "2025-08-15T17:39:09.166632",
+            "raw_query": "legal notice for money recovery",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 3, Article 4, Article 5.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "4",
+                "title": "Laws made under Articles 2 and 3 to provide for the amendment of the First and the Fourth Schedules and supplemental, incidental and consequential matters",
+                "summary": "(1) Any law referred to in Article 2 or Article 3 shall contain such provisions for the amendment of..."
+              },
+              {
+                "article_number": "5",
+                "title": "Citizenship at the commencement of the Constitution At the commencement of this Constitution every person who has his domicile in the territory of India and",
+                "summary": "(a) who was born in the territory of India; or\n(b) either of whose parents was born in the territory..."
+              }
+            ]
+          },
+          "user_feedback": "very helpful",
+          "feedback_type": "dissatisfaction",
+          "confidence_before": 0.28035681610650437,
+          "confidence_after": 0.28035681610650437,
+          "learning_applied": false
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [],
+      "final_satisfaction": null,
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250815_173909_fec5ef64",
+      "start_time": "2025-08-15T17:39:09.176989",
+      "end_time": "2025-08-15T17:39:09.212813",
+      "turns": [
+        {
+          "turn_id": "conv_20250815_173909_fec5ef64_turn_1",
+          "timestamp": "2025-08-15T17:39:09.177993",
+          "user_input": "someone threatened me with violence",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173909_fec5ef64",
+            "timestamp": "2025-08-15T17:39:09.176989",
+            "raw_query": "someone threatened me with violence",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250815_173909_fec5ef64_turn_2",
+          "timestamp": "2025-08-15T17:39:09.212813",
+          "user_input": "can I file criminal case for threats",
+          "agent_response": {
+            "domain": "criminal law",
+            "confidence": 0.28035681610650437,
+            "legal_route": "File FIR and engage criminal defense attorney",
+            "timeline": "3 months to 2 years",
+            "outcome": "Case resolution through court proceedings",
+            "process_steps": [
+              "1. Exercise right to remain silent",
+              "2. Request attorney immediately",
+              "3. Do not discuss case with anyone except attorney",
+              "4. Attend arraignment and enter plea",
+              "5. Participate in discovery process",
+              "6. Consider plea bargain negotiations",
+              "7. Prepare for trial if necessary",
+              "8. Appeal if convicted and grounds exist"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250815_173909_fec5ef64",
+            "timestamp": "2025-08-15T17:39:09.210499",
+            "raw_query": "can I file criminal case for threats",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Under the Constitution, you have fundamental rights including protection from arbitrary arrest and fair trial guarantees. Relevant constitutional provisions include Article 3, Article 4, Article 6.",
+            "constitutional_articles": [
+              {
+                "article_number": "3",
+                "title": "Formation of new States and alteration of areas, boundaries or names of existing States: Parliament may by law",
+                "summary": "(a) form a new State by separation of territory from any State or by uniting two or more States or p..."
+              },
+              {
+                "article_number": "4",
+                "title": "Laws made under Articles 2 and 3 to provide for the amendment of the First and the Fourth Schedules and supplemental, incidental and consequential matters",
+                "summary": "(1) Any law referred to in Article 2 or Article 3 shall contain such provisions for the amendment of..."
+              },
+              {
+                "article_number": "6",
+                "title": "Rights of citizenship of certain persons who have migrated to India from Pakistan Notwithstanding anything in Article 5, a person who has migrated to the territory of India from the territory now included in Pakistan shall be deemed to be a citizen of India at the commencement of this Constitution if",
+                "summary": "(a) he or either of his parents or any of his grand parents was born in India as defined in the Gove..."
+              }
+            ]
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "neutral",
+          "confidence_before": 0.0,
+          "confidence_after": 0.28035681610650437,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250815_173909_fec5ef64_turn_2",
+          "feedback_type": "neutral",
+          "confidence_change": 0.28035681610650437,
+          "timestamp": "2025-08-15T17:39:09.212813"
+        }
+      ],
+      "final_satisfaction": null,
+      "improvement_score": 0.3803568161065044
+    }
+  ],
+  "learning_patterns": {
+    "acknowledgment_patterns": {},
+    "clarification_patterns": {},
+    "dissatisfaction_patterns": {}
+  },
+  "last_updated": "2025-08-15T17:39:09.212813"
+}

@@ -1,0 +1,292 @@
+{
+  "test_summary": {
+    "total_tests": 10,
+    "successful_tests": 0,
+    "failed_tests": 10,
+    "success_rate": 0.0
+  },
+  "performance_metrics": {
+    "average_score": 4.63,
+    "domain_accuracy": 0.0,
+    "route_relevance": 1.5333333333333332,
+    "timeline_realism": 4.7,
+    "language_clarity": 5.0,
+    "constitutional_coverage": 90.0,
+    "data_insights_coverage": 0.0,
+    "jargon_detection": 16.666666666666664,
+    "average_response_time": 0.002783036231994629
+  },
+  "detailed_results": [
+    {
+      "scenario_id": "T001",
+      "timestamp": "2025-08-29T10:52:38.084550",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.3333333333333333,
+      "response_time": 0.0069963932037353516,
+      "overall_score": 4.566666666666666,
+      "issues": [
+        "Domain mismatch: got tenant rights, expected tenant_rights",
+        "Low confidence: 0.396 < 0.7",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T002",
+      "timestamp": "2025-08-29T10:52:38.125974",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 3.6666666666666665,
+      "timeline_realism": 4.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.3333333333333333,
+      "response_time": 0.0054395198822021484,
+      "overall_score": 5.5,
+      "issues": [
+        "Domain mismatch: got consumer complaint, expected consumer_complaint",
+        "Low confidence: 0.157 < 0.6",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T003",
+      "timestamp": "2025-08-29T10:52:38.153334",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 2.333333333333333,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.25,
+      "response_time": 0.0022864341735839844,
+      "overall_score": 5.216666666666666,
+      "issues": [
+        "Domain mismatch: got family law, expected family_law",
+        "Low confidence: 0.585 < 0.8",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T004",
+      "timestamp": "2025-08-29T10:52:38.175568",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.25,
+      "response_time": 0.0019998550415039062,
+      "overall_score": 4.55,
+      "issues": [
+        "Domain mismatch: got employment law, expected employment_law",
+        "Low confidence: 0.182 < 0.7",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T005",
+      "timestamp": "2025-08-29T10:52:38.193830",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.25,
+      "response_time": 0.0030765533447265625,
+      "overall_score": 4.55,
+      "issues": [
+        "Domain mismatch: got criminal law, expected criminal_law",
+        "Low confidence: 0.198 < 0.8",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T006",
+      "timestamp": "2025-08-29T10:52:38.210088",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 2.333333333333333,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.25,
+      "response_time": 0.0009989738464355469,
+      "overall_score": 5.216666666666666,
+      "issues": [
+        "Domain mismatch: got cyber crime, expected cyber_crime",
+        "Low confidence: 0.240 < 0.6",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T007",
+      "timestamp": "2025-08-29T10:52:38.233258",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 3.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": false,
+      "data_insights": false,
+      "jargon_detection": 0.0,
+      "response_time": 0.001020193099975586,
+      "overall_score": 3.2,
+      "issues": [
+        "Domain mismatch: got unknown, expected elder_abuse",
+        "Low confidence: 0.000 < 0.7",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T008",
+      "timestamp": "2025-08-29T10:52:38.250699",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.0,
+      "response_time": 0.0025217533111572266,
+      "overall_score": 4.5,
+      "issues": [
+        "Domain mismatch: got contract dispute, expected contract_dispute",
+        "Low confidence: 0.338 < 0.7",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T009",
+      "timestamp": "2025-08-29T10:52:38.269762",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.0,
+      "response_time": 0.0011606216430664062,
+      "overall_score": 4.5,
+      "issues": [
+        "Domain mismatch: got personal injury, expected personal_injury",
+        "Low confidence: 0.365 < 0.6",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    },
+    {
+      "scenario_id": "T010",
+      "timestamp": "2025-08-29T10:52:38.287940",
+      "success": false,
+      "domain_accuracy": 0.0,
+      "route_relevance": 1.0,
+      "timeline_realism": 5.0,
+      "language_clarity": 5.0,
+      "constitutional_backing": true,
+      "data_insights": false,
+      "jargon_detection": 0.0,
+      "response_time": 0.0023300647735595703,
+      "overall_score": 4.5,
+      "issues": [
+        "Domain mismatch: got immigration law, expected immigration_law",
+        "Low confidence: 0.372 < 0.8",
+        "Legal route lacks relevance",
+        "Poor jargon detection"
+      ],
+      "recommendations": [
+        "Improve ML classifier training data",
+        "Enhance feature extraction and training",
+        "Improve dataset-driven route generation",
+        "Enhance dynamic glossary patterns"
+      ]
+    }
+  ],
+  "common_issues": [
+    "Domain mismatch (10 occurrences)",
+    "Low confidence (10 occurrences)",
+    "Poor jargon detection (10 occurrences)",
+    "Legal route lacks relevance (9 occurrences)"
+  ],
+  "recommendations": [
+    "Improve ML classifier training data",
+    "Enhance dynamic glossary patterns",
+    "Enhance feature extraction and training",
+    "Improve dataset-driven route generation"
+  ],
+  "timestamp": "2025-08-29T10:52:38.287940"
+}

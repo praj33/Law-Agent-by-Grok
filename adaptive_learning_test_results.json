@@ -1,0 +1,243 @@
+{
+  "test_suite": "Adaptive Learning Comprehensive Test",
+  "total_tests": 5,
+  "passed_tests": 2,
+  "success_rate": 0.4,
+  "passed": false,
+  "individual_results": [
+    {
+      "test_name": "Behavioral Adaptation",
+      "passed": "True",
+      "details": {
+        "initial_confidence": 0.30538579153971074,
+        "final_confidence": 0.34759579153971076,
+        "confidence_change": 0.042210000000000025,
+        "confidence_improved": "True"
+      },
+      "metrics": {}
+    },
+    {
+      "test_name": "Multi-Stage Dialogue",
+      "passed": false,
+      "scenarios": [
+        {
+          "name": "Tenant Rights Improvement",
+          "passed": false,
+          "turns": [
+            {
+              "turn": 1,
+              "query": "my landlord is not returning my security deposit",
+              "confidence": 0.6092622139120313,
+              "domain": "tenant rights"
+            },
+            {
+              "turn": 2,
+              "query": "what legal action can I take against landlord for deposit",
+              "confidence": 0.3686744116415583,
+              "domain": "tenant rights",
+              "feedback_given": "wrong domain"
+            }
+          ],
+          "learning_detected": false,
+          "confidence_evolution": [
+            0.6092622139120313,
+            0.3686744116415583
+          ],
+          "error": "ConversationLoop.end_conversation() takes 2 positional arguments but 3 were given"
+        },
+        {
+          "name": "Cybercrime Confidence Drop",
+          "passed": false,
+          "turns": [
+            {
+              "turn": 1,
+              "query": "someone hacked my bank account and stole money",
+              "confidence": 0.14717350382760766,
+              "domain": "cyber crime"
+            },
+            {
+              "turn": 2,
+              "query": "how to report cybercrime to police",
+              "confidence": 0.0,
+              "domain": "unknown",
+              "feedback_given": "not helpful"
+            }
+          ],
+          "learning_detected": false,
+          "confidence_evolution": [
+            0.14717350382760766,
+            0.0
+          ],
+          "error": "ConversationLoop.end_conversation() takes 2 positional arguments but 3 were given"
+        },
+        {
+          "name": "Repayment Dispute Improvement",
+          "passed": false,
+          "turns": [
+            {
+              "turn": 1,
+              "query": "friend borrowed money and not returning",
+              "confidence": 0.25254681610650437,
+              "domain": "tenant rights"
+            },
+            {
+              "turn": 2,
+              "query": "legal notice for money recovery",
+              "confidence": 0.3226937161065044,
+              "domain": "tenant rights",
+              "feedback_given": "helpful"
+            }
+          ],
+          "learning_detected": false,
+          "confidence_evolution": [
+            0.25254681610650437,
+            0.3226937161065044
+          ],
+          "error": "ConversationLoop.end_conversation() takes 2 positional arguments but 3 were given"
+        },
+        {
+          "name": "Criminal Case Assertiveness",
+          "passed": false,
+          "turns": [
+            {
+              "turn": 1,
+              "query": "someone threatened me with violence",
+              "confidence": 0.0,
+              "domain": "unknown"
+            },
+            {
+              "turn": 2,
+              "query": "can I file criminal case for threats",
+              "confidence": 0.28035681610650437,
+              "domain": "criminal law",
+              "feedback_given": "good"
+            }
+          ],
+          "learning_detected": false,
+          "confidence_evolution": [
+            0.0,
+            0.28035681610650437
+          ],
+          "error": "ConversationLoop.end_conversation() takes 2 positional arguments but 3 were given"
+        }
+      ],
+      "metrics": {
+        "success_rate": 0.0,
+        "passed_scenarios": 0,
+        "total_scenarios": 4
+      }
+    },
+    {
+      "test_name": "Feedback Integration",
+      "passed": "True",
+      "feedback_types": {
+        "helpful": {
+          "confidence_change": 0.0,
+          "reward_score": 0.5499999999999999,
+          "reward_components": {
+            "accuracy": 0.5,
+            "helpfulness": 0.7,
+            "clarity": 0.5,
+            "timeliness": 0.5,
+            "consistency": 0.5
+          }
+        },
+        "not helpful": {
+          "confidence_change": 0.0,
+          "reward_score": 0.5499999999999999,
+          "reward_components": {
+            "accuracy": 0.5,
+            "helpfulness": 0.7,
+            "clarity": 0.5,
+            "timeliness": 0.5,
+            "consistency": 0.5
+          }
+        },
+        "wrong domain": {
+          "confidence_change": 0.0,
+          "reward_score": 0.5,
+          "reward_components": {
+            "accuracy": 0.5,
+            "helpfulness": 0.5,
+            "clarity": 0.5,
+            "timeliness": 0.5,
+            "consistency": 0.5
+          }
+        },
+        "confusing": {
+          "confidence_change": 0.0,
+          "reward_score": 0.44749999999999995,
+          "reward_components": {
+            "accuracy": 0.5,
+            "helpfulness": 0.44999999999999996,
+            "clarity": 0.3,
+            "timeliness": 0.5,
+            "consistency": 0.5
+          }
+        },
+        "excellent": {
+          "confidence_change": 0.0,
+          "reward_score": 0.5499999999999999,
+          "reward_components": {
+            "accuracy": 0.5,
+            "helpfulness": 0.7,
+            "clarity": 0.5,
+            "timeliness": 0.5,
+            "consistency": 0.5
+          }
+        }
+      },
+      "metrics": {
+        "avg_positive_reward": 0.5499999999999999,
+        "avg_negative_reward": 0.5249999999999999,
+        "reward_differentiation": 0.025000000000000022
+      }
+    },
+    {
+      "test_name": "Memory and Patterns",
+      "passed": false,
+      "patterns": {},
+      "metrics": {
+        "unique_patterns": 3,
+        "total_queries": 3,
+        "pattern_efficiency": 1.0,
+        "memory_stats": {
+          "total_records": 24,
+          "unique_patterns": 3,
+          "average_improvement": 0.02044915997609433,
+          "successful_learnings": 12,
+          "domain_distribution": {
+            "tenant rights": 24
+          },
+          "recent_activity_7days": 24,
+          "database_file": "test_state_memory.db",
+          "evolution_log_file": "query_evolution_log.json"
+        }
+      }
+    },
+    {
+      "test_name": "Confidence Adjustment",
+      "passed": "False",
+      "adjustments": [
+        {
+          "type": "positive_feedback",
+          "confidence_before": 0.3018158228481084,
+          "confidence_after": 0.3022379228481084,
+          "adjustment": 0.00042210000000003634
+        },
+        {
+          "type": "negative_feedback",
+          "confidence_before": 0.3022379228481084,
+          "confidence_after": 0.2364071438481084,
+          "adjustment": -0.065830779
+        }
+      ],
+      "metrics": {
+        "positive_boost": "False",
+        "negative_penalty": "True",
+        "adjustment_magnitude": 0.06625287900000004
+      }
+    }
+  ],
+  "timestamp": "2025-08-23 14:37:12"
+}

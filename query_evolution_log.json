@@ -1,0 +1,1322 @@
+[
+  {
+    "timestamp": "2025-08-23T14:31:22.185188",
+    "record_id": "rec_20250823_143122_182121",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.235023",
+    "record_id": "rec_20250823_143122_231984",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0012"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.312954",
+    "record_id": "rec_20250823_143122_309042",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0013"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.386622",
+    "record_id": "rec_20250823_143122_384362",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0014"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.447176",
+    "record_id": "rec_20250823_143122_443111",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0015"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.536488",
+    "record_id": "rec_20250823_143122_536488",
+    "session_id": "test_session_0",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.13483991391203132,
+    "improvement_score": 0.13483991391203132,
+    "pattern_id": "pattern_20250815_174025_0000"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.600567",
+    "record_id": "rec_20250823_143122_597042",
+    "session_id": "test_session_1",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.07793788835844173,
+    "improvement_score": -0.07793788835844173,
+    "pattern_id": "pattern_20250815_174025_0001"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.676715",
+    "record_id": "rec_20250823_143122_673517",
+    "session_id": "test_session_2",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.01182035812530663,
+    "improvement_score": -0.01182035812530663,
+    "pattern_id": "pattern_20250815_174025_0002"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.728725",
+    "record_id": "rec_20250823_143122_726655",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0020"
+  },
+  {
+    "timestamp": "2025-08-23T14:31:22.780071",
+    "record_id": "rec_20250823_143122_776668",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.018654300000000013,
+    "improvement_score": 0.018654300000000013,
+    "pattern_id": "pattern_20250823_115200_0020"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:14.859365",
+    "record_id": "rec_20250823_143214_857800",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:14.906228",
+    "record_id": "rec_20250823_143214_906228",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0012"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:14.976179",
+    "record_id": "rec_20250823_143214_975767",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0013"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.035105",
+    "record_id": "rec_20250823_143215_031933",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0014"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.080495",
+    "record_id": "rec_20250823_143215_079701",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0015"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.163390",
+    "record_id": "rec_20250823_143215_160046",
+    "session_id": "test_session_0",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.15351551391203133,
+    "improvement_score": 0.15351551391203133,
+    "pattern_id": "pattern_20250815_174025_0000"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.210754",
+    "record_id": "rec_20250823_143215_208739",
+    "session_id": "test_session_1",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.05926228835844172,
+    "improvement_score": -0.05926228835844172,
+    "pattern_id": "pattern_20250815_174025_0001"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.258666",
+    "record_id": "rec_20250823_143215_255431",
+    "session_id": "test_session_2",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.006855241874693441,
+    "improvement_score": 0.006855241874693441,
+    "pattern_id": "pattern_20250815_174025_0002"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.312494",
+    "record_id": "rec_20250823_143215_312494",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:32:15.369628",
+    "record_id": "rec_20250823_143215_366527",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.004214700000000016,
+    "improvement_score": 0.004214700000000016,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.583022",
+    "record_id": "rec_20250823_143332_581499",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.633535",
+    "record_id": "rec_20250823_143332_631290",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0012"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.708184",
+    "record_id": "rec_20250823_143332_696446",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_3_20250823_143332"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.765383",
+    "record_id": "rec_20250823_143332_764293",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0014"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.826761",
+    "record_id": "rec_20250823_143332_824196",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0015"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.918978",
+    "record_id": "rec_20250823_143332_913751",
+    "session_id": "test_session_0",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.1515991139120313,
+    "improvement_score": 0.1515991139120313,
+    "pattern_id": "pattern_20250815_174025_0000"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:32.973768",
+    "record_id": "rec_20250823_143332_970915",
+    "session_id": "test_session_1",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.0611786883584417,
+    "improvement_score": -0.0611786883584417,
+    "pattern_id": "pattern_20250815_174025_0001"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:33.027138",
+    "record_id": "rec_20250823_143333_024952",
+    "session_id": "test_session_2",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.0049388418746934,
+    "improvement_score": 0.0049388418746934,
+    "pattern_id": "pattern_20250815_174025_0002"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:33.079556",
+    "record_id": "rec_20250823_143333_078007",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:33:33.139406",
+    "record_id": "rec_20250823_143333_135901",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.00042210000000003634,
+    "improvement_score": 0.00042210000000003634,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.201267",
+    "record_id": "rec_20250823_143516_201267",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.254442",
+    "record_id": "rec_20250823_143516_252317",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0012"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.310848",
+    "record_id": "rec_20250823_143516_304103",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_3_20250823_143332"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.360817",
+    "record_id": "rec_20250823_143516_358851",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0014"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.409698",
+    "record_id": "rec_20250823_143516_407743",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0015"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.487730",
+    "record_id": "rec_20250823_143516_486366",
+    "session_id": "test_session_0",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.1515991139120313,
+    "improvement_score": 0.1515991139120313,
+    "pattern_id": "pattern_20250815_174025_0000"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.546300",
+    "record_id": "rec_20250823_143516_543097",
+    "session_id": "test_session_1",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.0611786883584417,
+    "improvement_score": -0.0611786883584417,
+    "pattern_id": "pattern_20250815_174025_0001"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.601142",
+    "record_id": "rec_20250823_143516_601142",
+    "session_id": "test_session_2",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.0049388418746934,
+    "improvement_score": 0.0049388418746934,
+    "pattern_id": "pattern_20250815_174025_0002"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.663073",
+    "record_id": "rec_20250823_143516_660655",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:35:16.725820",
+    "record_id": "rec_20250823_143516_720824",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.00042210000000003634,
+    "improvement_score": 0.00042210000000003634,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.675693",
+    "record_id": "rec_20250823_143711_673634",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.727242",
+    "record_id": "rec_20250823_143711_724348",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0012"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.799507",
+    "record_id": "rec_20250823_143711_796440",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_3_20250823_143332"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.856865",
+    "record_id": "rec_20250823_143711_853376",
+    "session_id": "session_rec_2025",
+    "domain": "tenant rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0014"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.912538",
+    "record_id": "rec_20250823_143711_911157",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_173909_0015"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:11.995236",
+    "record_id": "rec_20250823_143711_993842",
+    "session_id": "test_session_0",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.1515991139120313,
+    "improvement_score": 0.1515991139120313,
+    "pattern_id": "pattern_20250815_174025_0000"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:12.044744",
+    "record_id": "rec_20250823_143712_044744",
+    "session_id": "test_session_1",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": -0.0611786883584417,
+    "improvement_score": -0.0611786883584417,
+    "pattern_id": "pattern_20250815_174025_0001"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:12.088580",
+    "record_id": "rec_20250823_143712_085227",
+    "session_id": "test_session_2",
+    "domain": "tenant rights",
+    "feedback_type": "helpful",
+    "confidence_change": 0.0049388418746934,
+    "improvement_score": 0.0049388418746934,
+    "pattern_id": "pattern_20250815_174025_0002"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:12.134580",
+    "record_id": "rec_20250823_143712_130304",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T14:37:12.178465",
+    "record_id": "rec_20250823_143712_177271",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.00042210000000003634,
+    "improvement_score": 0.00042210000000003634,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-23T16:39:09.489047",
+    "record_id": "rec_20250823_163909_473692",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-23T16:48:10.752676",
+    "record_id": "rec_20250823_164810_751187",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.497288",
+    "record_id": "rec_20250827_092353_497288",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.569067",
+    "record_id": "rec_20250827_092353_564228",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.042210000000000025,
+    "improvement_score": 0.042210000000000025,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.704119",
+    "record_id": "rec_20250827_092353_701035",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0000"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.749452",
+    "record_id": "rec_20250827_092353_747112",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0001"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.795866",
+    "record_id": "rec_20250827_092353_792251",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0002"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.846520",
+    "record_id": "rec_20250827_092353_846520",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.900056",
+    "record_id": "rec_20250827_092353_898003",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04220999999999997,
+    "improvement_score": 0.04220999999999997,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:53.960471",
+    "record_id": "rec_20250827_092353_959472",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.014798",
+    "record_id": "rec_20250827_092354_011827",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.071807",
+    "record_id": "rec_20250827_092354_068808",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.129630",
+    "record_id": "rec_20250827_092354_126856",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.614882",
+    "record_id": "rec_20250827_092354_614882",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0000"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.674290",
+    "record_id": "rec_20250827_092354_669057",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0001"
+  },
+  {
+    "timestamp": "2025-08-27T09:23:54.730876",
+    "record_id": "rec_20250827_092354_728867",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0002"
+  },
+  {
+    "timestamp": "2025-08-27T09:24:01.834350",
+    "record_id": "rec_20250827_092401_833351",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:24:01.882047",
+    "record_id": "rec_20250827_092401_879563",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.042210000000000025,
+    "improvement_score": 0.042210000000000025,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.243195",
+    "record_id": "rec_20250827_095323_241676",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.296489",
+    "record_id": "rec_20250827_095323_292039",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.042210000000000025,
+    "improvement_score": 0.042210000000000025,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.409944",
+    "record_id": "rec_20250827_095323_407842",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0000"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.480663",
+    "record_id": "rec_20250827_095323_477203",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0001"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.538618",
+    "record_id": "rec_20250827_095323_535597",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0002"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.610029",
+    "record_id": "rec_20250827_095323_610029",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.664233",
+    "record_id": "rec_20250827_095323_658514",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04220999999999997,
+    "improvement_score": 0.04220999999999997,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.726023",
+    "record_id": "rec_20250827_095323_724250",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.777514",
+    "record_id": "rec_20250827_095323_777514",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.833856",
+    "record_id": "rec_20250827_095323_831835",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:23.879122",
+    "record_id": "rec_20250827_095323_879122",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:24.530564",
+    "record_id": "rec_20250827_095324_528561",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0000"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:24.594156",
+    "record_id": "rec_20250827_095324_591805",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0001"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:24.642778",
+    "record_id": "rec_20250827_095324_637766",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_114826_0002"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:25.218664",
+    "record_id": "rec_20250827_095325_217663",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T09:53:25.294906",
+    "record_id": "rec_20250827_095325_290651",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.042210000000000025,
+    "improvement_score": 0.042210000000000025,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-08-27T12:58:45.968140",
+    "record_id": "rec_20250827_125845_951362",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_unknown_2_20250827_125845"
+  },
+  {
+    "timestamp": "2025-08-28T14:43:09.368236",
+    "record_id": "rec_20250828_144309_339546",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment law_6_20250828_144309"
+  },
+  {
+    "timestamp": "2025-08-28T16:09:39.333375",
+    "record_id": "rec_20250828_160939_329823",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-28T16:38:19.855987",
+    "record_id": "rec_20250828_163819_851308",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-28T16:44:28.397408",
+    "record_id": "rec_20250828_164428_380759",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-29T12:24:56.511140",
+    "record_id": "rec_20250829_122456_503202",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-08-29T12:25:59.672676",
+    "record_id": "rec_20250829_122559_654929",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_4_20250829_122559"
+  },
+  {
+    "timestamp": "2025-08-29T12:28:05.608783",
+    "record_id": "rec_20250829_122805_591490",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_7_20250829_122805"
+  },
+  {
+    "timestamp": "2025-08-29T13:19:20.388546",
+    "record_id": "rec_20250829_131920_360744",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250829_131920"
+  },
+  {
+    "timestamp": "2025-08-29T13:52:49.543852",
+    "record_id": "rec_20250829_135249_540209",
+    "session_id": "session_rec_2025",
+    "domain": "cyber crime",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_cyber crime_2_20250823_163909"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:26.908986",
+    "record_id": "rec_20250908_113926_907510",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:26.953553",
+    "record_id": "rec_20250908_113926_952337",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.042210000000000025,
+    "improvement_score": 0.042210000000000025,
+    "pattern_id": "pattern_20250823_115000_0018"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.030002",
+    "record_id": "rec_20250908_113927_030002",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0000"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.098063",
+    "record_id": "rec_20250908_113927_095550",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0001"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.144351",
+    "record_id": "rec_20250908_113927_141861",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0002"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.204586",
+    "record_id": "rec_20250908_113927_203576",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.249959",
+    "record_id": "rec_20250908_113927_247790",
+    "session_id": "session_rec_2025",
+    "domain": "employment law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04220999999999997,
+    "improvement_score": 0.04220999999999997,
+    "pattern_id": "pattern_20250815_174230_0017"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.315874",
+    "record_id": "rec_20250908_113927_314743",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.367823",
+    "record_id": "rec_20250908_113927_364814",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.418247",
+    "record_id": "rec_20250908_113927_416141",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-09-08T11:39:27.468890",
+    "record_id": "rec_20250908_113927_466518",
+    "session_id": "session_rec_2025",
+    "domain": "unknown",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_20250823_115200_0021"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.082082",
+    "record_id": "rec_20250908_114900_069866",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.128147",
+    "record_id": "rec_20250908_114900_123983",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04544999999999999,
+    "improvement_score": 0.04544999999999999,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.229762",
+    "record_id": "rec_20250908_114900_229762",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0000"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.276077",
+    "record_id": "rec_20250908_114900_273703",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0001"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.333826",
+    "record_id": "rec_20250908_114900_329804",
+    "session_id": 1.0,
+    "domain": "tenant_rights",
+    "feedback_type": "positive",
+    "confidence_change": 0.09999999999999998,
+    "improvement_score": 0.09999999999999998,
+    "pattern_id": "pattern_20250823_115200_0002"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.517951",
+    "record_id": "rec_20250908_114900_514353",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.584286",
+    "record_id": "rec_20250908_114900_575890",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04544999999999999,
+    "improvement_score": 0.04544999999999999,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.683668",
+    "record_id": "rec_20250908_114900_675634",
+    "session_id": "session_rec_2025",
+    "domain": "family_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_family_law_4_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.742318",
+    "record_id": "rec_20250908_114900_738523",
+    "session_id": "session_rec_2025",
+    "domain": "family_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_family_law_4_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.795860",
+    "record_id": "rec_20250908_114900_790878",
+    "session_id": "session_rec_2025",
+    "domain": "family_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_family_law_4_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T11:49:00.855183",
+    "record_id": "rec_20250908_114900_850296",
+    "session_id": "session_rec_2025",
+    "domain": "family_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_family_law_4_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:06:33.567126",
+    "record_id": "rec_20250908_120633_564109",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:06:33.639400",
+    "record_id": "rec_20250908_120633_636408",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.052019999999999955,
+    "improvement_score": 0.052019999999999955,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:08:48.809891",
+    "record_id": "rec_20250908_120848_809891",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:08:48.877121",
+    "record_id": "rec_20250908_120848_874224",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.052019999999999955,
+    "improvement_score": 0.052019999999999955,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:11:37.763623",
+    "record_id": "rec_20250908_121137_762614",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:11:37.825844",
+    "record_id": "rec_20250908_121137_822416",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04541000000000006,
+    "improvement_score": 0.04541000000000006,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:21:13.488425",
+    "record_id": "rec_20250908_122113_486723",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:21:13.557228",
+    "record_id": "rec_20250908_122113_554673",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.04541000000000006,
+    "improvement_score": 0.04541000000000006,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:25:45.476646",
+    "record_id": "rec_20250908_122545_476646",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:25:45.534944",
+    "record_id": "rec_20250908_122545_532146",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.030491999999999964,
+    "improvement_score": 0.030491999999999964,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:28:06.802216",
+    "record_id": "rec_20250908_122806_800352",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:28:06.864626",
+    "record_id": "rec_20250908_122806_862363",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.030491999999999964,
+    "improvement_score": 0.030491999999999964,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:29:56.341767",
+    "record_id": "rec_20250908_122956_341767",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:29:56.405962",
+    "record_id": "rec_20250908_122956_403791",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.35740149719800873,
+    "improvement_score": 0.35740149719800873,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:30:21.136364",
+    "record_id": "rec_20250908_123021_134352",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "positive",
+    "confidence_change": 0.0,
+    "improvement_score": 0.0,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  },
+  {
+    "timestamp": "2025-09-08T12:30:21.214204",
+    "record_id": "rec_20250908_123021_212365",
+    "session_id": "session_rec_2025",
+    "domain": "employment_law",
+    "feedback_type": "negative",
+    "confidence_change": 0.35740149719800873,
+    "improvement_score": 0.35740149719800873,
+    "pattern_id": "pattern_employment_law_3_20250908_114900"
+  }
+]

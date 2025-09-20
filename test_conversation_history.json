@@ -1,0 +1,463 @@
+{
+  "conversations": [
+    {
+      "session_id": "conv_20250823_115051_ef4a3d07",
+      "start_time": "2025-08-23T11:50:51.063956",
+      "end_time": "2025-08-23T11:50:51.091260",
+      "turns": [
+        {
+          "turn_id": "conv_20250823_115051_ef4a3d07_turn_1",
+          "timestamp": "2025-08-23T11:50:51.067666",
+          "user_input": "my landlord is not returning my security deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.6092622139120313,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250823_115051_ef4a3d07",
+            "timestamp": "2025-08-23T11:50:51.063956",
+            "raw_query": "my landlord is not returning my security deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "🏛️ CONSTITUTIONAL FRAMEWORK FOR PROPERTY RIGHTS:\\n\\n📋 Article 300A - Right to Property:\\n   • No person shall be deprived of property save by authority of law\\n   • Protection against arbitrary seizure of security deposits\\n   • Legal procedure required for any property deprivation\\n\\n📋 Article 21 - Right to Life:\\n   • Right to shelter as part of right to life\\n   • Protection against illegal eviction\\n   • Dignified living conditions\\n\\n📋 Article 19(1)(e) - Right to Reside:\\n   • Freedom to reside and settle in any part of India\\n   • Protection against forced displacement\\n\\n⚖️ SUPPORTING LEGAL FRAMEWORK:\\n   • Rent Control Acts (State-specific)\\n   • Transfer of Property Act, 1882\\n   • Consumer Protection Act, 2019",
+            "constitutional_articles": [
+              {
+                "article_number": "300A",
+                "title": "Right to Property",
+                "summary": "No person shall be deprived of his property save by authority of law"
+              },
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              }
+            ]
+          },
+          "user_feedback": "wrong domain",
+          "feedback_type": "dissatisfaction",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.6092622139120313,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250823_115051_ef4a3d07_turn_2",
+          "timestamp": "2025-08-23T11:50:51.091260",
+          "user_input": "what legal action can I take against landlord for deposit",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.29648441164155825,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250823_115051_ef4a3d07",
+            "timestamp": "2025-08-23T11:50:51.067666",
+            "raw_query": "what legal action can I take against landlord for deposit",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "🏛️ CONSTITUTIONAL FRAMEWORK FOR PROPERTY RIGHTS:\\n\\n📋 Article 300A - Right to Property:\\n   • No person shall be deprived of property save by authority of law\\n   • Protection against arbitrary seizure of security deposits\\n   • Legal procedure required for any property deprivation\\n\\n📋 Article 21 - Right to Life:\\n   • Right to shelter as part of right to life\\n   • Protection against illegal eviction\\n   • Dignified living conditions\\n\\n📋 Article 19(1)(e) - Right to Reside:\\n   • Freedom to reside and settle in any part of India\\n   • Protection against forced displacement\\n\\n⚖️ SUPPORTING LEGAL FRAMEWORK:\\n   • Rent Control Acts (State-specific)\\n   • Transfer of Property Act, 1882\\n   • Consumer Protection Act, 2019",
+            "constitutional_articles": [
+              {
+                "article_number": "300A",
+                "title": "Right to Property",
+                "summary": "No person shall be deprived of his property save by authority of law"
+              },
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              }
+            ]
+          },
+          "user_feedback": "wrong domain",
+          "feedback_type": "clarification",
+          "confidence_before": 0.6092622139120313,
+          "confidence_after": 0.29648441164155825,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250823_115051_ef4a3d07_turn_2",
+          "feedback_type": "clarification",
+          "confidence_change": -0.312777802270473,
+          "timestamp": "2025-08-23T11:50:51.091260"
+        }
+      ],
+      "final_satisfaction": "completed",
+      "improvement_score": 0.0
+    },
+    {
+      "session_id": "conv_20250823_115051_5b57a699",
+      "start_time": "2025-08-23T11:50:51.091260",
+      "end_time": "2025-08-23T11:50:51.120300",
+      "turns": [
+        {
+          "turn_id": "conv_20250823_115051_5b57a699_turn_1",
+          "timestamp": "2025-08-23T11:50:51.091260",
+          "user_input": "someone hacked my bank account and stole money",
+          "agent_response": {
+            "domain": "cyber crime",
+            "confidence": 0.14717350382760766,
+            "legal_route": "Report to Cyber Crime Cell and file complaint under IT Act, 2000.",
+            "timeline": "1-8 months",
+            "outcome": "Investigation, recovery of funds, or prosecution.",
+            "process_steps": [
+              "1. Preserve all digital evidence (screenshots, emails, messages)",
+              "2. Report immediately to local Cyber Crime Cell",
+              "3. File FIR at nearest police station",
+              "4. Submit complaint on National Cyber Crime Portal",
+              "5. Freeze affected bank accounts if financial fraud",
+              "6. Cooperate with investigation agencies",
+              "7. Provide additional evidence as requested",
+              "8. Follow up on case progress and recovery"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250823_115051_5b57a699",
+            "timestamp": "2025-08-23T11:50:51.091260",
+            "raw_query": "someone hacked my bank account and stole money",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Constitutional rights to privacy and freedom of expression apply to digital spaces and cyber crimes. Relevant constitutional provisions include Article 21, Article 14, Article 19.",
+            "constitutional_articles": [
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              },
+              {
+                "article_number": "19",
+                "title": "Protection of certain rights regarding freedom of speech etc",
+                "summary": "(1) All citizens shall have the right to (a) freedom of speech and expression; (b) to assemble peace..."
+              }
+            ]
+          },
+          "user_feedback": "not helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.14717350382760766,
+          "confidence_after": 0.14717350382760766,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250823_115051_5b57a699_turn_2",
+          "timestamp": "2025-08-23T11:50:51.120300",
+          "user_input": "how to report cybercrime to police",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.15,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250823_115051_5b57a699",
+            "timestamp": "2025-08-23T11:50:51.091260",
+            "raw_query": "how to report cybercrime to police",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "not helpful",
+          "feedback_type": "clarification",
+          "confidence_before": 0.14717350382760766,
+          "confidence_after": 0.15,
+          "learning_applied": false
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [],
+      "final_satisfaction": "completed",
+      "improvement_score": 0.0028264961723923343
+    },
+    {
+      "session_id": "conv_20250823_115051_f3a72058",
+      "start_time": "2025-08-23T11:50:51.123069",
+      "end_time": "2025-08-23T11:50:51.152191",
+      "turns": [
+        {
+          "turn_id": "conv_20250823_115051_f3a72058_turn_1",
+          "timestamp": "2025-08-23T11:50:51.126459",
+          "user_input": "friend borrowed money and not returning",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.2824288338017419,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250823_115051_f3a72058",
+            "timestamp": "2025-08-23T11:50:51.123069",
+            "raw_query": "friend borrowed money and not returning",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 21, Article 14, Article 19.",
+            "constitutional_articles": [
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              },
+              {
+                "article_number": "19",
+                "title": "Protection of certain rights regarding freedom of speech etc",
+                "summary": "(1) All citizens shall have the right to (a) freedom of speech and expression; (b) to assemble peace..."
+              }
+            ]
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.2824288338017419,
+          "confidence_after": 0.2824288338017419,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250823_115051_f3a72058_turn_2",
+          "timestamp": "2025-08-23T11:50:51.150009",
+          "user_input": "legal notice for money recovery",
+          "agent_response": {
+            "domain": "tenant rights",
+            "confidence": 0.4324288338017419,
+            "legal_route": "Send legal notice to landlord and approach rent tribunal or housing court.",
+            "timeline": "2-3 months",
+            "outcome": "Deposit refund, rent reduction, or lease termination.",
+            "process_steps": [
+              "1. Document the issue (photos, receipts, communications)",
+              "2. Review your lease agreement and local tenant laws",
+              "3. Send written notice to landlord (certified mail)",
+              "4. Wait for landlord response (typically 30 days)",
+              "5. File complaint with local rent tribunal/housing court",
+              "6. Attend mediation session if required",
+              "7. Present evidence at hearing",
+              "8. Receive tribunal decision and enforcement"
+            ],
+            "glossary": {
+              "legal notice": "A formal written communication from one party to another regarding legal matters.",
+              "tribunal": "A special court or judicial body that handles particular types of legal matters."
+            },
+            "session_id": "conv_20250823_115051_f3a72058",
+            "timestamp": "2025-08-23T11:50:51.126459",
+            "raw_query": "legal notice for money recovery",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Relevant constitutional provisions include Article 21, Article 14, Article 19.",
+            "constitutional_articles": [
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              },
+              {
+                "article_number": "19",
+                "title": "Protection of certain rights regarding freedom of speech etc",
+                "summary": "(1) All citizens shall have the right to (a) freedom of speech and expression; (b) to assemble peace..."
+              }
+            ]
+          },
+          "user_feedback": "helpful",
+          "feedback_type": "dissatisfaction",
+          "confidence_before": 0.2824288338017419,
+          "confidence_after": 0.4324288338017419,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250823_115051_f3a72058_turn_2",
+          "feedback_type": "dissatisfaction",
+          "confidence_change": 0.15000000000000002,
+          "timestamp": "2025-08-23T11:50:51.150009"
+        }
+      ],
+      "final_satisfaction": "completed",
+      "improvement_score": 0.25
+    },
+    {
+      "session_id": "conv_20250823_115051_1a9c30b5",
+      "start_time": "2025-08-23T11:50:51.154841",
+      "end_time": "2025-08-23T11:50:51.181582",
+      "turns": [
+        {
+          "turn_id": "conv_20250823_115051_1a9c30b5_turn_1",
+          "timestamp": "2025-08-23T11:50:51.159490",
+          "user_input": "someone threatened me with violence",
+          "agent_response": {
+            "domain": "unknown",
+            "confidence": 0.0,
+            "legal_route": "No specific legal route identified. Consult with a general practice attorney.",
+            "timeline": "N/A",
+            "outcome": "Professional legal assessment needed.",
+            "process_steps": [
+              "1. Identify the specific legal issue involved",
+              "2. Research applicable laws and regulations",
+              "3. Consult with appropriate legal professional",
+              "4. Follow attorney's guidance for next steps"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250823_115051_1a9c30b5",
+            "timestamp": "2025-08-23T11:50:51.154841",
+            "raw_query": "someone threatened me with violence",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": null,
+            "constitutional_articles": null
+          },
+          "user_feedback": "good",
+          "feedback_type": "acknowledgment",
+          "confidence_before": 0.0,
+          "confidence_after": 0.0,
+          "learning_applied": false
+        },
+        {
+          "turn_id": "conv_20250823_115051_1a9c30b5_turn_2",
+          "timestamp": "2025-08-23T11:50:51.181582",
+          "user_input": "can I file criminal case for threats",
+          "agent_response": {
+            "domain": "criminal law",
+            "confidence": 0.43035681610650434,
+            "legal_route": "File FIR and engage criminal defense attorney",
+            "timeline": "3 months to 2 years",
+            "outcome": "Case resolution through court proceedings",
+            "process_steps": [
+              "1. Exercise right to remain silent",
+              "2. Request attorney immediately",
+              "3. Do not discuss case with anyone except attorney",
+              "4. Attend arraignment and enter plea",
+              "5. Participate in discovery process",
+              "6. Consider plea bargain negotiations",
+              "7. Prepare for trial if necessary",
+              "8. Appeal if convicted and grounds exist"
+            ],
+            "glossary": {},
+            "session_id": "conv_20250823_115051_1a9c30b5",
+            "timestamp": "2025-08-23T11:50:51.159490",
+            "raw_query": "can I file criminal case for threats",
+            "location_insights": null,
+            "data_driven_advice": null,
+            "risk_assessment": null,
+            "constitutional_backing": "Under the Constitution, you have fundamental rights including protection from arbitrary arrest and fair trial guarantees. Relevant constitutional provisions include Article 21, Article 14, Article 20.",
+            "constitutional_articles": [
+              {
+                "article_number": "21",
+                "title": "Protection of life and personal liberty",
+                "summary": "No person shall be deprived of his life or personal liberty except according to procedure establishe..."
+              },
+              {
+                "article_number": "14",
+                "title": "Right to Equality",
+                "summary": "The State shall not deny to any person equality before the law or the equal protection of the laws w..."
+              },
+              {
+                "article_number": "20",
+                "title": "Protection in respect of conviction for offences",
+                "summary": "(1) No person shall be convicted of any offence except for violation of a law in force at the time o..."
+              }
+            ]
+          },
+          "user_feedback": "good",
+          "feedback_type": "neutral",
+          "confidence_before": 0.0,
+          "confidence_after": 0.43035681610650434,
+          "learning_applied": true
+        }
+      ],
+      "total_turns": 2,
+      "learning_events": [
+        {
+          "turn_id": "conv_20250823_115051_1a9c30b5_turn_2",
+          "feedback_type": "neutral",
+          "confidence_change": 0.43035681610650434,
+          "timestamp": "2025-08-23T11:50:51.181582"
+        }
+      ],
+      "final_satisfaction": "completed",
+      "improvement_score": 0.5303568161065043
+    }
+  ],
+  "learning_patterns": {
+    "acknowledgment_patterns": {},
+    "clarification_patterns": {},
+    "dissatisfaction_patterns": {}
+  },
+  "last_updated": "2025-08-23T11:50:51.181582"
+}

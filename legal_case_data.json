@@ -1,0 +1,652 @@
+[
+  {
+    "domain": "tenant_rights",
+    "case_type": "security_deposit_dispute",
+    "jurisdiction": "civil_court",
+    "timeline_days": 45,
+    "cost_range": [
+      5000,
+      15000
+    ],
+    "success_rate": 0.75,
+    "outcome": "favorable",
+    "complexity": 3,
+    "documents": [
+      "lease_agreement",
+      "deposit_receipt",
+      "communication_records"
+    ],
+    "steps": [
+      "file_complaint",
+      "mediation",
+      "court_hearing",
+      "judgment"
+    ]
+  },
+  {
+    "domain": "tenant_rights",
+    "case_type": "eviction_defense",
+    "jurisdiction": "housing_court",
+    "timeline_days": 90,
+    "cost_range": [
+      10000,
+      30000
+    ],
+    "success_rate": 0.6,
+    "outcome": "mixed",
+    "complexity": 6,
+    "documents": [
+      "lease_agreement",
+      "eviction_notice",
+      "payment_records"
+    ],
+    "steps": [
+      "respond_to_notice",
+      "file_defense",
+      "court_hearings",
+      "negotiation"
+    ]
+  },
+  {
+    "domain": "tenant_rights",
+    "case_type": "habitability_issues",
+    "jurisdiction": "civil_court",
+    "timeline_days": 120,
+    "cost_range": [
+      8000,
+      25000
+    ],
+    "success_rate": 0.7,
+    "outcome": "favorable",
+    "complexity": 5,
+    "documents": [
+      "inspection_reports",
+      "photos",
+      "communication_records"
+    ],
+    "steps": [
+      "document_issues",
+      "demand_repairs",
+      "file_complaint",
+      "court_order"
+    ]
+  },
+  {
+    "domain": "consumer_complaint",
+    "case_type": "defective_product",
+    "jurisdiction": "consumer_forum",
+    "timeline_days": 180,
+    "cost_range": [
+      3000,
+      12000
+    ],
+    "success_rate": 0.8,
+    "outcome": "favorable",
+    "complexity": 4,
+    "documents": [
+      "purchase_receipt",
+      "warranty_card",
+      "defect_evidence"
+    ],
+    "steps": [
+      "file_complaint",
+      "company_response",
+      "hearing",
+      "compensation"
+    ]
+  },
+  {
+    "domain": "consumer_complaint",
+    "case_type": "service_deficiency",
+    "jurisdiction": "consumer_forum",
+    "timeline_days": 150,
+    "cost_range": [
+      2000,
+      10000
+    ],
+    "success_rate": 0.75,
+    "outcome": "favorable",
+    "complexity": 3,
+    "documents": [
+      "service_agreement",
+      "payment_records",
+      "complaint_evidence"
+    ],
+    "steps": [
+      "file_complaint",
+      "mediation",
+      "hearing",
+      "order"
+    ]
+  },
+  {
+    "domain": "family_law",
+    "case_type": "divorce_contested",
+    "jurisdiction": "family_court",
+    "timeline_days": 365,
+    "cost_range": [
+      50000,
+      200000
+    ],
+    "success_rate": 0.65,
+    "outcome": "mixed",
+    "complexity": 8,
+    "documents": [
+      "marriage_certificate",
+      "financial_records",
+      "custody_evidence"
+    ],
+    "steps": [
+      "file_petition",
+      "serve_papers",
+      "discovery",
+      "trial",
+      "decree"
+    ]
+  },
+  {
+    "domain": "family_law",
+    "case_type": "child_custody",
+    "jurisdiction": "family_court",
+    "timeline_days": 270,
+    "cost_range": [
+      30000,
+      100000
+    ],
+    "success_rate": 0.7,
+    "outcome": "mixed",
+    "complexity": 7,
+    "documents": [
+      "custody_evaluation",
+      "financial_records",
+      "character_references"
+    ],
+    "steps": [
+      "file_petition",
+      "custody_evaluation",
+      "mediation",
+      "hearing",
+      "order"
+    ]
+  },
+  {
+    "domain": "employment_law",
+    "case_type": "wrongful_termination",
+    "jurisdiction": "labor_court",
+    "timeline_days": 300,
+    "cost_range": [
+      25000,
+      75000
+    ],
+    "success_rate": 0.55,
+    "outcome": "mixed",
+    "complexity": 6,
+    "documents": [
+      "employment_contract",
+      "termination_letter",
+      "performance_records"
+    ],
+    "steps": [
+      "file_complaint",
+      "conciliation",
+      "tribunal_hearing",
+      "award"
+    ]
+  },
+  {
+    "domain": "employment_law",
+    "case_type": "workplace_harassment",
+    "jurisdiction": "labor_court",
+    "timeline_days": 240,
+    "cost_range": [
+      20000,
+      60000
+    ],
+    "success_rate": 0.65,
+    "outcome": "favorable",
+    "complexity": 5,
+    "documents": [
+      "incident_reports",
+      "witness_statements",
+      "company_policies"
+    ],
+    "steps": [
+      "internal_complaint",
+      "investigation",
+      "tribunal_filing",
+      "hearing"
+    ]
+  },
+  {
+    "domain": "contract_dispute",
+    "case_type": "contract_dispute_case_1",
+    "jurisdiction": "civil_court",
+    "timeline_days": 389,
+    "cost_range": [
+      12199,
+      93222
+    ],
+    "success_rate": 0.5000108554971066,
+    "outcome": "favorable",
+    "complexity": 6,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "contract_dispute",
+    "case_type": "contract_dispute_case_2",
+    "jurisdiction": "civil_court",
+    "timeline_days": 361,
+    "cost_range": [
+      14766,
+      110398
+    ],
+    "success_rate": 0.6358532910282657,
+    "outcome": "mixed",
+    "complexity": 8,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "contract_dispute",
+    "case_type": "contract_dispute_case_3",
+    "jurisdiction": "civil_court",
+    "timeline_days": 404,
+    "cost_range": [
+      12272,
+      98940
+    ],
+    "success_rate": 0.6106257058912524,
+    "outcome": "favorable",
+    "complexity": 6,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "personal_injury",
+    "case_type": "personal_injury_case_1",
+    "jurisdiction": "civil_court",
+    "timeline_days": 703,
+    "cost_range": [
+      34550,
+      418893
+    ],
+    "success_rate": 0.5965345119095773,
+    "outcome": "mixed",
+    "complexity": 6,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "personal_injury",
+    "case_type": "personal_injury_case_2",
+    "jurisdiction": "civil_court",
+    "timeline_days": 625,
+    "cost_range": [
+      24505,
+      548059
+    ],
+    "success_rate": 0.762962842302784,
+    "outcome": "favorable",
+    "complexity": 7,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "personal_injury",
+    "case_type": "personal_injury_case_3",
+    "jurisdiction": "civil_court",
+    "timeline_days": 371,
+    "cost_range": [
+      24642,
+      536547
+    ],
+    "success_rate": 0.6802219464550594,
+    "outcome": "favorable",
+    "complexity": 8,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "criminal_law",
+    "case_type": "criminal_law_case_1",
+    "jurisdiction": "criminal_court",
+    "timeline_days": 254,
+    "cost_range": [
+      54648,
+      343849
+    ],
+    "success_rate": 0.3049020830698005,
+    "outcome": "mixed",
+    "complexity": 9,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "criminal_law",
+    "case_type": "criminal_law_case_2",
+    "jurisdiction": "criminal_court",
+    "timeline_days": 188,
+    "cost_range": [
+      45421,
+      330473
+    ],
+    "success_rate": 0.30539117674727356,
+    "outcome": "favorable",
+    "complexity": 7,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "criminal_law",
+    "case_type": "criminal_law_case_3",
+    "jurisdiction": "criminal_court",
+    "timeline_days": 538,
+    "cost_range": [
+      49100,
+      310138
+    ],
+    "success_rate": 0.5914479401895556,
+    "outcome": "mixed",
+    "complexity": 10,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "immigration_law",
+    "case_type": "immigration_law_case_1",
+    "jurisdiction": "immigration_court",
+    "timeline_days": 421,
+    "cost_range": [
+      23220,
+      150735
+    ],
+    "success_rate": 0.6410135893902574,
+    "outcome": "favorable",
+    "complexity": 7,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "immigration_law",
+    "case_type": "immigration_law_case_2",
+    "jurisdiction": "immigration_court",
+    "timeline_days": 493,
+    "cost_range": [
+      29697,
+      158113
+    ],
+    "success_rate": 0.6897735693500466,
+    "outcome": "mixed",
+    "complexity": 8,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "immigration_law",
+    "case_type": "immigration_law_case_3",
+    "jurisdiction": "immigration_court",
+    "timeline_days": 615,
+    "cost_range": [
+      20893,
+      137270
+    ],
+    "success_rate": 0.5568445327695444,
+    "outcome": "favorable",
+    "complexity": 10,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "elder_abuse",
+    "case_type": "elder_abuse_case_1",
+    "jurisdiction": "civil_court",
+    "timeline_days": 241,
+    "cost_range": [
+      12386,
+      72382
+    ],
+    "success_rate": 0.7463869393387128,
+    "outcome": "mixed",
+    "complexity": 5,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "elder_abuse",
+    "case_type": "elder_abuse_case_2",
+    "jurisdiction": "civil_court",
+    "timeline_days": 204,
+    "cost_range": [
+      13022,
+      75734
+    ],
+    "success_rate": 0.6335572013932913,
+    "outcome": "favorable",
+    "complexity": 5,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "elder_abuse",
+    "case_type": "elder_abuse_case_3",
+    "jurisdiction": "civil_court",
+    "timeline_days": 100,
+    "cost_range": [
+      17207,
+      63928
+    ],
+    "success_rate": 0.8453942369410118,
+    "outcome": "favorable",
+    "complexity": 6,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "cyber_crime",
+    "case_type": "cyber_crime_case_1",
+    "jurisdiction": "cyber_court",
+    "timeline_days": 160,
+    "cost_range": [
+      21232,
+      83428
+    ],
+    "success_rate": 0.5384210419982929,
+    "outcome": "favorable",
+    "complexity": 7,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "cyber_crime",
+    "case_type": "cyber_crime_case_2",
+    "jurisdiction": "cyber_court",
+    "timeline_days": 187,
+    "cost_range": [
+      22363,
+      118232
+    ],
+    "success_rate": 0.44449354797831914,
+    "outcome": "favorable",
+    "complexity": 9,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  },
+  {
+    "domain": "cyber_crime",
+    "case_type": "cyber_crime_case_3",
+    "jurisdiction": "cyber_court",
+    "timeline_days": 107,
+    "cost_range": [
+      17288,
+      102507
+    ],
+    "success_rate": 0.5543984078081328,
+    "outcome": "mixed",
+    "complexity": 5,
+    "documents": [
+      "document_1",
+      "document_2",
+      "document_3"
+    ],
+    "steps": [
+      "step_1",
+      "step_2",
+      "step_3",
+      "step_4"
+    ]
+  }
+]

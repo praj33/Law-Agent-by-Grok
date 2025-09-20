@@ -1,0 +1,59 @@
+{
+  "feedback_weights": {
+    "i was injured in a car accident": 0.1,
+    "my landlord won't return my security deposit": 0.1,
+    "someone hacked my phone": 0.2,
+    "my car was stolen": 0.1,
+    "my landlord is refusing to return my \u20b975,000 security deposit even though i left the apartment clean": 0.1,
+    "my phone got stolen at airport": -0.1,
+    "my employer is not paying overtime wages": 0.1,
+    "what legal action can i take against landlord for deposit": -0.1,
+    "how to report cybercrime to police": -0.1,
+    "legal notice for money recovery": 0.1,
+    "can i file criminal case for threats": 0.1,
+    "test query for helpful feedback": 0.1,
+    "test query for not helpful feedback": -0.1,
+    "test query for wrong domain feedback": -0.1,
+    "test query for confusing feedback": -0.1,
+    "test query for excellent feedback": 0.1,
+    "workplace harassment by supervisor": 0.0,
+    "my boss is not paying overtime wages": 0.2,
+    "landlord not returning deposit": 0.1,
+    "follow up question": 0.1
+  },
+  "confidence_adjustments": {
+    "personal injury": 0.1,
+    "tenant rights": 0.15000000000000002,
+    "cyber crime": 0.05,
+    "employment law": 0.05,
+    "unknown": 0.04999999999999999,
+    "criminal law": 0.05
+  },
+  "negative_feedback_queries": [
+    "my phone got stolen at airport",
+    "what legal action can i take against landlord for deposit",
+    "how to report cybercrime to police",
+    "test query for not helpful feedback",
+    "test query for wrong domain feedback",
+    "test query for confusing feedback",
+    "workplace harassment by supervisor"
+  ],
+  "positive_feedback_queries": [
+    "i was injured in a car accident",
+    "my landlord won't return my security deposit",
+    "someone hacked my phone",
+    "someone hacked my phone",
+    "my car was stolen",
+    "my landlord is refusing to return my \u20b975,000 security deposit even though i left the apartment clean",
+    "my employer is not paying overtime wages",
+    "legal notice for money recovery",
+    "can i file criminal case for threats",
+    "test query for helpful feedback",
+    "test query for excellent feedback",
+    "workplace harassment by supervisor",
+    "my boss is not paying overtime wages",
+    "my boss is not paying overtime wages",
+    "landlord not returning deposit",
+    "follow up question"
+  ]
+}

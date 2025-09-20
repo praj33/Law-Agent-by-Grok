@@ -1,0 +1,19 @@
+# Core Framework
+fastapi
+uvicorn
+pydantic
+flask
+
+# Data Processing and ML
+pandas
+numpy
+scikit-learn
+
+# NLP and Text Processing
+spacy
+# Run: python -m spacy download en_core_web_sm
+
+# Additional Utilities
+python-dateutil
+requests
+streamlit

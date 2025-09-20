@@ -1,0 +1,268 @@
+# Legal Agent Project - .gitignore (Company Repository)
+# =====================================================
+# This .gitignore is configured for company use - includes all datasets,
+# learning data, feedback files, and test reports for team collaboration.
+
+# Python
+# -------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+# -------------------
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.env
+
+# IDE and Editor Files
+# --------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks
+# ------------------
+.ipynb_checkpoints
+
+# PyCharm
+# -------
+.idea/
+
+# Logs and Databases
+# ------------------
+*.log
+*.sqlite
+*.db
+
+# Legal Agent Specific Files
+# ---------------------------
+# Keep all datasets and important files for company repository
+
+# Only ignore temporary/cache files
+*.tmp.csv
+*.temp.json
+
+# Backup files
+backup_*/
+*_backup.*
+*.bak
+
+# Temporary files
+# ---------------
+*.tmp
+*.temp
+temp/
+tmp/
+
+# OS generated files
+# ------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Coverage reports
+# ----------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+# ------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# mypy
+# ----
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+# -----------------
+.pyre/
+
+# pytype static type analyzer
+# ---------------------------
+.pytype/
+
+# Cython debug symbols
+# --------------------
+cython_debug/
+
+# FastAPI specific
+# ----------------
+.pytest_cache/
+
+# Machine Learning Models
+# -----------------------
+models/
+*.pkl
+*.joblib
+*.model
+
+# Data files - KEEP ALL for company repository
+# ----------------------------------------------
+# All datasets, CSV files, and JSON data are included
+
+# Session files
+# -------------
+sessions/
+session_*.json
+
+# Performance monitoring
+# ----------------------
+performance_logs/
+monitoring/
+
+# Documentation builds
+# --------------------
+docs/_build/
+site/
+
+# Local configuration
+# -------------------
+config.local.json
+settings.local.py
+
+# API keys and secrets
+# --------------------
+.secrets
+secrets.json
+api_keys.txt
+*.key
+*.pem
+
+# Runtime files
+# -------------
+*.pid
+*.sock
+
+# Compiled translations
+# ---------------------
+*.mo
+*.pot
+
+# Django stuff (if applicable)
+# ----------------------------
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff (if applicable)
+# ---------------------------
+instance/
+.webassets-cache
+
+# Scrapy stuff (if applicable)
+# ----------------------------
+.scrapy
+
+# Sphinx documentation
+# --------------------
+docs/_build/
+
+# PyBuilder
+# ---------
+.pybuilder/
+target/
+
+# Celery stuff
+# ------------
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+# --------------------
+*.sage.py
+
+# Spyder project settings
+# -----------------------
+.spyderproject
+.spyproject
+
+# Rope project settings
+# ---------------------
+.ropeproject
+
+# mkdocs documentation
+# -------------------
+/site
+
+# mypy
+# ----
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+# -----------------
+.pyre/
+
+# pytype static type analyzer
+# ---------------------------
+.pytype/
+
+# Cython debug symbols
+# --------------------
+cython_debug/
+
+# Company Repository - Keep Important Files
+# ------------------------------------------
+# All datasets, reports, and learning data are included for company use
+
+# Keep all JSON datasets (including INSERT2.json, INSERT3.json, fixed versions)
+# Keep all enhanced integration files
+
+# Only ignore personal development files
+dev_personal.py
+my_test_*.py
+personal_notes.txt
+
+# Local environment overrides only
+.env.local.override
+config.personal.json

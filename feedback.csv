@@ -1,0 +1,300 @@
+timestamp,query,domain,feedback,session_id
+2025-07-22T15:08:30.000000,my property is being hijack,tenant rights,good,session_001
+2025-07-22T15:08:31.002736,Same query as before,unknown,"This was very helpful, thank you!",session_20250722150831_6871
+2025-07-22T15:10:00.710512,Same query as before,unknown,"This was very helpful, thank you!",session_20250722151000_3043
+2025-07-22T15:10:54.019108,Test feedback query,unknown,This was very helpful!,session_20250722151054_5505
+2025-07-22T15:16:53.738431,Test feedback query,unknown,This was very helpful!,session_20250722151653_9619
+2025-07-22T15:23:04.410526,Tenant rights query,unknown,helpful,session_20250722152304_7134
+2025-07-22T15:23:04.413496,Family law question,unknown,very helpful,session_20250722152304_8947
+2025-07-22T15:23:04.417629,Employment issue,unknown,not helpful,session_20250722152304_7245
+2025-07-22T15:29:48.112188,Test feedback query,unknown,This was very helpful!,session_20250722152948_8930
+2025-07-22T15:46:48.775514,Test feedback query,unknown,This was very helpful!,session_20250722154648_3587
+2025-07-22T15:47:34.966358,Test feedback query,unknown,This was very helpful!,session_20250722154734_7395
+2025-07-22T15:48:52.154191,Test feedback query,unknown,This was very helpful!,session_20250722154852_8901
+2025-07-22T15:49:46.888680,Test feedback query,unknown,This was very helpful!,session_20250722154946_3868
+2025-07-22T16:08:13.659937,My landlord won't return my deposit,tenant rights,"This is wrong! This should be consumer complaint, not tenant rights!",session_20250722160813_9141
+2025-07-22T16:08:13.673209,My landlord won't return my deposit,tenant rights,"This is wrong! This should be consumer complaint, not tenant rights!",adaptive_session_20250722160813_3316
+2025-07-22T16:08:13.710988,My bank charged me unfair fees,criminal law,"not helpful, this is a banking issue",adaptive_session_20250722160813_9112
+2025-07-22T16:08:13.719179,My employer didn't pay overtime,employment law,"very helpful, exactly right",adaptive_session_20250722160813_6840
+2025-07-22T16:08:13.730243,Online scammer took my money,cyber crime,"wrong domain, this is fraud not cyber crime",adaptive_session_20250722160813_7173
+2025-07-22T16:08:13.754844,My credit card company is charging hidden fees,immigration law,"This should be consumer complaint, not banking law",adaptive_session_20250722160813_4890
+2025-07-22T16:10:51.985303,Test feedback query,unknown,This was very helpful!,session_20250722161051_3125
+2025-07-22T16:16:37.465574,My landlord deposit issue,tenant rights,"not helpful, wrong domain",session_20250722161637_8714
+2025-07-22T16:16:37.481507,My landlord deposit issue,tenant rights,"not helpful, wrong domain",adaptive_session_20250722161637_1444
+2025-07-22T16:17:57.756361,My landlord won't return my deposit,consumer complaint,"not helpful, this should be consumer complaint",adaptive_session_20250722161740_3428
+2025-07-22T16:19:01.662500,My landlord won't return my deposit,consumer complaint,"not helpful, this should be consumer complaint",adaptive_session_20250722161841_2804
+2025-07-22T16:21:24.769752,My landlord won't return my deposit,consumer complaint,helpful,adaptive_session_20250722162000_1024
+2025-07-22T16:32:56.611669,not helpful,unknown,helpful,adaptive_session_20250722162000_1024
+2025-07-23T10:09:56.873933,My landlord won't return my deposit,consumer complaint,helpfu,adaptive_session_20250723100747_7196
+2025-07-24T08:16:45.097305,I was injured in a car accident,personal injury,helpful,adaptive_session_20250724081255_9096
+2025-07-26T14:41:56.025771,My phone is being hacked,cyber crime,helpful,adaptive_session_20250726143957_2436
+2025-07-26T14:42:51.744622,My phone is being hacked,cyber crime,help ful,adaptive_session_20250726143957_2436
+2025-07-26T14:50:27.427004,my phone is being hacked,unknown,not helpful,adaptive_session_20250726143957_2436
+2025-07-26T14:52:35.399598,My phone is being hacked,cyber crime,helpful,adaptive_session_20250726143957_2436
+2025-07-26T15:19:19.550350,My phone is being hacked,cyber crime,helpful,adaptive_session_20250726151837_1673
+2025-07-26T16:32:30.451768,My landlord won't return my security deposit,tenant rights,helpful,adaptive_session_20250726103147_7688
+2025-07-26T16:40:22.567133,Someone Hacked my phone,cyber crime,helpful,adaptive_session_20250726163855_6684
+2025-07-26T16:44:10.965613,Someone hacked my phone,cyber crime,helpful,adaptive_session_20250726163855_6684
+2025-07-26T16:46:10.526578,my car was stolen,personal injury,helpful,adaptive_session_20250726163855_6684
+2025-07-29T12:01:46.047049,my phone got stolen at airport,cyber crime,not helpful,adaptive_session_20250729114706_8660
+2025-08-15T17:25:52.396035,my employer is not paying overtime wages,employment law,helpful,adaptive_session_20250815172552_5274
+2025-08-15T17:25:52.405989,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250815_172552_bbd0cdcb
+2025-08-15T17:25:52.415691,how to report cybercrime to police,unknown,not helpful,conv_20250815_172552_ef65312c
+2025-08-15T17:25:52.425662,legal notice for money recovery,tenant rights,helpful,conv_20250815_172552_3e1e77b4
+2025-08-15T17:25:52.435948,can I file criminal case for threats,criminal law,good,conv_20250815_172552_5b980ec4
+2025-08-15T17:25:52.446315,test query for helpful feedback,unknown,helpful,adaptive_session_20250815172552_8916
+2025-08-15T17:25:52.450420,test query for not helpful feedback,unknown,not helpful,adaptive_session_20250815172552_9055
+2025-08-15T17:25:52.463887,test query for wrong domain feedback,unknown,wrong domain,adaptive_session_20250815172552_8587
+2025-08-15T17:25:52.470937,test query for confusing feedback,unknown,confusing,adaptive_session_20250815172552_8903
+2025-08-15T17:25:52.479281,test query for excellent feedback,unknown,excellent,adaptive_session_20250815172552_6322
+2025-08-15T17:25:52.584454,workplace harassment by supervisor,employment law,very helpful,adaptive_session_20250815172552_6959
+2025-08-15T17:25:52.592547,workplace harassment by supervisor,employment law,wrong domain,adaptive_session_20250815172552_4864
+2025-08-15T17:26:45.359991,my boss is not paying overtime wages,unknown,helpful,adaptive_session_20250815172645_3718
+2025-08-15T17:26:54.467660,my boss is not paying overtime wages,unknown,helpful,adaptive_session_20250815172654_4340
+2025-08-15T17:27:24.930000,landlord not returning deposit,tenant rights,helpful,adaptive_session_20250815172724_4018
+2025-08-15T17:27:24.982039,follow up question,unknown,helpful,conv_20250815_172724_0e206f95
+2025-08-15T17:33:35.060183,workplace harassment by supervisor,employment law,helpful,session_20250815173335_8479
+2025-08-15T17:33:52.080594,follow up,unknown,helpful,conv_20250815_173352_6716d40a
+2025-08-15T17:37:12.216751,my employer is not paying overtime,employment law,helpful,test_session_2
+2025-08-15T17:37:34.484454,"thank you, that was helpful",unknown,helpful,conv_20250815_173734_4f64be53
+2025-08-15T17:37:34.526774,what documents do I need for this?,unknown,clarification,conv_20250815_173734_4f64be53
+2025-08-15T17:37:34.569960,this advice is not helpful,unknown,not helpful,conv_20250815_173734_4f64be53
+2025-08-15T17:37:34.618829,"perfect, exactly what I needed",unknown,perfect,conv_20250815_173734_410c0f92
+2025-08-15T17:37:34.658597,can you explain the legal process in more detail?,unknown,explain more,conv_20250815_173734_432a7168
+2025-08-15T17:37:34.703456,this is completely wrong advice,unknown,wrong,conv_20250815_173734_f6ee78a7
+2025-08-15T17:39:09.069827,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250815_173909_d3732187
+2025-08-15T17:39:09.118308,how to report cybercrime to police,unknown,confusing,conv_20250815_173909_9ba99158
+2025-08-15T17:39:09.166632,legal notice for money recovery,tenant rights,very helpful,conv_20250815_173909_67702c09
+2025-08-15T17:39:09.211683,can I file criminal case for threats,criminal law,helpful,conv_20250815_173909_fec5ef64
+2025-08-15T17:40:25.707675,my employer is not paying overtime wages,employment law,helpful,session_20250815174025_4260
+2025-08-15T17:40:25.750022,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250815_174025_8c749e26
+2025-08-15T17:40:25.798984,how to report cybercrime to police,unknown,not helpful,conv_20250815_174025_c3ec9ed7
+2025-08-15T17:40:25.840264,legal notice for money recovery,tenant rights,helpful,conv_20250815_174025_ad32b9d5
+2025-08-15T17:40:25.885803,can I file criminal case for threats,criminal law,good,conv_20250815_174025_255cfe47
+2025-08-15T17:40:25.894183,test query for helpful feedback,unknown,helpful,session_20250815174025_7688
+2025-08-15T17:40:25.900493,test query for not helpful feedback,unknown,not helpful,session_20250815174025_6206
+2025-08-15T17:40:25.906910,test query for wrong domain feedback,unknown,wrong domain,session_20250815174025_6093
+2025-08-15T17:40:25.913206,test query for confusing feedback,unknown,confusing,session_20250815174025_6633
+2025-08-15T17:40:25.920162,test query for excellent feedback,unknown,excellent,session_20250815174025_9769
+2025-08-15T17:40:26.026624,workplace harassment by supervisor,employment law,very helpful,session_20250815174026_1712
+2025-08-15T17:40:26.030199,workplace harassment by supervisor,employment law,wrong domain,session_20250815174026_8374
+2025-08-15T17:41:43.490783,my boss is not paying overtime wages,unknown,very helpful,test_fix
+2025-08-15T17:41:43.533754,my boss is not paying overtime wages,unknown,wrong domain,test_fix
+2025-08-15T17:41:54.714455,my employer is not paying overtime wages,employment law,helpful,session_20250815174154_1253
+2025-08-15T17:41:54.740558,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250815_174154_d89c5cc6
+2025-08-15T17:41:54.777885,how to report cybercrime to police,unknown,not helpful,conv_20250815_174154_ff48ea7b
+2025-08-15T17:41:54.810080,legal notice for money recovery,tenant rights,helpful,conv_20250815_174154_e511c9ec
+2025-08-15T17:41:54.837785,can I file criminal case for threats,criminal law,good,conv_20250815_174154_102ab4fd
+2025-08-15T17:41:54.848703,test query for helpful feedback,unknown,helpful,session_20250815174154_9962
+2025-08-15T17:41:54.856597,test query for not helpful feedback,unknown,not helpful,session_20250815174154_7176
+2025-08-15T17:41:54.865111,test query for wrong domain feedback,unknown,wrong domain,session_20250815174154_1340
+2025-08-15T17:41:54.872514,test query for confusing feedback,unknown,confusing,session_20250815174154_3550
+2025-08-15T17:41:54.880681,test query for excellent feedback,unknown,excellent,session_20250815174154_6566
+2025-08-15T17:41:54.949122,workplace harassment by supervisor,employment law,very helpful,session_20250815174154_9539
+2025-08-15T17:41:54.952189,workplace harassment by supervisor,employment law,wrong domain,session_20250815174154_9698
+2025-08-15T17:42:30.145319,workplace harassment case,employment law,"excellent advice, very helpful",strong_test
+2025-08-15T17:42:30.169523,workplace harassment case,employment law,"completely wrong, not helpful at all",strong_test
+2025-08-23T11:40:32.817093,my employer is not paying overtime wages,employment law,helpful,session_20250823114032_1967
+2025-08-23T11:40:32.874501,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_114032_a20215a6
+2025-08-23T11:40:32.913797,how to report cybercrime to police,unknown,not helpful,conv_20250823_114032_d9deb50f
+2025-08-23T11:40:32.949427,legal notice for money recovery,tenant rights,helpful,conv_20250823_114032_97de858c
+2025-08-23T11:40:32.979684,can I file criminal case for threats,criminal law,good,conv_20250823_114032_3596c1f4
+2025-08-23T11:40:32.988401,test query for helpful feedback,unknown,helpful,session_20250823114032_7503
+2025-08-23T11:40:32.997505,test query for not helpful feedback,unknown,not helpful,session_20250823114032_6056
+2025-08-23T11:40:33.004671,test query for wrong domain feedback,unknown,wrong domain,session_20250823114033_2795
+2025-08-23T11:40:33.011868,test query for confusing feedback,unknown,confusing,session_20250823114033_8302
+2025-08-23T11:40:33.018883,test query for excellent feedback,unknown,excellent,session_20250823114033_1893
+2025-08-23T11:40:33.100854,workplace harassment by supervisor,employment law,very helpful,session_20250823114033_8809
+2025-08-23T11:40:33.105486,workplace harassment by supervisor,employment law,wrong domain,session_20250823114033_2246
+2025-08-23T11:48:26.356211,my employer is not paying overtime wages,employment law,very helpful,session_20250823114826_1549
+2025-08-23T11:48:26.360931,my employer is not paying overtime wages,employment law,wrong domain,session_20250823114826_5654
+2025-08-23T11:48:26.454229,workplace harassment by supervisor,employment law,very helpful,session_20250823114826_9946
+2025-08-23T11:48:26.457174,workplace harassment by supervisor,employment law,wrong domain,session_20250823114826_9243
+2025-08-23T11:48:26.496543,what legal action can I take,unknown,helpful,conv_20250823_114826_a985fe28
+2025-08-23T11:50:00.786919,my employer is not paying overtime wages,employment law,very helpful,test_session_123
+2025-08-23T11:50:00.827296,my employer is not paying overtime wages,employment law,wrong domain,test_session_123
+2025-08-23T11:50:43.038739,my employer is not paying overtime wages,employment law,very helpful,test_session_123
+2025-08-23T11:50:43.066552,my employer is not paying overtime wages,employment law,wrong domain,test_session_123
+2025-08-23T11:50:51.061918,my employer is not paying overtime wages,employment law,helpful,session_20250823115051_1252
+2025-08-23T11:50:51.067666,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_115051_ef4a3d07
+2025-08-23T11:50:51.098183,how to report cybercrime to police,unknown,not helpful,conv_20250823_115051_5b57a699
+2025-08-23T11:50:51.126459,legal notice for money recovery,tenant rights,helpful,conv_20250823_115051_f3a72058
+2025-08-23T11:50:51.159490,can I file criminal case for threats,criminal law,good,conv_20250823_115051_1a9c30b5
+2025-08-23T11:50:51.189628,test query for helpful feedback,unknown,helpful,session_20250823115051_6791
+2025-08-23T11:50:51.196265,test query for not helpful feedback,unknown,not helpful,session_20250823115051_2285
+2025-08-23T11:50:51.206539,test query for wrong domain feedback,unknown,wrong domain,session_20250823115051_3342
+2025-08-23T11:50:51.211821,test query for confusing feedback,unknown,confusing,session_20250823115051_1468
+2025-08-23T11:50:51.218852,test query for excellent feedback,unknown,excellent,session_20250823115051_2719
+2025-08-23T11:50:51.292389,workplace harassment by supervisor,employment law,very helpful,session_20250823115051_3452
+2025-08-23T11:50:51.294028,workplace harassment by supervisor,employment law,wrong domain,session_20250823115051_1921
+2025-08-23T11:52:00.307641,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-08-23T11:52:00.350271,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-08-23T11:52:00.419950,what legal action can I take against landlord,tenant rights,helpful,conv_20250823_115200_b179c0dc
+2025-08-23T11:52:00.440345,this advice seems wrong,unknown,not helpful,conv_20250823_115200_b179c0dc
+2025-08-23T11:52:00.566128,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-08-23T11:52:00.588799,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-08-23T11:52:00.644473,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-08-23T11:52:00.671248,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-08-23T11:52:00.696012,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-08-23T11:52:00.727034,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain
+2025-08-23T11:53:05.257319,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-08-23T11:53:05.294062,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-08-23T11:53:05.359047,what legal action can I take against landlord,tenant rights,helpful,conv_20250823_115305_0e4ae9e2
+2025-08-23T11:53:05.375968,this advice seems wrong,unknown,not helpful,conv_20250823_115305_0e4ae9e2
+2025-08-23T11:53:05.491848,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-08-23T11:53:05.510753,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-08-23T11:53:05.559230,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-08-23T11:53:05.610024,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-08-23T11:53:05.633176,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-08-23T11:53:05.661590,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain
+2025-08-23T11:56:08.898861,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-08-23T11:56:08.935594,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-08-23T11:56:09.001368,what legal action can I take against landlord,tenant rights,helpful,conv_20250823_115608_22309c7c
+2025-08-23T11:56:09.027648,this advice seems wrong,unknown,not helpful,conv_20250823_115608_22309c7c
+2025-08-23T11:56:09.148476,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-08-23T11:56:09.168472,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-08-23T11:56:09.212052,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-08-23T11:56:09.233714,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-08-23T11:56:09.255374,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-08-23T11:56:09.280460,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain
+2025-08-23T14:20:04.175592,my employer is not paying overtime wages,employment law,helpful,session_20250823142004_8190
+2025-08-23T14:20:04.186184,test query for helpful feedback,unknown,helpful,session_20250823142004_8264
+2025-08-23T14:20:04.280915,workplace harassment by supervisor,employment law,very helpful,session_20250823142004_6401
+2025-08-23T14:20:04.283621,workplace harassment by supervisor,employment law,wrong domain,session_20250823142004_6044
+2025-08-23T14:22:11.306560,what legal action can I take,unknown,helpful,test_session_001
+2025-08-23T14:23:36.501683,what legal action can I take,unknown,helpful,conv_20250823_142336_a7a46dc2
+2025-08-23T14:23:36.505469,thank you for the advice,unknown,very helpful,conv_20250823_142336_a7a46dc2
+2025-08-23T14:24:26.198238,my employer is not paying overtime wages,employment law,helpful,session_20250823142426_9523
+2025-08-23T14:24:26.236457,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_142426_09f1295b
+2025-08-23T14:24:26.269859,how to report cybercrime to police,unknown,not helpful,conv_20250823_142426_35766eab
+2025-08-23T14:24:26.307998,legal notice for money recovery,tenant rights,helpful,conv_20250823_142426_37bf8acc
+2025-08-23T14:24:26.340089,can I file criminal case for threats,criminal law,good,conv_20250823_142426_2902823c
+2025-08-23T14:24:26.342696,test query for helpful feedback,unknown,helpful,session_20250823142426_5495
+2025-08-23T14:24:26.350865,test query for not helpful feedback,unknown,not helpful,session_20250823142426_4104
+2025-08-23T14:24:26.355928,test query for wrong domain feedback,unknown,wrong domain,session_20250823142426_1113
+2025-08-23T14:24:26.362525,test query for confusing feedback,unknown,confusing,session_20250823142426_3826
+2025-08-23T14:24:26.368148,test query for excellent feedback,unknown,excellent,session_20250823142426_2195
+2025-08-23T14:24:26.464714,workplace harassment by supervisor,employment law,very helpful,session_20250823142426_9989
+2025-08-23T14:24:26.470789,workplace harassment by supervisor,employment law,wrong domain,session_20250823142426_1275
+2025-08-23T14:24:53.838002,what legal action can I take,unknown,helpful,test_session_001
+2025-08-23T14:24:53.870852,how to report this to police,unknown,helpful,conv_20250823_142453_6125a52e
+2025-08-23T14:27:46.934893,my employer is not paying overtime wages,employment law,helpful,session_20250823142746_2837
+2025-08-23T14:27:46.980298,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_142746_f3c98577
+2025-08-23T14:27:47.011563,how to report cybercrime to police,unknown,not helpful,conv_20250823_142746_80e9aef5
+2025-08-23T14:27:47.039939,legal notice for money recovery,tenant rights,helpful,conv_20250823_142747_646b9e14
+2025-08-23T14:27:47.070826,can I file criminal case for threats,criminal law,good,conv_20250823_142747_a6157674
+2025-08-23T14:27:47.078857,test query for helpful feedback,unknown,helpful,session_20250823142747_4675
+2025-08-23T14:27:47.083828,test query for not helpful feedback,unknown,not helpful,session_20250823142747_8529
+2025-08-23T14:27:47.088455,test query for wrong domain feedback,unknown,wrong domain,session_20250823142747_9026
+2025-08-23T14:27:47.093990,test query for confusing feedback,unknown,confusing,session_20250823142747_4647
+2025-08-23T14:27:47.100047,test query for excellent feedback,unknown,excellent,session_20250823142747_5292
+2025-08-23T14:27:47.186780,workplace harassment by supervisor,employment law,very helpful,session_20250823142747_5672
+2025-08-23T14:27:47.186780,workplace harassment by supervisor,employment law,wrong domain,session_20250823142747_9666
+2025-08-23T14:31:22.222376,my employer is not paying overtime wages,employment law,helpful,behavioral_test_1755939682
+2025-08-23T14:31:22.303223,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_143122_e8832458
+2025-08-23T14:31:22.370152,how to report cybercrime to police,unknown,not helpful,conv_20250823_143122_dc2a46e7
+2025-08-23T14:31:22.437468,legal notice for money recovery,tenant rights,helpful,conv_20250823_143122_924c3a9c
+2025-08-23T14:31:22.491586,can I file criminal case for threats,criminal law,good,conv_20250823_143122_64880fee
+2025-08-23T14:31:22.499107,test query for helpful feedback,unknown,helpful,session_20250823143122_7729
+2025-08-23T14:31:22.508394,test query for not helpful feedback,unknown,not helpful,session_20250823143122_5027
+2025-08-23T14:31:22.516621,test query for wrong domain feedback,unknown,wrong domain,session_20250823143122_6512
+2025-08-23T14:31:22.523333,test query for confusing feedback,unknown,confusing,session_20250823143122_6676
+2025-08-23T14:31:22.531260,test query for excellent feedback,unknown,excellent,session_20250823143122_2750
+2025-08-23T14:31:22.774541,workplace harassment by supervisor,employment law,very helpful,confidence_test_1755939682
+2025-08-23T14:31:22.845239,workplace harassment by supervisor,employment law,wrong domain,confidence_test_1755939682
+2025-08-23T14:32:14.895867,my employer is not paying overtime wages,employment law,helpful,behavioral_test_1755939734
+2025-08-23T14:32:14.966099,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_143214_97aeddc9
+2025-08-23T14:32:15.026581,how to report cybercrime to police,unknown,not helpful,conv_20250823_143214_9245a480
+2025-08-23T14:32:15.074951,legal notice for money recovery,tenant rights,helpful,conv_20250823_143215_bd24c984
+2025-08-23T14:32:15.129304,can I file criminal case for threats,criminal law,good,conv_20250823_143215_00e65eb1
+2025-08-23T14:32:15.136869,test query for helpful feedback,unknown,helpful,session_20250823143215_8640
+2025-08-23T14:32:15.142098,test query for not helpful feedback,unknown,not helpful,session_20250823143215_6098
+2025-08-23T14:32:15.146584,test query for wrong domain feedback,unknown,wrong domain,session_20250823143215_9932
+2025-08-23T14:32:15.151663,test query for confusing feedback,unknown,confusing,session_20250823143215_7223
+2025-08-23T14:32:15.156771,test query for excellent feedback,unknown,excellent,session_20250823143215_8474
+2025-08-23T14:32:15.363400,workplace harassment by supervisor,employment law,very helpful,confidence_test_1755939735
+2025-08-23T14:32:15.425727,workplace harassment by supervisor,employment law,wrong domain,confidence_test_1755939735
+2025-08-23T14:33:32.625086,my employer is not paying overtime wages,employment law,helpful,behavioral_test_1755939812
+2025-08-23T14:33:32.691532,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_143332_f0a88cc5
+2025-08-23T14:33:32.757582,how to report cybercrime to police,unknown,not helpful,conv_20250823_143332_ee345ecd
+2025-08-23T14:33:32.819025,legal notice for money recovery,tenant rights,helpful,conv_20250823_143332_5298a48e
+2025-08-23T14:33:32.878624,can I file criminal case for threats,criminal law,good,conv_20250823_143332_fcc325f3
+2025-08-23T14:33:32.885575,test query for helpful feedback,unknown,helpful,session_20250823143332_9711
+2025-08-23T14:33:32.891363,test query for not helpful feedback,unknown,not helpful,session_20250823143332_1936
+2025-08-23T14:33:32.895778,test query for wrong domain feedback,unknown,wrong domain,session_20250823143332_4553
+2025-08-23T14:33:32.905741,test query for confusing feedback,unknown,confusing,session_20250823143332_7557
+2025-08-23T14:33:32.911471,test query for excellent feedback,unknown,excellent,session_20250823143332_5085
+2025-08-23T14:33:33.130142,workplace harassment by supervisor,employment law,very helpful,confidence_test_1755939813
+2025-08-23T14:33:33.192635,workplace harassment by supervisor,employment law,wrong domain,confidence_test_1755939813
+2025-08-23T14:35:16.244254,my employer is not paying overtime wages,employment law,helpful,behavioral_test_1755939916
+2025-08-23T14:35:16.304103,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_143516_cb4ee84a
+2025-08-23T14:35:16.352714,how to report cybercrime to police,unknown,not helpful,conv_20250823_143516_26bae20d
+2025-08-23T14:35:16.404680,legal notice for money recovery,tenant rights,helpful,conv_20250823_143516_9fe00fc3
+2025-08-23T14:35:16.451725,can I file criminal case for threats,criminal law,good,conv_20250823_143516_9f8864c9
+2025-08-23T14:35:16.457361,test query for helpful feedback,unknown,helpful,session_20250823143516_3752
+2025-08-23T14:35:16.461575,test query for not helpful feedback,unknown,not helpful,session_20250823143516_4859
+2025-08-23T14:35:16.466227,test query for wrong domain feedback,unknown,wrong domain,session_20250823143516_9512
+2025-08-23T14:35:16.474601,test query for confusing feedback,unknown,confusing,session_20250823143516_7179
+2025-08-23T14:35:16.479643,test query for excellent feedback,unknown,excellent,session_20250823143516_2761
+2025-08-23T14:35:16.720824,workplace harassment by supervisor,employment law,very helpful,confidence_test_1755939916
+2025-08-23T14:35:16.773579,workplace harassment by supervisor,employment law,wrong domain,confidence_test_1755939916
+2025-08-23T14:37:11.715237,my employer is not paying overtime wages,employment law,helpful,behavioral_test_1755940031
+2025-08-23T14:37:11.783913,what legal action can I take against landlord for deposit,tenant rights,wrong domain,conv_20250823_143711_9a694c6d
+2025-08-23T14:37:11.842921,how to report cybercrime to police,unknown,not helpful,conv_20250823_143711_c4747986
+2025-08-23T14:37:11.905750,legal notice for money recovery,tenant rights,helpful,conv_20250823_143711_e17c01c0
+2025-08-23T14:37:11.950396,can I file criminal case for threats,criminal law,good,conv_20250823_143711_169d52da
+2025-08-23T14:37:11.961075,test query for helpful feedback,unknown,helpful,session_20250823143711_5242
+2025-08-23T14:37:11.964916,test query for not helpful feedback,unknown,not helpful,session_20250823143711_3716
+2025-08-23T14:37:11.973683,test query for wrong domain feedback,unknown,wrong domain,session_20250823143711_2674
+2025-08-23T14:37:11.980900,test query for confusing feedback,unknown,confusing,session_20250823143711_3345
+2025-08-23T14:37:11.985173,test query for excellent feedback,unknown,excellent,session_20250823143711_5875
+2025-08-23T14:37:12.173878,workplace harassment by supervisor,employment law,very helpful,confidence_test_1755940032
+2025-08-23T14:37:12.221275,workplace harassment by supervisor,employment law,wrong domain,confidence_test_1755940032
+2025-08-23T16:39:09.534670,My Phone is been Hacked,cyber crime,good,cli_session
+2025-08-23T16:48:10.805835,My Phone is being Hacked,cyber crime,good,cli_session
+2025-08-27T09:23:53.564228,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-08-27T09:23:53.619779,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-08-27T09:23:53.896002,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-08-27T09:23:53.943187,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-08-27T09:23:54.009795,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-08-27T09:23:54.064805,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-08-27T09:23:54.121891,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-08-27T09:23:54.179090,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain
+2025-08-27T09:23:54.534970,my employer is not paying overtime wages,employment law,very helpful,session_20250827092354_6396
+2025-08-27T09:23:54.538986,my employer is not paying overtime wages,employment law,wrong domain,session_20250827092354_8940
+2025-08-27T09:23:54.802498,workplace harassment by supervisor,employment law,very helpful,session_20250827092354_2842
+2025-08-27T09:23:54.808690,workplace harassment by supervisor,employment law,wrong domain,session_20250827092354_3992
+2025-08-27T09:24:01.878569,my employer is not paying overtime wages,employment law,very helpful,test_session_123
+2025-08-27T09:24:01.926976,my employer is not paying overtime wages,employment law,wrong domain,test_session_123
+2025-08-27T09:53:23.289576,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-08-27T09:53:23.357388,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-08-27T09:53:23.658514,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-08-27T09:53:23.710933,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-08-27T09:53:23.775020,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-08-27T09:53:23.827784,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-08-27T09:53:23.872272,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-08-27T09:53:23.925296,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain
+2025-08-27T09:53:24.503373,my employer is not paying overtime wages,employment law,very helpful,session_20250827095324_5323
+2025-08-27T09:53:24.513370,my employer is not paying overtime wages,employment law,wrong domain,session_20250827095324_8701
+2025-08-27T09:53:24.717769,workplace harassment by supervisor,employment law,very helpful,session_20250827095324_8899
+2025-08-27T09:53:24.730973,workplace harassment by supervisor,employment law,wrong domain,session_20250827095324_8136
+2025-08-27T09:53:25.290651,my employer is not paying overtime wages,employment law,very helpful,test_session_123
+2025-08-27T09:53:25.361713,my employer is not paying overtime wages,employment law,wrong domain,test_session_123
+2025-08-27T12:58:46.026308,My Property is Been Hijaced,unknown,helpful,cli_session
+2025-08-28T14:43:09.427274,Employee discloses all the company secrets to another company,employment law,good,cli_session
+2025-08-28T16:09:39.394530,My Phone is Being Hacked,cyber crime,good,cli_session
+2025-08-28T16:38:19.905695,My Phone is Been Hacked,cyber crime,Good,cli_session
+2025-08-28T16:44:28.446558,My Phone is Been Hacked,cyber crime,Good,cli_session
+2025-08-29T12:24:56.562817,My Phone is been Hacked,cyber crime,good,cli_session
+2025-08-29T12:25:59.720164,Someone hacked my Facebook account,cyber crime,good,cli_session
+2025-08-29T12:28:05.658870,My bank account money was stolen through online fraud.,cyber crime,Good,cli_session
+2025-08-29T13:19:20.430273,My Phone is Stolen,cyber crime,bad,cli_session
+2025-08-29T13:52:49.597640,My Phone is Hacked,cyber crime,good,cli_session
+2025-09-08T11:39:26.948698,my employer is not paying overtime wages,employment law,very helpful,behavioral_test_session
+2025-09-08T11:39:27.003643,my employer is not paying overtime wages,employment law,wrong domain,behavioral_test_session
+2025-09-08T11:39:27.244274,workplace harassment by supervisor,employment law,very helpful,confidence_test_session
+2025-09-08T11:39:27.296037,workplace harassment by supervisor,employment law,wrong domain,confidence_test_session
+2025-09-08T11:39:27.359925,test query for helpful feedback,unknown,helpful,feedback_test_helpful
+2025-09-08T11:39:27.411682,test query for not helpful feedback,unknown,not helpful,feedback_test_not_helpful
+2025-09-08T11:39:27.461515,test query for excellent feedback,unknown,excellent,feedback_test_excellent
+2025-09-08T11:39:27.538358,test query for wrong domain feedback,unknown,wrong domain,feedback_test_wrong_domain

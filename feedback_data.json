@@ -1,0 +1,265 @@
+{
+  "adjustments": {
+    "violent_crimes_murder": 0.15000000000000002,
+    "criminal_law_kidnapping": 0.15000000000000002,
+    "sexual_offences_rape": 0.30000000000000004,
+    "cyber_crime_general": 0.15000000000000002,
+    "employment_law_sexual_harassment": 0.15000000000000002,
+    "family_law_general": 0.55,
+    "criminal_law_general": 0.45000000000000007,
+    "drug_crimes_general": 0.15000000000000002,
+    "drug_crimes_smuggling": 0.15000000000000002,
+    "criminal_law_murder": 0.45000000000000007,
+    "violent_crimes_general": 0.15000000000000002,
+    "employment_law_general": 0.15000000000000002,
+    "financial_crimes_money_laundering": 0.15000000000000002,
+    "sexual_offences_sexual_harassment": 0.15000000000000002,
+    "corporate_law_general": 0.15000000000000002,
+    "environmental_law_general": 0.15000000000000002
+  },
+  "history": [
+    {
+      "timestamp": "2025-09-05T13:09:22.294010",
+      "query": "Someone murdered my brother in cold blood",
+      "domain": "violent_crimes",
+      "subdomain": "murder",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:55.366111",
+      "query": "My 5-year-old daughter was kidnapped for ransom",
+      "domain": "criminal_law",
+      "subdomain": "kidnapping",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:57.959969",
+      "query": "I was raped by my colleague at office party",
+      "domain": "sexual_offences",
+      "subdomain": "rape",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:58.365002",
+      "query": "Hackers stole money from my bank account",
+      "domain": "cyber_crime",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:58.728953",
+      "query": "My boss fired me for reporting sexual harassment",
+      "domain": "employment_law",
+      "subdomain": "sexual_harassment",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:59.233350",
+      "query": "My husband beats me and threatens to kill me",
+      "domain": "family_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:59.445096",
+      "query": "Business partner embezzled company funds",
+      "domain": "criminal_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:59.635363",
+      "query": "Caught with cocaine at airport security",
+      "domain": "drug_crimes",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:17:59.836996",
+      "query": "Police arrested me during peaceful protest",
+      "domain": "criminal_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-05T13:44:26.671609",
+      "query": "I was raped by my colleague",
+      "domain": "sexual_offences",
+      "subdomain": "rape",
+      "feedback": "Good",
+      "rating": 0,
+      "adjustment": -0.05
+    },
+    {
+      "timestamp": "2025-09-05T13:46:20.351541",
+      "query": "I was raped by my colleague",
+      "domain": "sexual_offences",
+      "subdomain": "rape",
+      "feedback": "Can you give more BNS and IPC sections",
+      "rating": 3,
+      "adjustment": 0
+    },
+    {
+      "timestamp": "2025-09-05T15:34:14.185269",
+      "query": "My child was kidnapped for child traficking",
+      "domain": "family_law",
+      "subdomain": "general",
+      "feedback": "nice",
+      "rating": 5,
+      "adjustment": 0.1
+    },
+    {
+      "timestamp": "2025-09-05T15:54:30.347988",
+      "query": "I was raped by my colleague",
+      "domain": "sexual_offences",
+      "subdomain": "rape",
+      "feedback": "superb",
+      "rating": 5,
+      "adjustment": 0.1
+    },
+    {
+      "timestamp": "2025-09-05T15:54:46.119615",
+      "query": "I was raped by my colleague",
+      "domain": "sexual_offences",
+      "subdomain": "rape",
+      "feedback": "nice",
+      "rating": 5,
+      "adjustment": 0.1
+    },
+    {
+      "timestamp": "2025-09-09T09:33:06.603386",
+      "query": "Caught with drugs at airport",
+      "domain": "drug_crimes",
+      "subdomain": "smuggling",
+      "feedback": "good",
+      "rating": 4,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T15:28:12.158205",
+      "query": "My husband beats me daily",
+      "domain": "family_law",
+      "subdomain": "general",
+      "feedback": "good",
+      "rating": 4,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:36.047667",
+      "query": "Someone murdered my brother in cold blood",
+      "domain": "criminal_law",
+      "subdomain": "murder",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:43.816221",
+      "query": "My 5-year-old daughter was kidnapped for ransom",
+      "domain": "violent_crimes",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:44.015735",
+      "query": "I was raped by my colleague at office party",
+      "domain": "employment_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:44.240594",
+      "query": "Hackers stole money from my bank account",
+      "domain": "financial_crimes",
+      "subdomain": "money_laundering",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:44.703651",
+      "query": "My boss fired me for reporting sexual harassment",
+      "domain": "sexual_offences",
+      "subdomain": "sexual_harassment",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:45.091643",
+      "query": "My husband beats me and threatens to kill me",
+      "domain": "family_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:45.445146",
+      "query": "Business partner embezzled company funds",
+      "domain": "corporate_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:45.860870",
+      "query": "Caught with cocaine at airport security",
+      "domain": "environmental_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:03:46.134453",
+      "query": "Police arrested me during peaceful protest",
+      "domain": "criminal_law",
+      "subdomain": "general",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-10T16:04:00.707291",
+      "query": "Someone murdered my brother in cold blood",
+      "domain": "criminal_law",
+      "subdomain": "murder",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    },
+    {
+      "timestamp": "2025-09-13T12:47:27.569839",
+      "query": "Someone murdered my brother",
+      "domain": "criminal_law",
+      "subdomain": "murder",
+      "feedback": "This analysis was very helpful",
+      "rating": 5,
+      "adjustment": 0.15000000000000002
+    }
+  ]
+}
