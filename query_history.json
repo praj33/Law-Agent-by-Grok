@@ -2975,5 +2975,34 @@
     "bns_count": 6,
     "ipc_count": 3,
     "crpc_count": 2
+<<<<<<< HEAD
+=======
+  },
+  {
+    "session_id": "ultimate_20250919_145513_1cdc5633",
+    "timestamp": "2025-09-19T14:55:13.550811",
+    "query": "test query for health check",
+    "domain": "medical_law",
+    "subdomain": "general",
+    "domain_confidence": 0.24285714285714285,
+    "subdomain_confidence": 0.5,
+    "total_sections": 1444,
+    "bns_count": 358,
+    "ipc_count": 572,
+    "crpc_count": 514
+  },
+  {
+    "session_id": "ultimate_20250919_145520_84f595fa",
+    "timestamp": "2025-09-19T14:55:20.309485",
+    "query": "I was raped by my colleague",
+    "domain": "sexual_offences",
+    "subdomain": "marital_rape",
+    "domain_confidence": 0.23333333333333334,
+    "subdomain_confidence": 0.7666666666666666,
+    "total_sections": 7,
+    "bns_count": 3,
+    "ipc_count": 2,
+    "crpc_count": 2
+>>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
   }
 ]
