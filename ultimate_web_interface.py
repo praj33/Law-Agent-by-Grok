@@ -28,10 +28,6 @@ except ImportError as e:
     print(f"⚠️ Ultimate legal agent not available: {e}")
     AGENT_AVAILABLE = False
 
-<<<<<<< HEAD
-app = Flask(__name__)
-app.secret_key = 'ultimate_legal_agent_2025'
-=======
 # Import CORS
 from flask_cors import CORS
 
@@ -44,10 +40,10 @@ CORS(app, resources={
     r"/api/*": {
         "origins": ["*"],  # Allow all origins for API routes
         "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"],
+        "allow_headers": ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
         "supports_credentials": True
     }
-})
+}, supports_credentials=True)
 
 # Handle OPTIONS requests explicitly
 @app.before_request
@@ -57,9 +53,20 @@ def handle_options():
         response = jsonify({'status': 'ok'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
         return response
->>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
+
+# Add a simple test route to verify API accessibility
+@app.route('/api/ping')
+def ping():
+    """Simple ping endpoint to verify API accessibility"""
+    return jsonify({
+        'success': True,
+        'message': 'API is accessible',
+        'timestamp': datetime.now().isoformat(),
+        'service': 'Ultimate Legal Agent API'
+    })
 
 # Global agent instance
 ultimate_agent = None
@@ -83,14 +90,13 @@ def index():
     """Main page with ultimate legal analysis"""
     return render_template('ultimate_index.html')
 
-<<<<<<< HEAD
-=======
 @app.route('/api')
 def api_endpoints():
     """List all available API endpoints"""
     return jsonify({
         'message': 'Available API endpoints',
         'endpoints': {
+            'GET /api/ping': 'Simple ping endpoint to verify API accessibility',
             'POST /api/ultimate-analysis': 'Process legal queries and get analysis',
             'POST /api/feedback': 'Submit feedback for queries',
             'GET /api/history': 'Get query history',
@@ -120,7 +126,6 @@ def test_api():
         ]
     })
 
->>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
 @app.route('/api/ultimate-analysis', methods=['POST'])
 def process_ultimate_analysis():
     """Process ANY type of legal query with ultimate analysis"""
@@ -509,29 +514,24 @@ if __name__ == '__main__':
     if initialize_ultimate_agent():
         print("✅ Ultimate Legal Agent ready!")
         print("🌐 Starting web server...")
-<<<<<<< HEAD
-        print("📱 Access URL: http://localhost:5000")
-=======
         
         # Get port from environment variable (Render) or default to 5000
         port = int(os.environ.get('PORT', 5000))
         print(f"📍 Server will be available at: http://0.0.0.0:{port}")
->>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
         print("🔗 API Endpoints:")
+        print("   • GET /api/ping - Simple ping endpoint")
+        print("   • GET /api - List all API endpoints")
         print("   • POST /api/ultimate-analysis - Ultimate legal analysis")
         print("   • POST /api/feedback - Submit feedback (adjusts confidence)")
         print("   • GET /api/history - Query history")
         print("   • GET /api/search-history - Search query history")
         print("   • GET /api/stats - System statistics")
         print("   • GET /api/health - Health check")
+        print("   • GET/POST /api/test - Test endpoint")
         print("=" * 80)
         
-<<<<<<< HEAD
-        app.run(debug=True, host='0.0.0.0', port=5000)
-=======
         # Run the app (bind to 0.0.0.0 for external access)
         app.run(debug=False, host='0.0.0.0', port=port)
->>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
     else:
         print("❌ Failed to start - Ultimate Legal Agent initialization failed")
         print("💡 Please ensure all required components are available:")

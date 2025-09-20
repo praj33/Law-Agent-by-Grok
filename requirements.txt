@@ -1,24 +1,4 @@
 # Core Framework
-<<<<<<< HEAD
-fastapi
-uvicorn
-pydantic
-flask
-
-# Data Processing and ML
-pandas
-numpy
-scikit-learn
-
-# NLP and Text Processing
-spacy
-# Run: python -m spacy download en_core_web_sm
-
-# Additional Utilities
-python-dateutil
-requests
-streamlit
-=======
 fastapi>=0.68.0,<0.69.0
 uvicorn>=0.15.0,<0.16.0
 pydantic>=1.8.0,<2.0.0
@@ -39,4 +19,3 @@ gunicorn>=20.1.0,<21.0.0
 
 # CORS support
 flask-cors>=3.0.10,<4.0.0
->>>>>>> 96573764006b9b3beee9f45615de140c3ebe2d7c
